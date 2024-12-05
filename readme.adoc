@@ -1,6 +1,101 @@
 = STF Documentation
-Squirrel Transfer Format - Modular 3D Interchange
+Squirrel Transfer Format - Modular 3D Interchange Format
+:hardbreaks-option:
 
+A 3D asset interchange format for (not only) game development use-cases.
 
+.Core Principles
+* Highly modular and extensible.
+* Doesn't impose any descisions on you.
+* If something can work, it should work.
 
+This is being developed datamodel first. Implementations will follow later. A proof-of-concept has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
 
+[caption=,title="Programming libraries are being developed for"]
+[%autowidth, cols=2*, frame=none, grid=none]
+|===
+|Python (TBD)
+|C# (TBD)
+|===
+
+[caption=,title="Implementations for authoring tools are being developed for"]
+[%autowidth, cols=3*, frame=none, grid=none]
+|===
+|Blender (TBD)
+|Godot (TBD)
+|Unity (TBD)
+|===
+
+⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
+
+---
+
+**This repository hosts documentation for the format and available types.**
+
+[cols=2*, frame=none, grid=none]
+[%autowidth]
+|===
+|**link:./specification/stf_specification.adoc[Core Format Specification]**
+|**link:./specification/stf_roadmap.adoc[Roadmap]**
+|===
+
+.Minimal example Json definition
+[%collapsible]
+====
+[,json]
+----
+{
+	"stf": {
+		"version_major": 0,
+		"version_minor": 0,
+		"meta": {
+			"asset_name": "STF Example 1",
+		},
+		"compatibility_profiles": [
+			"node_names_unique_within_prefab",
+			"game_engine_wide_compatibility"
+		],
+		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+	},
+	"resources": {
+		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
+			"type": "stf.prefab",
+			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"]
+			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
+			"nodes": {
+				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+					"name": "Super Awesome Model",
+					"enabled": true,
+					"trs": [],
+					"children": [],
+					"components": {
+						"stf.instance.mesh": {
+							"enabled": true,
+							"mesh": 0
+						}
+					}
+				}
+			}
+		},
+		"0e2e767b-2f90-4739-ad78-486b378ba051": {
+			"type": "stf.mesh",
+			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
+			"vertex_count": 32000,
+			"vertecies": {
+				"precision": 4,
+				"buffer": 0
+			},
+		}
+	},
+	"buffers": {
+		"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+			"type": "stf.buffer.included",
+			"index": 0
+		}
+	}
+}
+----
+====
+
+== License
+This repository is licensed under **CC-BY-4.0** (<https://creativecommons.org/licenses/by/4.0/>)

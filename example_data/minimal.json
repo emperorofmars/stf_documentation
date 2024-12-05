@@ -1,0 +1,218 @@
+{
+	"stf": {
+		"version_major": 0,
+		"version_minor": 0,
+		"meta": {
+			"asset_name": "STF Example 1",
+			"asset_author": "Mars"
+		},
+		"compatibility_profiles": [
+			"node_names_unique_within_prefab",
+			"game_engine_wide_compatibility"
+		],
+		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+	},
+	"resources": {
+		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
+			"type": "stf.prefab",
+			"name": "STF Example",
+			"referenced_resources": [
+				"0b1d3b32-5545-4e12-853f-cc3d0d49934d",
+				"0e2e767b-2f90-4739-ad78-486b378ba051",
+				"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd",
+				"0e94463f-cbc5-401a-b6a5-d17e017a9a91"
+			],
+			"root": "98be6ae4-1aaa-4ec6-89a0-fcf2d8902cf0",
+			"nodes": {
+				"98be6ae4-1aaa-4ec6-89a0-fcf2d8902cf0": {
+					"name": "Root",
+					"trs": [],
+					"children": ["7b898a6a-ac0e-4d25-a85e-4fb1af8d838d"]
+				},
+				"7b898a6a-ac0e-4d25-a85e-4fb1af8d838d": {
+					"name": "Armature Instance",
+					"trs": [],
+					"children": ["cf6b6ac1-1ba0-4ab6-ab25-22b1cd9c9539"],
+					"components": {
+						"86568c23-c077-4616-9ed3-a7d8b582c6a1": {
+							"type": "stf.instance.armature",
+							"armature": 0,
+							"appendices": [
+								{
+									"bone": "06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b",
+									"child": "b0e6bb74-5915-4661-88a7-f94366ff3f6a"
+								}
+							],
+							"overrides": [
+								{
+									"type": "set_property",
+									"bone": "06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b",
+									"path": "trs",
+									"value": []
+								}
+							]
+						}
+					}
+				},
+				"cf6b6ac1-1ba0-4ab6-ab25-22b1cd9c9539": {
+					"name": "Body Mesh Instance",
+					"components": {
+						"b910ec2f-7bad-40a3-9acc-9de28eb9de6c": {
+							"type": "stf.instance.mesh",
+							"mesh": 1,
+							"blenshape_values": [
+								0.3, 4
+							],
+							"materials": [2]
+						}
+					}
+				},
+				"b0e6bb74-5915-4661-88a7-f94366ff3f6a": {
+					"type": "stf.instance.prefab",
+					"name": "Cute Hat Asset",
+					"components": {
+						"0c8a9ab3-bd06-41b8-9028-dd632bcb3ca4": {
+							"type": "stf.instance.prefab",
+							"prefab": 3
+						}
+					}
+				}
+			}
+		},
+		"0b1d3b32-5545-4e12-853f-cc3d0d49934d": {
+			"type": "stf.armature",
+			"name": "Main Armature",
+			"root_bone": "df1373cf-828e-4a97-9b05-c5dc77692d4d",
+			"bones": {
+				"df1373cf-828e-4a97-9b05-c5dc77692d4d": {
+					"name": "Hips",
+					"trs": [],
+					"children": [
+						"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b"
+					]
+				},
+				"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b": {
+					"name": "Head",
+					"trs": [],
+					"children": []
+				}
+			}
+		},
+		"0e2e767b-2f90-4739-ad78-486b378ba051": {
+			"type": "stf.mesh",
+			"name": "Main Body Mesh",
+			"referenced_buffers": [
+				"2c04d7f9-96cd-4867-baf3-2a54d4d31a67",
+				"d7b951f7-8376-49af-a14e-cfbe83ca30aa",
+				"8183c641-689c-4d61-bb33-46fcb79f1eb5",
+				"48a7bc7e-cc3b-44cf-ac84-84664737835d"
+			],
+			"vertex_count": 32000,
+			"vertecies": {
+				"precision": 4,
+				"buffer": 0
+			},
+			"normals": {
+				"precision": 4,
+				"buffer": 1
+			},
+			"tangents": {
+				"precision": 4,
+				"buffer": "..."
+			},
+			"vertex_colors": {
+				"precision": 4,
+				"buffer": "..."
+			},
+			"weights": {
+				"precision": 4,
+				"buffer": "..."
+			},
+			"blendshapes": [
+				{
+					"name": "smile",
+					"indexed": true,
+					"vertecies": {
+						"precision": 4,
+						"buffer": 2
+					},
+					"normals": {
+						"precision": 4,
+						"buffer": 3
+					}
+				},
+				{
+					"name": "blep",
+					"indexed": true,
+					"vertecies": {
+						"precision": 4,
+						"buffer": "..."
+					},
+					"normals": {
+						"precision": 4,
+						"buffer": "..."
+					}
+				}
+			]
+		},
+		"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
+			"type": "stf.material",
+			"name": "Body Material",
+			"referenced_resources": [
+				"6f03d810-4613-467d-921b-a5302552f9d5",
+				"bb39a37d-ea6c-4cb8-a628-b797e55cbd14"
+			],
+			"properties": {
+				"albedo": {
+					"type": "image",
+					"image": 0
+				},
+				"normal": {
+					"type": "image",
+					"image": 1
+				}
+			}
+		},
+		"6f03d810-4613-467d-921b-a5302552f9d5": {
+			"type": "stf.image",
+			"name": "Body_Albedo",
+			"image_format": "png",
+			"texture_type": "rgb"
+		},
+		"bb39a37d-ea6c-4cb8-a628-b797e55cbd14": {
+			"type": "stf.image",
+			"name": "Body_Normal",
+			"image_format": "png",
+			"texture_type": "xyz"
+		},
+		"0e94463f-cbc5-401a-b6a5-d17e017a9a91": {
+			"type": "stf.prefab",
+			"name": "Superawesome Hat",
+			"root": "8d464880-7c6a-48aa-8f34-501f9d6e0722",
+			"nodes": {
+				"8d464880-7c6a-48aa-8f34-501f9d6e0722": {
+					"name": "Superawesome Hat Root",
+					"children": []
+				}
+			}
+		}
+	},
+	"buffers": {
+		"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+			"type": "stf.buffer.included",
+			"index": 0
+		},
+		"d7b951f7-8376-49af-a14e-cfbe83ca30aa": {
+			"type": "stf.buffer.included",
+			"index": 1
+		},
+		"8183c641-689c-4d61-bb33-46fcb79f1eb5": {
+			"type": "stf.buffer.included",
+			"index": 2
+		},
+		"48a7bc7e-cc3b-44cf-ac84-84664737835d": {
+			"type": "stf.buffer.included",
+			"index": 3
+		}
+	}
+}

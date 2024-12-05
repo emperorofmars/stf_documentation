@@ -1,0 +1,241 @@
+= STF Specification
+Squirrel Transfer Format - Modular 3D Interchange Format
+v0.0.0
+:hardbreaks-option:
+
+A STF file consists of a binary header, Json definition, and zero or more binary buffers.
+
+The file extension is `.stf`.
+The media-type is `model/stf`.
+The STF binary file is stored in `network byte order`.
+The Json definition is encoded as `utf8`.
+By default, binary buffers are stored in `network byte order`.
+By default, STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units)
+
+By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
+A standard set of types is defined in link:./specification/stf_json_definition.adoc[].
+
+== Binary Format
+
+[%autowidth, %header,cols=2*]
+|===
+|Length (Bytes) |Content
+|4 | Magic number: `STF0`
+|4 | STF binary format version major
+|4 | STF binary format version minor
+|4 | Number of buffers, including the Json definiton buffer
+|8 * {number of buffers} | Buffer length in bytes
+|{number of buffers} * {buffer length} | The buffers
+|===
+
+The Json definition is the first and only required buffer.
+
+== Json Definition
+The root Json element is an `object`. It contains 3 child-objects: `stf`, `resources` and `buffers`.
+
+=== `stf`
+The `stf` object holds meta information.
+
+.Example
+[%collapsible]
+====
+.STF object example
+[,json]
+----
+"stf": {
+	"version_major": 0,
+	"version_minor": 0,
+	"meta": {
+		"asset_name": "STF Example 1",
+	},
+	"compatibility_profiles": [
+		"node_names_unique_within_prefab",
+		"game_engine_wide_compatibility"
+	],
+	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+}
+----
+====
+
+.`stf` object Properties:
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|version_major |Yes |Integer |Major version of STF
+|version_minor |Yes |Integer |Minor version of STF
+|root |Yes |Unique ID String |Unique ID of the root resource
+|===
+
+The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
+
+=== `resources`
+The `resources` object is a map of resource objects identified by an unique ID string.
+
+The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
+
+.Example
+[%collapsible]
+====
+.resources object example
+[,json]
+----
+"resources": {
+	"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
+		"type": "stf.material",
+		"name": "Body Material",
+		"referenced_resources": [
+			"6f03d810-4613-467d-921b-a5302552f9d5",
+			"bb39a37d-ea6c-4cb8-a628-b797e55cbd14"
+		]
+		"properties": {
+			"albedo": {
+				"type": "image",
+				"image": 0
+			},
+		}
+	},
+	"6f03d810-4613-467d-921b-a5302552f9d5": {
+		"type": "stf.image",
+		"name": "Body_Albedo",
+		"image_format": "png",
+		"texture_type": "rgb"
+	},
+}
+----
+====
+
+.`resource` object general properties:
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|type |Yes |String |Namespaced type name of the resource
+|referenced_resources |No |Array of Unique ID Strings | IDs of Resources this resource depends on.
+|referenced_buffers |No |Array of Unique ID Strings |IDs of Buffers this resource depends on.
+|name |No |String |Display name of the resource
+|===
+
+Resources may contain other-resources, which are also identified by a `type`. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's appropriate property.
+
+==== Default Resource Types
+===== `stf.prefab`
+A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node.
+
+.Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root |Yes |Unique ID String |ID of the root node within this prefab.
+|nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
+|===
+
+The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
+
+Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
+
+===== `stf.node.spatial`
+A node that exists in 3d space. It defines its location, rotation and scale, relative to its parent.
+
+.Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|trs |Yes |TRS array |The nodes 3D transform
+|children |No |Array of child-node IDs |This child-nodes IDs
+|components |No |Object of ID - component pairs |Components represent define functionality of a node.
+|===
+
+
+=== `buffers`
+The `buffers` object is a map of buffer objects identified by an unique ID string.
+Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
+
+.Example
+[%collapsible]
+====
+.buffers object example
+[,json]
+----
+"buffers": {
+	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+		"type": "stf.buffer.included",
+		"index": 0
+	}
+}
+----
+====
+
+==== Default Buffer Types
+===== `stf.buffer.included`
+This type represents a buffer contained in the same file.
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|index |Yes |Integer |Index of the binary buffer in the file
+|===
+
+
+=== Full Json Definition Example
+
+.Show
+[%collapsible]
+====
+[,json]
+----
+{
+	"stf": {
+		"version_major": 0,
+		"version_minor": 0,
+		"meta": {
+			"asset_name": "STF Example 1"
+		},
+		"compatibility_profiles": [
+			"node_names_unique_within_prefab",
+			"game_engine_wide_compatibility"
+		],
+		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+	},
+	"resources": {
+		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
+			"type": "stf.prefab",
+			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"]
+			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
+			"nodes": {
+				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+					"name": "Super Awesome Model",
+					"enabled": true,
+					"trs": [],
+					"children": [],
+					"components": {
+						"2d172a76-e326-44d1-98c3-0c0ee2b15edd": {
+							"type": "stf.instance.mesh",
+							"enabled": true,
+							"mesh": 0
+						}
+					}
+				}
+			}
+		},
+		"0e2e767b-2f90-4739-ad78-486b378ba051": {
+			"type": "stf.mesh",
+			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
+			"vertex_count": 32000,
+			"vertecies": {
+				"precision": 4,
+				"buffer": 0
+			},
+		}
+	},
+	"buffers": {
+		"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+			"type": "stf.buffer.included",
+			"index": 0
+		}
+	}
+}
+----
+====
