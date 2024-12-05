@@ -1,7 +1,11 @@
-= STF Specification
-Squirrel Transfer Format - Modular 3D Interchange Format
+= STF: Specification
+Mars <mars@squirrel.pub>
 v0.0.0
 :hardbreaks-option:
+
+**Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
+
+Intended for (not only) game development use-cases.
 
 A STF file consists of a binary header, Json definition, and zero or more binary buffers.
 

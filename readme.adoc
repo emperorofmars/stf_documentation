@@ -1,8 +1,8 @@
-= STF Documentation
-Squirrel Transfer Format - Modular 3D Interchange Format
+= STF: Documentation
 :hardbreaks-option:
 
-A 3D asset interchange format for (not only) game development use-cases.
+**Squirrel Transfer Format - Modular 3D Interchange Format**
+Intended for (not only) game development use-cases.
 
 .Core Principles
 * Highly modular and extensible.
