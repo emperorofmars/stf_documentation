@@ -1,0 +1,6 @@
+= STF Documentation
+Squirrel Transfer Format - Modular 3D Interchange
+
+
+
+
