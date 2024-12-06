@@ -13,8 +13,7 @@ Intended for (not only) game development use-cases.
 A STF file consists of a binary header, a Json definition, and zero or more binary buffers.
 
 By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
-The minimum required set of types is defined in this document.
-A standard set of types required to describe common 3D asset functionality is defined in link:./stf_default_types.adoc[].
+The minimum required set of types is defined in this document in the **link:./stf_default_types.adoc[Default Types Specification]**.
 
 STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
 
@@ -81,15 +80,12 @@ The `stf` object holds meta information.
 
 The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
 
-Data and Component kind types must be supported by an implementations extension system.
-The remaining kinds can remain hard-coded according to this specification and the default types list: link:./specification/stf_default_types.adoc[].
-
 === The resources object
 The `resources` object is a map of resource objects identified by an ID.
 
 The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
 
-.`resource` object general properties:
+.Resource object general properties:
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -100,7 +96,9 @@ The various resource objects describe the files actual content. Each resource ha
 |name |No |String |Display name of the resource
 |===
 
-Resources may contain other-resources, which are also identified by a `type`. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's appropriate property.
+Resources may contain other-resources, which are also identified by a `type`. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's reference property.
+
+Find the list of all specified default types in the **link:./stf_default_types.adoc[Default Types Specification]**.
 
 .Example
 [%collapsible]
@@ -140,15 +138,20 @@ Some kinds of resource types simply sit directly in the `resources` object. Othe
 .These `kinds` of resource-types exist:
 * `Data`
 Can exist only at the top level.
+Loading plugins of this kind must be supported.
 * `Scene Hierarchy`
 Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
+Loading plugins of this kind must be supported.
 * `Node`
 Can only exist within a `Scene Hierarchy` kind type.
+Loading plugins of this kind is not required.
 * `Component`
 Represents functionality or information of `Data` or `Node` kinds.
+Loading plugins of this kind must be supported.
 * `Modification`
 They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
+Loading plugins of this kind is not required.
 
 `stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
 `stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
