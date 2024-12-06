@@ -115,7 +115,7 @@ Find the list of all specified default types in the **link:./stf_default_types.a
 		"name": "Body Material",
 		"referenced_resources": [
 			"6f03d810-4613-467d-921b-a5302552f9d5"
-		]
+		],
 		"properties": {
 			"albedo": {
 				"type": "image",

@@ -61,8 +61,8 @@ This is being developed datamodel first. Implementations will follow later. A pr
 	"resources": {
 		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
 			"type": "stf.prefab",
-			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"]
-			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
+			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"],
+			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95",
 			"nodes": {
 				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
 					"name": "Super Awesome Model",
@@ -81,7 +81,7 @@ This is being developed datamodel first. Implementations will follow later. A pr
 		},
 		"0e2e767b-2f90-4739-ad78-486b378ba051": {
 			"type": "stf.mesh",
-			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
+			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"],
 			"vertex_count": 32000,
 			"vertecies": {
 				"format": "f32",
