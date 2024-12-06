@@ -148,13 +148,22 @@ Loading plugins of this kind must be supported.
 |===
 |Key |Required |Type |Description
 
-|fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation.
+|fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation
 |components |No |Map<ID, Component> |
 |===
 
 ===== Scene Hierarchy
-Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
-Loading plugins of this kind must be supported.
+Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
+Loading plugins of this kind must be supported
+
+.Scene Hierarchy kind properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root |ID |ID | The ID of the root node contained in this resource
+|nodes |No |Map<ID, Node> |
+|===
 
 ===== Node
 Can only exist within a `Scene Hierarchy` kind type.
@@ -178,7 +187,7 @@ Loading plugins of this kind must be supported.
 |===
 |Key |Required |Type |Description
 
-|overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported.
+|overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
 
 ===== Modification
