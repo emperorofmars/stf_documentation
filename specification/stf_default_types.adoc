@@ -6,4 +6,83 @@ v0.0.0
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
-These STF types should be supported by every STF implementation.
+These STF resource-types have to be supported by every STF implementation.
+
+== Data types
+=== stf.mesh
+
+=== stf.image
+
+=== stf.material
+
+=== stf.animation
+
+== Data & Scene Hierarchy types
+=== stf.armature
+
+== Hierarchy types
+=== stf.prefab
+A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
+
+It's a `Scene Hierarchy` kind.
+
+.stf.prefab properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root |Yes |ID |ID of the root node within this prefab.
+|nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
+|===
+
+The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
+
+Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
+
+=== stf.prefab.modification
+A prefab modification. It applies a set of changes on to another prefab it references. The referenced prefab may be from another file.
+
+It's a `Scene Hierarchy` kind.
+
+.stf.prefab.modification properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|target |Yes |ID |ID of the base prefab.
+|modifications |Yes |Array of 'Modification' kinds |
+|===
+
+== Node types
+=== stf.node.spatial
+A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
+
+It's a `Node` kind.
+
+.stf.node.spatial properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|trs |Yes |TRS array |The nodes 3D transform
+|children |No |Array of IDs |This child-nodes IDs
+|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
+|===
+
+== Component types
+=== stf.instance.mesh
+
+=== stf.instance.armature
+
+=== stf.instance.prefab
+
+=== stf.texture
+
+== Modification types
+=== stf.modification.set_property
+
+=== stf.modification.append_node
+
+=== stf.modification.add_component
+
+=== stf.modification.remove_component

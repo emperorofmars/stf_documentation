@@ -14,7 +14,7 @@ A STF file consists of a binary header, a Json definition, and zero or more bina
 
 By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
 The minimum required set of types is defined in this document.
-A standard set of types required to describe common 3D asset functionality is defined in link:./specification/stf_default_types.adoc[].
+A standard set of types required to describe common 3D asset functionality is defined in link:./stf_default_types.adoc[].
 
 STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
 
@@ -137,7 +137,7 @@ Resources may contain other-resources, which are also identified by a `type`. Th
 There are different kinds of resource-types.
 Some kinds of resource types simply sit directly in the `resources` object. Other kinds of types may only exist within other kinds of resource types.
 
-.These `kinds` of types exist:
+.These `kinds` of resource-types exist:
 * `Data`
 Can exist only at the top level.
 * `Scene Hierarchy`
@@ -147,8 +147,8 @@ Can only exist within a `Scene Hierarchy` kind type.
 * `Component`
 Represents functionality or information of `Data` or `Node` kinds.
 * `Modification`
+They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
-Modifications can be listed on instances of `Scene Hierarchy` kind resource types.
 
 `stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
 `stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
@@ -156,54 +156,6 @@ Modifications can be listed on instances of `Scene Hierarchy` kind resource type
 Combinations of 'kinds' of resource types can exist. For example an armature is a `Data` and `Scene Hierarchy` kind of type.
 
 The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
-
-==== Default Resource Types
-===== stf.prefab
-A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
-
-It's a `Scene Hierarchy` kind.
-
-.stf.prefab properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|root |Yes |ID |ID of the root node within this prefab.
-|nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
-|===
-
-The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
-
-Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
-
-===== stf.node.spatial
-A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
-
-It's a `Node` kind.
-
-.stf.node.spatial properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|trs |Yes |TRS array |The nodes 3D transform
-|children |No |Array of IDs |This child-nodes IDs
-|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
-|===
-
-===== stf.prefab.modification
-A prefab modification. It applies a set of changes on to another prefab it references. The referenced prefab may be from another file.
-
-It's a `Scene Hierarchy` kind.
-
-.stf.prefab.modification properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|target |Yes |ID |ID of the base prefab.
-|modifications |Yes |Array of 'Modification' kinds |
-|===
 
 === The buffers object
 The `buffers` object is a map of buffer objects identified by an ID.

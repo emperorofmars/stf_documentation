@@ -148,6 +148,16 @@
 				"format": "f32",
 				"buffer": "..."
 			},
+			"uvs": [
+				{
+					"format": "f32",
+					"buffer": "..."
+				},
+				{
+					"format": "f32",
+					"buffer": "..."
+				}
+			],
 			"blendshapes": [
 				{
 					"name": "smile",
