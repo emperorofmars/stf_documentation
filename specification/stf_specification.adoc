@@ -74,8 +74,9 @@ The root resource must be of the `stf.prefab` type. It represents the entire ass
 	},
 	"profiles": [
 		"node_names_unique_within_prefab",
-		"game_engine_wide_compatibility"
-	],
+		"game_engine_wide_compatibility",
+		"no_prefab_instances"
+	]
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 }
 ----
