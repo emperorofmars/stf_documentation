@@ -2,6 +2,7 @@
 	"stf": {
 		"version_major": 0,
 		"version_minor": 0,
+		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5",
 		"meta": {
 			"asset_name": "STF Example 1",
 			"asset_author": "Mars"
@@ -9,8 +10,7 @@
 		"compatibility_profiles": [
 			"node_names_unique_within_prefab",
 			"game_engine_wide_compatibility"
-		],
-		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+		]
 	},
 	"resources": {
 		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
@@ -105,27 +105,47 @@
 				"2c04d7f9-96cd-4867-baf3-2a54d4d31a67",
 				"d7b951f7-8376-49af-a14e-cfbe83ca30aa",
 				"8183c641-689c-4d61-bb33-46fcb79f1eb5",
-				"48a7bc7e-cc3b-44cf-ac84-84664737835d"
+				"48a7bc7e-cc3b-44cf-ac84-84664737835d",
+				"b490106c-3508-448d-9aa6-3f589562f2d4",
+				"f79d1b47-6924-4498-956a-2ef032dc3ea7"
+			],
+			"referenced_resources": [
+				"0b1d3b32-5545-4e12-853f-cc3d0d49934d",
+				"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd"
+			],
+			"armature": 0,
+			"submeshes": [
+				{
+					"topology": "quads",
+					"buffer": 5,
+					"format": "i32",
+					"default_material": 1
+				},
+				{
+					"topology": "quads",
+					"buffer": 6,
+					"format": "i32"
+				}
 			],
 			"vertex_count": 32000,
 			"vertecies": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": 0
 			},
 			"normals": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": 1
 			},
 			"tangents": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": "..."
 			},
 			"vertex_colors": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": "..."
 			},
 			"weights": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": "..."
 			},
 			"blendshapes": [
@@ -133,23 +153,25 @@
 					"name": "smile",
 					"indexed": true,
 					"vertecies": {
-						"precision": 4,
+						"format": "f32",
+						"format_indices": "i32",
 						"buffer": 2
 					},
 					"normals": {
-						"precision": 4,
+						"format": "f32",
+						"format_indices": "i32",
 						"buffer": 3
 					}
 				},
 				{
 					"name": "blep",
-					"indexed": true,
+					"indexed": false,
 					"vertecies": {
-						"precision": 4,
+						"format": "f32",
 						"buffer": "..."
 					},
 					"normals": {
-						"precision": 4,
+						"format": "f32",
 						"buffer": "..."
 					}
 				}
@@ -213,6 +235,14 @@
 		"48a7bc7e-cc3b-44cf-ac84-84664737835d": {
 			"type": "stf.buffer.included",
 			"index": 3
+		},
+		"b490106c-3508-448d-9aa6-3f589562f2d4": {
+			"type": "stf.buffer.included",
+			"index": 4
+		},
+		"f79d1b47-6924-4498-956a-2ef032dc3ea7": {
+			"type": "stf.buffer.included",
+			"index": 4
 		}
 	}
 }

@@ -2,12 +2,23 @@
 Mars <mars@squirrel.pub>
 v0.0.0
 :hardbreaks-option:
+:toc:
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
 Intended for (not only) game development use-cases.
 
-A STF file consists of a binary header, Json definition, and zero or more binary buffers.
+== Introduction
+
+A STF file consists of a binary header, a Json definition, and zero or more binary buffers.
+
+By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
+The minimum required set of types is defined in this document.
+A standard set of types required to describe common 3D asset functionality is defined in link:./specification/stf_default_types.adoc[].
+
+STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
+
+Objects of any type get referenced by a globally/universally unique ID as a string. This will be reffered to as `ID`.
 
 The file extension is `.stf`.
 The media-type is `model/stf`.
@@ -15,9 +26,6 @@ The STF binary file is stored in `network byte order`.
 The Json definition is encoded as `utf8`.
 By default, binary buffers are stored in `network byte order`.
 By default, STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units)
-
-By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
-A standard set of types is defined in link:./specification/stf_json_definition.adoc[].
 
 == Binary Format
 
@@ -37,7 +45,7 @@ The Json definition is the first and only required buffer.
 == Json Definition
 The root Json element is an `object`. It contains 3 child-objects: `stf`, `resources` and `buffers`.
 
-=== `stf`
+=== The stf object
 The `stf` object holds meta information.
 
 .Example
@@ -68,15 +76,31 @@ The `stf` object holds meta information.
 
 |version_major |Yes |Integer |Major version of STF
 |version_minor |Yes |Integer |Minor version of STF
-|root |Yes |Unique ID String |Unique ID of the root resource
+|root |Yes |ID |ID of the root resource
 |===
 
 The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
 
-=== `resources`
-The `resources` object is a map of resource objects identified by an unique ID string.
+Data and Component kind types must be supported by an implementations extension system.
+The remaining kinds can remain hard-coded according to this specification and the default types list: link:./specification/stf_default_types.adoc[].
+
+=== The resources object
+The `resources` object is a map of resource objects identified by an ID.
 
 The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
+
+.`resource` object general properties:
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|type |Yes |String |Namespaced type name of the resource
+|referenced_resources |No |Array of IDs |IDs of Resources this resource depends on.
+|referenced_buffers |No |Array of IDs |IDs of Buffers this resource depends on.
+|name |No |String |Display name of the resource
+|===
+
+Resources may contain other-resources, which are also identified by a `type`. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's appropriate property.
 
 .Example
 [%collapsible]
@@ -109,29 +133,42 @@ The various resource objects describe the files actual content. Each resource ha
 ----
 ====
 
-.`resource` object general properties:
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
+==== Kinds of resource types
+There are different kinds of resource-types.
+Some kinds of resource types simply sit directly in the `resources` object. Other kinds of types may only exist within other kinds of resource types.
 
-|type |Yes |String |Namespaced type name of the resource
-|referenced_resources |No |Array of Unique ID Strings | IDs of Resources this resource depends on.
-|referenced_buffers |No |Array of Unique ID Strings |IDs of Buffers this resource depends on.
-|name |No |String |Display name of the resource
-|===
+.These `kinds` of types exist:
+* `Data`
+Can exist only at the top level.
+* `Scene Hierarchy`
+Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
+* `Node`
+Can only exist within a `Scene Hierarchy` kind type.
+* `Component`
+Represents functionality or information of `Data` or `Node` kinds.
+* `Modification`
+Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
+Modifications can be listed on instances of `Scene Hierarchy` kind resource types.
 
-Resources may contain other-resources, which are also identified by a `type`. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's appropriate property.
+`stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
+`stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
+
+Combinations of 'kinds' of resource types can exist. For example an armature is a `Data` and `Scene Hierarchy` kind of type.
+
+The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
 
 ==== Default Resource Types
-===== `stf.prefab`
-A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node.
+===== stf.prefab
+A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
 
-.Properties
+It's a `Scene Hierarchy` kind.
+
+.stf.prefab properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|root |Yes |Unique ID String |ID of the root node within this prefab.
+|root |Yes |ID |ID of the root node within this prefab.
 |nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
 |===
 
@@ -139,22 +176,37 @@ The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
 
 Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
 
-===== `stf.node.spatial`
-A node that exists in 3d space. It defines its location, rotation and scale, relative to its parent.
+===== stf.node.spatial
+A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
-.Properties
+It's a `Node` kind.
+
+.stf.node.spatial properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
 |trs |Yes |TRS array |The nodes 3D transform
-|children |No |Array of child-node IDs |This child-nodes IDs
-|components |No |Object of ID - component pairs |Components represent define functionality of a node.
+|children |No |Array of IDs |This child-nodes IDs
+|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
 |===
 
+===== stf.prefab.modification
+A prefab modification. It applies a set of changes on to another prefab it references. The referenced prefab may be from another file.
 
-=== `buffers`
-The `buffers` object is a map of buffer objects identified by an unique ID string.
+It's a `Scene Hierarchy` kind.
+
+.stf.prefab.modification properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|target |Yes |ID |ID of the base prefab.
+|modifications |Yes |Array of 'Modification' kinds |
+|===
+
+=== The buffers object
+The `buffers` object is a map of buffer objects identified by an ID.
 Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
 
 .Example
@@ -173,8 +225,10 @@ Each buffer object has a `type` property. Any further properties are defined in 
 ====
 
 ==== Default Buffer Types
-===== `stf.buffer.included`
+===== stf.buffer.included
 This type represents a buffer contained in the same file.
+
+.stf.buffer.included properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -182,9 +236,7 @@ This type represents a buffer contained in the same file.
 |index |Yes |Integer |Index of the binary buffer in the file
 |===
 
-
-=== Full Json Definition Example
-
+=== Minimal Definition Example
 .Show
 [%collapsible]
 ====
@@ -229,9 +281,9 @@ This type represents a buffer contained in the same file.
 			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
 			"vertex_count": 32000,
 			"vertecies": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": 0
-			},
+			}
 		}
 	},
 	"buffers": {

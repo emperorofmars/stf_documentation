@@ -1,0 +1,9 @@
+= STF: Default Types Specification
+Mars <mars@squirrel.pub>
+v0.0.0
+:hardbreaks-option:
+:toc:
+
+**Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
+
+These STF types should be supported by every STF implementation.
