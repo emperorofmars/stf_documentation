@@ -7,7 +7,7 @@
 			"asset_name": "STF Example 1",
 			"asset_author": "Mars"
 		},
-		"compatibility_profiles": [
+		"profiles": [
 			"node_names_unique_within_prefab",
 			"game_engine_wide_compatibility"
 		]

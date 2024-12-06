@@ -49,9 +49,9 @@ This is being developed datamodel first. Implementations will follow later. A pr
 		"version_major": 0,
 		"version_minor": 0,
 		"meta": {
-			"asset_name": "STF Example 1",
+			"asset_name": "STF Example 1"
 		},
-		"compatibility_profiles": [
+		"profiles": [
 			"node_names_unique_within_prefab",
 			"game_engine_wide_compatibility"
 		],
@@ -69,7 +69,8 @@ This is being developed datamodel first. Implementations will follow later. A pr
 					"trs": [],
 					"children": [],
 					"components": {
-						"stf.instance.mesh": {
+						"2d172a76-e326-44d1-98c3-0c0ee2b15edd": {
+							"type": "stf.instance.mesh",
 							"enabled": true,
 							"mesh": 0
 						}
@@ -82,9 +83,9 @@ This is being developed datamodel first. Implementations will follow later. A pr
 			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
 			"vertex_count": 32000,
 			"vertecies": {
-				"precision": 4,
+				"format": "f32",
 				"buffer": 0
-			},
+			}
 		}
 	},
 	"buffers": {
