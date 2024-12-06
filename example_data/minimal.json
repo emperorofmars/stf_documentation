@@ -9,7 +9,8 @@
 		},
 		"profiles": [
 			"node_names_unique_within_prefab",
-			"game_engine_wide_compatibility"
+			"game_engine_wide_compatibility",
+		"no_prefab_instances"
 		]
 	},
 	"resources": {
