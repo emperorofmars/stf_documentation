@@ -1,8 +1,10 @@
 = STF: Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
+:homepage: https://github.com/emperorofmars/stf
 :hardbreaks-option:
 :toc:
+:toclevels: 4
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
@@ -44,7 +46,7 @@ The Json definition is the first and only required buffer.
 == Json Definition
 The root Json element is an `object`. It contains 3 properties: `stf`, `resources` and `buffers`.
 
-=== The 'stf' object
+=== 'stf'
 The `stf` object holds meta information.
 
 .`stf` object Properties:
@@ -83,7 +85,7 @@ The root resource must be of the `stf.prefab` type. It represents the entire ass
 ----
 ====
 
-=== The 'resources' object
+=== 'resources'
 The `resources` object is a map of resource objects identified by an ID.
 
 The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
@@ -107,7 +109,7 @@ Each of these kinds has additional general properties.
 
 Find the list of all specified default resource-types in the **link:./stf_default_types.adoc[Default Types Specification]**.
 
-==== Data Resources
+==== Data
 Can exist only at the top level.
 Loading plugins of this kind must be supported.
 
@@ -120,7 +122,7 @@ Loading plugins of this kind must be supported.
 |components |No |Map<ID, Component> |
 |===
 
-==== Scene Hierarchy Resources
+==== Scene Hierarchy
 Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
 Loading plugins of this kind must be supported
 
@@ -133,7 +135,7 @@ Loading plugins of this kind must be supported
 |nodes |No |Map<ID, Node> |
 |===
 
-==== Node Resources
+==== Node
 Can only exist within a `Scene Hierarchy` kind type.
 Loading plugins of this kind is not required.
 
@@ -146,7 +148,7 @@ Loading plugins of this kind is not required.
 |components |No |Map<ID, Component> |
 |===
 
-==== Component Resources
+==== Component
 Represents functionality or information of `Data` or `Node` kinds.
 Loading plugins of this kind must be supported.
 
@@ -158,12 +160,12 @@ Loading plugins of this kind must be supported.
 |overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
 
-==== Modification Resources
+==== Modification
 They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
 Loading plugins of this kind is not required.
 
-==== Examples
+==== Resource Composition Examples
 
 `stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
 `stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
@@ -202,13 +204,17 @@ The information about what `kind` a type is must be known by a type's implementa
 ----
 ====
 
-=== The 'buffers' object
+=== 'buffers'
 The `buffers` object is a map of buffer objects identified by an ID.
 Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
+Two types of buffers are defined. Supporting buffer plugins is not required.
 
 In a binary STF file, `stf.buffer.included` is the only supported buffer type.
-In a `stf.json` file, `stf.buffer.file` is the only supported buffer type.
-Supporting buffer plugins is not required.
+It specifies the index of the buffer in within the STF binary with the `index` property.
+
+In a `stf.json` file, `stf.buffer.file` is the only supported buffer type. It references a `.stfbuffer` file with a relative path with its `path` property.
+
+A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
 
 .Example Json Buffers in an STF binary File
 [%collapsible]
