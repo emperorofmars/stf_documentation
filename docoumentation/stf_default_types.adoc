@@ -1,4 +1,4 @@
-= STF: Default Types Specification
+= STF: Default Types Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
 :hardbreaks-option:

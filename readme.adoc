@@ -41,9 +41,9 @@ This is being developed datamodel first. Implementations will follow later. A pr
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./specification/stf_documentation.adoc[STF Format Documentation]**
-|**link:./specification/stf_default_types.adoc[Default Types Documentation]**
-|**link:./specification/stf_roadmap.adoc[Roadmap]**
+|**link:./docoumentation/stf_documentation.adoc[STF Format Documentation]**
+|**link:./docoumentation/stf_default_types.adoc[Default Types Documentation]**
+|**link:./stf_roadmap.adoc[Roadmap]**
 |===
 
 .Minimal example Json definition
