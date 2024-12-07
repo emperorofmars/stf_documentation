@@ -1,3 +1,5 @@
+// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
+
 = STF: Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
@@ -11,8 +13,9 @@ v0.0.0
 Intended for (not only) game development use-cases.
 
 == Introduction
-
-A STF file consists of a binary header, a Json definition, and zero or more binary buffers.
+An STF asset can be represented as a single binary file, or separated into multiple files.
+A STF binary file uses the file-suffix `.stf`. It consists of a binary header, a Json definition, and zero or more binary buffers.
+If separated, the STF json definition uses the file suffix `.stf.json`.
 
 By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
 The minimum required set of types is defined in this document in the **link:./stf_default_types.adoc[Default Types Specification]**.
@@ -21,12 +24,14 @@ STF implementations must provide an easy to use plugin system, and if in any way
 
 Objects of any type get referenced by a globally/universally unique ID as a string. This will be reffered to as `ID`.
 
-The file extension is `.stf`.
-The media-type is `model/stf`.
+The file extension for stf binary files is `.stf`.
+The file extension for stf json files is `.stf.json`.
+The media-type for stf binary files is `model/stf+binary`.
+The media-type for stf json files is `model/stf+json`.
 The STF binary header is stored in `little endian` byte order.
 The Json definition is encoded as `utf8`.
 By default, binary buffers are stored in `little endian` byte order.
-By default, STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
+STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
 
@@ -323,10 +328,13 @@ This type represents a buffer contained in the same file.
 == Profiles
 Profiles define rules to which a STF file adheres to. Each STF implementation has to check each file on import and export whether it adheres to its set profiles.
 
-STF defines a set of profiles, but implementations can support additional ones.
+STF implementations can require some profiles in order to parse an STF asset. For example, game-engines may not support certain features, and as such can impose adherence to certain profiles.
+
+STF defines a set of profiles, but implementations can define additional ones.
 
 === node_names_unique_within_prefab
-=== game_engine_wide_compatibility
 === max_4_mesh_weights
 === no_prefab_instances
+=== game_engine_wide
+=== game_engine_wide_compatibility
 
