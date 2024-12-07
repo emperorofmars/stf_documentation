@@ -12,18 +12,24 @@ Intended for (not only) game development use-cases.
 This is being developed datamodel first. Implementations will follow later. A proof-of-concept has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
 
 [caption=,title="Programming libraries are being developed for"]
-[%autowidth, cols=2*, frame=none, grid=none]
+[%autowidth, cols=4*, frame=none, grid=none]
 |===
 |Python (TBD)
 |C# (TBD)
+|Js/Ts (TBD)
+|Rust (TBD)
 |===
 
-[caption=,title="Implementations for authoring tools are being developed for"]
-[%autowidth, cols=3*, frame=none, grid=none]
+[caption=,title="Implementations are being developed for"]
+[%autowidth, cols=7*, frame=none, grid=none]
 |===
 |Blender (TBD)
+|3dsMax (TBD)
+|Maya (TBD)
 |Godot (TBD)
 |Unity (TBD)
+|BabylonJs (TBD)
+|Bevy (TBD)
 |===
 
 ⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
@@ -35,8 +41,8 @@ This is being developed datamodel first. Implementations will follow later. A pr
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./specification/stf_specification.adoc[STF Format Specification]**
-|**link:./specification/stf_default_types.adoc[Default Types Specification]**
+|**link:./specification/stf_documentation.adoc[STF Format Documentation]**
+|**link:./specification/stf_default_types.adoc[Default Types Documentation]**
 |**link:./specification/stf_roadmap.adoc[Roadmap]**
 |===
 
@@ -54,7 +60,9 @@ This is being developed datamodel first. Implementations will follow later. A pr
 		},
 		"profiles": [
 			"node_names_unique_within_prefab",
-			"game_engine_wide_compatibility"
+			"game_engine_wide_compatibility",
+			"max_4_weights_per_vertex",
+			"no_prefab_instances"
 		],
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 	},

@@ -8,7 +8,7 @@ v0.0.0
 
 These STF resource-types have to be supported by every STF implementation.
 
-== Data types
+== Data Resources
 === stf.mesh
 
 === stf.image
@@ -20,7 +20,7 @@ These STF resource-types have to be supported by every STF implementation.
 == Data & Scene Hierarchy types
 === stf.armature
 
-== Hierarchy types
+== Hierarchy Resources
 === stf.prefab
 A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
 
@@ -53,7 +53,7 @@ It's a `Scene Hierarchy` kind.
 |modifications |Yes |Array of 'Modification' kinds |
 |===
 
-== Node types
+== Node Resources
 === stf.node.spatial
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
@@ -69,7 +69,7 @@ It's a `Node` kind.
 |components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
 |===
 
-== Component types
+== Component Resources
 === stf.instance.mesh
 
 === stf.instance.armature
@@ -78,8 +78,10 @@ It's a `Node` kind.
 
 === stf.texture
 
-== Modification types
+== Modification Types
 === stf.modification.set_property
+
+=== stf.modification.collection_append
 
 === stf.modification.append_node
 

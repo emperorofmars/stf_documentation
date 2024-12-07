@@ -1,4 +1,4 @@
-= STF: Specification
+= STF: Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
 :hardbreaks-option:
@@ -44,7 +44,7 @@ The Json definition is the first and only required buffer.
 == Json Definition
 The root Json element is an `object`. It contains 3 properties: `stf`, `resources` and `buffers`.
 
-=== The stf object
+=== The 'stf' object
 The `stf` object holds meta information.
 
 .`stf` object Properties:
@@ -55,12 +55,12 @@ The `stf` object holds meta information.
 |version_major |Yes |Integer |Major version of STF
 |version_minor |Yes |Integer |Minor version of STF
 |root |Yes |ID |ID of the root resource
-|profiles |No |List<string> |List of profile this asset adheres to. These are a set of
+|profiles |No |List<String> |List of profile this asset adheres to. These are a set of
 |===
 
 The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
 
-.Example
+.Example Json Metadata
 [%collapsible]
 ====
 .STF object example
@@ -75,6 +75,7 @@ The root resource must be of the `stf.prefab` type. It represents the entire ass
 	"profiles": [
 		"node_names_unique_within_prefab",
 		"game_engine_wide_compatibility",
+		"max_4_weights_per_vertex",
 		"no_prefab_instances"
 	]
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
@@ -82,7 +83,7 @@ The root resource must be of the `stf.prefab` type. It represents the entire ass
 ----
 ====
 
-=== The resources object
+=== The 'resources' object
 The `resources` object is a map of resource objects identified by an ID.
 
 The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
@@ -101,9 +102,77 @@ The various resource objects describe the files actual content. Each resource ha
 
 Resources may contain other resources. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's reference property.
 
-Find the list of all specified default types in the **link:./stf_default_types.adoc[Default Types Specification]**.
+Resources can be Data, Scene Hierarchy, Node, Component and Modification types.
+Each of these kinds has additional general properties.
 
-.Example
+Find the list of all specified default resource-types in the **link:./stf_default_types.adoc[Default Types Specification]**.
+
+==== Data Resources
+Can exist only at the top level.
+Loading plugins of this kind must be supported.
+
+.Data Resource Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation
+|components |No |Map<ID, Component> |
+|===
+
+==== Scene Hierarchy Resources
+Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
+Loading plugins of this kind must be supported
+
+.Scene Hierarchy Resource Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root |ID |ID | The ID of the root node contained in this resource
+|nodes |No |Map<ID, Node> |
+|===
+
+==== Node Resources
+Can only exist within a `Scene Hierarchy` kind type.
+Loading plugins of this kind is not required.
+
+.Node Resource Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|children |No |Map<ID, Node> |
+|components |No |Map<ID, Component> |
+|===
+
+==== Component Resources
+Represents functionality or information of `Data` or `Node` kinds.
+Loading plugins of this kind must be supported.
+
+.Component Resource Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
+|===
+
+==== Modification Resources
+They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
+Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
+Loading plugins of this kind is not required.
+
+==== Examples
+
+`stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
+`stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
+
+Combinations of 'kinds' of resource types can exist. For example an armature is a `Data` and `Scene Hierarchy` kind of type.
+
+The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
+
+.Example Json Resources
 [%collapsible]
 ====
 .resources object example
@@ -133,91 +202,39 @@ Find the list of all specified default types in the **link:./stf_default_types.a
 ----
 ====
 
-==== Kinds of resource types
-There are different kinds of resource-types.
-Some kinds of resource types simply sit directly in the `resources` object. Other kinds of types may only exist within other kinds of resource types.
-
-These `kinds` of resource-types exist:
-
-===== Data
-Can exist only at the top level.
-Loading plugins of this kind must be supported.
-
-.Data kind properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation
-|components |No |Map<ID, Component> |
-|===
-
-===== Scene Hierarchy
-Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
-Loading plugins of this kind must be supported
-
-.Scene Hierarchy kind properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|root |ID |ID | The ID of the root node contained in this resource
-|nodes |No |Map<ID, Node> |
-|===
-
-===== Node
-Can only exist within a `Scene Hierarchy` kind type.
-Loading plugins of this kind is not required.
-
-.Node kind properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|children |No |Map<ID, Node> |
-|components |No |Map<ID, Component> |
-|===
-
-===== Component
-Represents functionality or information of `Data` or `Node` kinds.
-Loading plugins of this kind must be supported.
-
-.Component kind properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
-|===
-
-===== Modification
-They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
-Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
-Loading plugins of this kind is not required.
-
-===== Examples
-
-`stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
-`stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
-
-Combinations of 'kinds' of resource types can exist. For example an armature is a `Data` and `Scene Hierarchy` kind of type.
-
-The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
-
-=== The buffers object
+=== The 'buffers' object
 The `buffers` object is a map of buffer objects identified by an ID.
 Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
 
-.Example
+In a binary STF file, `stf.buffer.included` is the only supported buffer type.
+In a `stf.json` file, `stf.buffer.file` is the only supported buffer type.
+Supporting buffer plugins is not required.
+
+.Example Json Buffers in an STF binary File
 [%collapsible]
 ====
-.buffers object example
+.buffers object example in an STF binary file
 [,json]
 ----
 "buffers": {
 	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
 		"type": "stf.buffer.included",
 		"index": 0
+	}
+}
+----
+====
+
+.Example Json Buffers in a `stf.json` File
+[%collapsible]
+====
+.buffers object example in an STF binary file
+[,json]
+----
+"buffers": {
+	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+		"type": "stf.buffer.file",
+		"path": "./buffers/mesh.stfbuffer"
 	}
 }
 ----
@@ -250,7 +267,9 @@ This type represents a buffer contained in the same file.
 		},
 		"profiles": [
 			"node_names_unique_within_prefab",
-			"game_engine_wide_compatibility"
+			"game_engine_wide_compatibility",
+			"max_4_weights_per_vertex",
+			"no_prefab_instances"
 		],
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 	},
@@ -296,5 +315,12 @@ This type represents a buffer contained in the same file.
 ====
 
 == Profiles
-Profiles define rules to which a STF file adheres to.
+Profiles define rules to which a STF file adheres to. Each STF implementation has to check each file on import and export whether it adheres to its set profiles.
+
+STF defines a set of profiles, but implementations can support additional ones.
+
+=== node_names_unique_within_prefab
+=== game_engine_wide_compatibility
+=== max_4_mesh_weights
+=== no_prefab_instances
 
