@@ -18,7 +18,7 @@ A STF binary file uses the file-suffix `.stf`. It consists of a binary header, a
 If separated, the STF json definition uses the file suffix `.stf.json`.
 
 By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
-The minimum required set of types is defined in this document in the **link:./stf_default_types.adoc[Default Types Specification]**.
+The minimum required set of types is defined in this document.
 
 STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
 
@@ -111,8 +111,6 @@ Resources may contain other resources. The top most resource is exclusively resp
 
 Resources can be Data, Scene Hierarchy, Node, Component and Modification types.
 Each of these kinds has additional general properties.
-
-Find the list of all specified default resource-types in the **link:./stf_default_types.adoc[Default Types Specification]**.
 
 ==== Data
 Can exist only at the top level.
@@ -215,11 +213,19 @@ Each buffer object has a `type` property. Any further properties are defined in 
 Two types of buffers are defined. Supporting buffer plugins is not required.
 
 In a binary STF file, `stf.buffer.included` is the only supported buffer type.
-It specifies the index of the buffer in within the STF binary with the `index` property.
 
-In a `stf.json` file, `stf.buffer.file` is the only supported buffer type. It references a `.stfbuffer` file with a relative path with its `path` property.
+In a `stf.json` file, `stf.buffer.file` is the only supported buffer type.
 
-A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
+==== stf.buffer.included
+This type represents a buffer contained in the same file.
+
+.stf.buffer.included properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|index |Yes |Integer |Index of the binary buffer in the file
+|===
 
 .Example Json Buffers in an STF binary File
 [%collapsible]
@@ -236,6 +242,19 @@ A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file i
 ----
 ====
 
+==== stf.buffer.file
+This type represents a buffer contained in the same file.
+
+.stf.buffer.file properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|path |Yes |String |Relative path to a buffer file.
+|===
+
+A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
+
 .Example Json Buffers in a `stf.json` File
 [%collapsible]
 ====
@@ -250,18 +269,6 @@ A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file i
 }
 ----
 ====
-
-==== Default Buffer Types
-===== stf.buffer.included
-This type represents a buffer contained in the same file.
-
-.stf.buffer.included properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|index |Yes |Integer |Index of the binary buffer in the file
-|===
 
 === Minimal Definition Example
 .Show
@@ -338,3 +345,79 @@ STF defines a set of profiles, but implementations can define additional ones.
 === game_engine_wide
 === game_engine_wide_compatibility
 
+
+== Default Resource Types
+These resource-types have to be supported by every STF implementation.
+
+=== Data Resources
+==== stf.mesh
+
+==== stf.image
+
+==== stf.material
+
+==== stf.animation
+
+=== Data & Scene Hierarchy types
+==== stf.armature
+
+=== Hierarchy Resources
+==== stf.prefab
+A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
+
+.stf.prefab properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root |Yes |ID |ID of the root node within this prefab.
+|nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
+|===
+
+The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
+
+Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
+
+=== Node Resources
+==== stf.node.spatial
+A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
+
+.stf.node.spatial properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|trs |Yes |TRS array |The nodes 3D transform
+|children |No |Array of IDs |This child-nodes IDs
+|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
+|===
+
+=== Component Resources
+==== stf.instance.mesh
+
+==== stf.instance.armature
+
+==== stf.instance.prefab
+An instance of a prefab. Optionally it applies a set of modifications on to the prefab it references. The referenced prefab may be from another file.
+
+.stf.instance.prefab properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|target |Yes |ID |ID of the base prefab.
+|modifications |Yes |Array of 'Modification' kinds |
+|===
+
+==== stf.texture
+
+=== Modification Types
+==== stf.modification.set_property
+
+==== stf.modification.collection_append
+
+==== stf.modification.append_node
+
+==== stf.modification.add_component
+
+==== stf.modification.remove_component

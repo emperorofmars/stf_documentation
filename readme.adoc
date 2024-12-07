@@ -38,11 +38,10 @@ This is being developed datamodel first. Implementations will follow later. A pr
 
 **This repository hosts documentation for the format and available types.**
 
-[cols=3*, frame=none, grid=none]
+[cols=2*, frame=none, grid=none]
 [%autowidth]
 |===
 |**link:./docoumentation/stf_documentation.adoc[STF Format Documentation]**
-|**link:./docoumentation/stf_default_types.adoc[Default Types Documentation]**
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
 

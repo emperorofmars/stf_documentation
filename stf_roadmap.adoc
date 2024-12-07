@@ -1,8 +1,16 @@
 = STF Roadmap
 :hardbreaks-option:
 
-== Proving Ground
+== Step 1
+Define core data-model.
+
+== Step 2
+Implement Python and C# libraries.
+
+== Step 3
+Implement STF on an absolutely incomplete basic level in Blender, Unity and Godot.
 
 == MVP
+Implement STF basic types in Blender, Unity and Godot.
 
 == Advanced Functinality
