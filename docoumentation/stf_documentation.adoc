@@ -370,7 +370,7 @@ This profile applies the conditions of: `mesh_max_4_weights`.
 This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`.
 
 === compatibility_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `no_prefab_instances`.
+This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`.
 
 
 == Default Resource Types
