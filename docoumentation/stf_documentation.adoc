@@ -15,12 +15,12 @@ Intended for (not only) game development use-cases.
 == Introduction
 An STF asset can be represented as a single binary file, or separated into multiple files.
 
-By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
+By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their `type`.
 The minimum required set of types is defined in this document.
 
 STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
 
-Objects of any type get referenced by a globally/universally unique ID as a string. This will be reffered to as `ID`.
+Objects of any type get referenced by a globally/universally unique ID as a string. This will be refered to as `ID`.
 
 The file extension for stf binary files is `.stf`.
 The file extension for stf json files is `.stf.json`.
@@ -32,7 +32,7 @@ By default, binary buffers are stored in `little endian` byte order.
 STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
-A STF binary file consists of a binary header, a Json definition, and zero or more binary buffers.
+A STF binary file consists of a binary header, a <<_json_definition>>, and zero or more binary buffers.
 
 .Binary file layout
 [%autowidth, %header,cols=2*]
@@ -49,7 +49,7 @@ A STF binary file consists of a binary header, a Json definition, and zero or mo
 The Json definition is the first and only required buffer.
 
 == Json Definition
-The root Json element is an `object`. It contains 3 properties: `stf`, `resources` and `buffers`.
+The root Json element is an object. It contains 3 properties: `<<_stf>>`, `<<_resources>>` and `<<_buffers>>`.
 
 === 'stf'
 The `stf` object holds meta information.
@@ -65,7 +65,7 @@ The `stf` object holds meta information.
 |profiles |No |List<String> |List of <<_profiles, profiles>> this asset adheres to. These are a set of
 |===
 
-The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
+The root resource must be of the `<<_stf_prefab>>` type. It represents the entire assets scene hierarchy and has a single root node.
 
 .Example
 [%collapsible]
@@ -109,7 +109,7 @@ The various resource objects describe the files actual content. Each resource ha
 
 Resources may contain other resources. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's reference property.
 
-Resources can be Data, Scene Hierarchy, Node, Component and Modification types.
+Resources can be `Data`, `Scene Hierarchy`, `Node`, `Component` and `Modification` kinds.
 Each of these kinds has additional general properties.
 
 ==== Data
@@ -126,7 +126,7 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Scene Hierarchy
-Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
+Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
 Loading plugins of this kind must be supported
 
 .Scene hierarchy resource properties
@@ -139,7 +139,7 @@ Loading plugins of this kind must be supported
 |===
 
 ==== Node
-Can only exist within a `Scene Hierarchy` kind type.
+Can only exist within a `Scene Hierarchy` kinds.
 Loading plugins of this kind is not required.
 
 .Node resource properties
@@ -164,18 +164,18 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Modification
-They are a special type that can exist only on instantiations of `Scene Hierarchy` kind types. For example on `stf.instance.prefab` and `stf.instance.armature`.
+They are a special kind that can exist only on instantiations of `Scene Hierarchy` kinds. For example on `<<_stf_instance_prefab>>` and `<<_stf_instance_armature>>`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
 Loading plugins of this kind is not required.
 
 ==== Resource Composition Examples
 
-`stf.image` is a `Data` kind type. Types that are a kind of `Data` can only exist at the top level.
-`stf.node.spatial` is a `Node` kind type. `Node` kind types can only exist within `Scene Hierarchy` kinds.
+`<<_stf_image>>` is a `Data` kind. `Data` kinds can only exist at the top level.
+`<<_stf_node_spatial>>` is a `Node` kind. `Node` kinds can only exist within `Scene Hierarchy` kinds.
 
-Combinations of 'kinds' of resource types can exist. For example an armature is a `Data` and `Scene Hierarchy` kind of type.
+Combinations of these 'kinds' of resource types can exist. For example <<_stf_armature>> is a `Data` and `Scene Hierarchy` kind.
 
-The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
+The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate files.
 
 .Example
 [%collapsible]
