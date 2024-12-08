@@ -5,19 +5,19 @@ Mars <mars@squirrel.pub>
 v0.0.0
 :homepage: https://github.com/emperorofmars/stf
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
-:idprefix:
-:idseparator: -
+:hardbreaks-option:
+:library: Asciidoctor
 :toc:
 :toclevels: 4
 :toc-placement!:
+:idprefix:
+:idseparator: -
+:experimental:
+:table-caption!:
 ifdef::env-github[]
 	:tip-caption: :bulb:
 	:note-caption: :information_source:
-	:important-caption: :heavy_exclamation_mark:
-	:caution-caption: :fire:
-	:warning-caption: :warning:
 endif::[]
-:hardbreaks-option:
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
