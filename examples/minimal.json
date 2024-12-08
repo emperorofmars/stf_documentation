@@ -67,7 +67,6 @@
 					}
 				},
 				"b0e6bb74-5915-4661-88a7-f94366ff3f6a": {
-					"type": "stf.instance.prefab",
 					"name": "Cute Hat Asset",
 					"components": {
 						"0c8a9ab3-bd06-41b8-9028-dd632bcb3ca4": {
