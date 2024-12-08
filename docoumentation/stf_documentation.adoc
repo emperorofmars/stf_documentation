@@ -124,6 +124,7 @@ Each of these kinds has additional general properties.
 
 ==== Data
 Can exist only at the top level.
+Data resources can be instantiated.
 Loading plugins of this kind must be supported.
 
 .Data resource properties
@@ -137,6 +138,7 @@ Loading plugins of this kind must be supported.
 
 ==== Scene Hierarchy
 Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
+Scene Hierarchy resources can be instantiated.
 Loading plugins of this kind must be supported
 
 .Scene hierarchy resource properties
@@ -150,6 +152,7 @@ Loading plugins of this kind must be supported
 
 ==== Node
 Can only exist within a `Scene Hierarchy` kinds.
+Node resources can not be instantiated.
 Loading plugins of this kind is not required.
 
 .Node resource properties
@@ -163,6 +166,7 @@ Loading plugins of this kind is not required.
 
 ==== Component
 Represents functionality or information of `Data` or `Node` kinds.
+Component resources can not be instantiated.
 Loading plugins of this kind must be supported.
 
 .Component resource properties
@@ -176,6 +180,7 @@ Loading plugins of this kind must be supported.
 ==== Modification
 They are a special kind that can exist only on instantiations of `Scene Hierarchy` kinds. For example on `<<stf-instance-prefab>>` and `<<stf-instance-armature>>`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
+Modification resources can not be instantiated.
 Loading plugins of this kind is not required.
 
 ==== Resource Composition Examples
