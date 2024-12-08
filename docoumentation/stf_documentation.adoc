@@ -83,7 +83,7 @@ The root resource must be of the `<<stf-prefab>>` type. It represents the entire
 .Example
 [%collapsible]
 ====
-.STF object example
+.stf object example
 [,json]
 ----
 "stf": {
@@ -93,10 +93,7 @@ The root resource must be of the `<<stf-prefab>>` type. It represents the entire
 		"asset_name": "STF Example 1",
 	},
 	"profiles": [
-		"node_names_unique_within_prefab",
-		"game_engine_wide_compatibility",
-		"max_4_weights_per_vertex",
-		"no_prefab_instances"
+		"compatibility_wide"
 	]
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 }
@@ -297,10 +294,7 @@ A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file i
 			"asset_name": "STF Example 1"
 		},
 		"profiles": [
-			"node_names_unique_within_prefab",
-			"game_engine_wide_compatibility",
-			"max_4_weights_per_vertex",
-			"no_prefab_instances"
+			"compatibility_wide"
 		],
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 	},

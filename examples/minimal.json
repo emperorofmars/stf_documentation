@@ -8,10 +8,7 @@
 			"asset_author": "Mars"
 		},
 		"profiles": [
-			"node_names_unique_within_prefab",
-			"game_engine_wide_compatibility",
-			"max_4_weights_per_vertex",
-			"no_prefab_instances"
+			"compatibility_wide"
 		]
 	},
 	"resources": {
