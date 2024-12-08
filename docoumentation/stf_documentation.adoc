@@ -15,8 +15,8 @@ v0.0.0
 :experimental:
 :table-caption!:
 ifdef::env-github[]
-	:tip-caption: :bulb:
-	:note-caption: :information_source:
+:tip-caption: :bulb:
+:note-caption: :information_source:
 endif::[]
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
