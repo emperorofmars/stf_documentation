@@ -363,7 +363,7 @@ Vertices in a mesh may have a maximum of 4 weights.
 Vertices in a mesh may have a maximum of 8 weights.
 
 * mesh_max_8_uv_channels
-Vertices in a mesh may have a maximum of 4 weights.
+Meshes may have a maximum of 8 UV channels.
 
 * mesh_instances_separate
 Instances of meshes must be the only component on that node.
@@ -372,7 +372,7 @@ Instances of meshes must be the only component on that node.
 Buffers that get parsed by an STF implementation itself can only store 32 bit integers and floats. This includes buffers for vertices, normals or UVs. Buffers that store another fileformat, like PNG or JPG, do not matter for this rule.
 
 * no_prefab_instances
-Prefab instances are forbidden in this asset.
+Prefab instances are forbidden in this asset. Armatures may be instanced once throughout the entire asset.
 
 * self_contained
 This file has no references to other files.
