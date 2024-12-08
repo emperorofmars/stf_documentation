@@ -368,6 +368,9 @@ Vertices in a mesh may have a maximum of 4 weights.
 * mesh_instances_separate
 Instances of meshes must be the only component on that node.
 
+* precision_32_bit_only
+Buffers that get parsed by an STF implementation itself can only store 32 bit integers and floats. This includes buffers for vertices, normals or UVs. Buffers that store another fileformat, like PNG or JPG, do not matter for this rule.
+
 * no_prefab_instances
 Prefab instances are forbidden in this asset.
 
@@ -375,16 +378,16 @@ Prefab instances are forbidden in this asset.
 This file has no references to other files.
 
 * compatibility_game_engine
-This profile applies the conditions of: `mesh_max_8_weights`, `mesh_instances_separate`, `node_names_not_empty`.
+This profile applies the conditions of: `mesh_max_8_weights`, `mesh_instances_separate`, `node_names_not_empty`, `precision_32_bit_only`.
 
 * compatibility_game_engine_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `mesh_instances_separate`, `node_names_not_empty`.
+This profile applies the conditions of: `mesh_max_4_weights`, `mesh_instances_separate`, `node_names_not_empty`, `precision_32_bit_only`.
 
 * compatibility
-This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`.
+This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`, `precision_32_bit_only`.
 
 * compatibility_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`.
+This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`, `precision_32_bit_only`.
 
 
 == Default Resource Types
