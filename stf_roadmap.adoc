@@ -2,15 +2,23 @@
 :hardbreaks-option:
 
 == Step 1
-Define core data-model.
+Define the core data-model and basic types.
 
 == Step 2
 Implement Python and C# libraries.
+Support reading and writing binary and Json STF files.
+High quality code with high testing coverage.
+Plugin based architecture.
 
 == Step 3
 Implement STF on an absolutely incomplete basic level in Blender, Unity and Godot.
+Mostly empty assets can be transfered between these tools.
+Loading Data and Component plugins is supported.
 
 == MVP
 Implement STF basic types in Blender, Unity and Godot.
+Full weight painted and textured 3d models can be transfered between these tools.
 
 == Advanced Functinality
+Add support for addon assets (instances of prefab assets from another file).
+Start separate project for VR & Vtuber avatar components.

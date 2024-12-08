@@ -146,10 +146,19 @@
 				"format": "f32",
 				"buffer": "..."
 			},
-			"weights": {
-				"format": "f32",
-				"buffer": "..."
-			},
+			"weights": [
+				{
+					"indexed": false,
+					"format": "f32",
+					"buffer": "..."
+				},
+				{
+					"indexed": true,
+					"format_indices": "i32",
+					"format": "f32",
+					"buffer": "..."
+				}
+			],
 			"uvs": [
 				{
 					"format": "f32",
@@ -164,14 +173,13 @@
 				{
 					"name": "smile",
 					"indexed": true,
+					"format_indices": "i32",
 					"vertecies": {
 						"format": "f32",
-						"format_indices": "i32",
 						"buffer": 2
 					},
 					"normals": {
 						"format": "f32",
-						"format_indices": "i32",
 						"buffer": 3
 					}
 				},
@@ -211,13 +219,21 @@
 			"type": "stf.image",
 			"name": "Body_Albedo",
 			"image_format": "png",
-			"texture_type": "rgb"
+			"texture_type": "rgb",
+			"buffer": 0,
+			"referenced_buffer": [
+				"d49ab4f4-8c69-4c2b-895c-1a61797667ac"
+			]
 		},
 		"bb39a37d-ea6c-4cb8-a628-b797e55cbd14": {
 			"type": "stf.image",
 			"name": "Body_Normal",
 			"image_format": "png",
-			"texture_type": "xyz"
+			"texture_type": "xyz",
+			"buffer": 0,
+			"referenced_buffer": [
+				"2812628c-3cbe-485a-b487-7d070b1419a4"
+			]
 		},
 		"0e94463f-cbc5-401a-b6a5-d17e017a9a91": {
 			"type": "stf.prefab",
@@ -254,7 +270,15 @@
 		},
 		"f79d1b47-6924-4498-956a-2ef032dc3ea7": {
 			"type": "stf.buffer.included",
-			"index": 4
+			"index": 5
+		},
+		"d49ab4f4-8c69-4c2b-895c-1a61797667ac": {
+			"type": "stf.buffer.included",
+			"index": 6
+		},
+		"2812628c-3cbe-485a-b487-7d070b1419a4": {
+			"type": "stf.buffer.included",
+			"index": 7
 		}
 	}
 }
