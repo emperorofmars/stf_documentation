@@ -5,9 +5,8 @@ Mars <mars@squirrel.pub>
 v0.0.0
 :homepage: https://github.com/emperorofmars/stf
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
-:idprefix: _
-:idseparator: _
-:hardbreaks-option:
+:idprefix:
+:idseparator: -
 :toc:
 :toclevels: 4
 :toc-placement!:
@@ -18,6 +17,7 @@ ifdef::env-github[]
 	:caution-caption: :fire:
 	:warning-caption: :warning:
 endif::[]
+:hardbreaks-option:
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
@@ -45,7 +45,7 @@ By default, binary buffers are stored in `little endian` byte order.
 STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
-A STF binary file consists of a binary header, a <<_json_definition>>, and zero or more binary buffers.
+A STF binary file consists of a binary header, a <<json-definition>>, and zero or more binary buffers.
 
 .Binary file layout
 [%autowidth, %header,cols=2*]
@@ -62,7 +62,7 @@ A STF binary file consists of a binary header, a <<_json_definition>>, and zero 
 The Json definition is the first and only required buffer.
 
 == Json Definition
-The root Json element is an object. It contains 3 properties: `<<_stf>>`, `<<_resources>>` and `<<_buffers>>`.
+The root Json element is an object. It contains 3 properties: `<<stf>>`, `<<resources>>` and `<<buffers>>`.
 
 === 'stf'
 The `stf` object holds meta information.
@@ -75,10 +75,10 @@ The `stf` object holds meta information.
 |version_major |Yes |Integer |Major version of STF
 |version_minor |Yes |Integer |Minor version of STF
 |root |Yes |ID |ID of the root resource
-|profiles |No |List<String> |List of <<_profiles, profiles>> this asset adheres to. These are a set of
+|profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to. These are a set of
 |===
 
-The root resource must be of the `<<_stf_prefab>>` type. It represents the entire assets scene hierarchy and has a single root node.
+The root resource must be of the `<<stf-prefab>>` type. It represents the entire assets scene hierarchy and has a single root node.
 
 .Example
 [%collapsible]
@@ -177,16 +177,16 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Modification
-They are a special kind that can exist only on instantiations of `Scene Hierarchy` kinds. For example on `<<_stf_instance_prefab>>` and `<<_stf_instance_armature>>`.
+They are a special kind that can exist only on instantiations of `Scene Hierarchy` kinds. For example on `<<stf-instance-prefab>>` and `<<stf-instance-armature>>`.
 Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
 Loading plugins of this kind is not required.
 
 ==== Resource Composition Examples
 
-`<<_stf_image>>` is a `Data` kind. `Data` kinds can only exist at the top level.
-`<<_stf_node_spatial>>` is a `Node` kind. `Node` kinds can only exist within `Scene Hierarchy` kinds.
+`<<stf-image>>` is a `Data` kind. `Data` kinds can only exist at the top level.
+`<<stf-node-spatial>>` is a `Node` kind. `Node` kinds can only exist within `Scene Hierarchy` kinds.
 
-Combinations of these 'kinds' of resource types can exist. For example <<_stf_armature>> is a `Data` and `Scene Hierarchy` kind.
+Combinations of these 'kinds' of resource types can exist. For example `<<stf-armature>>` is a `Data` and `Scene Hierarchy` kind.
 
 The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate files.
 
