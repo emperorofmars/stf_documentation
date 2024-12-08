@@ -14,8 +14,6 @@ Intended for (not only) game development use-cases.
 
 == Introduction
 An STF asset can be represented as a single binary file, or separated into multiple files.
-A STF binary file uses the file-suffix `.stf`. It consists of a binary header, a Json definition, and zero or more binary buffers.
-If separated, the STF json definition uses the file suffix `.stf.json`.
 
 By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their type.
 The minimum required set of types is defined in this document.
@@ -34,7 +32,9 @@ By default, binary buffers are stored in `little endian` byte order.
 STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
+A STF binary file consists of a binary header, a Json definition, and zero or more binary buffers.
 
+.Binary file layout
 [%autowidth, %header,cols=2*]
 |===
 |Length (Bytes) |Content
@@ -54,7 +54,7 @@ The root Json element is an `object`. It contains 3 properties: `stf`, `resource
 === 'stf'
 The `stf` object holds meta information.
 
-.`stf` object Properties:
+.`stf` object properties:
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -62,12 +62,12 @@ The `stf` object holds meta information.
 |version_major |Yes |Integer |Major version of STF
 |version_minor |Yes |Integer |Minor version of STF
 |root |Yes |ID |ID of the root resource
-|profiles |No |List<String> |List of profile this asset adheres to. These are a set of
+|profiles |No |List<String> |List of <<_profiles, profiles>> this asset adheres to. These are a set of
 |===
 
 The root resource must be of the `stf.prefab` type. It represents the entire assets scene hierarchy and has a single root node.
 
-.Example Json Metadata
+.Example
 [%collapsible]
 ====
 .STF object example
@@ -116,7 +116,7 @@ Each of these kinds has additional general properties.
 Can exist only at the top level.
 Loading plugins of this kind must be supported.
 
-.Data Resource Properties
+.Data resource properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -129,7 +129,7 @@ Loading plugins of this kind must be supported.
 Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds
 Loading plugins of this kind must be supported
 
-.Scene Hierarchy Resource Properties
+.Scene hierarchy resource properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -142,7 +142,7 @@ Loading plugins of this kind must be supported
 Can only exist within a `Scene Hierarchy` kind type.
 Loading plugins of this kind is not required.
 
-.Node Resource Properties
+.Node resource properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -155,7 +155,7 @@ Loading plugins of this kind is not required.
 Represents functionality or information of `Data` or `Node` kinds.
 Loading plugins of this kind must be supported.
 
-.Component Resource Properties
+.Component resource properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
@@ -177,7 +177,7 @@ Combinations of 'kinds' of resource types can exist. For example an armature is 
 
 The information about what `kind` a type is must be known by a type's implementation and is not containes within a STF files. This should be used to validate files.
 
-.Example Json Resources
+.Example
 [%collapsible]
 ====
 .resources object example
@@ -227,7 +227,7 @@ This type represents a buffer contained in the same file.
 |index |Yes |Integer |Index of the binary buffer in the file
 |===
 
-.Example Json Buffers in an STF binary File
+.Example
 [%collapsible]
 ====
 .buffers object example in an STF binary file
@@ -255,10 +255,10 @@ This type represents a buffer contained in the same file.
 
 A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
 
-.Example Json Buffers in a `stf.json` File
+.Example
 [%collapsible]
 ====
-.buffers object example in an STF binary file
+.buffers object example in an STF Json file
 [,json]
 ----
 "buffers": {
@@ -339,37 +339,38 @@ STF implementations can require some profiles in order to parse an STF asset. Fo
 
 STF defines a set of profiles, but implementations can define additional ones.
 
-=== node_names_unique_within_prefab
+[]
+* node_names_unique_within_prefab
 Within a Scene Hierarchy, Node names must be unique, and contain more than zero non-whitespace characters. This condition is required by Blender.
 
-=== node_names_max_bytes_63
+* node_names_max_bytes_63
 Node names can't be longer than 63 bytes. This condition is required by Blender.
 
-=== mesh_max_4_weights
+* mesh_max_4_weights
 Vertices in a mesh may have a maximum of 4 weights.
 
-=== mesh_max_8_weights
+* mesh_max_8_weights
 Vertices in a mesh may have a maximum of 8 weights.
 
-=== mesh_max_8_uv_channels
+* mesh_max_8_uv_channels
 Vertices in a mesh may have a maximum of 4 weights.
 
-=== no_prefab_instances
+* no_prefab_instances
 Prefab instances are forbidden in this asset.
 
-=== self_contained
+* self_contained
 This file has no references to other files.
 
-=== compatibility_game_engine
+* compatibility_game_engine
 This profile applies the conditions of: `mesh_max_8_weights`.
 
-=== compatibility_game_engine_wide
+* compatibility_game_engine_wide
 This profile applies the conditions of: `mesh_max_4_weights`.
 
-=== compatibility
+* compatibility
 This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`.
 
-=== compatibility_wide
+* compatibility_wide
 This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`.
 
 
@@ -385,7 +386,7 @@ These resource-types have to be supported by every STF implementation.
 
 ==== stf.animation
 
-=== Data & Scene Hierarchy types
+=== Data & Scene Hierarchy Resources
 ==== stf.armature
 
 === Hierarchy Resources
