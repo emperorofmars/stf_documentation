@@ -4,13 +4,26 @@
 Mars <mars@squirrel.pub>
 v0.0.0
 :homepage: https://github.com/emperorofmars/stf
+:keywords: stf, 3d, fileformat, format, interchange, interoperability
+:idprefix: _
+:idseparator: _
 :hardbreaks-option:
 :toc:
 :toclevels: 4
+:toc-placement!:
+ifdef::env-github[]
+	:tip-caption: :bulb:
+	:note-caption: :information_source:
+	:important-caption: :heavy_exclamation_mark:
+	:caution-caption: :fire:
+	:warning-caption: :warning:
+endif::[]
 
 **Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
 
 Intended for (not only) game development use-cases.
+
+toc::[]
 
 == Introduction
 An STF asset can be represented as a single binary file, or separated into multiple files.

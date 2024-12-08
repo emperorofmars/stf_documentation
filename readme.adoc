@@ -1,5 +1,16 @@
 = STF: Documentation
+:homepage: https://github.com/emperorofmars/stf
+:keywords: stf, 3d, fileformat, format, interchange, interoperability
+:idprefix: _
+:idseparator: _
 :hardbreaks-option:
+ifdef::env-github[]
+	:tip-caption: :bulb:
+	:note-caption: :information_source:
+	:important-caption: :heavy_exclamation_mark:
+	:caution-caption: :fire:
+	:warning-caption: :warning:
+endif::[]
 
 **Squirrel Transfer Format - Modular 3D Interchange Format**
 Intended for (not only) game development use-cases.
