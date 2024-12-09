@@ -285,6 +285,34 @@ A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file i
 ----
 ====
 
+==== stf.buffer.json_array
+This type stores binary data as an array directly. Supporting this buffer-type is not required, but may be useful during development.
+
+.stf.buffer.json_array properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|data |Yes |List<Any> |Data array directly stored in json
+|===
+
+The buffer file can be an encoded image as `.png` for example. Otherwise if the buffer does not represent an existing file-format, a `.stfbuffer` file can be used. A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
+
+.Example
+[%collapsible]
+====
+.buffers object example in an STF Json file
+[,json]
+----
+"buffers": {
+	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+		"type": "stf.buffer.json_array",
+		"data": [3, 0.34, 0.43214, 4.234, 4, 0.65, 0.6656, 2.234]
+	}
+}
+----
+====
+
 === Minimal Definition Example
 .Show
 [%collapsible]
