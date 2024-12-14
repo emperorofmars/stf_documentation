@@ -105,23 +105,26 @@
 				"8183c641-689c-4d61-bb33-46fcb79f1eb5",
 				"48a7bc7e-cc3b-44cf-ac84-84664737835d",
 				"b490106c-3508-448d-9aa6-3f589562f2d4",
-				"f79d1b47-6924-4498-956a-2ef032dc3ea7"
+				"f79d1b47-6924-4498-956a-2ef032dc3ea7",
+				"6bbdb901-07f9-4bc8-ba68-6c7d6299e3fc",
+				"deb437b5-f2e4-4e09-a01d-d215cc4c655c",
+				"...."
 			],
 			"referenced_resources": [
 				"0b1d3b32-5545-4e12-853f-cc3d0d49934d",
 				"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd"
 			],
 			"armature": 0,
-			"submeshes": [
+			"primitives": [
 				{
-					"topology": "quads",
-					"buffer": 5,
+					"topology": "tris",
+					"buffer": 4,
 					"format": "i32",
 					"default_material": 1
 				},
 				{
-					"topology": "quads",
-					"buffer": 6,
+					"topology": "tris",
+					"buffer": 5,
 					"format": "i32"
 				}
 			],
@@ -130,39 +133,43 @@
 				"format": "f32",
 				"buffer": 0
 			},
+			"virtual_vertecies": {
+				"format": "i32",
+				"buffer": 6
+			},
 			"normals": {
 				"format": "f32",
 				"buffer": 1
 			},
 			"tangents": {
 				"format": "f32",
-				"buffer": "..."
+				"buffer": 12
 			},
 			"vertex_colors": {
 				"format": "f32",
-				"buffer": "..."
+				"buffer": 13
 			},
 			"weights": [
 				{
 					"indexed": false,
 					"format": "f32",
-					"buffer": "..."
+					"buffer": 14
 				},
 				{
 					"indexed": true,
 					"format_indices": "i32",
 					"format": "f32",
-					"buffer": "..."
+					"buffer": 15
 				}
 			],
 			"uvs": [
 				{
 					"format": "f32",
-					"buffer": "..."
+					"buffer": 16
 				},
 				{
 					"format": "f32",
-					"buffer": "..."
+					"buffer": 17
 				}
 			],
 			"blendshapes": [
@@ -184,14 +191,31 @@
 					"indexed": false,
 					"vertecies": {
 						"format": "f32",
-						"buffer": "..."
+						"buffer": 10
 					},
 					"normals": {
 						"format": "f32",
-						"buffer": "..."
+						"buffer": 9
 					}
 				}
-			]
+			],
+			"components": {
+				"8d6c99d3-e61f-4df8-ad12-0f1e5553312b": {
+					"type": "stf.mesh.normals_split",
+					"edge_split": {
+						"indexed": true,
+						"format_indices": "i32",
+						"format": "f32",
+						"buffer": 7
+					},
+					"point_split": {
+						"indexed": true,
+						"format_indices": "i32",
+						"format": "f32",
+						"buffer": 8
+					}
+				}
+			}
 		},
 		"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
 			"type": "stf.material",
@@ -275,6 +299,14 @@
 		"2812628c-3cbe-485a-b487-7d070b1419a4": {
 			"type": "stf.buffer.included",
 			"index": 7
+		},
+		"6bbdb901-07f9-4bc8-ba68-6c7d6299e3fc": {
+			"type": "stf.buffer.included",
+			"index": 8
+		},
+		"deb437b5-f2e4-4e09-a01d-d215cc4c655c": {
+			"type": "stf.buffer.included",
+			"index": 9
 		}
 	}
 }
