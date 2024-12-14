@@ -1,5 +1,5 @@
 @startuml Mesh
-title Thought Experiment:\nHow to store Meshes of arbitrary topology, with defined triangulation, without loss of information.\nThis construct should be easy to import &export from applications like: Blender, 3dsMax, Maya, Godot Editor, Unity Editor, Unreal Editor\n Not pictured is the possibility to store many of these buffers indexed.\nVariables can be of arbitrary precision, defined separately.
+title Thought Experiment:\nHow to store Meshes of arbitrary topology, with defined triangulation, without loss of information.\nThe implementation of importers & exporters for this construct should be easy in applications like: Blender, 3dsMax, Maya, Godot Editor, Unity Editor, Unreal Editor\n Not pictured is the possibility to store many of these buffers indexed.\nVariables can be of arbitrary precision, defined separately.\n'Primitives_Combine' specifies the number of next triangles to be combined into a single face when supported.\nNot represented is the ability for primitives to consist of lines and points. Combining primitives would not be relevant for these.
 
 entity Mesh {
 	id: id_string
@@ -61,6 +61,7 @@ entity UV {
 entity Primitive {
 	index
 	--
+	default_material: id_string
 }
 
 entity Triangle {
@@ -154,19 +155,19 @@ Virtual_Vertex::index ||--|| Tangent::index
 Virtual_Vertex::index ||--|| Color::index
 Virtual_Vertex::index ||--|| UV::index : UV per UVChannel
 
-Mesh *-- Primitive : 1..n
+Mesh *-- "1..n" Primitive
 Primitive *-- Triangle : 1..n
 Primitive *-- Primitives_Combine : 0..n
 Triangle o-- Virtual_Vertex : 3
 
-Mesh *-- UVChannel : 0..n
+Mesh *-- "0..n" UVChannel
 UVChannel *-- UV : 1..n
 
-Mesh *-- Weight_Channel : 0..n
+Mesh *-- "0..n" Weight_Channel
 Weight_Channel *-- Weight : 1..n
 Vertex::index ||--|| Weight::index
 
-Mesh *-- Blendshape : 0..n
+Mesh *-- "0..n" Blendshape
 Blendshape *-- B_Translation : 0..n
 Blendshape *-- B_Normal : 0..n
 Blendshape *-- B_Tangent : 0..n
@@ -174,13 +175,13 @@ B_Translation::index ||--|| Vertex::index
 B_Normal::index ||--|| Vertex::index
 B_Tangent::index ||--|| Vertex::index
 
-Mesh *-- Normal_Split_Point : 0..n
+Mesh *-- "0..n" Normal_Split_Point
 Normal_Split_Point o-- Vertex : 1
 
-Mesh *-- Normal_Split_Edge : 0..n
+Mesh *-- "0..n" Normal_Split_Edge
 Normal_Split_Edge o-- Vertex : 2
 
-Mesh *-- Edge_Crease : 0..n
+Mesh *-- "0..n" Edge_Crease
 Edge_Crease o-- Vertex : 2
 
 @enduml
