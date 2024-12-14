@@ -15,7 +15,7 @@ entity Vertex {
 	z: float
 }
 
-entity Virtual_Vertex {
+entity Split_Vertex {
 	index
 	--
 	vertex_index: int
@@ -149,16 +149,16 @@ package Extensions
 }
 
 Mesh *-- Vertex : 1..n
-Vertex o-- Virtual_Vertex : 1..n
-Virtual_Vertex::index ||--|| Normal::index
-Virtual_Vertex::index ||--|| Tangent::index
-Virtual_Vertex::index ||--|| Color::index
-Virtual_Vertex::index ||--|| UV::index : UV per UVChannel
+Vertex o-- Split_Vertex : 1..n
+Split_Vertex::index ||--|| Normal::index
+Split_Vertex::index ||--|| Tangent::index
+Split_Vertex::index ||--|| Color::index
+Split_Vertex::index ||--|| UV::index : UV per UVChannel
 
 Mesh *-- "1..n" Primitive
 Primitive *-- Triangle : 1..n
 Primitive *-- Primitives_Combine : 0..n
-Triangle o-- Virtual_Vertex : 3
+Triangle o-- Split_Vertex : 3
 
 Mesh *-- "0..n" UVChannel
 UVChannel *-- UV : 1..n
