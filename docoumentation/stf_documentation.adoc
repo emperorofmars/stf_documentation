@@ -40,8 +40,8 @@ The file extension for stf json files is `.stf.json`.
 The media-type for stf binary files is `model/stf+binary`.
 The media-type for stf json files is `model/stf+json`.
 The STF binary header is stored in `little endian` byte order.
-The Json definition is encoded as `utf8`.
 By default, binary buffers are stored in `little endian` byte order.
+The Json definition is encoded as `utf8`.
 STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
@@ -78,7 +78,7 @@ The `stf` object holds meta information.
 |profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to. These are a set of
 |===
 
-The root resource must be of the `<<stf-prefab>>` type. It represents the entire assets scene hierarchy and has a single root node.
+The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-prefab`] type. It represents the assets hierarchy and has a single root node.
 
 .Example
 [%collapsible]
@@ -119,7 +119,7 @@ The various resource objects describe the files actual content. Each resource ha
 
 Resources may contain other resources. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's reference property.
 
-Resources can be `Data`, `Scene Hierarchy`, `Node`, `Component` and `Modification` kinds.
+Resources can be `Data`, `Prefab`, `Node`, `Component` and `Modification` kinds.
 Each of these kinds has additional general properties.
 
 ==== Data
@@ -136,22 +136,8 @@ Loading plugins of this kind must be supported.
 |components |No |Map<ID, Component> |
 |===
 
-==== Scene Hierarchy
-Can exist only at the top level. Represents a scene hierarchy, made up of `Node` kinds.
-Scene Hierarchy resources can be instantiated.
-Loading plugins of this kind must be supported
-
-.Scene hierarchy resource properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|root |ID |ID | The ID of the root node contained in this resource
-|nodes |No |Map<ID, Node> |
-|===
-
 ==== Node
-Can only exist within a `Scene Hierarchy` kinds.
+Can only exist within `Data` kinds.
 Node resources can not be instantiated.
 Loading plugins of this kind is not required.
 
@@ -178,17 +164,14 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Modification
-They are a special kind that can exist only on instantiations of `Scene Hierarchy` kinds. For example on `<<stf-instance-prefab>>` and `<<stf-instance-armature>>`.
-Represents a change to be applied onto the elements of a referenced `Scene Hierarchy` kind.
+They are a special kind that can exist only on instantiations of `Data` kinds. For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
+Represents a change to be applied onto the elements of a referenced `Data` kind.
 Modification resources can not be instantiated.
 Loading plugins of this kind is not required.
 
 ==== Resource Composition Examples
-
-`<<stf-image>>` is a `Data` kind. `Data` kinds can only exist at the top level.
-`<<stf-node-spatial>>` is a `Node` kind. `Node` kinds can only exist within `Scene Hierarchy` kinds.
-
-Combinations of these 'kinds' of resource types can exist. For example `<<stf-armature>>` is a `Data` and `Scene Hierarchy` kind.
+xref:./resources/data/stf_image.adoc[`stf.image`] is a `Data` kind. `Data` kinds can only exist at the top level.
+xref:./resources/node/stf_node_spatial.adoc[`stf.node.spatial`] is a `Node` kind. `Node` kinds can only exist within `Data` kinds.
 
 The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate files.
 
@@ -384,7 +367,7 @@ STF defines a set of profiles, but implementations can define additional ones.
 Node names must contain more than zero non-whitespace characters.
 
 * node_names_unique_within_prefab
-Within a Scene Hierarchy, Node names must be unique, and contain more than zero non-whitespace characters. This condition is required by Blender.
+Within a Prefab, Node names must be unique, and contain more than zero non-whitespace characters. This condition is required by Blender.
 
 * node_names_max_bytes_63
 Node names can't be longer than 63 bytes. This condition is required by Blender.
@@ -423,78 +406,4 @@ This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique
 This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`, `precision_32_bit_only`.
 
 
-== Default Resource Types
-These resource-types have to be supported by every STF implementation.
 
-=== Data Resources
-==== stf.mesh
-
-==== stf.image
-
-==== stf.material
-
-==== stf.animation
-
-=== Data & Scene Hierarchy Resources
-==== stf.armature
-
-=== Hierarchy Resources
-==== stf.prefab
-A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
-
-.stf.prefab properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|root |Yes |ID |ID of the root node within this prefab.
-|nodes |Yes |Object of ID - node pairs |Nodes must represent a scene hierarchy object.
-|===
-
-The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
-
-Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
-
-=== Node Resources
-==== stf.node.spatial
-A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
-
-.stf.node.spatial properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|trs |Yes |TRS array |The nodes 3D transform
-|children |No |Array of IDs |This child-nodes IDs
-|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
-|===
-
-=== Component Resources
-==== stf.instance.mesh
-
-==== stf.instance.armature
-
-==== stf.instance.prefab
-An instance of a prefab. Optionally it applies a set of modifications on to the prefab it references. The referenced prefab may be from another file.
-
-.stf.instance.prefab properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|target |Yes |ID |ID of the base prefab.
-|modifications |Yes |Array of 'Modification' kinds |
-|===
-
-==== stf.texture
-
-=== Modification Types
-==== stf.modification.set_property
-
-==== stf.modification.collection_append
-
-==== stf.modification.append_node
-
-==== stf.modification.add_component
-
-==== stf.modification.remove_component

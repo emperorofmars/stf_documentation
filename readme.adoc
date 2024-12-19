@@ -10,47 +10,35 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-**Squirrel Transfer Format - Modular 3D Interchange Format**
+In this repository the various parts that make up a 3d interchange format, intended for (not only) game development use-cases.
+
+This fictional fileformat will be called:
+**STF - Squirrel Transfer Format**
+_Just to have a name to refer to._
+
 Intended for (not only) game development use-cases.
+
+Similar to the concept of GLTF 2.0, this format consists of a Json definition and binary buffers. However, this format is firmly intended for interchange, not runtime loading.
+
+It doesn't hard-code any specific resource types like GLTF. It consists of a structure of resources which get identified by a 'type' property. Support for any arbitrary type gets implemented by modules, which should be pluggable and hot-loadable.
 
 .Core Principles
 * Highly modular and extensible.
 * Doesn't impose any descisions on you.
 * If something can work, it should work.
 
-This is being developed datamodel first. Implementations will follow later. A proof-of-concept has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
-
-[caption=,title="Programming libraries are being developed for"]
-[%autowidth, cols=4*, frame=none, grid=none]
-|===
-|Python (TBD)
-|C# (TBD)
-|Js/Ts (TBD)
-|Rust (TBD)
-|===
-
-[caption=,title="Implementations are being developed for"]
-[%autowidth, cols=7*, frame=none, grid=none]
-|===
-|Blender (TBD)
-|3dsMax (TBD)
-|Maya (TBD)
-|Godot (TBD)
-|Unity (TBD)
-|BabylonJs (TBD)
-|Bevy (TBD)
-|===
+This is being explored datamodel first. Implementations may follow at some point.
+A proof-of-concept has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
 
 ⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
 
 ---
 
-**This repository hosts documentation for the format and available types.**
-
 [cols=2*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_documentation.adoc[STF Format Documentation]**
+|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
+|**link:./docoumentation/core_resources.adoc[Core Resources]**
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
 

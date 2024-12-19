@@ -1,0 +1,11 @@
+== stf.instance.prefab
+An instance of a prefab. Optionally it applies a set of modifications on to the prefab it references. The referenced prefab may be from another file.
+
+.stf.instance.prefab properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|target |Yes |ID |ID of the base prefab.
+|modifications |Yes |Array of 'Modification' kinds |
+|===

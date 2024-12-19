@@ -1,0 +1,130 @@
+@startuml Mesh
+allowmixing
+title Thought Experiment:\nHow to store a mesh of arbitrary topology, with defined triangulation, without loss of information.\nThe implementation of importers & exporters for this construct should be easy in applications like: Blender, 3dsMax, Maya, Godot Editor, Unity Editor, Unreal Editor\n Not pictured is the possibility to store many of these buffers indexed.\nVariables can be of arbitrary precision, defined separately.\n'Primitives_Combine' specifies the number of next triangles to be combined into a single face when supported.\nNot represented is the ability for primitives to consist of lines and points. Combining primitives would not be relevant for these.
+
+package "Vertex Data" as Vertex_Data {
+	entity Vertex {
+		index
+		--
+		position: vec3
+	}
+
+	entity Split_Vertex {
+		index
+		--
+		vertex_index: int
+		?normal: vec3
+		?tangent: vec3
+		?color: vec3
+	}
+
+	entity UVChannel {
+		index
+		--
+	}
+
+	entity UV {
+		index
+		--
+		position: vec2
+	}
+
+	entity Weight_Channel {
+		index
+		--
+	}
+
+	entity Weight {
+		index
+		--
+		bone_index: int
+		weight: float
+	}
+}
+
+package Topology {
+
+	entity Primitive {
+		index
+		--
+		default_material: id_string
+	}
+
+	entity Triangle {
+		index
+		--
+		vertex1_index: int
+		vertex2_index: int
+		vertex3_index: int
+	}
+
+	entity Primitives_Combine {
+		index
+		--
+		combine_triangle_length: int
+	}
+}
+
+package Blendshapes
+{
+	entity Blendshape {
+		index
+		--
+		name: string
+	}
+
+	entity Blendshape_Vertex {
+		index
+		--
+		position: vec3
+		?normal: vec3
+		?tangent: vec3
+	}
+}
+
+package "Optional Extensions" as Optional_Extensions
+{
+	entity Normal_Split_Point {
+		index
+		--
+		vertex_index: int
+	}
+
+	entity Normal_Split_Edge {
+		index
+		--
+		vertex1_index: int
+		vertex2_index: int
+	}
+
+	entity Edge_Crease {
+		index
+		--
+		vertex1_index: int
+		vertex2_index: int
+		weight: float
+	}
+}
+
+Vertex o-- Split_Vertex : 1..n
+Split_Vertex::index ||--|| UV::index
+
+Primitive *-- Triangle : 1..n
+Primitive *-- Primitives_Combine : 0..n
+Triangle o-- Split_Vertex : 3
+
+UVChannel *-- UV : 1..n
+
+Weight_Channel *-- Weight : 1..n
+Vertex::index ||--|| Weight::index
+
+Blendshape *-- Blendshape_Vertex : 0..n
+Blendshape_Vertex::index ||--|| Vertex::index
+
+Normal_Split_Point o-- Vertex : 1
+
+Normal_Split_Edge o-- Vertex : 2
+
+Edge_Crease o-- Vertex : 2
+
+@enduml
