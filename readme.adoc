@@ -1,4 +1,4 @@
-= STF: Documentation
+= STF: Exploration
 :homepage: https://github.com/emperorofmars/stf
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
@@ -10,7 +10,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-In this repository the various parts that make up a 3d interchange format, intended for (not only) game development use-cases.
+Exploration of the various parts that make up a 3d interchange format, that is highly modular and extensible.
 
 This fictional fileformat will be called:
 **STF - Squirrel Transfer Format**
