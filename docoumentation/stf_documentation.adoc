@@ -146,6 +146,7 @@ Loading plugins of this kind is not required.
 |===
 |Key |Required |Type |Description
 
+|enabled |No |boolean |True by default
 |children |No |Map<ID, Node> |
 |components |No |Map<ID, Component> |
 |===
@@ -160,6 +161,7 @@ Loading plugins of this kind must be supported.
 |===
 |Key |Required |Type |Description
 
+|enabled |No |boolean |True by default
 |overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
 
