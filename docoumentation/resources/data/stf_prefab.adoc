@@ -9,6 +9,7 @@ A prefab represents a hierarchy of nodes. It can be instantiated on another pref
 
 |root |Yes |ID |ID of the root node within this prefab.
 |nodes |Yes |Object of ID - node pairs |Nodes must represent a prefab object.
+|animations |No |List of IDs of animation resources |
 |===
 
 The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.

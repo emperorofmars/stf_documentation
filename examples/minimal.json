@@ -7,6 +7,8 @@
 			"asset_name": "STF Example 1",
 			"asset_author": "Mars"
 		},
+		"timestamp": "2024-11-31T23:05:01:321Z",
+		"generator": "stfblender",
 		"profiles": [
 			"compatibility_wide"
 		]
@@ -75,7 +77,10 @@
 						}
 					}
 				}
-			}
+			},
+			"animations": [
+				"28234415-7638-45ec-aa98-653d9e04bcab"
+			]
 		},
 		"0b1d3b32-5545-4e12-853f-cc3d0d49934d": {
 			"type": "stf.armature",
@@ -85,6 +90,7 @@
 				"df1373cf-828e-4a97-9b05-c5dc77692d4d": {
 					"name": "Hips",
 					"trs": [],
+					"pose_trs": [],
 					"children": [
 						"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b"
 					]
@@ -92,6 +98,7 @@
 				"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b": {
 					"name": "Head",
 					"trs": [],
+					"pose_trs": [],
 					"children": []
 				}
 			}
@@ -129,11 +136,12 @@
 				}
 			],
 			"vertex_count": 32000,
+			"split_vertex_count": 32000,
 			"vertecies": {
 				"format": "f32",
 				"buffer": 0
 			},
-			"virtual_vertecies": {
+			"split_vertecies": {
 				"format": "i32",
 				"buffer": 6
 			},
@@ -241,7 +249,7 @@
 			"image_format": "png",
 			"texture_type": "rgb",
 			"buffer": 0,
-			"referenced_buffer": [
+			"referenced_buffers": [
 				"d49ab4f4-8c69-4c2b-895c-1a61797667ac"
 			]
 		},
@@ -251,7 +259,7 @@
 			"image_format": "png",
 			"texture_type": "xyz",
 			"buffer": 0,
-			"referenced_buffer": [
+			"referenced_buffers": [
 				"2812628c-3cbe-485a-b487-7d070b1419a4"
 			]
 		},
@@ -265,6 +273,23 @@
 					"children": []
 				}
 			}
+		},
+		"28234415-7638-45ec-aa98-653d9e04bcab": {
+			"type": "stf.animation",
+			"name": "wave",
+			"referenced_buffers": [
+				"360b0068-463a-42dd-ac2c-407fce7fe5d3"
+			],
+			"fps": 24,
+			"loop_mode": "none",
+			"tracks": [
+				{
+					"interpolation": "bezier",
+					"target_resource": "",
+					"target_path": "translation.x",
+					"buffer": 0
+				}
+			]
 		}
 	},
 	"buffers": {
@@ -307,6 +332,10 @@
 		"deb437b5-f2e4-4e09-a01d-d215cc4c655c": {
 			"type": "stf.buffer.included",
 			"index": 9
+		},
+		"d360b0068-463a-42dd-ac2c-407fce7fe5d3": {
+			"type": "stf.buffer.included",
+			"index": 10
 		}
 	}
 }

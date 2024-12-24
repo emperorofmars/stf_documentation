@@ -1,2 +1,18 @@
 
 == stf.mesh
+
+.stf.mesh properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|armature |No |ID |ID of the armature if the mesh is skinned
+|vertex_count |Yes |int |Number of vertices
+|split_vertex_count |Yes |int |Number of split vertices
+|vertecies |Yes |Vertex buffer reference |
+|split_vertecies |Yes |Split vertex buffer reference |
+|normals |No | |
+|tangents |No | |
+|vertex_colors |No | |
+|... |No | |
+|===
