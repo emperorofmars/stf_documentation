@@ -5,7 +5,7 @@
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5",
 		"meta": {
 			"asset_name": "STF Example 1",
-			"asset_author": "Mars"
+			"asset_author": "Mars <mars@squirrel.pub>"
 		},
 		"timestamp": "2024-11-31T23:05:01:321Z",
 		"generator": "stfblender",
