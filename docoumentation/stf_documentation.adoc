@@ -139,7 +139,7 @@ Loading plugins of this kind must be supported.
 ==== Node
 Can only exist within `Data` kinds.
 Node resources can not be instantiated.
-Loading plugins of this kind is not required.
+Loading plugins of this kind must be supported.
 
 .Node resource properties
 [%autowidth, %header,cols=4*]
@@ -166,7 +166,7 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Modification
-They are a special kind that can exist only on instantiations of `Data` kinds. For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
+For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
 Represents a change to be applied onto the elements of a referenced `Data` kind.
 Modification resources can not be instantiated.
 Loading plugins of this kind is not required.
@@ -323,17 +323,21 @@ The buffer file can be an encoded image as `.png` for example. Otherwise if the 
 			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
 			"nodes": {
 				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+					"type": "stf.node.spatial",
+					"name": "Some Node",
+					"enabled": true,
+					"trs": [],
+					"children": [],
+					"components": {}
+				}
+				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+					"type": "stf.instance.mesh",
 					"name": "Super Awesome Model",
 					"enabled": true,
 					"trs": [],
 					"children": [],
-					"components": {
-						"2d172a76-e326-44d1-98c3-0c0ee2b15edd": {
-							"type": "stf.instance.mesh",
-							"enabled": true,
-							"mesh": 0
-						}
-					}
+					"mesh": "0e2e767b-2f90-4739-ad78-486b378ba051",
+					"components": {}
 				}
 			}
 		},

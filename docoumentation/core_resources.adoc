@@ -35,11 +35,12 @@ toc::[]
 
 == Node
 * link:./resources/node/stf_node_spatial.adoc[stf.node.spatial]
+* link:./resources/node/stf_bone_spatial.adoc[stf.bone.spatial]
+* link:./resources/node/stf_instance_prefab.adoc[stf.instance.prefab]
+* link:./resources/node/stf_instance_mesh.adoc[stf.instance.mesh]
+* link:./resources/node/stf_instance_armature.adoc[stf.instance.armature]
 
 == Component
-* link:./resources/component/stf_instance_prefab.adoc[stf.instance.prefab]
-* link:./resources/component/stf_instance_mesh.adoc[stf.instance.mesh]
-* link:./resources/component/stf_instance_armature.adoc[stf.instance.armature]
 * link:./resources/component/stf_texture.adoc[stf.texture]
 
 == Modification

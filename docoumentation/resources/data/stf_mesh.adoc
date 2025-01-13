@@ -10,12 +10,14 @@
 |vertex_count |Yes |int |Number of vertices
 |vertecies |Yes |Vertex buffer reference |
 |split_vertex_count |Yes |int |Number of split vertices
-|split_vertecies |Yes |Split vertex buffer reference |
+|splits |Yes |Split vertex buffer reference |
 |normals |No | |
 |tangents |No | |
-|vertex_colors |No | |
-|weights |No |List of `weights` objects |
+|colors |No | |
+|tris |No | |
+|faces |No | |
 |uvs |No |List of `uv` objects |
+|weights |No |List of `weights` objects |
 |blendshapes |No |List of `blendshape` objects |
 |===
 
