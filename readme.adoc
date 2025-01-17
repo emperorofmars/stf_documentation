@@ -18,8 +18,8 @@ Intended for (not only) game development use-cases.
 [%autowidth]
 |===
 |**Available for:**
-|**https://github.com/emperorofmars/stfblender[Blender]**
-|**https://github.com/emperorofmars/stfunity[Unity]**
+|**https://github.com/emperorofmars/stf_blender[Blender]**
+|**https://github.com/emperorofmars/stf_unity[Unity]**
 |===
 
 ⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
