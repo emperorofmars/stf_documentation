@@ -12,6 +12,6 @@ A prefab represents a hierarchy of nodes. It can be instantiated on another pref
 |animations |No |List of IDs of animation resources |Animations which originate from this prefab's root
 |===
 
-The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial`.
+The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial` as well as types which contain the same properties as `stf.node.spatial`.
 
-Nodes are implicitly of the `stf.node.spatial` type, unless otherwise specified. Nodes also have an implicit boolean `enabled` property with a default value of `true`.
+Nodes also have an implicit boolean `enabled` property with a default value of `true`.

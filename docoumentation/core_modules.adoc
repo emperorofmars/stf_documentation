@@ -1,6 +1,6 @@
 // Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= STF: Core Resources
+= STF Core Modules: Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
 :homepage: https://github.com/emperorofmars/stf
@@ -23,9 +23,9 @@ endif::[]
 
 Intended for (not only) game development use-cases.
 
-toc::[]
+// toc::[]
 
-== Data
+== Data Modules
 * link:./resources/data/stf_prefab.adoc[stf.prefab]
 * link:./resources/data/stf_mesh.adoc[stf.mesh]
 * link:./resources/data/stf_armature.adoc[stf.armature]
@@ -33,17 +33,17 @@ toc::[]
 * link:./resources/data/stf_image.adoc[stf.image]
 * link:./resources/data/stf_animation.adoc[stf.animation]
 
-== Node
+== Node Modules
 * link:./resources/node/stf_node_spatial.adoc[stf.node.spatial]
 * link:./resources/node/stf_bone_spatial.adoc[stf.bone.spatial]
 * link:./resources/node/stf_instance_prefab.adoc[stf.instance.prefab]
 * link:./resources/node/stf_instance_mesh.adoc[stf.instance.mesh]
 * link:./resources/node/stf_instance_armature.adoc[stf.instance.armature]
 
-== Component
+== Component Modules
 * link:./resources/component/stf_texture.adoc[stf.texture]
 
-== Modification
+== Modification Modules
 * link:./resources/modification/stf_modification_add_component.adoc[stf.modification.add_component]
 * link:./resources/modification/stf_modification_append_node.adoc[stf.modification.append_node]
 * link:./resources/modification/stf_modification_collection_append.adoc[stf.modification.collection_append]

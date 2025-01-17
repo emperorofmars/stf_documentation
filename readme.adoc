@@ -1,4 +1,4 @@
-= STF: Exploration
+= STF: Documentation
 :homepage: https://github.com/emperorofmars/stf
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
@@ -10,37 +10,50 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-Exploration of the various parts that make up a 3d interchange format, that is highly modular and extensible.
-
-This fictional fileformat will be called:
-**STF - Squirrel Transfer Format**
-_Just to have a name to refer to._
+**Squirrel Transfer Format - Modular 3D Interchange Format** [version 0.0.0]
 
 Intended for (not only) game development use-cases.
 
-Similar to the concept of GLTF 2.0, this format consists of a Json definition and binary buffers. However, this format is firmly intended for interchange, not runtime loading.
+[cols=3*, frame=none, grid=none]
+[%autowidth]
+|===
+|**Available for:**
+|**https://github.com/emperorofmars/stfblender[Blender]**
+|**https://github.com/emperorofmars/stfunity[Unity]**
+|===
+
+⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
+
+This repository hosts the documentation for the core format and core modules.
+
+---
+
+Similar to the concept of GLTF 2.0, this format consists of a Json definition and binary buffers. However, this format is firmly intended for interchange & integrity, not runtime loading optimization.
+Game-engines are responsible for runtime optimization, not the 3d file format or 3d modeling tool!
 
 It doesn't hard-code any specific resource types like GLTF. It consists of a structure of resources which get identified by a 'type' property. Support for any arbitrary type gets implemented by modules, which should be pluggable and hot-loadable.
 
 .Core Principles
-* Highly modular and extensible.
-* Doesn't impose any descisions on you.
-* If something can work, it should work.
-
-This is being explored datamodel first. Implementations may follow at some point.
-A proof-of-concept has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
-
-⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
+* Highly modular and extensible
+* Doesn't impose any descisions on artists and game-developers
+* Prioritizes developer-experience over performance
+* Maximizes development speed for STF implementations and additional third party modules
 
 ---
 
-[cols=2*, frame=none, grid=none]
+[cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
-|**link:./docoumentation/core_resources.adoc[Core Resources]**
+|**link:./docoumentation/stf_core_documentation.adoc[Core Format Documentation]**
+|**link:./docoumentation/core_modules.adoc[Core Modules Documentation]**
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
+
+---
+
+Previously, a proof-of-concept for such a format has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
+
+---
 
 .Minimal example Json definition
 [%collapsible]

@@ -1,6 +1,6 @@
 // Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= STF: Documentation
+= STF Core: Documentation
 Mars <mars@squirrel.pub>
 v0.0.0
 :homepage: https://github.com/emperorofmars/stf
@@ -28,15 +28,16 @@ toc::[]
 == Introduction
 An STF asset can be represented as a single binary file, or separated into multiple files.
 
-By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their `type`.
-The minimum required set of types is defined in this document.
+By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their `type`. Support for importing, exporting & validationg a resource type is implemented by a module.
 
-STF implementations must provide an easy to use plugin system, and if in any way possible, the ability to hot-load plugins.
+The minimum required set of modules is specified in link:./core_modules.adoc[Core Modules].
 
-Objects of any type get referenced by a globally/universally unique ID as a string. This will be refered to as `ID`.
+STF implementations must provide an easy to use module plugin system, and if in any way possible, the ability to hot-load modules.
+
+Objects of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be a UUID v4.
 
 The file extension for stf binary files is `.stf`.
-The file extension for stf json files is `.stf.json`.
+The file extension for stf Json files is `.stf.json`.
 The media-type for stf binary files is `model/stf+binary`.
 The media-type for stf json files is `model/stf+json`.
 The STF binary header is stored in `little endian` byte order.
@@ -64,7 +65,7 @@ The Json definition is the first and only required buffer.
 == Json Definition
 The root Json element is an object. It contains 3 properties: `<<stf>>`, `<<resources>>` and `<<buffers>>`.
 
-=== 'stf'
+=== stf
 The `stf` object holds meta information.
 
 .`stf` object properties:
@@ -76,6 +77,7 @@ The `stf` object holds meta information.
 |version_minor |Yes |Integer |Minor version of STF
 |root |Yes |ID |ID of the root resource
 |profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to. These are a set of
+|meta |No |Object<String, String> |Meta information such as authors, license or documentation link.
 |===
 
 The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-prefab`] type. It represents the assets hierarchy and has a single root node.
@@ -100,7 +102,7 @@ The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-pref
 ----
 ====
 
-=== 'resources'
+=== resources
 The `resources` object is a map of resource objects identified by an ID.
 
 The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
@@ -117,15 +119,15 @@ The various resource objects describe the files actual content. Each resource ha
 |degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID
 |===
 
-Resources may contain other resources. The top most resource is exclusively responsible for storing references to other resources and buffers. The top most resource, as well as any sub-resource must reference resources and buffers by index in the top most resource's reference property.
+Resources may be composed of other resources. The top most resource is exclusively responsible for listing all contained references to other resources and buffers.
 
-Resources can be `Data`, `Prefab`, `Node`, `Component` and `Modification` kinds.
-Each of these kinds has additional general properties.
+Resources can be `Data`, `Node`, `Component` and `Modification` kinds.
+Each of these kinds has additional properties.
 
 ==== Data
 Can exist only at the top level.
-Data resources can be instantiated.
-Loading plugins of this kind must be supported.
+Data resources can be instantiated into a hierarchy.
+Suppport for loading module plugins of this kind is required.
 
 .Data resource properties
 [%autowidth, %header,cols=4*]
@@ -138,8 +140,8 @@ Loading plugins of this kind must be supported.
 
 ==== Node
 Can only exist within `Data` kinds.
-Node resources can not be instantiated.
-Loading plugins of this kind must be supported.
+Node resources can not be instantiated. Only their parent `Date` kind resource can.
+Suppport for loading module plugins of this kind is required.
 
 .Node resource properties
 [%autowidth, %header,cols=4*]
@@ -149,12 +151,13 @@ Loading plugins of this kind must be supported.
 |enabled |No |boolean |True by default
 |children |No |Map<ID, Node> |
 |components |No |Map<ID, Component> |
+|parent_binding |No |List<ID> |
 |===
 
 ==== Component
-Represents functionality or information of `Data` or `Node` kinds.
-Component resources can not be instantiated.
-Loading plugins of this kind must be supported.
+Represents additional functionality or information for `Data` or `Node` kinds.
+Component resources can not be instantiated. Component resources must be stored within `Data` or `Node` kinds.
+Suppport for loading module plugins of this kind is required.
 
 .Component resource properties
 [%autowidth, %header,cols=4*]
@@ -166,16 +169,16 @@ Loading plugins of this kind must be supported.
 |===
 
 ==== Modification
-For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
 Represents a change to be applied onto the elements of a referenced `Data` kind.
+For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
 Modification resources can not be instantiated.
-Loading plugins of this kind is not required.
+Suppport for loading module plugins of this kind is not required.
 
 ==== Resource Composition Examples
 xref:./resources/data/stf_image.adoc[`stf.image`] is a `Data` kind. `Data` kinds can only exist at the top level.
 xref:./resources/node/stf_node_spatial.adoc[`stf.node.spatial`] is a `Node` kind. `Node` kinds can only exist within `Data` kinds.
 
-The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate files.
+The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate STF files.
 
 .Example
 [%collapsible]
@@ -193,7 +196,7 @@ The information about what `kind` a type is must be known by a type's implementa
 		"properties": {
 			"albedo": {
 				"type": "image",
-				"image": 0
+				"image": 6f03d810-4613-467d-921b-a5302552f9d5
 			},
 		}
 	},
@@ -201,13 +204,22 @@ The information about what `kind` a type is must be known by a type's implementa
 		"type": "stf.image",
 		"name": "Body_Albedo",
 		"image_format": "png",
-		"texture_type": "rgb"
+		"texture_type": "rgb",
+		"components": {
+			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
+				"type": "stf.texture",
+				"resolution": [2048, 2048],
+				"compression": "BC7",
+				"texture_type": "color",
+				"downscale_priority": 0
+			}
+		}
 	},
 }
 ----
 ====
 
-=== 'buffers'
+=== buffers
 The `buffers` object is a map of buffer objects identified by an ID.
 Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
 Two types of buffers are defined. Supporting buffer plugins is not required.
@@ -215,6 +227,8 @@ Two types of buffers are defined. Supporting buffer plugins is not required.
 In a binary STF file, `stf.buffer.included` is the only supported buffer type.
 
 In a `stf.json` file, `stf.buffer.file` is the only supported buffer type.
+
+Buffers which are fetched by URL may be considered in the future.
 
 ==== stf.buffer.included
 This type represents a buffer contained in the same file.
@@ -370,46 +384,37 @@ STF defines a set of profiles, but implementations can define additional ones.
 
 []
 * node_names_not_empty
-Node names must contain more than zero non-whitespace characters.
+Node names contain more than zero non-whitespace characters.
 
 * node_names_unique_within_prefab
-Within a Prefab, Node names must be unique, and contain more than zero non-whitespace characters. This condition is required by Blender.
-
-* node_names_max_bytes_63
-Node names can't be longer than 63 bytes. This condition is required by Blender.
+Within a Prefab, Node names are unique, and contain more than zero non-whitespace characters.
 
 * mesh_max_4_weights
-Vertices in a mesh may have a maximum of 4 weights.
+Vertices in a mesh have a maximum of 4 weights.
 
 * mesh_max_8_weights
-Vertices in a mesh may have a maximum of 8 weights.
+Vertices in a mesh have a maximum of 8 weights.
 
 * mesh_max_8_uv_channels
-Meshes may have a maximum of 8 UV channels.
-
-* mesh_instances_separate
-Instances of meshes must be the only component on that node.
+Meshes have a maximum of 8 UV channels.
 
 * precision_32_bit_only
 Buffers that get parsed by an STF implementation itself can only store 32 bit integers and floats. This includes buffers for vertices, normals or UVs. Buffers that store another fileformat, like PNG or JPG, do not matter for this rule.
 
 * no_prefab_instances
-Prefab instances are forbidden in this asset. Armatures may be instanced once throughout the entire asset.
-
-* self_contained
-This file has no references to other files.
+This asset doesn't contain any instantiations of prefabs. Armatures may be instanced once throughout the entire asset.
 
 * compatibility_game_engine
-This profile applies the conditions of: `mesh_max_8_weights`, `mesh_instances_separate`, `node_names_not_empty`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_8_weights`, `node_names_not_empty`, `precision_32_bit_only`.
 
 * compatibility_game_engine_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `mesh_instances_separate`, `node_names_not_empty`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_4_weights`, `node_names_not_empty`, `precision_32_bit_only`.
 
 * compatibility
-This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `precision_32_bit_only`.
 
 * compatibility_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `node_names_max_bytes_63`, `mesh_max_8_uv_channels`, `mesh_instances_separate`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `precision_32_bit_only`.
 
 
 
