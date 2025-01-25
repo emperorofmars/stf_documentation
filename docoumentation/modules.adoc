@@ -1,0 +1,81 @@
+// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
+
+= STF Modules: Documentation
+Mars <mars@squirrel.pub>
+v0.0.0
+:homepage: https://github.com/emperorofmars/stf
+:keywords: stf, 3d, fileformat, format, interchange, interoperability
+:hardbreaks-option:
+:library: Asciidoctor
+:toc:
+:toclevels: 4
+:toc-placement!:
+:idprefix:
+:idseparator: -
+:experimental:
+:table-caption!:
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+endif::[]
+
+**Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
+
+Intended for (not only) game development use-cases.
+
+toc::[]
+
+== Core Modules
+Suppport for these modules is required for a valid STF implementation
+
+=== Data Modules
+* link:./modules_core/data/stf_prefab.adoc[stf.prefab]
+* link:./modules_core/data/stf_armature.adoc[stf.armature]
+* link:./modules_core/data/stf_mesh.adoc[stf.mesh]
+* link:./modules_core/data/stf_material.adoc[stf.material]
+* link:./modules_core/data/stf_image.adoc[stf.image]
+* link:./modules_core/data/stf_animation.adoc[stf.animation]
+
+=== Node Modules
+* link:./modules_core/node/stf_node_spatial.adoc[stf.node.spatial]
+* link:./modules_core/node/stf_bone_spatial.adoc[stf.bone.spatial]
+* link:./modules_core/node/stf_instance_mesh.adoc[stf.instance.mesh]
+* link:./modules_core/node/stf_instance_armature.adoc[stf.instance.armature]
+
+=== Component Modules
+* link:./modules_core/component/stf_texture.adoc[stf.texture]
+
+
+== Expanded Modules
+Not required but recommended modules.
+
+=== Data Modules
+
+=== Node Modules
+* link:./modules_expanded/node/stfexp_instance_prefab.adoc[stfexp.instance.prefab]
+
+=== Component Modules
+* link:./modules_expanded/component/stfexp_constraint_twist.adoc[stfexp.constraint.twist]
+* link:./modules_expanded/component/stfexp_constraint_bend.adoc[stfexp.constraint.bend]
+* link:./modules_expanded/component/stfexp_constraint_blend_rotation.adoc[stfexp.constraint.blend_rotation]
+* link:./modules_expanded/component/stfexp_constraint_blend_position.adoc[stfexp.constraint.blend_position]
+* link:./modules_expanded/component/stfexp_constraint_blend_parent.adoc[stfexp.constraint.blend_parent]
+* link:./modules_expanded/component/stfexp_constraint_look_at.adoc[stfexp.constraint.look_at]
+* link:./modules_expanded/component/stfexp_collider.adoc[stfexp.collider]
+
+
+== AVA Modules
+Modules which define VR & V-Tubing avatars.
+
+=== Data Modules
+=== Node Modules
+=== Component Modules
+* link:./modules_ava/component/ava_avatar.adoc[ava.avatar]
+* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.animation]
+* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.blendshape]
+* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.animation]
+* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.blendshape]
+* link:./modules_ava/component/ava_eyelids_rotation.adoc[ava.eyelids.rotation]
+* link:./modules_ava/component/ava_eyelids_blendshape.adoc[ava.eyelids.blendshape]
+* link:./modules_ava/component/ava_eyes_rotations.adoc[ava.eyes.rotations]
+* link:./modules_ava/component/ava_eyes_blendshape.adoc[ava.eyes.blendshape]

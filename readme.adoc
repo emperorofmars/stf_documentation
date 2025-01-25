@@ -44,8 +44,8 @@ It doesn't hard-code any specific resource types like GLTF. It consists of a str
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_core_documentation.adoc[Core Format Documentation]**
-|**link:./docoumentation/core_modules.adoc[Core Modules Documentation]**
+|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
+|**link:./docoumentation/modules.adoc[Modules Documentation]**
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
 
@@ -70,37 +70,41 @@ Previously, a proof-of-concept for such a format has been made here: https://git
 		"profiles": [
 			"compatibility_wide"
 		],
+		"metric_multiplier": 1.0,
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 	},
 	"resources": {
 		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
 			"type": "stf.prefab",
-			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"],
-			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95",
+			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"]
+			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
 			"nodes": {
 				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+					"type": "stf.node.spatial",
+					"name": "Some Node",
+					"enabled": true,
+					"trs": [],
+					"children": ["eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9"],
+					"components": {}
+				}
+				"eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9": {
+					"type": "stf.instance.mesh",
 					"name": "Super Awesome Model",
 					"enabled": true,
 					"trs": [],
 					"children": [],
-					"components": {
-						"2d172a76-e326-44d1-98c3-0c0ee2b15edd": {
-							"type": "stf.instance.mesh",
-							"enabled": true,
-							"mesh": 0
-						}
-					}
+					"mesh": "0e2e767b-2f90-4739-ad78-486b378ba051",
+					"components": {}
 				}
 			}
 		},
 		"0e2e767b-2f90-4739-ad78-486b378ba051": {
 			"type": "stf.mesh",
-			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"],
+			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
 			"vertex_count": 32000,
-			"vertecies": {
-				"format": "f32",
-				"buffer": 0
-			}
+			"vertex_width": 4,
+			"vertex_indices_width": 4,
+			"vertices": "2c04d7f9-96cd-4867-baf3-2a54d4d31a67"
 		}
 	},
 	"buffers": {

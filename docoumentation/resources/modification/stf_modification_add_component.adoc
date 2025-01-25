@@ -1,2 +1,0 @@
-
-== stf.modification.add_component

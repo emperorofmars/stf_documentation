@@ -1,2 +1,0 @@
-
-== stf.modification.collection_append

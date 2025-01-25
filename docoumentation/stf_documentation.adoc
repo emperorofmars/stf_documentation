@@ -26,15 +26,17 @@ Intended for (not only) game development use-cases.
 toc::[]
 
 == Introduction
-An STF asset can be represented as a single binary file, or separated into multiple files.
+An STF asset can be represented as a single binary file, containing a Json definition and a set of binary buffers.
 
-By itself, STF is merely a 'shell' format. Actual content is stored in objects defined by their `type`. Support for importing, exporting & validationg a resource type is implemented by a module.
+Alternatively and optionally, an STF assset can be separated into a Json file containing the definition, and multiple buffer files. This is not required to be implemented for a valid STF implementation.
 
-The minimum required set of modules is specified in link:./core_modules.adoc[Core Modules].
+By itself, STF defines merely a 'shell' format. Actual content is stored in `resources` defined by their `type`. Support for importing, exporting & validationg a resource is implemented by a `module`.
 
-STF implementations must provide an easy to use module plugin system, and if in any way possible, the ability to hot-load modules.
+The minimum required set of modules is specified in link:./modules.adoc[Modules], as well as some additional not-required modules.
 
-Objects of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be a UUID v4.
+STF implementations must provide an easy to use plugin system for modules, and if in any way possible, the ability to hot-load modules.
+
+Objects of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be an UUID v4.
 
 The file extension for stf binary files is `.stf`.
 The file extension for stf Json files is `.stf.json`.
@@ -46,7 +48,7 @@ The Json definition is encoded as `utf8`.
 STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
-A STF binary file consists of a binary header, a <<json-definition>>, and zero or more binary buffers.
+An STF binary file consists of a binary header, a <<json-definition>>, and zero or more binary buffers.
 
 .Binary file layout
 [%autowidth, %header,cols=2*]
@@ -76,11 +78,12 @@ The `stf` object holds meta information.
 |version_major |Yes |Integer |Major version of STF
 |version_minor |Yes |Integer |Minor version of STF
 |root |Yes |ID |ID of the root resource
-|profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to. These are a set of
+|profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to.
 |meta |No |Object<String, String> |Meta information such as authors, license or documentation link.
+|metric_multiplier |No |Float |Which number represents one meter. The default value is `1.0`.
 |===
 
-The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-prefab`] type. It represents the assets hierarchy and has a single root node.
+The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf-prefab`] type. It represents the assets hierarchy and has a single root node.
 
 .Example
 [%collapsible]
@@ -92,11 +95,12 @@ The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-pref
 	"version_major": 0,
 	"version_minor": 0,
 	"meta": {
-		"asset_name": "STF Example 1",
+		"asset_name": "STF Example 1"
 	},
 	"profiles": [
 		"compatibility_wide"
-	]
+	],
+	"metric_multiplier": 1.0,
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 }
 ----
@@ -105,23 +109,25 @@ The root resource must be of the xref:./resources/data/stf_prefab.adoc[`stf-pref
 === resources
 The `resources` object is a map of resource objects identified by an ID.
 
-The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined in the resource-type's definition.
+The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined by the definition for the resource.
 
 .Resource object general properties:
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|type |Yes |String |Namespaced type name of the resource
-|referenced_resources |No |List<ID> |IDs of Resources this resource depends on
-|referenced_buffers |No |List<ID> |IDs of Buffers this resource depends on
-|name |No |String |Display name of the resource
-|degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID
+|type |Yes |String |Namespaced type name of the resource.
+|referenced_resources |No |List<ID> |IDs of Resources this resource depends on.
+|referenced_buffers |No |List<ID> |IDs of Buffers this resource depends on.
+|name |No |String |Display name of the resource.
+|version_major |No |Integer |Major version of this resource. The default value is `0`.
+|version_minor |No |Integer |Major version of this resource. The default value is `0`.
+|degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`.
 |===
 
-Resources may be composed of other resources. The top most resource is exclusively responsible for listing all contained references to other resources and buffers.
+Resources may be composed of other resources. Every resource has to list all references to buffers and resources of itself and of its child-resources.
 
-Resources can be `Data`, `Node`, `Component` and `Modification` kinds.
+Resources can be `Data`, `Node` and `Component` kinds.
 Each of these kinds has additional properties.
 
 ==== Data
@@ -168,15 +174,9 @@ Suppport for loading module plugins of this kind is required.
 |overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
 
-==== Modification
-Represents a change to be applied onto the elements of a referenced `Data` kind.
-For example on xref:./resources/component/stf_instance_prefab.adoc[`stf.instance.prefab`] and xref:./resources/component/stf_instance_armature.adoc[`stf.instance.armature`].
-Modification resources can not be instantiated.
-Suppport for loading module plugins of this kind is not required.
-
 ==== Resource Composition Examples
-xref:./resources/data/stf_image.adoc[`stf.image`] is a `Data` kind. `Data` kinds can only exist at the top level.
-xref:./resources/node/stf_node_spatial.adoc[`stf.node.spatial`] is a `Node` kind. `Node` kinds can only exist within `Data` kinds.
+xref:./modules_core/data/stf_image.adoc[`stf.image`] is a `Data` kind. `Data` kinds can only exist at the top level.
+xref:./modules_core/node/stf_node_spatial.adoc[`stf.node.spatial`] is a `Node` kind. `Node` kinds can only exist within `Data` kinds.
 
 The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate STF files.
 
@@ -257,7 +257,7 @@ This type represents a buffer contained in the same file.
 ====
 
 ==== stf.buffer.file
-This type represents a buffer contained in the same file.
+This type represents a buffer contained in the same file. Supporting this buffer-type is not required, but may be useful for version-controlled projects containing STF assets.
 
 .stf.buffer.file properties
 [%autowidth, %header,cols=4*]
@@ -267,7 +267,7 @@ This type represents a buffer contained in the same file.
 |path |Yes |String |Relative path to a buffer file.
 |===
 
-A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
+An `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
 
 .Example
 [%collapsible]
@@ -292,10 +292,8 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 |===
 |Key |Required |Type |Description
 
-|data |Yes |List<Any> |Data array directly stored in json
+|data |Yes |String |Base64 encoded binary data
 |===
-
-The buffer file can be an encoded image as `.png` for example. Otherwise if the buffer does not represent an existing file-format, a `.stfbuffer` file can be used. A `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
 
 .Example
 [%collapsible]
@@ -328,6 +326,7 @@ The buffer file can be an encoded image as `.png` for example. Otherwise if the 
 		"profiles": [
 			"compatibility_wide"
 		],
+		"metric_multiplier": 1.0,
 		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 	},
 	"resources": {
@@ -341,10 +340,10 @@ The buffer file can be an encoded image as `.png` for example. Otherwise if the 
 					"name": "Some Node",
 					"enabled": true,
 					"trs": [],
-					"children": [],
+					"children": ["eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9"],
 					"components": {}
 				}
-				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
+				"eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9": {
 					"type": "stf.instance.mesh",
 					"name": "Super Awesome Model",
 					"enabled": true,
@@ -359,10 +358,9 @@ The buffer file can be an encoded image as `.png` for example. Otherwise if the 
 			"type": "stf.mesh",
 			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
 			"vertex_count": 32000,
-			"vertecies": {
-				"format": "f32",
-				"buffer": 0
-			}
+			"vertex_width": 4,
+			"vertex_indices_width": 4,
+			"vertices": "2c04d7f9-96cd-4867-baf3-2a54d4d31a67"
 		}
 	},
 	"buffers": {
@@ -398,23 +396,14 @@ Vertices in a mesh have a maximum of 8 weights.
 * mesh_max_8_uv_channels
 Meshes have a maximum of 8 UV channels.
 
-* precision_32_bit_only
+* width_max_4
 Buffers that get parsed by an STF implementation itself can only store 32 bit integers and floats. This includes buffers for vertices, normals or UVs. Buffers that store another fileformat, like PNG or JPG, do not matter for this rule.
 
-* no_prefab_instances
-This asset doesn't contain any instantiations of prefabs. Armatures may be instanced once throughout the entire asset.
-
-* compatibility_game_engine
-This profile applies the conditions of: `mesh_max_8_weights`, `node_names_not_empty`, `precision_32_bit_only`.
-
-* compatibility_game_engine_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_not_empty`, `precision_32_bit_only`.
-
 * compatibility
-This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `width_max_4`.
 
 * compatibility_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `precision_32_bit_only`.
+This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `width_max_4`.
 
 
 
