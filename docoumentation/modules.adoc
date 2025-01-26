@@ -30,42 +30,42 @@ Suppport for these modules is required for a valid STF implementation
 
 === Data Modules
 * link:./modules_core/data/stf_prefab.adoc[stf.prefab]
-* link:./modules_core/data/stf_armature.adoc[stf.armature]
-* link:./modules_core/data/stf_mesh.adoc[stf.mesh]
-* link:./modules_core/data/stf_material.adoc[stf.material]
-* link:./modules_core/data/stf_image.adoc[stf.image]
-* link:./modules_core/data/stf_animation.adoc[stf.animation]
+* link:./modules_core/data/stf_armature.adoc[stf.armature] (TODO)
+* link:./modules_core/data/stf_mesh.adoc[stf.mesh] (TODO)
+* link:./modules_core/data/stf_material.adoc[stf.material] (TODO)
+* link:./modules_core/data/stf_image.adoc[stf.image] (TODO)
+* link:./modules_core/data/stf_animation.adoc[stf.animation] (TODO)
 
 === Node Modules
-* link:./modules_core/node/stf_node_spatial.adoc[stf.node.spatial]
-* link:./modules_core/node/stf_bone_spatial.adoc[stf.bone.spatial]
-* link:./modules_core/node/stf_instance_mesh.adoc[stf.instance.mesh]
-* link:./modules_core/node/stf_instance_armature.adoc[stf.instance.armature]
+* link:./modules_core/node/stf_node_spatial.adoc[stf.node.spatial] (TODO)
+* link:./modules_core/node/stf_bone_spatial.adoc[stf.bone.spatial] (TODO)
+* link:./modules_core/node/stf_instance_mesh.adoc[stf.instance.mesh] (TODO)
+* link:./modules_core/node/stf_instance_armature.adoc[stf.instance.armature] (TODO)
 
 === Component Modules
-* link:./modules_core/component/stf_texture.adoc[stf.texture]
+* link:./modules_core/component/stf_texture.adoc[stf.texture] (TODO)
 
 
 == Expanded Modules (stfexp.*)
 Not required but recommended modules.
 
 === Data Modules
-* link:./modules_expanded/data/stfexp_camera.adoc[stfexp.camera]
-* link:./modules_expanded/data/stfexp_light.adoc[stfexp.light]
+* link:./modules_expanded/data/stfexp_camera.adoc[stfexp.camera] (TODO)
+* link:./modules_expanded/data/stfexp_light.adoc[stfexp.light] (TODO)
 
 === Node Modules
-* link:./modules_expanded/node/stfexp_instance_prefab.adoc[stfexp.instance.prefab]
-* link:./modules_expanded/node/stfexp_instance_camera.adoc[stfexp.instance.camera]
-* link:./modules_expanded/node/stfexp_instance_light.adoc[stfexp.instance.light]
+* link:./modules_expanded/node/stfexp_instance_prefab.adoc[stfexp.instance.prefab] (TODO)
+* link:./modules_expanded/node/stfexp_instance_camera.adoc[stfexp.instance.camera] (TODO)
+* link:./modules_expanded/node/stfexp_instance_light.adoc[stfexp.instance.light] (TODO)
 
 === Component Modules
-* link:./modules_expanded/component/stfexp_constraint_twist.adoc[stfexp.constraint.twist]
-* link:./modules_expanded/component/stfexp_constraint_bend.adoc[stfexp.constraint.bend]
-* link:./modules_expanded/component/stfexp_constraint_blend_rotation.adoc[stfexp.constraint.blend_rotation]
-* link:./modules_expanded/component/stfexp_constraint_blend_position.adoc[stfexp.constraint.blend_position]
-* link:./modules_expanded/component/stfexp_constraint_blend_parent.adoc[stfexp.constraint.blend_parent]
-* link:./modules_expanded/component/stfexp_constraint_look_at.adoc[stfexp.constraint.look_at]
-* link:./modules_expanded/component/stfexp_collider.adoc[stfexp.collider]
+* link:./modules_expanded/component/stfexp_constraint_twist.adoc[stfexp.constraint.twist] (TODO)
+* link:./modules_expanded/component/stfexp_constraint_bend.adoc[stfexp.constraint.bend] (TODO)
+* link:./modules_expanded/component/stfexp_constraint_blend_rotation.adoc[stfexp.constraint.blend_rotation] (TODO)
+* link:./modules_expanded/component/stfexp_constraint_blend_position.adoc[stfexp.constraint.blend_position] (TODO)
+* link:./modules_expanded/component/stfexp_constraint_blend_parent.adoc[stfexp.constraint.blend_parent] (TODO)
+* link:./modules_expanded/component/stfexp_constraint_look_at.adoc[stfexp.constraint.look_at] (TODO)
+* link:./modules_expanded/component/stfexp_collider.adoc[stfexp.collider] (TODO)
 
 TODO many more
 
@@ -74,20 +74,20 @@ TODO many more
 Modules which define VR & V-Tubing avatars.
 
 === Data Modules
-* link:./modules_ava/data/ava_blend_tree.adoc[ava.blend_tree]
+* link:./modules_ava/data/ava_blend_tree.adoc[ava.blend_tree] (TODO)
 
 === Node Modules
 
 === Component Modules
-* link:./modules_ava/component/ava_avatar.adoc[ava.avatar]
-* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.animation]
-* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.blendshape]
-* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.animation]
-* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.blendshape]
-* link:./modules_ava/component/ava_eyelids_rotation.adoc[ava.eyelids.rotation]
-* link:./modules_ava/component/ava_eyelids_blendshape.adoc[ava.eyelids.blendshape]
-* link:./modules_ava/component/ava_eyes_rotations.adoc[ava.eyes.rotations]
-* link:./modules_ava/component/ava_eyes_blendshape.adoc[ava.eyes.blendshape]
-* link:./modules_ava/component/ava_collider.adoc[ava.collider]
+* link:./modules_ava/component/ava_avatar.adoc[ava.avatar] (TODO)
+* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.animation] (TODO)
+* link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.blendshape] (TODO)
+* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.animation] (TODO)
+* link:./modules_ava/component/ava_visemes_facial.adoc[ava.visemes.facial.blendshape] (TODO)
+* link:./modules_ava/component/ava_eyelids_rotation.adoc[ava.eyelids.rotation] (TODO)
+* link:./modules_ava/component/ava_eyelids_blendshape.adoc[ava.eyelids.blendshape] (TODO)
+* link:./modules_ava/component/ava_eyes_rotations.adoc[ava.eyes.rotations] (TODO)
+* link:./modules_ava/component/ava_eyes_blendshape.adoc[ava.eyes.blendshape] (TODO)
+* link:./modules_ava/component/ava_collider.adoc[ava.collider] (TODO)
 
 TODO many more
