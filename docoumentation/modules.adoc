@@ -23,9 +23,9 @@ endif::[]
 
 Intended for (not only) game development use-cases.
 
-toc::[]
+// toc::[]
 
-== Core Modules
+== Core Modules (stf.*)
 Suppport for these modules is required for a valid STF implementation
 
 === Data Modules
@@ -46,13 +46,17 @@ Suppport for these modules is required for a valid STF implementation
 * link:./modules_core/component/stf_texture.adoc[stf.texture]
 
 
-== Expanded Modules
+== Expanded Modules (stfexp.*)
 Not required but recommended modules.
 
 === Data Modules
+* link:./modules_expanded/data/stfexp_camera.adoc[stfexp.camera]
+* link:./modules_expanded/data/stfexp_light.adoc[stfexp.light]
 
 === Node Modules
 * link:./modules_expanded/node/stfexp_instance_prefab.adoc[stfexp.instance.prefab]
+* link:./modules_expanded/node/stfexp_instance_camera.adoc[stfexp.instance.camera]
+* link:./modules_expanded/node/stfexp_instance_light.adoc[stfexp.instance.light]
 
 === Component Modules
 * link:./modules_expanded/component/stfexp_constraint_twist.adoc[stfexp.constraint.twist]
@@ -63,12 +67,17 @@ Not required but recommended modules.
 * link:./modules_expanded/component/stfexp_constraint_look_at.adoc[stfexp.constraint.look_at]
 * link:./modules_expanded/component/stfexp_collider.adoc[stfexp.collider]
 
+TODO many more
 
-== AVA Modules
+
+== AVA Modules (ava.*)
 Modules which define VR & V-Tubing avatars.
 
 === Data Modules
+* link:./modules_ava/data/ava_blend_tree.adoc[ava.blend_tree]
+
 === Node Modules
+
 === Component Modules
 * link:./modules_ava/component/ava_avatar.adoc[ava.avatar]
 * link:./modules_ava/component/ava_visemes_voice_blendshape.adoc[ava.visemes.voice.animation]
@@ -79,3 +88,6 @@ Modules which define VR & V-Tubing avatars.
 * link:./modules_ava/component/ava_eyelids_blendshape.adoc[ava.eyelids.blendshape]
 * link:./modules_ava/component/ava_eyes_rotations.adoc[ava.eyes.rotations]
 * link:./modules_ava/component/ava_eyes_blendshape.adoc[ava.eyes.blendshape]
+* link:./modules_ava/component/ava_collider.adoc[ava.collider]
+
+TODO many more

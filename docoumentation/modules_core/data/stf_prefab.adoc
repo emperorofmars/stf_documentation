@@ -1,17 +1,16 @@
 
 == stf.prefab
-A prefab represents a hierarchy of nodes. It can be instantiated on another prefab's node. It can never be instantiated recursively or in a loop.
+A prefab represents a hierarchy of nodes.
+It can never be instantiated recursively or in a loop.
 
 .stf.prefab properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|root |Yes |ID |ID of the root node within this prefab
+|root_nodes |Yes |List<ID> |IDs of the root nodes within this prefab
 |nodes |Yes |Object of ID - node pairs |Nodes must represent a prefab object
 |animations |No |List of IDs of animation resources |Animations which originate from this prefab's root
 |===
 
 The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial` as well as types which contain the same properties as `stf.node.spatial`.
-
-Nodes also have an implicit boolean `enabled` property with a default value of `true`.
