@@ -44,6 +44,7 @@ Suppport for these modules is required for a valid STF implementation
 
 === Component Modules
 * link:./modules_core/component/stf_texture.adoc[stf.texture] (TODO)
+* link:./modules_core/component/stf_mesh_seams.adoc[stf.mesh.seams] (TODO)
 
 
 == Expanded Modules (stfexp.*)
