@@ -1,12 +1,18 @@
-== stf.node.spatial
+== stf.node
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
-.stf.node.spatial properties
+.stf.node characteristics
+[%autowidth, %header,cols=4*]
+|===
+| Kind |Instantiable | |
+
+| Node |No | |
+|===
+
+.stf.node properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
 |trs |Yes |TRS array |The nodes 3D transform
-|children |No |Array of IDs |This child-nodes IDs
-|components |No |Object of ID - 'Component' kind pairs |Components represent define functionality of a node.
 |===

@@ -37,8 +37,8 @@ Suppport for these modules is required for a valid STF implementation
 * link:./modules_core/data/stf_animation.adoc[stf.animation] (TODO)
 
 === Node Modules
-* link:./modules_core/node/stf_node_spatial.adoc[stf.node.spatial] (TODO)
-* link:./modules_core/node/stf_bone_spatial.adoc[stf.bone.spatial] (TODO)
+* link:./modules_core/node/stf_node.adoc[stf.node] (TODO)
+* link:./modules_core/node/stf_bone.adoc[stf.bone] (TODO)
 * link:./modules_core/node/stf_instance_mesh.adoc[stf.instance.mesh] (TODO)
 * link:./modules_core/node/stf_instance_armature.adoc[stf.instance.armature] (TODO)
 

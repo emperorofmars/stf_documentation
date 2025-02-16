@@ -3,14 +3,21 @@
 A prefab represents a hierarchy of nodes.
 It can never be instantiated recursively or in a loop.
 
+.stf.prefab characteristics
+[%autowidth, %header,cols=4*]
+|===
+|Kind |Instantiable | |
+
+|Data |Yes | |
+|===
+
 .stf.prefab properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
 |root_nodes |Yes |List<ID> |IDs of the root nodes within this prefab
-|nodes |Yes |Object of ID - node pairs |Nodes must represent a prefab object
-|animations |No |List of IDs of animation resources |Animations which originate from this prefab's root
+|animations |No |List<ID> |Animations which originate from this prefab's root
 |===
 
-The only allowed type for nodes contained in `stf.prefab` is `stf.node.spatial` as well as types which contain the same properties as `stf.node.spatial`.
+The only allowed type for nodes contained in `stf.prefab` is `stf.node` as well as types which contain the same properties as `stf.node`.

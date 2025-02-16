@@ -125,14 +125,14 @@ The various resource objects describe the files actual content. Each resource ha
 |degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`.
 |===
 
-Resources may be composed of other resources. Every resource has to list all references to buffers and resources of itself and of its child-resources.
+Resources may be composed of other resources if the relationship is 1 to 1. This is the case for components.
+Every resource has to list all references to buffers and resources it uses.
 
 Resources can be `Data`, `Node` and `Component` kinds.
 Each of these kinds has additional properties.
 
 ==== Data
-Can exist only at the top level.
-Data resources can be instantiated into a hierarchy.
+Data resources can be instantiated.
 Suppport for loading module plugins of this kind is required.
 
 .Data resource properties
@@ -145,9 +145,10 @@ Suppport for loading module plugins of this kind is required.
 |===
 
 ==== Node
-Can only exist within `Data` kinds.
-Node resources can not be instantiated. Only their parent `Date` kind resource can.
+Root nodes must be referenced by a `data` resource, usually `stf.prefab`.
+Node resources can not be instantiated. Only the parent of the entire hierarchy of nodes can be.
 Suppport for loading module plugins of this kind is required.
+All node kinds must be super-sets of `stf.node` or `stf.bone`.
 
 .Node resource properties
 [%autowidth, %header,cols=4*]
@@ -156,13 +157,14 @@ Suppport for loading module plugins of this kind is required.
 
 |enabled |No |boolean |True by default
 |children |No |Map<ID, Node> |
-|components |No |Map<ID, Component> |
 |parent_binding |No |List<ID> |
+|components |No |Map<ID, Component> |
+|instance |No |Object |
 |===
 
 ==== Component
 Represents additional functionality or information for `Data` or `Node` kinds.
-Component resources can not be instantiated. Component resources must be stored within `Data` or `Node` kinds.
+Component resources can not be instantiated. Component resources must be stored within `Data` or `Node` kinds and can not exist on the top level `resources` object.
 Suppport for loading module plugins of this kind is required.
 
 .Component resource properties
@@ -320,90 +322,158 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 	"stf": {
 		"version_major": 0,
 		"version_minor": 0,
-		"meta": {
-			"asset_name": "STF Example 1"
+		"root": "8a4019a2-ca1d-4f9b-a316-b118cd31dada",
+		"profiles": [],
+		"asset_info": {
+			"asset_name": "Default Cube"
 		},
-		"profiles": [
-			"compatibility_wide"
-		],
-		"metric_multiplier": 1.0,
-		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+		"generator": "stfblender",
+		"timestamp": "2025-02-15T20:41:01.988159+00:00",
+		"metric_multiplier": 1
 	},
 	"resources": {
-		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
-			"type": "stf.prefab",
-			"referenced_resources": ["0e2e767b-2f90-4739-ad78-486b378ba051"]
-			"root": "1e5775b8-64ae-4cfa-b8dd-ad6a91469d95"
-			"nodes": {
-				"1e5775b8-64ae-4cfa-b8dd-ad6a91469d95": {
-					"type": "stf.node.spatial",
-					"name": "Some Node",
-					"enabled": true,
-					"trs": [],
-					"children": ["eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9"],
-					"components": {}
+		"ba0f6e23-cb13-4cd5-9f66-8184460befc4": {
+			"type": "stf.material",
+			"name": "Material",
+			"properties": {
+				"color": {
+					"value_type": "color",
+					"value": [
+						1.0,
+						1.0,
+						1.0
+					]
 				}
-				"eb25c8e4-8e0a-4ac2-8f51-1b87e22afcd9": {
-					"type": "stf.instance.mesh",
-					"name": "Super Awesome Model",
-					"enabled": true,
-					"trs": [],
-					"children": [],
-					"mesh": "0e2e767b-2f90-4739-ad78-486b378ba051",
-					"components": {}
+			},
+			"referenced_resources": [],
+			"referenced_buffers": [],
+			"style_hints": [],
+			"shader_targets": {}
+		},
+		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
+			"type": "stf.mesh",
+			"name": "Cube",
+			"referenced_resources": [],
+			"referenced_buffers": [
+				"d8e72e40-9006-441b-a0c5-1315700f14ef",
+				"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
+				"2eb9be5e-b2ad-4df0-9163-942a506ddff8",
+				"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
+				"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6",
+				"a66be574-6ed2-4607-9190-a1ed4e2331c3",
+				"cd1688fc-d100-4916-a0c2-dfa5899f010e",
+				"0a0e9df2-e63e-47b5-acab-1435d5b3579f",
+				"950f09cc-f6e1-4173-bf9a-2054ae233717",
+				"85cc4f16-0934-45f0-9249-304a991ee78a",
+				"d86f7202-ad21-4e94-8659-9f17c2be827b"
+			],
+			"material_slots": [
+				"ba0f6e23-cb13-4cd5-9f66-8184460befc4"
+			],
+			"vertex_count": 8,
+			"vertex_width": 4,
+			"vertex_indices_width": 4,
+			"vertices": "d8e72e40-9006-441b-a0c5-1315700f14ef",
+			"vertex_color_width": 4,
+			"colors": [],
+			"split_count": 24,
+			"split_indices_width": 4,
+			"split_normal_width": 4,
+			"split_tangent_width": 4,
+			"split_color_width": 4,
+			"split_uv_width": 4,
+			"splits": "f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
+			"split_normals": "2eb9be5e-b2ad-4df0-9163-942a506ddff8",
+			"split_tangents": "d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
+			"uvs": [
+				{
+					"name": "UVMap",
+					"uv": "4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6"
+				}
+			],
+			"split_colors": [],
+			"tris_count": 12,
+			"face_count": 6,
+			"face_indices_width": 4,
+			"tris": "a66be574-6ed2-4607-9190-a1ed4e2331c3",
+			"material_indices_width": 4,
+			"faces": "cd1688fc-d100-4916-a0c2-dfa5899f010e",
+			"material_indices": "0a0e9df2-e63e-47b5-acab-1435d5b3579f",
+			"sharp_face_indices_len": 6,
+			"sharp_face_indices": "950f09cc-f6e1-4173-bf9a-2054ae233717",
+			"lines_len": 0,
+			"lines": "85cc4f16-0934-45f0-9249-304a991ee78a",
+			"sharp_edges_len": 0,
+			"sharp_edges": "d86f7202-ad21-4e94-8659-9f17c2be827b",
+			"armature": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
+			"bones": [],
+			"bone_weight_width": 4,
+			"weights": [],
+			"components": {
+				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
+					"type": "stf.mesh.seams",
+					"referenced_resources": [],
+					"referenced_buffers": [
+						"3f877195-7da8-41fc-be16-63833584fc97"
+					],
+					"seams_len": 0,
+					"seams": "3f877195-7da8-41fc-be16-63833584fc97"
 				}
 			}
 		},
-		"0e2e767b-2f90-4739-ad78-486b378ba051": {
-			"type": "stf.mesh",
-			"referenced_buffers": ["2c04d7f9-96cd-4867-baf3-2a54d4d31a67"]
-			"vertex_count": 32000,
-			"vertex_width": 4,
-			"vertex_indices_width": 4,
-			"vertices": "2c04d7f9-96cd-4867-baf3-2a54d4d31a67"
+		"4a76690a-8f1c-4a3c-9135-4bcac5c92831": {
+			"type": "stf.instance.mesh",
+			"name": "Cube",
+			"children": [],
+			"trs": [
+				[
+					0.0,
+					0.0,
+					-0.0
+				],
+				[
+					0.0,
+					0.0,
+					-0.0,
+					1.0
+				],
+				[
+					1.0,
+					1.0,
+					1.0
+				]
+			],
+			"instance": {
+				"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
+				"material_slots": [
+					{
+						"name": "Material",
+						"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
+					}
+				],
+				"blendshape_values": []
+			},
+			"referenced_resources": [],
+			"referenced_buffers": []
+		},
+		"8a4019a2-ca1d-4f9b-a316-b118cd31dada": {
+			"type": "stf.prefab",
+			"name": "Scene Collection",
+			"root_nodes": [
+				"4a76690a-8f1c-4a3c-9135-4bcac5c92831"
+			],
+			"animations": [],
+			"referenced_resources": [],
+			"referenced_buffers": []
 		}
 	},
 	"buffers": {
-		"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+		"d8e72e40-9006-441b-a0c5-1315700f14ef": {
 			"type": "stf.buffer.included",
 			"index": 0
-		}
+		},
+		...
 	}
 }
 ----
 ====
-
-== Profiles
-Profiles define rules to which a STF file adheres to. Each STF implementation has to check each file on import and export whether it adheres to its set profiles.
-
-STF implementations can require some profiles in order to parse an STF asset. For example, game-engines may not support certain features, and as such can impose adherence to certain profiles.
-
-STF defines a set of profiles, but implementations can define additional ones.
-
-[]
-* node_names_not_empty
-Node names contain more than zero non-whitespace characters.
-
-* node_names_unique_within_prefab
-Within a Prefab, Node names are unique, and contain more than zero non-whitespace characters.
-
-* mesh_max_4_weights
-Vertices in a mesh have a maximum of 4 weights.
-
-* mesh_max_8_weights
-Vertices in a mesh have a maximum of 8 weights.
-
-* mesh_max_8_uv_channels
-Meshes have a maximum of 8 UV channels.
-
-* width_max_4
-Buffers that get parsed by an STF implementation itself can only store 32 bit integers and floats. This includes buffers for vertices, normals or UVs. Buffers that store another fileformat, like PNG or JPG, do not matter for this rule.
-
-* compatibility
-This profile applies the conditions of: `mesh_max_8_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `width_max_4`.
-
-* compatibility_wide
-This profile applies the conditions of: `mesh_max_4_weights`, `node_names_unique_within_prefab`, `mesh_max_8_uv_channels`, `width_max_4`.
-
-
-

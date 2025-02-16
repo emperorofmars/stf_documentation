@@ -2,340 +2,247 @@
 	"stf": {
 		"version_major": 0,
 		"version_minor": 0,
-		"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5",
-		"meta": {
-			"asset_name": "STF Example 1",
-			"asset_author": "Mars <mars@squirrel.pub>"
+		"root": "8a4019a2-ca1d-4f9b-a316-b118cd31dada",
+		"profiles": [],
+		"asset_info": {
+			"asset_name": "Default Cube"
 		},
-		"timestamp": "2024-11-31T23:05:01:321Z",
 		"generator": "stfblender",
-		"profiles": [
-			"compatibility_wide"
-		]
+		"timestamp": "2025-02-15T20:41:01.988159+00:00",
+		"metric_multiplier": 1
 	},
 	"resources": {
-		"5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5": {
-			"type": "stf.prefab",
-			"name": "STF Example",
-			"referenced_resources": [
-				"0b1d3b32-5545-4e12-853f-cc3d0d49934d",
-				"0e2e767b-2f90-4739-ad78-486b378ba051",
-				"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd",
-				"0e94463f-cbc5-401a-b6a5-d17e017a9a91"
-			],
-			"root": "98be6ae4-1aaa-4ec6-89a0-fcf2d8902cf0",
-			"nodes": {
-				"98be6ae4-1aaa-4ec6-89a0-fcf2d8902cf0": {
-					"name": "Root",
-					"trs": [],
-					"children": ["7b898a6a-ac0e-4d25-a85e-4fb1af8d838d"]
-				},
-				"7b898a6a-ac0e-4d25-a85e-4fb1af8d838d": {
-					"name": "Armature Instance",
-					"trs": [],
-					"children": ["cf6b6ac1-1ba0-4ab6-ab25-22b1cd9c9539"],
-					"components": {
-						"86568c23-c077-4616-9ed3-a7d8b582c6a1": {
-							"type": "stf.instance.armature",
-							"armature": 0,
-							"appendices": [
-								{
-									"bone": "06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b",
-									"child": "b0e6bb74-5915-4661-88a7-f94366ff3f6a"
-								}
-							],
-							"overrides": [
-								{
-									"type": "set_property",
-									"bone": "06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b",
-									"path": "trs",
-									"value": []
-								}
-							]
-						}
-					}
-				},
-				"cf6b6ac1-1ba0-4ab6-ab25-22b1cd9c9539": {
-					"name": "Body Mesh Instance",
-					"components": {
-						"b910ec2f-7bad-40a3-9acc-9de28eb9de6c": {
-							"type": "stf.instance.mesh",
-							"mesh": 1,
-							"blenshape_values": [
-								0.3, 4
-							],
-							"materials": [2]
-						}
-					}
-				},
-				"b0e6bb74-5915-4661-88a7-f94366ff3f6a": {
-					"name": "Cute Hat Asset",
-					"components": {
-						"0c8a9ab3-bd06-41b8-9028-dd632bcb3ca4": {
-							"type": "stf.instance.prefab",
-							"prefab": 3
-						}
-					}
-				}
-			},
-			"animations": [
-				"28234415-7638-45ec-aa98-653d9e04bcab"
-			]
-		},
-		"0b1d3b32-5545-4e12-853f-cc3d0d49934d": {
-			"type": "stf.armature",
-			"name": "Main Armature",
-			"root_bone": "df1373cf-828e-4a97-9b05-c5dc77692d4d",
-			"bones": {
-				"df1373cf-828e-4a97-9b05-c5dc77692d4d": {
-					"name": "Hips",
-					"trs": [],
-					"pose_trs": [],
-					"children": [
-						"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b"
+		"ba0f6e23-cb13-4cd5-9f66-8184460befc4": {
+			"type": "stf.material",
+			"name": "Material",
+			"properties": {
+				"color": {
+					"value_type": "color",
+					"value": [
+						1.0,
+						1.0,
+						1.0
 					]
-				},
-				"06fd4a9b-cfb4-479e-bcfd-6f5b9dbdcb9b": {
-					"name": "Head",
-					"trs": [],
-					"pose_trs": [],
-					"children": []
 				}
-			}
+			},
+			"referenced_resources": [],
+			"referenced_buffers": [],
+			"style_hints": [],
+			"shader_targets": {}
 		},
-		"0e2e767b-2f90-4739-ad78-486b378ba051": {
+		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
 			"type": "stf.mesh",
-			"name": "Main Body Mesh",
+			"name": "Cube",
+			"referenced_resources": [],
 			"referenced_buffers": [
-				"2c04d7f9-96cd-4867-baf3-2a54d4d31a67",
-				"d7b951f7-8376-49af-a14e-cfbe83ca30aa",
-				"8183c641-689c-4d61-bb33-46fcb79f1eb5",
-				"48a7bc7e-cc3b-44cf-ac84-84664737835d",
-				"b490106c-3508-448d-9aa6-3f589562f2d4",
-				"f79d1b47-6924-4498-956a-2ef032dc3ea7",
-				"6bbdb901-07f9-4bc8-ba68-6c7d6299e3fc",
-				"deb437b5-f2e4-4e09-a01d-d215cc4c655c",
-				"...."
+				"d8e72e40-9006-441b-a0c5-1315700f14ef",
+				"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
+				"2eb9be5e-b2ad-4df0-9163-942a506ddff8",
+				"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
+				"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6",
+				"a66be574-6ed2-4607-9190-a1ed4e2331c3",
+				"cd1688fc-d100-4916-a0c2-dfa5899f010e",
+				"0a0e9df2-e63e-47b5-acab-1435d5b3579f",
+				"950f09cc-f6e1-4173-bf9a-2054ae233717",
+				"85cc4f16-0934-45f0-9249-304a991ee78a",
+				"d86f7202-ad21-4e94-8659-9f17c2be827b"
 			],
-			"referenced_resources": [
-				"0b1d3b32-5545-4e12-853f-cc3d0d49934d",
-				"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd"
+			"material_slots": [
+				"ba0f6e23-cb13-4cd5-9f66-8184460befc4"
 			],
-			"armature": 0,
-			"primitives": [
-				{
-					"topology": "tris",
-					"buffer": 4,
-					"format": "i32",
-					"default_material": 1
-				},
-				{
-					"topology": "tris",
-					"buffer": 5,
-					"format": "i32"
-				}
-			],
-			"vertex_count": 32000,
-			"split_vertex_count": 32000,
-			"vertecies": {
-				"format": "f32",
-				"buffer": 0
-			},
-			"split_vertecies": {
-				"format": "i32",
-				"buffer": 6
-			},
-			"normals": {
-				"format": "f32",
-				"buffer": 1
-			},
-			"tangents": {
-				"format": "f32",
-				"buffer": 12
-			},
-			"vertex_colors": {
-				"format": "f32",
-				"buffer": 13
-			},
-			"weights": [
-				{
-					"indexed": false,
-					"format": "f32",
-					"buffer": 14
-				},
-				{
-					"indexed": true,
-					"format_indices": "i32",
-					"format": "f32",
-					"buffer": 15
-				}
-			],
+			"vertex_count": 8,
+			"vertex_width": 4,
+			"vertex_indices_width": 4,
+			"vertices": "d8e72e40-9006-441b-a0c5-1315700f14ef",
+			"vertex_color_width": 4,
+			"colors": [],
+			"split_count": 24,
+			"split_indices_width": 4,
+			"split_normal_width": 4,
+			"split_tangent_width": 4,
+			"split_color_width": 4,
+			"split_uv_width": 4,
+			"splits": "f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
+			"split_normals": "2eb9be5e-b2ad-4df0-9163-942a506ddff8",
+			"split_tangents": "d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
 			"uvs": [
 				{
-					"format": "f32",
-					"buffer": 16
-				},
-				{
-					"format": "f32",
-					"buffer": 17
+					"name": "UVMap",
+					"uv": "4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6"
 				}
 			],
-			"blendshapes": [
-				{
-					"name": "smile",
-					"indexed": true,
-					"format_indices": "i32",
-					"vertecies": {
-						"format": "f32",
-						"buffer": 2
-					},
-					"normals": {
-						"format": "f32",
-						"buffer": 3
-					}
-				},
-				{
-					"name": "blep",
-					"indexed": false,
-					"vertecies": {
-						"format": "f32",
-						"buffer": 10
-					},
-					"normals": {
-						"format": "f32",
-						"buffer": 9
-					}
-				}
-			],
+			"split_colors": [],
+			"tris_count": 12,
+			"face_count": 6,
+			"face_indices_width": 4,
+			"tris": "a66be574-6ed2-4607-9190-a1ed4e2331c3",
+			"material_indices_width": 4,
+			"faces": "cd1688fc-d100-4916-a0c2-dfa5899f010e",
+			"material_indices": "0a0e9df2-e63e-47b5-acab-1435d5b3579f",
+			"sharp_face_indices_len": 6,
+			"sharp_face_indices": "950f09cc-f6e1-4173-bf9a-2054ae233717",
+			"lines_len": 0,
+			"lines": "85cc4f16-0934-45f0-9249-304a991ee78a",
+			"sharp_edges_len": 0,
+			"sharp_edges": "d86f7202-ad21-4e94-8659-9f17c2be827b",
+			"armature": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
+			"bones": [],
+			"bone_weight_width": 4,
+			"weights": [],
 			"components": {
-				"8d6c99d3-e61f-4df8-ad12-0f1e5553312b": {
-					"type": "stf.mesh.normals_split",
-					"edge_split": {
-						"indexed": true,
-						"format_indices": "i32",
-						"format": "f32",
-						"buffer": 7
-					},
-					"point_split": {
-						"indexed": true,
-						"format_indices": "i32",
-						"format": "f32",
-						"buffer": 8
+				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
+					"type": "stf.mesh.seams",
+					"referenced_resources": [],
+					"referenced_buffers": [
+						"3f877195-7da8-41fc-be16-63833584fc97"
+					],
+					"seams_len": 0,
+					"seams": "3f877195-7da8-41fc-be16-63833584fc97"
+				}
+			}
+		},
+		"4a76690a-8f1c-4a3c-9135-4bcac5c92831": {
+			"type": "stf.instance.mesh",
+			"name": "Cube",
+			"children": [],
+			"trs": [
+				[
+					0.0,
+					0.0,
+					-0.0
+				],
+				[
+					0.0,
+					0.0,
+					-0.0,
+					1.0
+				],
+				[
+					1.0,
+					1.0,
+					1.0
+				]
+			],
+			"instance": {
+				"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
+				"material_slots": [
+					{
+						"name": "Material",
+						"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
 					}
-				}
-			}
+				],
+				"blendshape_values": []
+			},
+			"referenced_resources": [],
+			"referenced_buffers": []
 		},
-		"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
-			"type": "stf.material",
-			"name": "Body Material",
-			"referenced_resources": [
-				"6f03d810-4613-467d-921b-a5302552f9d5",
-				"bb39a37d-ea6c-4cb8-a628-b797e55cbd14"
-			],
-			"properties": {
-				"albedo": {
-					"type": "image",
-					"image": 0
-				},
-				"normal": {
-					"type": "image",
-					"image": 1
-				}
-			}
-		},
-		"6f03d810-4613-467d-921b-a5302552f9d5": {
-			"type": "stf.image",
-			"name": "Body_Albedo",
-			"image_format": "png",
-			"texture_type": "rgb",
-			"buffer": 0,
-			"referenced_buffers": [
-				"d49ab4f4-8c69-4c2b-895c-1a61797667ac"
+		"30834490-b5db-4b17-8970-0dacbba245f4": {
+			"type": "stf.node",
+			"name": "Light",
+			"children": [],
+			"trs": [
+				[
+					4.076245307922363,
+					5.903861999511719,
+					-1.0054539442062378
+				],
+				[
+					0.16907574236392975,
+					0.7558803558349609,
+					-0.27217137813568115,
+					0.570947527885437
+				],
+				[
+					1.0,
+					1.0,
+					0.9999999403953552
+				]
 			]
 		},
-		"bb39a37d-ea6c-4cb8-a628-b797e55cbd14": {
-			"type": "stf.image",
-			"name": "Body_Normal",
-			"image_format": "png",
-			"texture_type": "xyz",
-			"buffer": 0,
-			"referenced_buffers": [
-				"2812628c-3cbe-485a-b487-7d070b1419a4"
+		"0af022bb-8525-43d0-a21a-c8e05ab8ed8f": {
+			"type": "stf.node",
+			"name": "Camera",
+			"children": [],
+			"trs": [
+				[
+					7.358891487121582,
+					4.958309173583984,
+					6.925790786743164
+				],
+				[
+					0.483536034822464,
+					0.33687159419059753,
+					-0.20870360732078552,
+					0.7804827094078064
+				],
+				[
+					1.0,
+					1.0,
+					1.0
+				]
 			]
 		},
-		"0e94463f-cbc5-401a-b6a5-d17e017a9a91": {
+		"8a4019a2-ca1d-4f9b-a316-b118cd31dada": {
 			"type": "stf.prefab",
-			"name": "Superawesome Hat",
-			"root": "8d464880-7c6a-48aa-8f34-501f9d6e0722",
-			"nodes": {
-				"8d464880-7c6a-48aa-8f34-501f9d6e0722": {
-					"name": "Superawesome Hat Root",
-					"children": []
-				}
-			}
-		},
-		"28234415-7638-45ec-aa98-653d9e04bcab": {
-			"type": "stf.animation",
-			"name": "wave",
-			"referenced_buffers": [
-				"360b0068-463a-42dd-ac2c-407fce7fe5d3"
+			"name": "Scene Collection",
+			"root_nodes": [
+				"4a76690a-8f1c-4a3c-9135-4bcac5c92831",
+				"30834490-b5db-4b17-8970-0dacbba245f4",
+				"0af022bb-8525-43d0-a21a-c8e05ab8ed8f"
 			],
-			"fps": 24,
-			"loop_mode": "none",
-			"tracks": [
-				{
-					"interpolation": "bezier",
-					"target_resource": "",
-					"target_path": "translation.x",
-					"buffer": 0
-				}
-			]
+			"animations": [],
+			"referenced_resources": [],
+			"referenced_buffers": []
 		}
 	},
 	"buffers": {
-		"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
+		"d8e72e40-9006-441b-a0c5-1315700f14ef": {
 			"type": "stf.buffer.included",
 			"index": 0
 		},
-		"d7b951f7-8376-49af-a14e-cfbe83ca30aa": {
+		"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a": {
 			"type": "stf.buffer.included",
 			"index": 1
 		},
-		"8183c641-689c-4d61-bb33-46fcb79f1eb5": {
+		"2eb9be5e-b2ad-4df0-9163-942a506ddff8": {
 			"type": "stf.buffer.included",
 			"index": 2
 		},
-		"48a7bc7e-cc3b-44cf-ac84-84664737835d": {
+		"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b": {
 			"type": "stf.buffer.included",
 			"index": 3
 		},
-		"b490106c-3508-448d-9aa6-3f589562f2d4": {
+		"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6": {
 			"type": "stf.buffer.included",
 			"index": 4
 		},
-		"f79d1b47-6924-4498-956a-2ef032dc3ea7": {
+		"a66be574-6ed2-4607-9190-a1ed4e2331c3": {
 			"type": "stf.buffer.included",
 			"index": 5
 		},
-		"d49ab4f4-8c69-4c2b-895c-1a61797667ac": {
+		"cd1688fc-d100-4916-a0c2-dfa5899f010e": {
 			"type": "stf.buffer.included",
 			"index": 6
 		},
-		"2812628c-3cbe-485a-b487-7d070b1419a4": {
+		"0a0e9df2-e63e-47b5-acab-1435d5b3579f": {
 			"type": "stf.buffer.included",
 			"index": 7
 		},
-		"6bbdb901-07f9-4bc8-ba68-6c7d6299e3fc": {
+		"950f09cc-f6e1-4173-bf9a-2054ae233717": {
 			"type": "stf.buffer.included",
 			"index": 8
 		},
-		"deb437b5-f2e4-4e09-a01d-d215cc4c655c": {
+		"85cc4f16-0934-45f0-9249-304a991ee78a": {
 			"type": "stf.buffer.included",
 			"index": 9
 		},
-		"d360b0068-463a-42dd-ac2c-407fce7fe5d3": {
+		"d86f7202-ad21-4e94-8659-9f17c2be827b": {
 			"type": "stf.buffer.included",
 			"index": 10
+		},
+		"3f877195-7da8-41fc-be16-63833584fc97": {
+			"type": "stf.buffer.included",
+			"index": 11
 		}
 	}
 }
