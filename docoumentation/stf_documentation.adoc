@@ -84,7 +84,7 @@ The `stf` object holds meta information.
 |metric_multiplier |No |Float |Which number represents one meter. The default value is `1.0`.
 |===
 
-The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf-prefab`] type. It represents the assets hierarchy and has a single root node.
+The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf.prefab`] type. It represents the assets hierarchy and has a single root node.
 
 .Example
 [%collapsible]
@@ -129,7 +129,7 @@ The various resource objects describe the files actual content. Each resource ha
 Resources may be composed of other resources if the relationship is 1 to 1. This is the case for components.
 Every resource has to list all references to buffers and resources it uses.
 
-Resources can be `Data`, `Node` and `Component` kinds.
+Resources can be `Data`, `Node`, `Instance` and `Component` kinds.
 Each of these kinds has additional properties.
 
 ==== Data
@@ -358,28 +358,12 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 					]
 				}
 			},
-			"referenced_resources": [],
-			"referenced_buffers": [],
 			"style_hints": [],
 			"shader_targets": {}
 		},
 		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
 			"type": "stf.mesh",
 			"name": "Cube",
-			"referenced_resources": [],
-			"referenced_buffers": [
-				"d8e72e40-9006-441b-a0c5-1315700f14ef",
-				"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
-				"2eb9be5e-b2ad-4df0-9163-942a506ddff8",
-				"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
-				"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6",
-				"a66be574-6ed2-4607-9190-a1ed4e2331c3",
-				"cd1688fc-d100-4916-a0c2-dfa5899f010e",
-				"0a0e9df2-e63e-47b5-acab-1435d5b3579f",
-				"950f09cc-f6e1-4173-bf9a-2054ae233717",
-				"85cc4f16-0934-45f0-9249-304a991ee78a",
-				"d86f7202-ad21-4e94-8659-9f17c2be827b"
-			],
 			"material_slots": [
 				"ba0f6e23-cb13-4cd5-9f66-8184460befc4"
 			],
@@ -422,17 +406,14 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 			"bones": [],
 			"bone_weight_width": 4,
 			"weights": [],
-			"components": {
-				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
-					"type": "stf.mesh.seams",
-					"referenced_resources": [],
-					"referenced_buffers": [
-						"3f877195-7da8-41fc-be16-63833584fc97"
-					],
-					"seams_len": 0,
-					"seams": "3f877195-7da8-41fc-be16-63833584fc97"
-				}
-			}
+			"components": [
+				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20"
+			]
+		},
+		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
+			"type": "stf.mesh.seams",
+			"seams_len": 0,
+			"seams": "3f877195-7da8-41fc-be16-63833584fc97"
 		},
 		"4a76690a-8f1c-4a3c-9135-4bcac5c92831": {
 			"type": "stf.instance.mesh",
@@ -456,18 +437,17 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 					1.0
 				]
 			],
-			"instance": {
-				"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
-				"material_slots": [
-					{
-						"name": "Material",
-						"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
-					}
-				],
-				"blendshape_values": []
-			},
-			"referenced_resources": [],
-			"referenced_buffers": []
+			"instance": "0131108d-ea45-4ed7-a427-6c6f1a1a3f7e"
+		},
+		"0131108d-ea45-4ed7-a427-6c6f1a1a3f7e": {
+			"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
+			"material_slots": [
+				{
+					"name": "Material",
+					"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
+				}
+			],
+			"blendshape_values": []
 		},
 		"8a4019a2-ca1d-4f9b-a316-b118cd31dada": {
 			"type": "stf.prefab",
@@ -475,9 +455,7 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 			"root_nodes": [
 				"4a76690a-8f1c-4a3c-9135-4bcac5c92831"
 			],
-			"animations": [],
-			"referenced_resources": [],
-			"referenced_buffers": []
+			"animations": []
 		}
 	},
 	"buffers": {
