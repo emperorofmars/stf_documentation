@@ -2,17 +2,17 @@
 	"stf": {
 		"version_major": 0,
 		"version_minor": 0,
-		"root": "8a4019a2-ca1d-4f9b-a316-b118cd31dada",
+		"root": "c46be810-c8d5-4b41-9302-be189ae8edca",
 		"profiles": [],
 		"asset_info": {
 			"asset_name": "Default Cube"
 		},
 		"generator": "stfblender",
-		"timestamp": "2025-02-15T20:41:01.988159+00:00",
+		"timestamp": "2025-03-27T18:41:43.530040+00:00",
 		"metric_multiplier": 1
 	},
 	"resources": {
-		"ba0f6e23-cb13-4cd5-9f66-8184460befc4": {
+		"7bf9d0ed-6377-48bc-b764-ab72aefebfa6": {
 			"type": "stf.material",
 			"name": "Material",
 			"properties": {
@@ -25,35 +25,19 @@
 					]
 				}
 			},
-			"referenced_resources": [],
-			"referenced_buffers": [],
 			"style_hints": [],
 			"shader_targets": {}
 		},
-		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
+		"cef2b7a2-e4da-4762-9ba8-362cc441a6cf": {
 			"type": "stf.mesh",
 			"name": "Cube",
-			"referenced_resources": [],
-			"referenced_buffers": [
-				"d8e72e40-9006-441b-a0c5-1315700f14ef",
-				"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
-				"2eb9be5e-b2ad-4df0-9163-942a506ddff8",
-				"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
-				"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6",
-				"a66be574-6ed2-4607-9190-a1ed4e2331c3",
-				"cd1688fc-d100-4916-a0c2-dfa5899f010e",
-				"0a0e9df2-e63e-47b5-acab-1435d5b3579f",
-				"950f09cc-f6e1-4173-bf9a-2054ae233717",
-				"85cc4f16-0934-45f0-9249-304a991ee78a",
-				"d86f7202-ad21-4e94-8659-9f17c2be827b"
-			],
 			"material_slots": [
-				"ba0f6e23-cb13-4cd5-9f66-8184460befc4"
+				"7bf9d0ed-6377-48bc-b764-ab72aefebfa6"
 			],
 			"vertex_count": 8,
 			"vertex_width": 4,
 			"vertex_indices_width": 4,
-			"vertices": "d8e72e40-9006-441b-a0c5-1315700f14ef",
+			"vertices": "066d87ce-14af-4363-864b-de3f3b1fbf4d",
 			"vertex_color_width": 4,
 			"colors": [],
 			"split_count": 24,
@@ -62,47 +46,51 @@
 			"split_tangent_width": 4,
 			"split_color_width": 4,
 			"split_uv_width": 4,
-			"splits": "f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
-			"split_normals": "2eb9be5e-b2ad-4df0-9163-942a506ddff8",
-			"split_tangents": "d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
+			"splits": "e18e0731-0a8b-4b96-aab6-ce047418ec8f",
+			"split_normals": "afbaef7d-5a37-419e-ba52-866acaeca43c",
+			"split_tangents": "2629b0ca-9bd9-42dc-b305-6198ca2f355b",
 			"uvs": [
 				{
 					"name": "UVMap",
-					"uv": "4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6"
+					"uv": "77a96387-7301-4914-b120-9dfb4189e78a"
 				}
 			],
 			"split_colors": [],
 			"tris_count": 12,
 			"face_count": 6,
 			"face_indices_width": 4,
-			"tris": "a66be574-6ed2-4607-9190-a1ed4e2331c3",
+			"tris": "04b1027d-9c51-4753-a3be-069d434bc36c",
 			"material_indices_width": 4,
-			"faces": "cd1688fc-d100-4916-a0c2-dfa5899f010e",
-			"material_indices": "0a0e9df2-e63e-47b5-acab-1435d5b3579f",
+			"faces": "f3a9b48a-295a-45a9-b3e7-d5eef488cfa9",
+			"material_indices": "72eb1af2-094f-4a02-bd56-0332c06eb4b5",
 			"sharp_face_indices_len": 6,
-			"sharp_face_indices": "950f09cc-f6e1-4173-bf9a-2054ae233717",
+			"sharp_face_indices": "ea7006b3-c70d-4cae-aac4-2245df157169",
 			"lines_len": 0,
-			"lines": "85cc4f16-0934-45f0-9249-304a991ee78a",
+			"lines": "55e7a01b-1028-4e0e-b277-49f4b3671f87",
 			"sharp_edges_len": 0,
-			"sharp_edges": "d86f7202-ad21-4e94-8659-9f17c2be827b",
-			"armature": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
-			"bones": [],
-			"bone_weight_width": 4,
-			"weights": [],
-			"components": {
-				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
-					"type": "stf.mesh.seams",
-					"referenced_resources": [],
-					"referenced_buffers": [
-						"3f877195-7da8-41fc-be16-63833584fc97"
-					],
-					"seams_len": 0,
-					"seams": "3f877195-7da8-41fc-be16-63833584fc97"
-				}
-			}
+			"sharp_edges": "a64e4ba0-5211-4eaf-a808-700bf963d71e",
+			"components": [
+				"fcdc99bb-b7d1-420c-a9bd-8bbfc4d78673"
+			]
 		},
-		"4a76690a-8f1c-4a3c-9135-4bcac5c92831": {
+		"fcdc99bb-b7d1-420c-a9bd-8bbfc4d78673": {
+			"type": "stf.mesh.seams",
+			"seams_len": 0,
+			"seams": "82888e68-585d-4cfc-8381-0f7bb7298ef5"
+		},
+		"3f1ea70d-7f31-48e3-a9ce-e619958812cf": {
 			"type": "stf.instance.mesh",
+			"mesh": "cef2b7a2-e4da-4762-9ba8-362cc441a6cf",
+			"material_slots": [
+				{
+					"name": "Material",
+					"material": "7bf9d0ed-6377-48bc-b764-ab72aefebfa6"
+				}
+			],
+			"blendshape_values": []
+		},
+		"e3cd1a73-16b1-4702-968c-1f759ed4746f": {
+			"type": "stf.node",
 			"name": "Cube",
 			"children": [],
 			"trs": [
@@ -123,20 +111,9 @@
 					1.0
 				]
 			],
-			"instance": {
-				"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
-				"material_slots": [
-					{
-						"name": "Material",
-						"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
-					}
-				],
-				"blendshape_values": []
-			},
-			"referenced_resources": [],
-			"referenced_buffers": []
+			"instance": "3f1ea70d-7f31-48e3-a9ce-e619958812cf"
 		},
-		"30834490-b5db-4b17-8970-0dacbba245f4": {
+		"3394fbfe-1f05-4f75-889f-90450a8be02a": {
 			"type": "stf.node",
 			"name": "Light",
 			"children": [],
@@ -159,7 +136,7 @@
 				]
 			]
 		},
-		"0af022bb-8525-43d0-a21a-c8e05ab8ed8f": {
+		"dd015e94-898b-4d7f-8b23-32504af51739": {
 			"type": "stf.node",
 			"name": "Camera",
 			"children": [],
@@ -182,65 +159,63 @@
 				]
 			]
 		},
-		"8a4019a2-ca1d-4f9b-a316-b118cd31dada": {
+		"c46be810-c8d5-4b41-9302-be189ae8edca": {
 			"type": "stf.prefab",
-			"name": "Scene Collection",
+			"name": "Collection",
 			"root_nodes": [
-				"4a76690a-8f1c-4a3c-9135-4bcac5c92831",
-				"30834490-b5db-4b17-8970-0dacbba245f4",
-				"0af022bb-8525-43d0-a21a-c8e05ab8ed8f"
+				"e3cd1a73-16b1-4702-968c-1f759ed4746f",
+				"3394fbfe-1f05-4f75-889f-90450a8be02a",
+				"dd015e94-898b-4d7f-8b23-32504af51739"
 			],
-			"animations": [],
-			"referenced_resources": [],
-			"referenced_buffers": []
+			"animations": []
 		}
 	},
 	"buffers": {
-		"d8e72e40-9006-441b-a0c5-1315700f14ef": {
+		"066d87ce-14af-4363-864b-de3f3b1fbf4d": {
 			"type": "stf.buffer.included",
 			"index": 0
 		},
-		"f36cb7a4-ffd9-48e7-87b3-321c91da6c5a": {
+		"e18e0731-0a8b-4b96-aab6-ce047418ec8f": {
 			"type": "stf.buffer.included",
 			"index": 1
 		},
-		"2eb9be5e-b2ad-4df0-9163-942a506ddff8": {
+		"afbaef7d-5a37-419e-ba52-866acaeca43c": {
 			"type": "stf.buffer.included",
 			"index": 2
 		},
-		"d12eb259-c0f3-4b0a-bed1-6904e62f8a1b": {
+		"2629b0ca-9bd9-42dc-b305-6198ca2f355b": {
 			"type": "stf.buffer.included",
 			"index": 3
 		},
-		"4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6": {
+		"77a96387-7301-4914-b120-9dfb4189e78a": {
 			"type": "stf.buffer.included",
 			"index": 4
 		},
-		"a66be574-6ed2-4607-9190-a1ed4e2331c3": {
+		"04b1027d-9c51-4753-a3be-069d434bc36c": {
 			"type": "stf.buffer.included",
 			"index": 5
 		},
-		"cd1688fc-d100-4916-a0c2-dfa5899f010e": {
+		"f3a9b48a-295a-45a9-b3e7-d5eef488cfa9": {
 			"type": "stf.buffer.included",
 			"index": 6
 		},
-		"0a0e9df2-e63e-47b5-acab-1435d5b3579f": {
+		"72eb1af2-094f-4a02-bd56-0332c06eb4b5": {
 			"type": "stf.buffer.included",
 			"index": 7
 		},
-		"950f09cc-f6e1-4173-bf9a-2054ae233717": {
+		"ea7006b3-c70d-4cae-aac4-2245df157169": {
 			"type": "stf.buffer.included",
 			"index": 8
 		},
-		"85cc4f16-0934-45f0-9249-304a991ee78a": {
+		"55e7a01b-1028-4e0e-b277-49f4b3671f87": {
 			"type": "stf.buffer.included",
 			"index": 9
 		},
-		"d86f7202-ad21-4e94-8659-9f17c2be827b": {
+		"a64e4ba0-5211-4eaf-a808-700bf963d71e": {
 			"type": "stf.buffer.included",
 			"index": 10
 		},
-		"3f877195-7da8-41fc-be16-63833584fc97": {
+		"82888e68-585d-4cfc-8381-0f7bb7298ef5": {
 			"type": "stf.buffer.included",
 			"index": 11
 		}

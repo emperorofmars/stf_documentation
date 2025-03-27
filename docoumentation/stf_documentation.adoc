@@ -19,7 +19,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-**Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
+**Squirrel Transfer Format - Experimental Modular 3D Interchange Format** [version {revnumber}]
 
 Intended for (not only) game development use-cases.
 
@@ -38,14 +38,15 @@ STF implementations must provide an easy to use plugin system for modules, and i
 
 Objects of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be an UUID v4.
 
-The file extension for stf binary files is `.stf`.
-The file extension for stf Json files is `.stf.json`.
-The media-type for stf binary files is `model/stf+binary`.
-The media-type for stf json files is `model/stf+json`.
-The STF binary header is stored in `little endian` byte order.
-By default, binary buffers are stored in `little endian` byte order.
-The Json definition is encoded as `utf8`.
-STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
+.Key Facts
+* The file extension for stf binary files is `.stf`.
+* The file extension for stf Json files is `.stf.json`.
+* The media-type for stf binary files is `model/stf+binary`.
+* The media-type for stf json files is `model/stf+json`.
+* The STF binary header is stored in `little endian` byte order.
+* By default, binary buffers are stored in `little endian` byte order.
+* The Json definition is encoded as `utf8`.
+* STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
 == Binary Format
 An STF binary file consists of a binary header, a <<json-definition>>, and zero or more binary buffers.
@@ -159,7 +160,19 @@ All node kinds must be super-sets of `stf.node` or `stf.bone`.
 |children |No |Map<ID, Node> |
 |parent_binding |No |List<ID> |
 |components |No |Map<ID, Component> |
-|instance |No |Object |
+|instance |No |ID |
+|===
+
+==== Instance
+Instances have a 1 to 1 relationship to nodes. They represent an instance of a `data` resource on in the scene hierarchy. These include for example mesh or armature instances.
+Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
+
+.Instance resource properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|enabled |No |boolean |True by default
 |===
 
 ==== Component
