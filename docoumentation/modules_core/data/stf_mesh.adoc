@@ -1,4 +1,3 @@
-
 == stf.mesh
 
 .stf.mesh properties
@@ -8,17 +7,17 @@
 
 |armature |No |ID |ID of the armature if the mesh is skinned
 |vertex_count |Yes |int |Number of vertices
-|vertecies |Yes |Vertex buffer reference |
+|vertecies |Yes |ID |Vertex buffer reference
 |split_vertex_count |Yes |int |Number of split vertices
-|splits |Yes |Split vertex buffer reference |
+|splits |Yes |ID| Split vertex buffer reference
 |normals |No | |
 |tangents |No | |
 |colors |No | |
 |tris |No | |
 |faces |No | |
-|uvs |No |List of `uv` objects |
-|weights |No |List of `weights` objects |
-|blendshapes |No |List of `blendshape` objects |
+|uvs |No |List<UV-Object> |
+|weights |No |List<Weights-Object> |
+|blendshapes |No |List<Blendshape-Object> |
 |===
 
 .weights properties

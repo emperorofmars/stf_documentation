@@ -28,23 +28,20 @@ toc::[]
 == Introduction
 An STF asset can be represented as a single binary file, containing a Json definition and a set of binary buffers.
 
-Alternatively and optionally, an STF assset can be separated into a Json file containing the definition, and multiple buffer files. This is not required to be implemented for a valid STF implementation.
+By itself, STF defines merely a 'shell' format. Actual content is stored in `resources` and `buffers`.
+Resources have a `type`, and are identified by a unique ID. Support for importing, exporting & validationg resources of a specific `type` is implemented by a `module` for that `type`.
 
-By itself, STF defines merely a 'shell' format. Actual content is stored in `resources` defined by their `type`. Support for importing, exporting & validationg a resource is implemented by a `module`.
+The minimum required set of supported modules is specified in link:./modules.adoc[Modules].
 
-The minimum required set of modules is specified in link:./modules.adoc[Modules], as well as some additional not-required modules.
+STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable.
 
-STF implementations must provide an easy to use plugin system for modules, and if in any way possible, the ability to hot-load modules.
+Resources of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be an UUID v4.
 
-Objects of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be an UUID v4.
-
-.Key Facts
+=== Key Facts
 * The file extension for stf binary files is `.stf`.
-* The file extension for stf Json files is `.stf.json`.
 * The media-type for stf binary files is `model/stf+binary`.
-* The media-type for stf json files is `model/stf+json`.
 * The STF binary header is stored in `little endian` byte order.
-* By default, binary buffers are stored in `little endian` byte order.
+* By default, buffers are stored in `little endian` byte order.
 * The Json definition is encoded as `utf8`.
 * STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
@@ -76,11 +73,10 @@ The `stf` object holds meta information.
 |===
 |Key |Required |Type |Description
 
-|version_major |Yes |Integer |Major version of STF
-|version_minor |Yes |Integer |Minor version of STF
+|version_major |Yes |Int |Major version of STF
+|version_minor |Yes |Int |Minor version of STF
 |root |Yes |ID |ID of the root resource
-|profiles |No |List<String> |List of <<profiles, profiles>> this asset adheres to.
-|meta |No |Object<String, String> |Meta information such as authors, license or documentation link.
+|meta |No |Map<String, String> |Meta information such as authors, license or documentation link.
 |metric_multiplier |No |Float |Which number represents one meter. The default value is `1.0`.
 |===
 
@@ -110,29 +106,31 @@ The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf.p
 === resources
 The `resources` object is a map of resource objects identified by an ID.
 
-The various resource objects describe the files actual content. Each resource has a `type` property and optional lists of references to other resources and buffers. Any further properties are defined by the definition for the resource.
+The various resource objects describe the files actual content. Any further properties are defined by the definition for the resource.
 
 .Resource object general properties:
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|type |Yes |String |Namespaced type name of the resource.
-|referenced_resources |No |List<ID> |IDs of Resources this resource depends on.
-|referenced_buffers |No |List<ID> |IDs of Buffers this resource depends on.
+|type |Yes |String |Namespaced type of the resource.
+|referenced_resources |No |List<ID> |IDs of resources this resource references.
+|referenced_buffers |No |List<ID> |IDs of buffers this resource references.
 |name |No |String |Display name of the resource.
-|version_major |No |Integer |Major version of this resource. The default value is `0`.
-|version_minor |No |Integer |Major version of this resource. The default value is `0`.
+|version_major |No |Int |Major version of this resource. The default value is `0`.
+|version_minor |No |Int |Major version of this resource. The default value is `0`.
 |degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`.
 |===
 
-Resources may be composed of other resources if the relationship is 1 to 1. This is the case for components.
-Every resource has to list all references to buffers and resources it uses.
+If a referenced buffer is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field.
 
+==== Resource Kinds
 Resources can be `Data`, `Node`, `Instance` and `Component` kinds.
-Each of these kinds has additional properties.
+Each of these kinds have additional properties.
 
-==== Data
+The information about what `kind` a type is must be known by the type's implementation and is not contained in STF files. This information should be used to validate STF files.
+
+===== Data
 Data resources can be instantiated.
 Suppport for loading module plugins of this kind is required.
 
@@ -142,14 +140,13 @@ Suppport for loading module plugins of this kind is required.
 |Key |Required |Type |Description
 
 |fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation
-|components |No |Map<ID, Component> |
+|components |No |List<ID> |Component resource IDs
 |===
 
-==== Node
+===== Node
 Root nodes must be referenced by a `data` resource, usually `stf.prefab`.
 Node resources can not be instantiated. Only the parent of the entire hierarchy of nodes can be.
-Suppport for loading module plugins of this kind is required.
-All node kinds must be super-sets of `stf.node` or `stf.bone`.
+Suppport for loading module plugins of this kind is not required.
 
 .Node resource properties
 [%autowidth, %header,cols=4*]
@@ -157,15 +154,16 @@ All node kinds must be super-sets of `stf.node` or `stf.bone`.
 |Key |Required |Type |Description
 
 |enabled |No |boolean |True by default
-|children |No |Map<ID, Node> |
-|parent_binding |No |List<ID> |
-|components |No |Map<ID, Component> |
-|instance |No |ID |
+|children |No |List<ID> |IDs of child-nodes
+|parent_binding |No |List<Path Part> |Path to the parent resource, for example a bone of a node with an armature-instance
+|components |No |List<ID> |Component resource IDs
+|instance |No |ID |Reference to an instance resource
 |===
 
-==== Instance
+===== Instance
 Instances have a 1 to 1 relationship to nodes. They represent an instance of a `data` resource on in the scene hierarchy. These include for example mesh or armature instances.
 Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
+Suppport for loading module plugins of this kind is required.
 
 .Instance resource properties
 [%autowidth, %header,cols=4*]
@@ -175,8 +173,8 @@ Instances can provide data relevant for the instance of the resource, such as an
 |enabled |No |boolean |True by default
 |===
 
-==== Component
-Represents additional functionality or information for `Data` or `Node` kinds.
+===== Component
+Represents additional functionality or information for `Data` and `Node` kinds.
 Component resources can not be instantiated. Component resources must be stored within `Data` or `Node` kinds and can not exist on the top level `resources` object.
 Suppport for loading module plugins of this kind is required.
 
@@ -188,12 +186,6 @@ Suppport for loading module plugins of this kind is required.
 |enabled |No |boolean |True by default
 |overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
-
-==== Resource Composition Examples
-xref:./modules_core/data/stf_image.adoc[`stf.image`] is a `Data` kind. `Data` kinds can only exist at the top level.
-xref:./modules_core/node/stf_node_spatial.adoc[`stf.node.spatial`] is a `Node` kind. `Node` kinds can only exist within `Data` kinds.
-
-The information about what `kind` a type is must be known by a type's implementation and is not contained in STF files. This information should be used to validate STF files.
 
 .Example
 [%collapsible]
@@ -220,14 +212,15 @@ The information about what `kind` a type is must be known by a type's implementa
 		"name": "Body_Albedo",
 		"image_format": "png",
 		"texture_type": "rgb",
-		"components": {
-			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
-				"type": "stf.texture",
-				"resolution": [2048, 2048],
-				"compression": "BC7",
-				"texture_type": "color",
-				"downscale_priority": 0
-			}
+		"components": [
+			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70"
+		],
+		"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
+			"type": "stf.texture",
+			"resolution": [2048, 2048],
+			"compression": "BC7",
+			"texture_type": "color",
+			"downscale_priority": 0
 		}
 	},
 }
@@ -253,7 +246,7 @@ This type represents a buffer contained in the same file.
 |===
 |Key |Required |Type |Description
 
-|index |Yes |Integer |Index of the binary buffer in the file
+|index |Yes |Int |Index of the binary buffer in the file
 |===
 
 .Example

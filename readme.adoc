@@ -22,9 +22,15 @@ Intended for (not only) game development use-cases.
 |**https://github.com/emperorofmars/stf_unity[Unity]**
 |===
 
-⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
-
 This repository hosts the documentation for the core format and core modules.
+
+[cols=3*, frame=none, grid=none]
+[%autowidth]
+|===
+|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
+|**link:./docoumentation/modules.adoc[Modules Documentation]**
+|**link:./stf_roadmap.adoc[Roadmap]**
+|===
 
 ---
 
@@ -38,16 +44,6 @@ STF doesn't hard-code any specific resource types like GLTF. It consists of a st
 * Doesn't impose any descisions on artists and game-developers
 * Prioritizes developer-experience & user-experience over performance
 * Maximizes development speed for STF implementations and additional third party modules
-
----
-
-[cols=3*, frame=none, grid=none]
-[%autowidth]
-|===
-|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
-|**link:./docoumentation/modules.adoc[Modules Documentation]**
-|**link:./stf_roadmap.adoc[Roadmap]**
-|===
 
 ---
 
@@ -197,6 +193,8 @@ Previously, a proof-of-concept for such a format has been made here: https://git
 }
 ----
 ====
+
+⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
 
 == License
 This repository is licensed under **CC-BY-4.0** (<https://creativecommons.org/licenses/by/4.0/>)

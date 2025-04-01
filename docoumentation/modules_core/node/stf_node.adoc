@@ -1,18 +1,10 @@
 == stf.node
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
-.stf.node characteristics
-[%autowidth, %header,cols=4*]
-|===
-| Kind |Instantiable | |
-
-| Node |No | |
-|===
-
 .stf.node properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|trs |Yes |TRS array |The nodes 3D transform
+|trs |Yes |TRS |The nodes 3D transform
 |===
