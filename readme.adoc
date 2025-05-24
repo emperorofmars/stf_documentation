@@ -35,7 +35,7 @@ This repository hosts the documentation for the core format and core modules.
 == Concept
 STF by itself is merely a shell format. It provides a framework for different modules to parse and serialize resourses.
 
-It doesn't hard code any specific resource types, however a few modules, including but not limited to `stf.mesh`, `stf.node` and `stf.material`, are provided by default.
+STF doesn't hard code any specific resource types, however a few modules, including but not limited to `stf.mesh`, `stf.node` and `stf.material`, are provided by default.
 
 Additional modules can be easily implemented by third parties. Module types, aside from the default ones, should use reverse domain notation for their type.
 

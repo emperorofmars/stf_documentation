@@ -26,16 +26,15 @@ Intended for (not only) game development use-cases.
 toc::[]
 
 == Introduction
-An STF asset can be represented as a single binary file, containing a Json definition and a set of binary buffers.
+STF is a binary file format, containing a header, a Json definition and a set of binary buffers.
 
-By itself, STF defines merely a 'shell' format. Actual content is stored in `resources` and `buffers`.
-Resources have a `type`, and are identified by a unique ID. Support for importing, exporting & validationg resources of a specific `type` is implemented by a `module` for that `type`.
+By itself, STF defines merely a shell format. Actual content is stored in `resources` and `buffers`.
+Resources have a `type` property, and are identified by a unique ID.
+Based on a resources type, a module gets selected which provides support to import & export it.
 
 The minimum required set of supported modules is specified in link:./modules.adoc[Modules].
 
-STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable.
-
-Resources of any type get referenced by a unique ID as a string. This will be refered to as `ID`. Usually it should be an UUID v4.
+STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 
 === Key Facts
 * The file extension for stf binary files is `.stf`.
