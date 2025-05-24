@@ -55,7 +55,7 @@ An STF binary file consists of a binary header, a <<json-definition>>, and zero 
 |4 | STF binary format version major
 |4 | STF binary format version minor
 |4 | Number of buffers, including the Json definiton buffer
-|8 * {number of buffers} | Buffer length in bytes
+|8 * {number of buffers} | Buffer lengths in bytes
 |{number of buffers} * {buffer length} | The buffers
 |===
 
