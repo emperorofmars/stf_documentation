@@ -15,7 +15,7 @@ Implementation progress.
 |stf.bone |5/5 |5/tbd |tbd |tbd |tbd |tbd
 |stf.mesh |5/5 |5/tbd |tbd |tbd |tbd |tbd
 |stf.instance.mesh |5/5 |4/tbd |tbd |tbd |tbd |tbd
-|stf.material |5/5 |tbd |tbd |tbd |tbd |tbd
+|stf.material |2/2 |tbd |tbd |tbd |tbd |tbd
 |stf.image |5/5 |tbd |tbd |tbd |tbd |tbd
 |stf.texture |tbd |tbd |tbd |tbd |tbd |tbd
 |stf.animation |4/4 |4/tbd |tbd |tbd |tbd |tbd
