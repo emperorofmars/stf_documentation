@@ -17,7 +17,7 @@ Intended for (not only) game development use-cases.
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**In development for for:**
+|**In development for:**
 |**https://github.com/emperorofmars/stf_blender[Blender]**
 |**https://github.com/emperorofmars/stf_unity[Unity]**
 |===
