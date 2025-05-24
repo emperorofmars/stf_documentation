@@ -32,17 +32,22 @@ This repository hosts the documentation for the core format and core modules.
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
 
----
+== Concept
+Similar to GLTF 2.0, STF consists of a Json definition and binary buffers. However, this format is firmly intended for interchange, not runtime loading optimization.
+Game-engines are responsible for runtime optimization, not the 3d file format or 3d modeling tool.
 
-Similar to the concept of GLTF 2.0, this format consists of a Json definition and binary buffers. However, this format is firmly intended for interchange & integrity, not runtime loading optimization.
-Game-engines are responsible for runtime optimization, not the 3d file format or 3d modeling tool!
+STF itself is merely a shell format. It doesn't hard code any specific resource types.
+Instead, STF provides a framework for resources to store their data and relationships between them. Hot-loadable modules are responsible for parsing and serializing resources.
+A set of Modules like `stf.mesh`, `stf.node` and `stf.material` is included by default with every STF implementation.
+Additional modules can be easily implemented by third parties.
 
-STF doesn't hard-code any specific resource types like GLTF. It consists of a structure of resources which get identified by a 'type' property. Support for any arbitrary type gets implemented by modules, which are pluggable and hot-loadable.
+Module types, aside from the default ones, should use reverse domain notation for their type.
+Every resource of a module is identified by a UUID and specifies its module type.
 
-.Core Principles
-* Highly modular and extensible
-* Doesn't impose any descisions on artists and game-developers
-* Prioritizes developer-experience & user-experience over performance
+== Core Principles
+* Fully modular and extensible
+* Doesn't impose any artificial limitations on artists and game-developers
+* Prioritizes developer-experience & user-experience over performance and filesize
 * Maximizes development speed for STF implementations and additional third party modules
 
 ---
@@ -193,8 +198,6 @@ Previously, a proof-of-concept for such a format has been made here: https://git
 }
 ----
 ====
-
-⭐ Star this repo if you would like to not loose half your work between export and import! ⭐
 
 == License
 This repository is licensed under **CC-BY-4.0** (<https://creativecommons.org/licenses/by/4.0/>)

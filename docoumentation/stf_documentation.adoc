@@ -122,7 +122,7 @@ The various resource objects describe the files actual content. Any further prop
 |degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`.
 |===
 
-If a referenced buffer is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field.
+If a referenced buffer is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field. This is only required for non-default modules.
 
 ==== Resource Kinds
 Resources can be `Data`, `Node`, `Instance` and `Component` kinds.

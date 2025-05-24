@@ -1,13 +1,22 @@
 = STF Roadmap
 :hardbreaks-option:
 
-== Step 1
-Get some basics working between Blender, Unity, 3DsMax and Godot.
-Weight painted models can be transferred between these application.
-Modules can be hot-loaded and developed mostly in isolation of each other.
+Implementation progress.
 
-== Step 2
-Implement all core modules across the previous applications.
+.Default Module Implementations (0-5 points for: Import/Export)
+[%autowidth, %header,cols=7*]
+|===
+|Module |Blender |Unity |Godot |Unreal |3dsMax |Maya
 
-== Step 3
-Polish the UX for artists and users.
+|stf.prefab |5/5 |5/tbd |tbd |tbd |tbd |tbd
+|stf.node |5/5 |5/tbd |tbd |tbd |tbd |tbd
+|stf.armature |5/5 |5/tbd |tbd |tbd |tbd |tbd
+|stf.instance.armature |5/5 |4/tbd |tbd |tbd |tbd |tbd
+|stf.bone |5/5 |5/tbd |tbd |tbd |tbd |tbd
+|stf.mesh |5/5 |5/tbd |tbd |tbd |tbd |tbd
+|stf.instance.mesh |5/5 |4/tbd |tbd |tbd |tbd |tbd
+|stf.material |5/5 |tbd |tbd |tbd |tbd |tbd
+|stf.image |5/5 |tbd |tbd |tbd |tbd |tbd
+|stf.texture |tbd |tbd |tbd |tbd |tbd |tbd
+|stf.animation |4/4 |4/tbd |tbd |tbd |tbd |tbd
+|===
