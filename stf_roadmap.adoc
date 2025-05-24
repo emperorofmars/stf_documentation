@@ -8,15 +8,15 @@ Implementation progress.
 |===
 |Module |Blender |Unity |Godot |Unreal |3dsMax |Maya
 
-|stf.prefab |5/5 |5/tbd |tbd |tbd |tbd |tbd
-|stf.node |5/5 |5/tbd |tbd |tbd |tbd |tbd
-|stf.armature |5/5 |5/tbd |tbd |tbd |tbd |tbd
-|stf.instance.armature |5/5 |4/tbd |tbd |tbd |tbd |tbd
-|stf.bone |5/5 |5/tbd |tbd |tbd |tbd |tbd
-|stf.mesh |5/5 |5/tbd |tbd |tbd |tbd |tbd
-|stf.instance.mesh |5/5 |4/tbd |tbd |tbd |tbd |tbd
-|stf.material |2/2 |tbd |tbd |tbd |tbd |tbd
-|stf.image |5/5 |tbd |tbd |tbd |tbd |tbd
-|stf.texture |tbd |tbd |tbd |tbd |tbd |tbd
-|stf.animation |4/4 |4/tbd |tbd |tbd |tbd |tbd
+|stf.prefab					|5/5	|5/tbd	|tbd |tbd |tbd |tbd
+|stf.node					|5/5	|5/tbd	|tbd |tbd |tbd |tbd
+|stf.armature				|5/5	|5/tbd	|tbd |tbd |tbd |tbd
+|stf.instance.armature	|5/5	|4/tbd	|tbd |tbd |tbd |tbd
+|stf.bone					|5/5	|5/tbd	|tbd |tbd |tbd |tbd
+|stf.mesh					|5/5	|5/tbd	|tbd |tbd |tbd |tbd
+|stf.instance.mesh		|5/5	|4/tbd	|tbd |tbd |tbd |tbd
+|stf.material				|2/2	|tbd		|tbd |tbd |tbd |tbd
+|stf.image					|3/3	|1/tbd	|tbd |tbd |tbd |tbd
+|stf.texture				|2/2	|tbd		|tbd |tbd |tbd |tbd
+|stf.animation				|4/4	|4/tbd	|tbd |tbd |tbd |tbd
 |===
