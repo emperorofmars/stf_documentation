@@ -14,12 +14,13 @@ endif::[]
 
 Intended for (not only) game development use-cases.
 
-[cols=3*, frame=none, grid=none]
+[cols=4*, frame=none, grid=none]
 [%autowidth]
 |===
 |**In development for:**
 |**https://github.com/emperorofmars/stf_blender[Blender]**
 |**https://github.com/emperorofmars/stf_unity[Unity]**
+|Godot (TBD)
 |===
 
 This repository hosts the documentation for the core format and core modules.
