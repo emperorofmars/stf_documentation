@@ -20,8 +20,12 @@ Intended for (not only) game development use-cases.
 |**In development for:**
 |**https://github.com/emperorofmars/stf_blender[Blender]**
 |**https://github.com/emperorofmars/stf_unity[Unity]**
-|Godot (TBD)
+|Godot (TBD soon)
 |===
+
+Very relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bevy, BabylonJs, ...
+
+---
 
 This repository hosts the documentation for the core format and core modules.
 
