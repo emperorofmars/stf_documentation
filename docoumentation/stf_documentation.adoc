@@ -263,11 +263,248 @@ This type represents a buffer contained in the same file.
 ====
 
 === Minimal Definition Example
+//.Minimal example Json definition
+//[%collapsible]
+//====
+//[,json]
+//----
+//include::examples/minimal.json[]
+//----
+//====
 .Show
 [%collapsible]
 ====
 [,json]
 ----
-include::../examples/minimal.json[]
+{
+	"stf": {
+		"version_major": 0,
+		"version_minor": 0,
+		"root": "50695120-9637-4a9f-be77-bfa3b06504f8",
+		"profiles": [],
+		"asset_info": {
+			"asset_name": "Default Cube"
+		},
+		"generator": "stf_blender",
+		"generator_version": "0.0.1",
+		"timestamp": "2025-06-17T15:43:23.736748+00:00",
+		"metric_multiplier": 1
+	},
+	"resources": {
+		"26dc0d69-1ae8-4397-9620-adcbf4d78d8e": {
+			"type": "stf.material",
+			"name": "Material",
+			"properties": {
+				"albedo.color": {
+					"type": "color",
+					"values": [
+						[
+							0.800000011920929,
+							0.800000011920929,
+							0.800000011920929,
+							1.0
+						]
+					]
+				},
+				"roughness.value": {
+					"type": "float",
+					"values": [
+						0.5
+					]
+				},
+				"metallic.value": {
+					"type": "float",
+					"values": [
+						0.0
+					]
+				}
+			},
+			"style_hints": [
+				"realistic",
+				"pbr"
+			],
+			"shader_targets": {
+				"stfblender": [
+					"ShaderNodeBsdfPrincipled"
+				]
+			}
+		},
+		"d37b3ebb-cfd3-4862-b411-5a204d69c890": {
+			"type": "stf.mesh",
+			"name": "Cube",
+			"material_slots": [
+				"26dc0d69-1ae8-4397-9620-adcbf4d78d8e"
+			],
+			"float_width": 4,
+			"indices_width": 1,
+			"vertices": "d00a096e-4326-4fdb-bf02-eb3de813e84f",
+			"vertex_color_width": 4,
+			"colors": [],
+			"splits": "2dae3757-6ce4-4119-968c-397ee0ce105f",
+			"split_normals": "4c25c590-7a8b-4a88-bf42-f4f7c34cdef4",
+			"split_tangents": "538c4eb6-eeca-476b-a929-c3649157a81f",
+			"uvs": [
+				{
+					"name": "UVMap",
+					"uv": "be2b2b11-85bc-4beb-9cff-880946e137bf"
+				}
+			],
+			"split_colors": [],
+			"tris": "a57a4aea-a62a-4de1-af00-1942ee555bee",
+			"material_indices_width": 1,
+			"faces": "2222c1fc-2a27-4d0b-843a-d835878559f8",
+			"material_indices": "33607654-7624-4a63-9ddf-c1dbba31589d",
+			"sharp_face_indices": "7f2c36a2-dbd8-4b73-b8a9-d52ed3b78ca7",
+			"lines": "469abcd8-fdcf-485c-b2c6-6faf2bf84150",
+			"sharp_edges": "635c99eb-00ae-4066-b5ad-1b7d1e4c54f3",
+			"components": [
+				"2a4a7084-0df6-4a01-b25f-09de8825defd"
+			]
+		},
+		"2a4a7084-0df6-4a01-b25f-09de8825defd": {
+			"type": "stfexp.mesh.seams",
+			"seams_len": 0,
+			"seams": "e3cc3cbf-a72d-448a-b9d4-51db25909d58"
+		},
+		"46de4bce-c119-404e-8348-43ac53c8317d": {
+			"type": "stf.instance.mesh",
+			"mesh": "d37b3ebb-cfd3-4862-b411-5a204d69c890",
+			"materials": [
+				"26dc0d69-1ae8-4397-9620-adcbf4d78d8e"
+			],
+			"blendshape_values": []
+		},
+		"0585218b-dc88-4a9b-b7e5-c67a40a988a6": {
+			"type": "stf.node",
+			"name": "Cube",
+			"children": [],
+			"trs": [
+				[
+					0.0,
+					0.0,
+					-0.0
+				],
+				[
+					0.0,
+					0.0,
+					-0.0,
+					1.0
+				],
+				[
+					1.0,
+					1.0,
+					1.0
+				]
+			],
+			"instance": "46de4bce-c119-404e-8348-43ac53c8317d"
+		},
+		"c76b3b6f-8ef6-444a-91e6-137000d12f0e": {
+			"type": "stf.node",
+			"name": "Light",
+			"children": [],
+			"trs": [
+				[
+					4.076245307922363,
+					5.903861999511719,
+					-1.0054539442062378
+				],
+				[
+					0.16907574236392975,
+					0.7558803558349609,
+					-0.27217137813568115,
+					0.570947527885437
+				],
+				[
+					1.0,
+					1.0,
+					0.9999999403953552
+				]
+			]
+		},
+		"9a05989b-ca4f-4cef-baa3-952564e705da": {
+			"type": "stf.node",
+			"name": "Camera",
+			"children": [],
+			"trs": [
+				[
+					7.358891487121582,
+					4.958309173583984,
+					6.925790786743164
+				],
+				[
+					0.483536034822464,
+					0.33687159419059753,
+					-0.20870360732078552,
+					0.7804827094078064
+				],
+				[
+					1.0,
+					1.0,
+					1.0
+				]
+			]
+		},
+		"50695120-9637-4a9f-be77-bfa3b06504f8": {
+			"type": "stf.prefab",
+			"name": "Collection",
+			"root_nodes": [
+				"0585218b-dc88-4a9b-b7e5-c67a40a988a6",
+				"c76b3b6f-8ef6-444a-91e6-137000d12f0e",
+				"9a05989b-ca4f-4cef-baa3-952564e705da"
+			],
+			"animations": []
+		}
+	},
+	"buffers": {
+		"d00a096e-4326-4fdb-bf02-eb3de813e84f": {
+			"type": "stf.buffer.included",
+			"index": 0
+		},
+		"2dae3757-6ce4-4119-968c-397ee0ce105f": {
+			"type": "stf.buffer.included",
+			"index": 1
+		},
+		"4c25c590-7a8b-4a88-bf42-f4f7c34cdef4": {
+			"type": "stf.buffer.included",
+			"index": 2
+		},
+		"538c4eb6-eeca-476b-a929-c3649157a81f": {
+			"type": "stf.buffer.included",
+			"index": 3
+		},
+		"be2b2b11-85bc-4beb-9cff-880946e137bf": {
+			"type": "stf.buffer.included",
+			"index": 4
+		},
+		"a57a4aea-a62a-4de1-af00-1942ee555bee": {
+			"type": "stf.buffer.included",
+			"index": 5
+		},
+		"2222c1fc-2a27-4d0b-843a-d835878559f8": {
+			"type": "stf.buffer.included",
+			"index": 6
+		},
+		"33607654-7624-4a63-9ddf-c1dbba31589d": {
+			"type": "stf.buffer.included",
+			"index": 7
+		},
+		"7f2c36a2-dbd8-4b73-b8a9-d52ed3b78ca7": {
+			"type": "stf.buffer.included",
+			"index": 8
+		},
+		"469abcd8-fdcf-485c-b2c6-6faf2bf84150": {
+			"type": "stf.buffer.included",
+			"index": 9
+		},
+		"635c99eb-00ae-4066-b5ad-1b7d1e4c54f3": {
+			"type": "stf.buffer.included",
+			"index": 10
+		},
+		"e3cc3cbf-a72d-448a-b9d4-51db25909d58": {
+			"type": "stf.buffer.included",
+			"index": 11
+		}
+	}
+}
 ----
 ====
