@@ -11,4 +11,4 @@ It can never be instantiated recursively or in a loop.
 |animations |No |List<ID> |Animations which originate from this prefab's root
 |===
 
-The only allowed type for nodes contained in `stf.prefab` is `stf.node`.
+The only allowed type for nodes in `root_nodes` is xref:../node/stf_node.adoc[`stf.node`].

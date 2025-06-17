@@ -5,28 +5,36 @@
 |===
 |Key |Required |Type |Description
 
-|armature |No |ID |ID of the armature if the mesh is skinned
-|vertex_count |Yes |int |Number of vertices
-|vertecies |Yes |ID |Vertex buffer reference
-|split_vertex_count |Yes |int |Number of split vertices
-|splits |Yes |ID| Split vertex buffer reference
-|normals |No | |
-|tangents |No | |
+|float_width |No |Int |Byte-width of float-values
+|indices_width |No |Int |Byte-width of indices
+|material_slots |No |List<ID / null> |List of material IDs in the order of the meshes material-slots
+|vertecies |Yes |ID |Vertex buffer ID
 |colors |No | |
+|splits |Yes |ID | Split vertex buffer ID
+|split_normals |No | |
+|split_tangents |No | |
+|split_colors |No | |
 |tris |No | |
 |faces |No | |
-|uvs |No |List<UV-Object> |
+|material_indices |No | |
+|sharp_edges |No | |
+|sharp_face_indices |No | |
+|lines |No | |
+|armature |No |ID |ID of the armature if the mesh is skinned
+|bones |No |List<ID> |
 |weights |No |List<Weights-Object> |
+|uvs |No |List<UV-Object> |
 |blendshapes |No |List<Blendshape-Object> |
 |===
 
-.weights properties
+.Weights-Object properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|indexed |No |bool |
-|format_indices |No |string |
-|format |No |string |
+|indexed |Yes |bool |
+|count |Yes |Int |
 |buffer |Yes |ID |Buffer ID
 |===
+
+...TODO

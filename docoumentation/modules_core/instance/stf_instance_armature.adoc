@@ -1,2 +1,10 @@
-
 == stf.instance.armature
+Instantiates an armature onto a node.
+
+.properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+|armature |Yes |ID |ID of the instantiated armature resource, usually xref:../data/stf_armature.adoc[`stf.armature`]
+|pose |No |Map<ID, TRS> |Map of the corresponding bone and TRS.
+|===

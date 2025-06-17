@@ -3,7 +3,7 @@
 
 Implementation progress.
 
-.Default Module Implementations (0-5 points for: Import/Export)
+.Core Module Implementations (0-5 points for: Import/Export)
 [%autowidth, %header,cols=4*]
 |===
 |Module |Blender |Unity |Godot
@@ -11,12 +11,21 @@ Implementation progress.
 |stf.prefab					|5/5	|5/tbd	|tbd
 |stf.node					|5/5	|5/tbd	|tbd
 |stf.armature				|5/5	|5/tbd	|tbd
-|stf.instance.armature	|5/5	|4/tbd	|tbd
 |stf.bone					|5/5	|5/tbd	|tbd
+|stf.instance.armature	|5/5	|5/tbd	|tbd
 |stf.mesh					|5/5	|5/tbd	|tbd
-|stf.instance.mesh		|5/5	|4/tbd	|tbd
+|stf.instance.mesh		|5/5	|5/tbd	|tbd
 |stf.material				|2/2	|tbd		|tbd
-|stf.image					|3/3	|1/tbd	|tbd
-|stf.texture				|2/2	|tbd		|tbd
+|stf.image					|3/3	|3/tbd	|tbd
+|stf.texture				|2/2	|2/tbd	|tbd
 |stf.animation				|4/4	|4/tbd	|tbd
+|===
+
+.Expanded Module Implementations (0-5 points for: Import/Export)
+[%autowidth, %header,cols=4*]
+|===
+|Module |Blender |Unity |Godot
+
+|stf.mesh.seams			|5/5	|-			|-
+|stf.constraint.twist	|5/5	|5/tbd	|tbd
 |===

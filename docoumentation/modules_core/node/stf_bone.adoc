@@ -6,8 +6,10 @@ Can only exist within `stf.armature`.
 |===
 |Key |Required |Type |Description
 
-|head |Yes |Translation |The position of the bones head relative to its armature position.
-|tail |Yes |Translation |The position of the bones tail relative to its armature position.
-|roll |Yes |Float |
+|translation |Yes |Translation |The position of the bone relative to its armature position.
+|rotation |Yes |Rotation |The rotation of the bones head relative to its armature position.
+|length |Yes |Float |The bones length
 |connected |No |Boolean |Default `false`
 |===
+
+Only other `stf.bone` type nodes are allowed as its children.

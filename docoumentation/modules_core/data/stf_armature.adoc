@@ -1,2 +1,15 @@
-
 == stf.armature
+A armature represents a hierarchy of bones.
+It can never be instantiated recursively or in a loop.
+
+.stf.armature properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|root_bones |Yes |List<ID> |IDs of nodes
+|===
+
+The only allowed type for nodes in `root_bones` is xref:../node/stf_bone.adoc[`stf.bone`].
+
+Armatures can be instantiated by xref:../instance/stf_instance_armature.adoc[`stf.instance.armature`].

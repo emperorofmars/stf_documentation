@@ -2,13 +2,13 @@
 
 = STF Core: Documentation
 Mars <mars@squirrel.pub>
-v0.0.0
+v0.0.1
 :homepage: https://github.com/emperorofmars/stf
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
 :library: Asciidoctor
 :toc:
-:toclevels: 4
+:toclevels: 3
 :toc-placement!:
 :idprefix:
 :idseparator: -
@@ -26,7 +26,7 @@ Intended for (not only) game development use-cases.
 toc::[]
 
 == Introduction
-STF is a binary file format, containing a header, a Json definition and a set of binary buffers.
+STF is a binary file format, containing a binary header, a Json definition and a set of binary buffers.
 
 By itself, STF defines merely a shell format. Actual content is stored in `resources` and `buffers`.
 Resources have a `type` property, and are identified by a unique ID.
@@ -40,7 +40,6 @@ STF implementations must provide an easy to use plugin system for modules. If in
 * The file extension for stf binary files is `.stf`.
 * The media-type for stf binary files is `model/stf+binary`.
 * The STF binary header is stored in `little endian` byte order.
-* By default, buffers are stored in `little endian` byte order.
 * The Json definition is encoded as `utf8`.
 * STF uses the same coordinate system as glTF 2.0. (See https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units[glTF-2.0. coordinate-system-and-units])
 
@@ -64,7 +63,7 @@ The Json definition is the first and only required buffer.
 == Json Definition
 The root Json element is an object. It contains 3 properties: `<<stf>>`, `<<resources>>` and `<<buffers>>`.
 
-=== stf
+=== "stf"
 The `stf` object holds meta information.
 
 .`stf` object properties:
@@ -76,10 +75,12 @@ The `stf` object holds meta information.
 |version_minor |Yes |Int |Minor version of STF
 |root |Yes |ID |ID of the root resource
 |meta |No |Map<String, String> |Meta information such as authors, license or documentation link.
+|generator |No |String |The name of the STF implementation that created this file
+|timestamp |No |String |Timestamp as a String in the ISO format.
 |metric_multiplier |No |Float |Which number represents one meter. The default value is `1.0`.
 |===
 
-The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf.prefab`] type. It represents the assets hierarchy and has a single root node.
+The root resource must be a xref:./modules_core/data/stf_prefab.adoc[`stf.prefab`]. It represents the assets scene-hierarchy.
 
 .Example
 [%collapsible]
@@ -102,17 +103,17 @@ The root resource must be of the xref:./modules_core/data/stf_prefab.adoc[`stf.p
 ----
 ====
 
-=== resources
+=== "resources"
 The `resources` object is a map of resource objects identified by an ID.
 
-The various resource objects describe the files actual content. Any further properties are defined by the definition for the resource.
+The various resource objects describe the files actual content. Any further properties are defined by each resources module.
 
 .Resource object general properties:
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|type |Yes |String |Namespaced type of the resource.
+|type |Yes |String |Type of the resource.
 |referenced_resources |No |List<ID> |IDs of resources this resource references.
 |referenced_buffers |No |List<ID> |IDs of buffers this resource references.
 |name |No |String |Display name of the resource.
@@ -121,17 +122,18 @@ The various resource objects describe the files actual content. Any further prop
 |degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`.
 |===
 
-If a referenced buffer is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field. This is only required for non-default modules.
+If a referenced resource is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field. This is only required for non-default modules.
+
+A referenced buffer must be additionally stored in the `referenced_buffers` field. This is only required for non-default modules.
 
 ==== Resource Kinds
 Resources can be `Data`, `Node`, `Instance` and `Component` kinds.
-Each of these kinds have additional properties.
+Each of these kinds has additional properties.
 
-The information about what `kind` a type is must be known by the type's implementation and is not contained in STF files. This information should be used to validate STF files.
+The information about what `kind` a resource is, must be known by the resource-type's implementation and is not contained in STF files itself.
 
 ===== Data
-Data resources can be instantiated.
-Suppport for loading module plugins of this kind is required.
+Suppport for module plugins of this kind is required.
 
 .Data resource properties
 [%autowidth, %header,cols=4*]
@@ -143,9 +145,8 @@ Suppport for loading module plugins of this kind is required.
 |===
 
 ===== Node
-Root nodes must be referenced by a `data` resource, usually `stf.prefab`.
-Node resources can not be instantiated. Only the parent of the entire hierarchy of nodes can be.
-Suppport for loading module plugins of this kind is not required.
+For now only `stf.node` and `stf.bone` are supported.
+Suppport for module plugins of this kind is not required.
 
 .Node resource properties
 [%autowidth, %header,cols=4*]
@@ -154,15 +155,15 @@ Suppport for loading module plugins of this kind is not required.
 
 |enabled |No |boolean |True by default
 |children |No |List<ID> |IDs of child-nodes
-|parent_binding |No |List<Path Part> |Path to the parent resource, for example a bone of a node with an armature-instance
 |components |No |List<ID> |Component resource IDs
-|instance |No |ID |Reference to an instance resource
 |===
 
 ===== Instance
-Instances have a 1 to 1 relationship to nodes. They represent an instance of a `data` resource on in the scene hierarchy. These include for example mesh or armature instances.
+They represent an instance of a `data` resource in the scene hierarchy.
+These include for example mesh or armature instances.
 Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
-Suppport for loading module plugins of this kind is required.
+An instance resource can be referenced only once by a `Node` resource.
+Suppport for module plugins of this kind is required.
 
 .Instance resource properties
 [%autowidth, %header,cols=4*]
@@ -173,9 +174,9 @@ Suppport for loading module plugins of this kind is required.
 |===
 
 ===== Component
-Represents additional functionality or information for `Data` and `Node` kinds.
-Component resources can not be instantiated. Component resources must be stored within `Data` or `Node` kinds and can not exist on the top level `resources` object.
-Suppport for loading module plugins of this kind is required.
+They Represents additional functionality or information for `Data` and `Node` resources.
+A component resource can be referenced only once by a `Data` or `Node` resource.
+Suppport for module plugins of this kind is required.
 
 .Component resource properties
 [%autowidth, %header,cols=4*]
@@ -208,34 +209,32 @@ Suppport for loading module plugins of this kind is required.
 	},
 	"6f03d810-4613-467d-921b-a5302552f9d5": {
 		"type": "stf.image",
-		"name": "Body_Albedo",
+		"name": "Body_Color",
 		"image_format": "png",
-		"texture_type": "rgb",
+		"buffer": "4f825896-ecb3-4c6e-b90a-d5b8304a40c4",
 		"components": [
 			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70"
 		],
-		"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
-			"type": "stf.texture",
-			"resolution": [2048, 2048],
-			"compression": "BC7",
-			"texture_type": "color",
-			"downscale_priority": 0
-		}
-	},
+		"referenced_buffers": [
+			"4f825896-ecb3-4c6e-b90a-d5b8304a40c4"
+		]
+	}
+	"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
+		"type": "stf.texture",
+		"resolution": [2048, 2048],
+		"quality": 0.7,
+		"texture_type": "color",
+		"downscale_priority": 0
+	}
 }
 ----
 ====
 
-=== buffers
+=== "buffers"
 The `buffers` object is a map of buffer objects identified by an ID.
 Each buffer object has a `type` property. Any further properties are defined in the buffer-type's definition.
-Two types of buffers are defined. Supporting buffer plugins is not required.
 
-In a binary STF file, `stf.buffer.included` is the only supported buffer type.
-
-In a `stf.json` file, `stf.buffer.file` is the only supported buffer type.
-
-Buffers which are fetched by URL may be considered in the future.
+For now, `stf.buffer.included` is the only supported buffer type. Support for hot-loading different buffer-types is not required.
 
 ==== stf.buffer.included
 This type represents a buffer contained in the same file.
@@ -257,61 +256,7 @@ This type represents a buffer contained in the same file.
 "buffers": {
 	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
 		"type": "stf.buffer.included",
-		"index": 0
-	}
-}
-----
-====
-
-==== stf.buffer.file
-This type represents a buffer contained in the same file. Supporting this buffer-type is not required, but may be useful for version-controlled projects containing STF assets.
-
-.stf.buffer.file properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|path |Yes |String |Relative path to a buffer file.
-|===
-
-An `.stfbuffer` file starts with a magic number of `STFB`. The rest of the file is the raw buffer.
-
-.Example
-[%collapsible]
-====
-.buffers object example in an STF Json file
-[,json]
-----
-"buffers": {
-	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
-		"type": "stf.buffer.file",
-		"path": "./buffers/mesh.stfbuffer"
-	}
-}
-----
-====
-
-==== stf.buffer.json_array
-This type stores binary data as an array directly. Supporting this buffer-type is not required, but may be useful during development.
-
-.stf.buffer.json_array properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
-|data |Yes |String |Base64 encoded binary data
-|===
-
-.Example
-[%collapsible]
-====
-.buffers object example in an STF Json file
-[,json]
-----
-"buffers": {
-	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
-		"type": "stf.buffer.json_array",
-		"data": [3, 0.34, 0.43214, 4.234, 4, 0.65, 0.6656, 2.234]
+		"index": 666
 	}
 }
 ----
@@ -323,140 +268,6 @@ This type stores binary data as an array directly. Supporting this buffer-type i
 ====
 [,json]
 ----
-{
-	"stf": {
-		"version_major": 0,
-		"version_minor": 0,
-		"root": "8a4019a2-ca1d-4f9b-a316-b118cd31dada",
-		"profiles": [],
-		"asset_info": {
-			"asset_name": "Default Cube"
-		},
-		"generator": "stfblender",
-		"timestamp": "2025-02-15T20:41:01.988159+00:00",
-		"metric_multiplier": 1
-	},
-	"resources": {
-		"ba0f6e23-cb13-4cd5-9f66-8184460befc4": {
-			"type": "stf.material",
-			"name": "Material",
-			"properties": {
-				"color": {
-					"value_type": "color",
-					"value": [
-						1.0,
-						1.0,
-						1.0
-					]
-				}
-			},
-			"style_hints": [],
-			"shader_targets": {}
-		},
-		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
-			"type": "stf.mesh",
-			"name": "Cube",
-			"material_slots": [
-				"ba0f6e23-cb13-4cd5-9f66-8184460befc4"
-			],
-			"vertex_count": 8,
-			"vertex_width": 4,
-			"vertex_indices_width": 4,
-			"vertices": "d8e72e40-9006-441b-a0c5-1315700f14ef",
-			"vertex_color_width": 4,
-			"colors": [],
-			"split_count": 24,
-			"split_indices_width": 4,
-			"split_normal_width": 4,
-			"split_tangent_width": 4,
-			"split_color_width": 4,
-			"split_uv_width": 4,
-			"splits": "f36cb7a4-ffd9-48e7-87b3-321c91da6c5a",
-			"split_normals": "2eb9be5e-b2ad-4df0-9163-942a506ddff8",
-			"split_tangents": "d12eb259-c0f3-4b0a-bed1-6904e62f8a1b",
-			"uvs": [
-				{
-					"name": "UVMap",
-					"uv": "4d9ee4ba-a45c-4bba-8a96-1bd79d86eee6"
-				}
-			],
-			"split_colors": [],
-			"tris_count": 12,
-			"face_count": 6,
-			"face_indices_width": 4,
-			"tris": "a66be574-6ed2-4607-9190-a1ed4e2331c3",
-			"material_indices_width": 4,
-			"faces": "cd1688fc-d100-4916-a0c2-dfa5899f010e",
-			"material_indices": "0a0e9df2-e63e-47b5-acab-1435d5b3579f",
-			"sharp_face_indices_len": 6,
-			"sharp_face_indices": "950f09cc-f6e1-4173-bf9a-2054ae233717",
-			"lines_len": 0,
-			"lines": "85cc4f16-0934-45f0-9249-304a991ee78a",
-			"sharp_edges_len": 0,
-			"sharp_edges": "d86f7202-ad21-4e94-8659-9f17c2be827b",
-			"armature": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
-			"bones": [],
-			"bone_weight_width": 4,
-			"weights": [],
-			"components": [
-				"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20"
-			]
-		},
-		"a72729cd-be7d-4b2c-a02e-cf8bfdc97e20": {
-			"type": "stf.mesh.seams",
-			"seams_len": 0,
-			"seams": "3f877195-7da8-41fc-be16-63833584fc97"
-		},
-		"4a76690a-8f1c-4a3c-9135-4bcac5c92831": {
-			"type": "stf.instance.mesh",
-			"name": "Cube",
-			"children": [],
-			"trs": [
-				[
-					0.0,
-					0.0,
-					-0.0
-				],
-				[
-					0.0,
-					0.0,
-					-0.0,
-					1.0
-				],
-				[
-					1.0,
-					1.0,
-					1.0
-				]
-			],
-			"instance": "0131108d-ea45-4ed7-a427-6c6f1a1a3f7e"
-		},
-		"0131108d-ea45-4ed7-a427-6c6f1a1a3f7e": {
-			"mesh": "a72729cd-be7d-4b2c-a02e-cf8bfdc97e20",
-			"material_slots": [
-				{
-					"name": "Material",
-					"material": "ba0f6e23-cb13-4cd5-9f66-8184460befc4"
-				}
-			],
-			"blendshape_values": []
-		},
-		"8a4019a2-ca1d-4f9b-a316-b118cd31dada": {
-			"type": "stf.prefab",
-			"name": "Scene Collection",
-			"root_nodes": [
-				"4a76690a-8f1c-4a3c-9135-4bcac5c92831"
-			],
-			"animations": []
-		}
-	},
-	"buffers": {
-		"d8e72e40-9006-441b-a0c5-1315700f14ef": {
-			"type": "stf.buffer.included",
-			"index": 0
-		},
-		...
-	}
-}
+include::../examples/minimal.json[]
 ----
 ====
