@@ -22,6 +22,7 @@ Intended for (not only) game development use-cases.
 |**https://github.com/emperorofmars/stf_unity[Unity]**
 |Godot (TBD soon)
 |===
+_Try to import this https://squirrelbite.itch.io/stf-avatar-showcase[example model]!_
 
 Very relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bevy, BabylonJs, ...
 
