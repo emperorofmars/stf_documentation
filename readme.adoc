@@ -10,7 +10,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-**Squirrel Transfer Format - Experimental Modular 3D Interchange Format** [version 0.0.0]
+**Squirrel Transfer Format - Experimental Modular 3D Interchange Format** [version 0.0.3]
 
 Intended for (not only) game development use-cases.
 
@@ -43,7 +43,7 @@ STF by itself is merely a shell format. It provides a framework for different mo
 
 Resources are stored as Json-objects, identified by a unique ID. Resources can reference binary buffers and each other.
 
-A few modules, including but not limited to `stf.prefab`, `stf.node`, `stf.mesh` and `stf.material`, are provided by default.
+A few modules, including but not limited to `stf.prefab`, `stf.mesh`, `stf.material` or `stf.image`, are provided by default.
 
 Additional modules can be easily implemented by third parties. Each STF implementation provides an easy and convenient way to hot-load module-plugins.
 

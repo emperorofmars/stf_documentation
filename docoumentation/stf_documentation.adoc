@@ -28,8 +28,8 @@ toc::[]
 == Introduction
 STF is a binary file format, containing a binary header, a Json definition and a set of binary buffers.
 
-By itself, STF defines merely a shell format. Actual content is stored in `resources` and `buffers`.
-Resources have a `type` property, and are identified by a unique ID.
+The Json definition contains meta information, arbitrary resources and buffer references.
+Resources have a `type` property, and are identified by a unique ID as a string.
 Based on a resources type, a module gets selected which provides support to import & export it.
 
 The minimum required set of supported modules is specified in link:./modules.adoc[Modules].
@@ -55,7 +55,7 @@ An STF binary file consists of a binary header, a <<json-definition>>, and zero 
 |4 | STF binary format version minor
 |4 | Number of buffers, including the Json definiton buffer
 |8 * {number of buffers} | Buffer lengths in bytes
-|{number of buffers} * {buffer length} | The buffers
+|{length of all buffers} | Buffers
 |===
 
 The Json definition is the first and only required buffer.
