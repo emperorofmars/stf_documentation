@@ -5,36 +5,65 @@
 |===
 |Key |Required |Type |Description
 
-|float_width |No |Int |Byte-width of float-values
-|indices_width |No |Int |Byte-width of indices
-|material_slots |No |List<ID / null> |List of material IDs in the order of the meshes material-slots
-|vertecies |Yes |ID |Vertex buffer ID
-|colors |No | |
-|splits |Yes |ID | Split vertex buffer ID
-|split_normals |No | |
-|split_tangents |No | |
-|split_colors |No | |
-|tris |No | |
-|faces |No | |
+|float_width |No |uint |Byte-width of float-values
+|indices_width |No |uint |Byte-width of indices
+|material_slots |No |List<Resource ID / null> |List of material IDs in the order of the meshes material-slots
+|vertices |Yes |Buffer ID |Vertex buffer ID
+|colors |No |Buffer ID |
+|splits |Yes |Buffer ID | Split vertex buffer ID
+|split_normals |No |Buffer ID |
+|split_tangents |No |Buffer ID |
+|split_colors |No |Buffer ID |
+|tris |No |Buffer ID |
+|faces |No |Buffer ID |
 |material_indices |No | |
-|sharp_edges |No | |
-|sharp_face_indices |No | |
-|lines |No | |
-|armature |No |ID |ID of the armature if the mesh is skinned
+|sharp_edges |No |Buffer ID |
+|sharp_face_indices |No |Buffer ID |
+|lines |No |Buffer ID |
+|armature |No |Resource ID |ID of the armature if the mesh is skinned
+|weight_lens_width |No |uint |
+|bone_indices_width |No |uint |
 |bones |No |List<ID> |
-|weights |No |List<Weights-Object> |
+|weight_lens |No |Buffer ID |
+|bone_indices |No |Buffer ID |
+|weights |No |Buffer ID |
 |uvs |No |List<UV-Object> |
 |blendshapes |No |List<Blendshape-Object> |
+|vertex_groups |No |List<VertexGroup-Object> |
 |===
 
-.Weights-Object properties
+.UV-Object properties
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
 
-|indexed |Yes |bool |
-|count |Yes |Int |
-|buffer |Yes |ID |Buffer ID
+|name |Yes |string |
+|uv |Yes |Buffer ID |Buffer ID
+|===
+
+.Blendshape-Object properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|name |No |string |
+|default_value |No |float |
+|limit_upper |No |float |
+|limit_lower |No |float |
+|indices |No |Buffer ID |Buffer ID
+|position_offsets |Yes |Buffer ID |Buffer ID
+|split_indices |No |Buffer ID |Buffer ID
+|split_normals |No |Buffer ID |Buffer ID
+|===
+
+.VertexGroup-Object properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|name |Yes |string |
+|weights |Yes |Buffer ID |Buffer ID
+|indices |No |Buffer ID |Buffer ID
 |===
 
 ...TODO
