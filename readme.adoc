@@ -10,7 +10,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-**Squirrel Transfer Format - Experimental Modular 3D Interchange Format** [version 0.0.3]
+**Squirrel Transfer Format - Experimental Modular 3D Interchange Format** [version 0.0.4]
 
 Intended for (not only) game development use-cases.
 
@@ -20,7 +20,7 @@ Intended for (not only) game development use-cases.
 |**In development for:**
 |**https://github.com/emperorofmars/stf_blender[Blender]**
 |**https://github.com/emperorofmars/stf_unity[Unity]**
-|Godot (TBD soon)
+|**https://github.com/emperorofmars/stf_godot[Godot]**
 |===
 _Try to import this https://squirrelbite.itch.io/stf-avatar-showcase[example model]!_
 
