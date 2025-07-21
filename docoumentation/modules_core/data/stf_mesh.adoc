@@ -10,7 +10,8 @@
 |material_slots |No |List<Resource ID / null> |List of material IDs in the order of the meshes material-slots
 |vertices |Yes |Buffer ID |Vertex buffer ID
 |colors |No |Buffer ID |
-|splits |Yes |Buffer ID | Split vertex buffer ID
+|face_corners |Yes |Buffer ID | Face Corner buffer ID
+|splits |Yes |Buffer ID | Split buffer ID
 |split_normals |No |Buffer ID |
 |split_tangents |No |Buffer ID |
 |split_colors |No |Buffer ID |
