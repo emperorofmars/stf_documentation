@@ -8,16 +8,15 @@
 |float_width |No |uint |Byte-width of float-values
 |indices_width |No |uint |Byte-width of indices
 |material_slots |No |List<Resource ID / null> |List of material IDs in the order of the meshes material-slots
-|vertices |Yes |Buffer ID |Vertex buffer ID
-|colors |No |Buffer ID |
-|face_corners |Yes |Buffer ID | Face Corner buffer ID
-|splits |Yes |Buffer ID | Split buffer ID
-|split_normals |No |Buffer ID |
-|split_tangents |No |Buffer ID |
-|split_colors |No |Buffer ID |
-|tris |No |Buffer ID |
-|faces |No |Buffer ID |
-|material_indices |No | |
+|vertices |Yes |Buffer ID |3 floats per vertex
+|colors |No |Buffer ID |4 floats per color (rgba)
+|face_corners |Yes |Buffer ID |Index of the split for each face corner
+|splits |Yes |Buffer ID |Vertex index for each unique combination of normals, uvs, colors, etc..
+|split_normals |No |Buffer ID |3 floats per normal
+|split_colors |No |Buffer ID |4 floats per color (rgba)
+|tris |No |Buffer ID |3 indices per triangle
+|faces |No |Buffer ID |number of tris for the face
+|material_indices |No |Buffer ID |
 |sharp_edges |No |Buffer ID |
 |sharp_face_indices |No |Buffer ID |
 |lines |No |Buffer ID |
