@@ -9,7 +9,6 @@
 |indices_width |No |uint |Byte-width of indices
 |material_slots |No |List<Resource ID / null> |List of material IDs in the order of the meshes material-slots
 |vertices |Yes |Buffer ID |3 floats per vertex
-|colors |No |Buffer ID |4 floats per color (rgba)
 |face_corners |Yes |Buffer ID |Index of the split for each face corner
 |splits |Yes |Buffer ID |Vertex index for each unique combination of normals, uvs, colors, etc..
 |split_normals |No |Buffer ID |3 floats per normal
