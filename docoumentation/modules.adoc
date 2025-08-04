@@ -19,8 +19,7 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 
-**Squirrel Transfer Format - Modular 3D Interchange Format** [version {revnumber}]
-
+**Squirrel Transfer Format - Modular 3D File-Format** [version {revnumber}]
 Intended for (not only) game development use-cases.
 
 // toc::[]
@@ -33,7 +32,7 @@ Suppport for these modules is required for a valid STF implementation
 * link:./modules_core/data/stf_armature.adoc[stf.armature]
 * link:./modules_core/data/stf_mesh.adoc[stf.mesh]
 * link:./modules_core/data/stf_material.adoc[stf.material] (TODO)
-* link:./modules_core/data/stf_image.adoc[stf.image] (TODO)
+* link:./modules_core/data/stf_image.adoc[stf.image]
 * link:./modules_core/data/stf_animation.adoc[stf.animation] (TODO)
 
 === Node Modules
@@ -45,7 +44,7 @@ Suppport for these modules is required for a valid STF implementation
 * link:./modules_core/instance/stf_instance_armature.adoc[stf.instance.armature]
 
 === Component Modules
-* link:./modules_core/component/stf_texture.adoc[stf.texture] (TODO)
+* link:./modules_core/component/stf_texture.adoc[stf.texture]
 
 
 == Expanded Modules (stfexp.*)
