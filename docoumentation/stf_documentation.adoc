@@ -2,8 +2,8 @@
 
 = STF Core: Documentation
 Mars <mars@squirrel.pub>
-v0.0.1
-:homepage: https://github.com/emperorofmars/stf
+v0.0.7
+:homepage: https://stfform.at
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
 :library: Asciidoctor
@@ -73,7 +73,7 @@ The `stf` object holds meta information.
 
 |version_major |Yes |Int |Major version of STF
 |version_minor |Yes |Int |Minor version of STF
-|root |Yes |ID |ID of the root resource
+|root |Yes |Resource-ID |ID of the root resource
 |meta |No |Map<String, String> |Meta information such as authors, license or documentation link.
 |generator |No |String |The name of the STF implementation that created this file
 |timestamp |No |String |Timestamp as a String in the ISO format.
@@ -114,8 +114,8 @@ The various resource objects describe the files actual content. Any further prop
 |Key |Required |Type |Description
 
 |type |Yes |String |Type of the resource.
-|referenced_resources |No |List<ID> |IDs of resources this resource references.
-|referenced_buffers |No |List<ID> |IDs of buffers this resource references.
+|referenced_resources |No |List<Resource-ID> |IDs of resources this resource references.
+|referenced_buffers |No |List<Buffer-ID> |IDs of buffers this resource references.
 |name |No |String |Display name of the resource.
 |version_major |No |Int |Major version of this resource. The default value is `0`.
 |version_minor |No |Int |Major version of this resource. The default value is `0`.
@@ -140,8 +140,8 @@ Suppport for module plugins of this kind is required.
 |===
 |Key |Required |Type |Description
 
-|fallback |No |ID |ID of a resource that should be used in case this one's type is not supported in this implementation
-|components |No |List<ID> |Component resource IDs
+|fallback |No |Resource-ID |ID of a resource that should be used in case this one's type is not supported in this implementation
+|components |No |List<Resource-ID> |Component resource IDs
 |===
 
 ===== Node
@@ -154,8 +154,8 @@ Suppport for module plugins of this kind is not required.
 |Key |Required |Type |Description
 
 |enabled |No |boolean |True by default
-|children |No |List<ID> |IDs of child-nodes
-|components |No |List<ID> |Component resource IDs
+|children |No |List<Resource-ID> |IDs of child-nodes
+|components |No |List<Resource-ID> |Component resource IDs
 |===
 
 ===== Instance
@@ -184,7 +184,7 @@ Suppport for module plugins of this kind is required.
 |Key |Required |Type |Description
 
 |enabled |No |boolean |True by default
-|overrides |No |List<ID> |References `Component` kind types that should not be processed, if this type is supported
+|overrides |No |List<Resource-ID> |References `Component` kind types that should not be processed, if this type is supported
 |===
 
 .Example
@@ -244,7 +244,7 @@ This type represents a buffer contained in the same file.
 |===
 |Key |Required |Type |Description
 
-|index |Yes |Int |Index of the binary buffer in the file
+|index |Yes |Int |Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer.
 |===
 
 .Example
@@ -280,18 +280,18 @@ This type represents a buffer contained in the same file.
 	"stf": {
 		"version_major": 0,
 		"version_minor": 0,
-		"root": "50695120-9637-4a9f-be77-bfa3b06504f8",
+		"root": "979c1726-222d-4184-89b1-72f9b2c82d60",
 		"profiles": [],
 		"asset_info": {
 			"asset_name": "Default Cube"
 		},
 		"generator": "stf_blender",
-		"generator_version": "0.0.1",
-		"timestamp": "2025-06-17T15:43:23.736748+00:00",
+		"generator_version": "0.0.7",
+		"timestamp": "2025-08-04T16:43:03.324405+00:00",
 		"metric_multiplier": 1
 	},
 	"resources": {
-		"26dc0d69-1ae8-4397-9620-adcbf4d78d8e": {
+		"5ced8683-2dff-49de-aefe-3f02c4856e86": {
 			"type": "stf.material",
 			"name": "Material",
 			"properties": {
@@ -329,52 +329,49 @@ This type represents a buffer contained in the same file.
 				]
 			}
 		},
-		"d37b3ebb-cfd3-4862-b411-5a204d69c890": {
+		"89abf95c-575c-4033-adbc-fffe3f59cdb9": {
 			"type": "stf.mesh",
 			"name": "Cube",
 			"material_slots": [
-				"26dc0d69-1ae8-4397-9620-adcbf4d78d8e"
+				"5ced8683-2dff-49de-aefe-3f02c4856e86"
 			],
 			"float_width": 4,
 			"indices_width": 1,
-			"vertices": "d00a096e-4326-4fdb-bf02-eb3de813e84f",
-			"vertex_color_width": 4,
-			"colors": [],
-			"splits": "2dae3757-6ce4-4119-968c-397ee0ce105f",
-			"split_normals": "4c25c590-7a8b-4a88-bf42-f4f7c34cdef4",
-			"split_tangents": "538c4eb6-eeca-476b-a929-c3649157a81f",
+			"vertices": "c69104d6-55a9-4460-a8fc-e2f3a70da3eb",
+			"face_corners": "214dd09d-b2eb-4b1f-83bb-c1650222a897",
+			"splits": "a7ca9d09-169f-4f65-8af5-265a3e1c1128",
+			"split_normals": "497cd907-6bbf-4017-bbf4-bdb57f34a6b4",
 			"uvs": [
 				{
 					"name": "UVMap",
-					"uv": "be2b2b11-85bc-4beb-9cff-880946e137bf"
+					"uv": "f88f80c6-4b95-4103-88d6-056af49e454b"
 				}
 			],
-			"split_colors": [],
-			"tris": "a57a4aea-a62a-4de1-af00-1942ee555bee",
+			"tris": "f705415c-93c5-48d1-8c12-fa6fc6a976b1",
 			"material_indices_width": 1,
-			"faces": "2222c1fc-2a27-4d0b-843a-d835878559f8",
-			"material_indices": "33607654-7624-4a63-9ddf-c1dbba31589d",
-			"sharp_face_indices": "7f2c36a2-dbd8-4b73-b8a9-d52ed3b78ca7",
-			"lines": "469abcd8-fdcf-485c-b2c6-6faf2bf84150",
-			"sharp_edges": "635c99eb-00ae-4066-b5ad-1b7d1e4c54f3",
+			"faces": "42b4c79a-12b9-4fc9-97b0-518bcdef6043",
+			"material_indices": "e443faf5-38d0-485a-8f5f-30735c49bf2c",
+			"sharp_face_indices": "9c25f6ef-f33b-4aa7-9860-da7427d01bdb",
+			"lines": "3d232b23-6deb-41ad-b09e-5805869fff1c",
+			"sharp_edges": "cc4206c5-2ff7-4d28-9e90-f4d3c6a8130a",
 			"components": [
-				"2a4a7084-0df6-4a01-b25f-09de8825defd"
+				"4ab71531-2a97-4d63-b574-3ab760290f4a"
 			]
 		},
-		"2a4a7084-0df6-4a01-b25f-09de8825defd": {
+		"4ab71531-2a97-4d63-b574-3ab760290f4a": {
 			"type": "stfexp.mesh.seams",
-			"seams_len": 0,
-			"seams": "e3cc3cbf-a72d-448a-b9d4-51db25909d58"
-		},
-		"46de4bce-c119-404e-8348-43ac53c8317d": {
-			"type": "stf.instance.mesh",
-			"mesh": "d37b3ebb-cfd3-4862-b411-5a204d69c890",
-			"materials": [
-				"26dc0d69-1ae8-4397-9620-adcbf4d78d8e"
+			"indices_width": 1,
+			"referenced_buffers": [
+				"29e557ab-6f20-4302-9396-a2287cda0b6e"
 			],
-			"blendshape_values": []
+			"seams": "29e557ab-6f20-4302-9396-a2287cda0b6e"
 		},
-		"0585218b-dc88-4a9b-b7e5-c67a40a988a6": {
+		"9742257e-e1b3-424f-882f-33c44c746d98": {
+			"type": "stf.instance.mesh",
+			"name": "",
+			"mesh": "89abf95c-575c-4033-adbc-fffe3f59cdb9"
+		},
+		"25f8b224-46a3-404c-a15a-8594f2c9e8fc": {
 			"type": "stf.node",
 			"name": "Cube",
 			"children": [],
@@ -396,9 +393,9 @@ This type represents a buffer contained in the same file.
 					1.0
 				]
 			],
-			"instance": "46de4bce-c119-404e-8348-43ac53c8317d"
+			"instance": "9742257e-e1b3-424f-882f-33c44c746d98"
 		},
-		"c76b3b6f-8ef6-444a-91e6-137000d12f0e": {
+		"53650c64-eb81-4873-a4f0-4e274c02597f": {
 			"type": "stf.node",
 			"name": "Light",
 			"children": [],
@@ -421,7 +418,7 @@ This type represents a buffer contained in the same file.
 				]
 			]
 		},
-		"9a05989b-ca4f-4cef-baa3-952564e705da": {
+		"57d85e39-1994-4604-b4fc-4acd76a5f635": {
 			"type": "stf.node",
 			"name": "Camera",
 			"children": [],
@@ -444,63 +441,63 @@ This type represents a buffer contained in the same file.
 				]
 			]
 		},
-		"50695120-9637-4a9f-be77-bfa3b06504f8": {
+		"979c1726-222d-4184-89b1-72f9b2c82d60": {
 			"type": "stf.prefab",
 			"name": "Collection",
 			"root_nodes": [
-				"0585218b-dc88-4a9b-b7e5-c67a40a988a6",
-				"c76b3b6f-8ef6-444a-91e6-137000d12f0e",
-				"9a05989b-ca4f-4cef-baa3-952564e705da"
+				"25f8b224-46a3-404c-a15a-8594f2c9e8fc",
+				"53650c64-eb81-4873-a4f0-4e274c02597f",
+				"57d85e39-1994-4604-b4fc-4acd76a5f635"
 			],
 			"animations": []
 		}
 	},
 	"buffers": {
-		"d00a096e-4326-4fdb-bf02-eb3de813e84f": {
+		"c69104d6-55a9-4460-a8fc-e2f3a70da3eb": {
 			"type": "stf.buffer.included",
 			"index": 0
 		},
-		"2dae3757-6ce4-4119-968c-397ee0ce105f": {
+		"214dd09d-b2eb-4b1f-83bb-c1650222a897": {
 			"type": "stf.buffer.included",
 			"index": 1
 		},
-		"4c25c590-7a8b-4a88-bf42-f4f7c34cdef4": {
+		"a7ca9d09-169f-4f65-8af5-265a3e1c1128": {
 			"type": "stf.buffer.included",
 			"index": 2
 		},
-		"538c4eb6-eeca-476b-a929-c3649157a81f": {
+		"497cd907-6bbf-4017-bbf4-bdb57f34a6b4": {
 			"type": "stf.buffer.included",
 			"index": 3
 		},
-		"be2b2b11-85bc-4beb-9cff-880946e137bf": {
+		"f88f80c6-4b95-4103-88d6-056af49e454b": {
 			"type": "stf.buffer.included",
 			"index": 4
 		},
-		"a57a4aea-a62a-4de1-af00-1942ee555bee": {
+		"f705415c-93c5-48d1-8c12-fa6fc6a976b1": {
 			"type": "stf.buffer.included",
 			"index": 5
 		},
-		"2222c1fc-2a27-4d0b-843a-d835878559f8": {
+		"42b4c79a-12b9-4fc9-97b0-518bcdef6043": {
 			"type": "stf.buffer.included",
 			"index": 6
 		},
-		"33607654-7624-4a63-9ddf-c1dbba31589d": {
+		"e443faf5-38d0-485a-8f5f-30735c49bf2c": {
 			"type": "stf.buffer.included",
 			"index": 7
 		},
-		"7f2c36a2-dbd8-4b73-b8a9-d52ed3b78ca7": {
+		"9c25f6ef-f33b-4aa7-9860-da7427d01bdb": {
 			"type": "stf.buffer.included",
 			"index": 8
 		},
-		"469abcd8-fdcf-485c-b2c6-6faf2bf84150": {
+		"3d232b23-6deb-41ad-b09e-5805869fff1c": {
 			"type": "stf.buffer.included",
 			"index": 9
 		},
-		"635c99eb-00ae-4066-b5ad-1b7d1e4c54f3": {
+		"cc4206c5-2ff7-4d28-9e90-f4d3c6a8130a": {
 			"type": "stf.buffer.included",
 			"index": 10
 		},
-		"e3cc3cbf-a72d-448a-b9d4-51db25909d58": {
+		"29e557ab-6f20-4302-9396-a2287cda0b6e": {
 			"type": "stf.buffer.included",
 			"index": 11
 		}

@@ -1,2 +1,173 @@
+// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-== stf.animation
+= stf.animation
+:homepage: https://stfform.at
+:keywords: stf, 3d, fileformat, format, interchange, interoperability
+:hardbreaks-option:
+:idprefix:
+:idseparator: -
+:library: Asciidoctor
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+endif::[]
+
+== Properties
+[%autowidth, %header,cols=4*]
+|===
+|Key |Required |Type |Description
+
+|loop |Yes |bool |Whether to loop the animation
+|fps |Yes |float |
+|range |Yes |List<float> |Beginning and end frame of the animation
+|tracks |Yes |List<Track-Object> |
+|===
+
+=== Track-Object properties
+|===
+|Key |Required |Type |Description
+
+|target |Yes |Path |STF path of the target property
+|keyframes |Yes |List<Keyframe-Object> |
+|===
+
+=== Keyframe-Object properties
+|===
+|Key |Required |Type |Description
+
+|frame |Yes |float |
+|values |Yes |List<List<float>> |
+|===
+
+== Json Example
+[,json]
+----
+"3e8fb358-4501-41a6-a9f7-57ee47e1ffdb": {
+	"type": "stf.animation",
+	"name": "Blep",
+	"loop": false,
+	"fps": 24,
+	"range": [
+		1.0,
+		6.0
+	],
+	"tracks": [
+		{
+			"target": [
+				"bf97e4a7-2aa8-4d90-9a4b-b7fa6223d8e7",
+				"instance",
+				"1267a0a3-7954-4a02-a1a3-4aceb0c386a1",
+				"r"
+			],
+			"keyframes": [
+				{
+					"frame": 1.0,
+					"values": [
+						[
+							0.0,
+							-0.3333333730697632,
+							0.0,
+							0.3333333730697632,
+							0.0
+						],
+						[
+							0.0,
+							-0.3333333730697632,
+							0.0,
+							0.3333333730697632,
+							0.0
+						],
+						[
+							0.0,
+							-0.3333333730697632,
+							0.0,
+							0.3333333730697632,
+							0.0
+						],
+						[
+							1.0,
+							-0.3333333730697632,
+							0.0,
+							0.3333333730697632,
+							0.0
+						]
+					]
+				},
+				{
+					"frame": 6.0,
+					"values": [
+						[
+							0.1110716313123703,
+							-1.3333334922790527,
+							0.0,
+							1.3333334922790527,
+							0.0
+						],
+						[
+							-4.270208739230678e-17,
+							-1.3333334922790527,
+							0.0,
+							1.3333334922790527,
+							0.0
+						],
+						[
+							-8.932223817870164e-17,
+							-1.3333334922790527,
+							0.0,
+							1.3333334922790527,
+							0.0
+						],
+						[
+							0.9938123822212219,
+							-1.3333334922790527,
+							0.0,
+							1.3333334922790527,
+							0.0
+						]
+					]
+				}
+			]
+		},
+		{
+			"target": [
+				"e961bceb-add8-438d-8168-69146f0426af",
+				"instance",
+				"blendshape",
+				"LipPucker",
+				"value"
+			],
+			"keyframes": [
+				{
+					"frame": 1.0,
+					"values": [
+						[
+							0.0,
+							-1.0,
+							0.0,
+							1.0,
+							0.0
+						]
+					]
+				},
+				{
+					"frame": 4.0,
+					"values": [
+						[
+							0.75,
+							-1.0,
+							0.0,
+							0.6666665077209473,
+							0.0
+						]
+					]
+				}
+			]
+		}
+	]
+}
+----
+
+== Implementations
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_animation/stf_animation.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/modules/core/stf_animation/stf_animation.py[Codeberg]
+* Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs[Codeberg]
+* Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd[Codeberg]

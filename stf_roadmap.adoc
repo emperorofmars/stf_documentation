@@ -8,17 +8,17 @@ Implementation progress.
 |===
 |Module |Blender |Unity |Godot
 
-|stf.prefab					|5/5	|5/tbd	|tbd
-|stf.node					|5/5	|5/tbd	|tbd
-|stf.armature				|5/5	|5/tbd	|tbd
-|stf.bone					|5/5	|5/tbd	|tbd
-|stf.instance.armature	|5/5	|5/tbd	|tbd
-|stf.mesh					|5/5	|5/tbd	|tbd
-|stf.instance.mesh		|5/5	|5/tbd	|tbd
-|stf.material				|2/2	|tbd		|tbd
-|stf.image					|3/3	|3/tbd	|tbd
+|stf.prefab					|5/5	|5/tbd	|5/tbd
+|stf.node					|5/5	|5/tbd	|5/tbd
+|stf.armature				|5/5	|5/tbd	|5/tbd
+|stf.bone					|5/5	|5/tbd	|5/tbd
+|stf.instance.armature	|5/5	|5/tbd	|5/tbd
+|stf.mesh					|5/5	|5/tbd	|5/tbd
+|stf.instance.mesh		|5/5	|5/tbd	|5/tbd
+|stf.material				|2/2	|tbd		|1/tbd
+|stf.image					|3/3	|3/tbd	|2/tbd
 |stf.texture				|2/2	|2/tbd	|tbd
-|stf.animation				|4/4	|4/tbd	|tbd
+|stf.animation				|4/4	|4/tbd	|2/tbd
 |===
 
 .Expanded Module Implementations (0-5 points for: Import/Export)
@@ -27,5 +27,6 @@ Implementation progress.
 |Module |Blender |Unity |Godot
 
 |stf.mesh.seams			|5/5	|-			|-
+|stf.mesh.creases			|5/5	|-			|-
 |stf.constraint.twist	|5/5	|5/tbd	|tbd
 |===

@@ -1,6 +1,6 @@
 // Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= stf.instance.mesh
+= com.example.module
 :homepage: https://stfform.at
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
@@ -16,10 +16,8 @@ endif::[]
 [%autowidth, %header,cols=4*]
 |===
 |Key |Required |Type |Description
-|mesh |Yes |ID |Resource-ID of the instantiated mesh resource, usually xref:../data/stf_mesh.adoc[`stf.mesh`]
-|armature_instance |No |Resource-ID |ID of a node with an instantiated armature. Usually the instance resource is xref:./stf_instance_armature.adoc[`stf.instance.armature`]
-|blendshape_values |No |List<float> |
-|materials |No |List<Resource-ID> |
+
+|test |Yes |List<Resource-ID> |description
 |===
 
 == Json Example
@@ -28,6 +26,6 @@ endif::[]
 ----
 
 == Implementations
-* Blender: 
-* Unity: 
-* Godot: 
+* Blender: [GitHub] | [Codeberg]
+* Unity: [GitHub] | [Codeberg]
+* Godot: [GitHub] | [Codeberg]

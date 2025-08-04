@@ -2,8 +2,8 @@
 
 = STF Modules: Documentation
 Mars <mars@squirrel.pub>
-v0.0.1
-:homepage: https://github.com/emperorofmars/stf
+v0.0.7
+:homepage: https://stfform.at
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
 :library: Asciidoctor
@@ -41,7 +41,7 @@ Suppport for these modules is required for a valid STF implementation
 * link:./modules_core/node/stf_bone.adoc[stf.bone]
 
 === Instance Modules
-* link:./modules_core/instance/stf_instance_mesh.adoc[stf.instance.mesh] (TODO)
+* link:./modules_core/instance/stf_instance_mesh.adoc[stf.instance.mesh]
 * link:./modules_core/instance/stf_instance_armature.adoc[stf.instance.armature]
 
 === Component Modules
@@ -52,15 +52,15 @@ Suppport for these modules is required for a valid STF implementation
 Not required but recommended modules.
 
 === Data Modules
-* link:./modules_expanded/data/stfexp_camera.adoc[stfexp.camera] (TODO)
-* link:./modules_expanded/data/stfexp_light.adoc[stfexp.light] (TODO)
+-
 
 === Instance Modules
-* link:./modules_expanded/node/stfexp_instance_camera.adoc[stfexp.instance.camera] (TODO)
-* link:./modules_expanded/node/stfexp_instance_light.adoc[stfexp.instance.light] (TODO)
+* link:./modules_expanded/node/stfexp_camera.adoc[stfexp.camera] (TODO)
+* link:./modules_expanded/node/stfexp_light.adoc[stfexp.light] (TODO)
 
 === Component Modules
 * link:./modules_expanded/component/stfexp_mesh_seams.adoc[stfexp.mesh.seams] (TODO)
+* link:./modules_expanded/component/stfexp_mesh_creases.adoc[stfexp.mesh.creases] (TODO)
 * link:./modules_expanded/component/stfexp_armature_humanoid.adoc[stfexp.armature.humanoid] (TODO)
 * link:./modules_expanded/component/stfexp_constraint_twist.adoc[stfexp.constraint.twist] (TODO)
 * link:./modules_expanded/component/stfexp_constraint_bend.adoc[stfexp.constraint.bend] (TODO)
