@@ -1,6 +1,6 @@
 // Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= STF Core: Documentation
+= STF Format: Documentation
 Mars <mars@squirrel.pub>
 v0.0.7
 :homepage: https://stfform.at

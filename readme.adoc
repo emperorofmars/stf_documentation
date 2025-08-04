@@ -35,8 +35,8 @@ This repository hosts the documentation for the STF format and core modules.
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_documentation.adoc[Core Format Documentation]**
-|**link:./docoumentation/modules.adoc[Modules Documentation]**
+|**link:./docoumentation/stf_documentation.adoc[STF Format Documentation]**
+|**link:./docoumentation/modules.adoc[Core Modules Documentation]**
 |**link:./stf_roadmap.adoc[Roadmap]**
 |===
 
