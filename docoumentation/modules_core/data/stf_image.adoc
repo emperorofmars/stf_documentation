@@ -38,6 +38,6 @@ endif::[]
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_image/stf_image.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/commit/f45c3b56085fbd550901d6160a2d7cc96f69cda5/stfblender/modules/core/stf_image/stf_image.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_image/stf_image.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/commit/f45c3b56085fbd550901d6160a2d7cc96f69cda5/stfblender/stf_modules/core/stf_image/stf_image.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Image.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/commit/5320b3e0f2bd631ac0d901ebc2d5765b0eff2a8a/Runtime/Modules/Modules_Core/STF_Image.cs[Codeberg]
 * Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Image.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Image.gd[Codeberg]

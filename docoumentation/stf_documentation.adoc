@@ -2,7 +2,7 @@
 
 = STF Format: Documentation
 Mars <mars@squirrel.pub>
-v0.0.7
+v0.0.8
 :homepage: https://stfform.at
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:

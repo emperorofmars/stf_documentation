@@ -67,6 +67,6 @@ Only other `stf.node` type resources are allowed as its children. Children may n
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_node/stf_node.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/modules/core/stf_node/stf_node.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_node/stf_node.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Node.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs[Codeberg]
 * Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Node.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd[Codeberg]

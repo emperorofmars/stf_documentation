@@ -43,6 +43,6 @@ Armatures can be instantiated by xref:../instance/stf_instance_armature.adoc[`st
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_armature/stf_armature.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/modules/core/stf_armature/stf_armature.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_armature/stf_armature.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_armature/stf_armature.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Armature.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Armature.cs[Codeberg]
 * Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Armature.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Armature.gd[Codeberg]

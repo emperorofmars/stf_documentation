@@ -38,6 +38,6 @@ endif::[]
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_texture/stf_texture.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/modules/core/stf_texture/stf_texture.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_texture/stf_texture.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_texture/stf_texture.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Texture.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Texture.cs[Codeberg]
 * Godot (TBD)

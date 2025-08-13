@@ -20,6 +20,7 @@ endif::[]
 |loop |Yes |bool |Whether to loop the animation
 |fps |Yes |float |
 |range |Yes |List<float> |Beginning and end frame of the animation
+|bake_on_export |No |bool |Whether the animation should be baked on
 |tracks |Yes |List<Track-Object> |
 |===
 
@@ -36,8 +37,21 @@ endif::[]
 |Key |Required |Type |Description
 
 |frame |Yes |float |
-|values |Yes |List<List<float>> |
+|values |Yes |List<Keyframe-Array / null> |
 |===
+
+=== Keyframe-Array
+|===
+|Index |Required |Type |Description
+
+|0 |Yes |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
+|1 |Yes |float |The main value
+|2 |No |float |In-tangent x-offset
+|3 |No |float |In-tangent y-offset
+|4 |No |float |Out-tangent x-offset
+|5 |No |float |Out-tangent y-offset
+|===
+
 
 == Json Example
 [,json]
@@ -168,6 +182,6 @@ endif::[]
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_animation/stf_animation.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/modules/core/stf_animation/stf_animation.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs[Codeberg]
 * Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd[Codeberg]

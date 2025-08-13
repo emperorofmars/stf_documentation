@@ -59,6 +59,6 @@ The only allowed type for nodes in `root_nodes` is xref:../node/stf_node.adoc[`s
 ----
 
 == Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/modules/core/stf_prefab/stf_prefab.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/commit/f45c3b56085fbd550901d6160a2d7cc96f69cda5/stfblender/modules/core/stf_prefab/stf_prefab.py[Codeberg]
+* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/commit/f45c3b56085fbd550901d6160a2d7cc96f69cda5/stfblender/stf_modules/core/stf_prefab/stf_prefab.py[Codeberg]
 * Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Prefab.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Prefab.cs[Codeberg]
 * Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Prefab.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Prefab.gd[Codeberg]
