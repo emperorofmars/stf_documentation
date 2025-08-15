@@ -32,9 +32,9 @@ Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bev
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_format.adoc[STF Format]**
-|**xref:./docoumentation/modules.adoc[Core Modules]**
-|**xref:./stf_roadmap.adoc[Roadmap]**
+|**link:./documentation/stf_format.adoc[STF Format]**
+|**link:./documentation/modules.adoc[Core Modules]**
+|**link:./stf_roadmap.adoc[Roadmap]**
 |===
 
 == Concept
