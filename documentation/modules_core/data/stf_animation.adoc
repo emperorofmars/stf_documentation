@@ -50,6 +50,12 @@ endif::[]
 |3 |string |interpolation type
 |===
 
+In case the previous keyframe has an out-tangent, this keyframes in-tangent is added at the last position in the keyframe-array.
+|===
+|Index |Type |Description
+|Last index |float |In-tangent x and y offset, present only if the previous keyframe has an out-tangent
+|===
+
 Depending on the `interpolation type`, the following properties are added.
 
 ==== bezier
@@ -57,7 +63,6 @@ Depending on the `interpolation type`, the following properties are added.
 |Index |Type |Description
 |4 |string |tangent type
 |5 |List<float> |Out-tangent x and y offset
-|6 (optional) |float |In-tangent x and y offset, present only if the previous keyframe has an out-tangent
 |===
 
 
