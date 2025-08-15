@@ -11,6 +11,7 @@ ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
 endif::[]
+ifdef::env-codeberg[:relfilesuffix: .adoc]
 
 **Squirrel Transfer Format - Modular 3D File-Format** [version {revnumber}]
 Intended for (not only) game development use-cases.
@@ -31,7 +32,7 @@ Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bev
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**xref:./docoumentation/stf_format.adoc[STF Format]**
+|**link:./docoumentation/stf_format.adoc[STF Format]**
 |**xref:./docoumentation/modules.adoc[Core Modules]**
 |**xref:./stf_roadmap.adoc[Roadmap]**
 |===
