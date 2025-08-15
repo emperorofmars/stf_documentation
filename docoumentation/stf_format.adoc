@@ -280,7 +280,6 @@ This type represents a buffer contained in the same file.
 		"version_major": 0,
 		"version_minor": 0,
 		"root": "979c1726-222d-4184-89b1-72f9b2c82d60",
-		"profiles": [],
 		"asset_info": {
 			"asset_name": "Default Cube"
 		},

@@ -28,12 +28,12 @@ Intended for (not only) game development use-cases.
 Suppport for these modules is required for a valid STF implementation
 
 === Data Modules
-* link:./modules_core/data/stf_prefab.adoc[stf.prefab]
-* link:./modules_core/data/stf_armature.adoc[stf.armature]
-* link:./modules_core/data/stf_mesh.adoc[stf.mesh]
-* link:./modules_core/data/stf_material.adoc[stf.material]
-* link:./modules_core/data/stf_image.adoc[stf.image]
-* link:./modules_core/data/stf_animation.adoc[stf.animation]
+* xref:modules_core/data/stf_prefab.adoc[stf.prefab]
+* xref:./modules_core/data/stf_armature.adoc[stf.armature]
+* xref:./modules_core/data/stf_mesh.adoc[stf.mesh]
+* xref:./modules_core/data/stf_material.adoc[stf.material]
+* xref:./modules_core/data/stf_image.adoc[stf.image]
+* xref:./modules_core/data/stf_animation.adoc[stf.animation]
 
 === Node Modules
 * link:./modules_core/node/stf_node.adoc[stf.node]

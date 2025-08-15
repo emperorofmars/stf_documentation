@@ -19,24 +19,21 @@ Intended for (not only) game development use-cases.
 [%autowidth]
 |===
 |**In development for:**
-|**https://github.com/emperorofmars/stf_blender[Blender]**
-|**https://github.com/emperorofmars/stf_unity[Unity]**
-|**https://github.com/emperorofmars/stf_godot[Godot]**
+|**Blender** [https://github.com/emperorofmars/stf_blender[GitHub] - https://codeberg.org/emperorofmars/stf_blender[Codeberg]]
+|**Unity** [https://github.com/emperorofmars/stf_unity[GitHub] - https://codeberg.org/emperorofmars/stf_unity[Codeberg]]
+|**Godot** [https://github.com/emperorofmars/stf_godot[GitHub] - https://codeberg.org/emperorofmars/stf_godot[Codeberg]]
 |===
 _Try to import this https://squirrelbite.itch.io/stf-avatar-showcase[example model]!_
 
 Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bevy, BabylonJs, ...
 
----
-
-This repository hosts the documentation for the STF format and core modules.
-
+== Documentation
 [cols=3*, frame=none, grid=none]
 [%autowidth]
 |===
-|**link:./docoumentation/stf_documentation.adoc[STF Format Documentation]**
-|**link:./docoumentation/modules.adoc[Core Modules Documentation]**
-|**link:./stf_roadmap.adoc[Roadmap]**
+|**xref:./docoumentation/stf_format.adoc[STF Format]**
+|**xref:./docoumentation/modules.adoc[Core Modules]**
+|**xref:./stf_roadmap.adoc[Roadmap]**
 |===
 
 == Concept
@@ -71,7 +68,6 @@ Game-engines are responsible for runtime optimization, not the 3d file format or
 		"version_major": 0,
 		"version_minor": 0,
 		"root": "979c1726-222d-4184-89b1-72f9b2c82d60",
-		"profiles": [],
 		"asset_info": {
 			"asset_name": "Default Cube"
 		},
