@@ -17,7 +17,7 @@ endif::[]
 |===
 |Key |Required |Type |Description
 
-|loop |Yes |bool |Whether to loop the animation
+|loop |Yes |string |Whether to loop the animation and how
 |fps |Yes |float |
 |range |Yes |List<float> |Beginning and end frame of the animation
 |bake_on_export |No |bool |Whether the animation should be baked on
@@ -72,7 +72,7 @@ Depending on the `interpolation type`, the following properties are added.
 "6a60e775-4374-4439-bbbe-49ea5edc9438": {
 	"type": "stf.animation",
 	"name": "Anim Test",
-	"loop": false,
+	"loop": "none",
 	"fps": 24,
 	"bake_on_export": true,
 	"range": [
