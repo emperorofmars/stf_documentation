@@ -2,7 +2,7 @@
 
 = STF Format: Documentation
 Mars <mars@squirrel.pub>
-v0.0.8
+v0.0.9
 :homepage: https://stfform.at
 :keywords: stf, 3d, fileformat, format, interchange, interoperability
 :hardbreaks-option:
@@ -93,9 +93,6 @@ The root resource must be a xref:./modules_core/data/stf_prefab.adoc[`stf.prefab
 	"meta": {
 		"asset_name": "STF Example 1"
 	},
-	"profiles": [
-		"compatibility_wide"
-	],
 	"metric_multiplier": 1.0,
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 }
@@ -196,28 +193,24 @@ Suppport for module plugins of this kind is required.
 	"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
 		"type": "stf.material",
 		"name": "Body Material",
-		"referenced_resources": [
-			"6f03d810-4613-467d-921b-a5302552f9d5"
-		],
 		"properties": {
-			"albedo": {
+			"albedo.texture": {
 				"type": "image",
-				"image": 6f03d810-4613-467d-921b-a5302552f9d5
-			},
+				"values": [
+					{
+						"image": "f518a35d-d788-4692-a2dd-84d036d259e8"
+					}
+				]
+			}
 		}
 	},
-	"6f03d810-4613-467d-921b-a5302552f9d5": {
+	"60b9192c-0c82-434b-b1cf-27d8add2c071": {
 		"type": "stf.image",
-		"name": "Body_Color",
-		"image_format": "png",
-		"buffer": "4f825896-ecb3-4c6e-b90a-d5b8304a40c4",
-		"components": [
-			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70"
-		],
-		"referenced_buffers": [
-			"4f825896-ecb3-4c6e-b90a-d5b8304a40c4"
-		]
-	}
+		"name": "Awesome Texture.png",
+		"format": "png",
+		"buffer": "d07b09a0-3184-4a39-8650-d1fc90c64df2",
+		"data_type": "color"
+	},
 	"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
 		"type": "stf.texture",
 		"resolution": [2048, 2048],
