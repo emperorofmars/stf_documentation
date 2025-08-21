@@ -46,7 +46,8 @@ A few modules, including but not limited to `stf.prefab`, `stf.mesh`, `stf.mater
 
 Additional modules can be easily implemented by third parties. Each STF implementation provides an easy and convenient way to hot-load module-plugins.
 
-As the format is focussed on interoperability, the default module for meshes for example stores meshes both, triangulated, and the original topology. If it gets imported into a game-engine, the triangulated data will be used, if imported into a modeling tool, the original topology will be imported. This is possible with negligible storage impact.
+As the format is focussed on interoperability, the default module for meshes for example stores its data both, triangulated, and the original topology.
+If it gets imported into a game-engine, the triangulated data will be used, if imported into a modeling tool, the original topology will be imported. This is possible with negligible storage impact.
 
 Learn how STF compares to other 3d file-formats: link:./documentation/comparisons.adoc[Comparisons]
 
