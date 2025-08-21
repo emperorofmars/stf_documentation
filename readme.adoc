@@ -46,9 +46,9 @@ A few modules, including but not limited to `stf.prefab`, `stf.mesh`, `stf.mater
 
 Additional modules can be easily implemented by third parties. Each STF implementation provides an easy and convenient way to hot-load module-plugins.
 
-Similar to glTF 2.0, an STF file consists of a Json definition and binary data. Contrary to glTF, STF is firmly intended for interchange of 3d assets, not runtime loading or asset-streaming.
-Game-engines are responsible for runtime optimization, not the 3d file format or 3d modeling tool.
+As the format is focussed on interoperability, the default module for meshes for example stores meshes both, triangulated and the original topology. If it gets imported into a game-engine, the triangulated data will be used, if imported into a modeling tool, the original topology will be imported.
 
+Learn how STF compares to other 3d file-formats: link:./documentation/comparisons.adoc[Comparisons]
 
 //.Minimal example Json definition
 //[%collapsible]
