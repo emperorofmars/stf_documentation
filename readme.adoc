@@ -12,9 +12,12 @@ ifdef::env-github[]
 :note-caption: :information_source:
 endif::[]
 ifdef::env-codeberg[:relfilesuffix: .adoc]
+:imagesdir: ./documentation/img
 
 **Squirrel Transfer Format - Modular 3D File-Format** [version {revnumber}]
 Intended for (not only) game development use-cases.
+
+See installation instructions on the https://stfform.at[official website]!
 
 [cols=4*, frame=none, grid=none]
 [%autowidth]
@@ -50,6 +53,9 @@ As the format is focussed on interoperability, the default module for meshes for
 If it gets imported into a game-engine, the triangulated data will be used, if imported into a modeling tool, the original topology will be imported. This is possible with negligible storage impact.
 
 Learn how STF compares to other 3d file-formats: link:./documentation/comparisons.adoc[Comparisons]
+
+=== Anatomy of an STF file
+image:stf_anatomy.png[width=50%]
 
 //.Minimal example Json definition
 //[%collapsible]
@@ -293,10 +299,6 @@ Learn how STF compares to other 3d file-formats: link:./documentation/comparison
 }
 ----
 ====
-
----
-
-Previously, a proof-of-concept for such a format has been made here: https://github.com/emperorofmars/stf-unity-poc[Repository Link]
 
 == License
 This repository is licensed under **CC-BY-4.0** (<https://creativecommons.org/licenses/by/4.0/>)
