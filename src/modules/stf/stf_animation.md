@@ -1,75 +1,56 @@
 # stf.animation
-// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= stf.animation
-:homepage: https://stfform.at
-:keywords: stf, 3d, fileformat, format, interchange, interoperability
-:hardbreaks-option:
-:idprefix:
-:idseparator: -
-:library: Asciidoctor
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-endif::[]
-
-== Properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+## Properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |loop |Yes |string |Whether to loop the animation and how
 |fps |Yes |float |
 |range |Yes |List<float> |Beginning and end frame of the animation
 |bake_on_export |No |bool |Whether the animation should be baked on
 |tracks |Yes |List<Track-Object> |
-|===
 
-=== Track-Object properties
-|===
-|Key |Required |Type |Description
-
+### Track-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |target |Yes |Path |STF path of the target property
 |subtracks |Yes |List<Subtrack-Object / null> |
-|===
 
-=== Subtrack-Object properties
-|===
-|Key |Required |Type |Description
-
+### Subtrack-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |keyframes |Yes |List<Keyframe-Array / null> |
 |baked |No |Buffer-ID |Baked values between range[0] and range[1]
-|===
 
-=== Keyframe-Array
-|===
-|Index |Type |Description
-
+### Keyframe-Array
+| Index | Type | Description |
+| :--- | :--- | :--- |
 |0 |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
 |1 |float |Timepoint in frames
 |2 |float |The main value
 |3 |string |interpolation type
-|===
 
 In case the previous keyframe has an out-tangent, this keyframes in-tangent is added at the last position in the keyframe-array.
-|===
-|Index |Type |Description
-|Last index |float |In-tangent x and y offset, present only if the previous keyframe has an out-tangent
-|===
+
+| Index | Type | Description |
+| :--- | :--- | :--- |
+| last | float | In-tangent x and y offset, present only if the previous keyframe has an out-tangent
 
 Depending on the `interpolation type`, the following properties are added.
 
-==== bezier
-|===
-|Index |Type |Description
+#### bezier
+| Index | Type | Description |
+| :--- | :--- | :--- |
 |4 |string |tangent type
 |5 |List<float> |Out-tangent x and y offset
-|===
+
+## Implementations
+* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
+* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
+* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
 
 
-== Json Example
-[,json]
-----
+## Json Example
+```json
 "6a60e775-4374-4439-bbbe-49ea5edc9438": {
 	"type": "stf.animation",
 	"name": "Anim Test",
@@ -241,9 +222,4 @@ Depending on the `interpolation type`, the following properties are added.
 		}
 	]
 },
-----
-
-== Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py[Codeberg]
-* Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs[Codeberg]
-* Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd[Codeberg]
+```

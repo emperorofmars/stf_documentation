@@ -5,7 +5,7 @@ It can never be instantiated recursively.
 ## Properties
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-|root_bones |Yes |List<ID> |IDs of nodes |
+| root_bones | Yes | List<ID> | IDs of nodes |
 
 The only allowed type for nodes in `root_bones` is [`stf.bone`](stf_bone.md).
 

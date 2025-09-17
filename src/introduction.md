@@ -7,9 +7,9 @@ Please note, STF is work in progress and likely to change.
 </div>
 
 **Get STF support for:**
-
-| [Blender 4.4+](installation/blender.md) | [Unity 2022.3+](installation/unity.md) | [Godot 4.5+](installation/godot.md) |
-| --- | --- | --- |
+* [Blender 4.4+](installation/blender.md)
+* [Unity 2022.3+](installation/unity.md)
+* [Godot 4.5+](installation/godot.md)
 
 _Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showcase)!_
 
@@ -31,4 +31,3 @@ Learn how STF compares to other 3d file-formats: [Comparisons](format/comparison
 
 ## Anatomy of an STF file
 ![](assets/stf_anatomy.png)
-
