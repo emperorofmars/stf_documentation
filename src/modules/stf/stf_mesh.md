@@ -1,19 +1,6 @@
 # stf.mesh
-// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= stf.mesh
-:homepage: https://stfform.at
-:keywords: stf, 3d, fileformat, format, interchange, interoperability
-:hardbreaks-option:
-:idprefix:
-:idseparator: -
-:library: Asciidoctor
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-endif::[]
-
-== Datemodel
+## Datemodel
 
 Face -> Triangle -> Face Corner -> Split -> Vertex
 
@@ -21,11 +8,9 @@ Face: Material Index
 Split: Normal, UVs, Colors
 Vertex: Position
 
-== Properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+## Properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |float_width |No |uint |Byte-width of float-values
 |indices_width |No |uint |Byte-width of indices
 |material_slots |No |List<Resource-ID / null> |List of material IDs in the order of the meshes material-slots
@@ -50,22 +35,16 @@ Vertex: Position
 |uvs |No |List<UV-Object> |
 |blendshapes |No |List<Blendshape-Object> |
 |vertex_groups |No |List<VertexGroup-Object> |
-|===
 
-=== UV-Object properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+### UV-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |name |Yes |string |
 |uv |Yes |Buffer-ID |2 floats per split
-|===
 
-=== Blendshape-Object properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+### Blendshape-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |name |Yes |string |
 |default_value |No |float |default: 0
 |limit_upper |No |float |default: 1
@@ -74,23 +53,23 @@ Vertex: Position
 |position_offsets |Yes |Buffer-ID |3 floats per vertex
 |split_indices |No |Buffer-ID |int
 |split_normals |No |Buffer-ID |3 floats per split
-|===
 
-=== VertexGroup-Object properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+### VertexGroup-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |name |Yes |string |
 |indices |No |Buffer-ID |int
 |weights |Yes |Buffer-ID |float per vertex
-|===
 
 ...TODO
 
-== Json Example
-[,json]
-----
+## Implementations
+* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
+* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)
+* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Mesh.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
+
+## Json Example
+```json
 "783134da-9e2a-4d69-a1f0-59952bc36895": {
 	"type": "stf.mesh",
 	"name": "Superawesome Mesh",
@@ -160,9 +139,4 @@ Vertex: Position
 		"5e6c4973-d3cf-423f-aabe-a6a6d0959e40"
 	]
 }
-----
-
-== Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py[Codeberg]
-* Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs[Codeberg]
-* Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Mesh.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd[Codeberg]
+```

@@ -1,62 +1,45 @@
 # stf.material
-// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
 
-= stf.material
-:homepage: https://stfform.at
-:keywords: stf, 3d, fileformat, format, interchange, interoperability
-:hardbreaks-option:
-:idprefix:
-:idseparator: -
-:library: Asciidoctor
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-endif::[]
-
-== Properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+## Properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |style_hints |No |List<String> |Hints on the visual style of the material
 |shader_targets |No |Dict<List<String>> |Hints on the target stader per target application
 |properties |Yes |Dict<String, Property-Object> |Dict of Property-ID as a string to an Object
-|===
 
-=== Property-Object properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-
+### Property-Object properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |type |No |String |Type of the value variables
 |values |No |List<Value-Variable> |List of values. The value object is determined by the `type`
-|===
 
 The following types for property-values are supported:
 
-==== `float`
+#### `float`
 Json float value
 
-==== `int`
+#### `int`
 Json int value
 
-==== `color`
+#### `color`
 Json array of four floats, corresponding to the RGBA color channels.
 
-==== `image`
+#### `image`
 An Image-Property-Value-Object:
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
 
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
 |image |Yes |Resource-ID |ID of an `stf.image` or compatible resource.
-|===
-TODO the image object should be expanded with UV-offsets and such
 
+TODO: the image object should be expanded with UV-offsets and such
 
-== Json Example
-[,json]
-----
+## Implementations
+* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_material/stf_material.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_material/stf_material.py)
+* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs)
+* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Material.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Material.gd)
+
+## Json Example
+```json
 "bdf11d99-70d2-42df-8a58-19f1e5238662": {
 	"type": "stf.material",
 	"name": "Body",
@@ -107,9 +90,4 @@ TODO the image object should be expanded with UV-offsets and such
 		}
 	}
 }
-----
-
-== Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_material/stf_material.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_material/stf_material.py[Codeberg]
-* Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs[Codeberg]
-* Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Material.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Material.gd[Codeberg]
+```

@@ -1,31 +1,19 @@
 # stf.instance.armature
-// Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>)
-
-= stf.instance.armature
-:homepage: https://stfform.at
-:keywords: stf, 3d, fileformat, format, interchange, interoperability
-:hardbreaks-option:
-:idprefix:
-:idseparator: -
-:library: Asciidoctor
-ifdef::env-github[]
-:tip-caption: :bulb:
-:note-caption: :information_source:
-endif::[]
-
 Instantiates an armature onto a node.
 
-== Properties
-[%autowidth, %header,cols=4*]
-|===
-|Key |Required |Type |Description
-|armature |Yes |Resource-ID |ID of the instantiated armature resource, usually xref:../data/stf_armature.adoc[`stf.armature`]
+## Properties
+| Key | Required | Type | Description |
+| :--- | :--- | :--- | :--- |
+|armature |Yes |Resource-ID |ID of the instantiated armature resource, usually [`stf.armature`](stf_armature.md)
 |pose |No |Map<Resource-ID, TRS> |Map of the corresponding bone and TRS.
-|===
 
-== Json Example
-[,json]
-----
+## Implementations
+* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py)
+* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs)
+* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd)
+
+## Json Example
+```json
 "73d67945-2937-41c8-b683-7a992cbca5c5": {
 	"type": "stf.instance.armature",
 	"name": "",
@@ -48,9 +36,4 @@ Instantiates an armature onto a node.
 		]
 	}
 }
-----
-
-== Implementations
-* Blender: https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py[GitHub] | https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py[Codeberg]
-* Unity: https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs[GitHub] | https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs[Codeberg]
-* Godot: https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd[GitHub] | https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd[Codeberg]
+```
