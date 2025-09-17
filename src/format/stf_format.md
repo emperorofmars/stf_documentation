@@ -44,6 +44,7 @@ The root Json element is an object. It contains 3 properties: [`stf`](#stf-objec
 The `stf` object holds meta information.
 
 `stf` object properties:
+
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 | version_major | Yes | Int | Major version of STF |
@@ -75,6 +76,7 @@ The `resources` object is a map of resource objects identified by an ID.
 The various resource objects describe the files actual content. Any further properties are defined by each resources module.
 
 Resource object general properties:
+
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 | type |Yes |String |Type of the resource. |
@@ -98,7 +100,8 @@ The information about what `kind` a resource is, must be known by the resource-t
 ##### Data
 Suppport for module plugins of this kind is required.
 
-Data resource properties
+Data resource properties:
+
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |fallback |No |Resource-ID |ID of a resource that should be used in case this one's type is not supported in this implementation |
@@ -108,7 +111,8 @@ Data resource properties
 For now only [`stf.node`](modules/stf/stf_node.md) and [`stf.bone`](modules/stf/stf_bone.md) exist.
 Suppport for module plugins of this kind is not required.
 
-Node resource properties
+Node resource properties:
+
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |enabled |No |boolean |True by default |
@@ -122,7 +126,8 @@ Instances can provide data relevant for the instance of the resource, such as an
 An instance resource can be referenced only once by a `Node` resource.
 Suppport for module plugins of this kind is required.
 
-Instance resource properties
+Instance resource properties:
+
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |enabled |No |boolean |True by default |
@@ -132,7 +137,8 @@ They Represents additional functionality or information for `Data` and `Node` re
 A component resource can be referenced only once by a `Data` or `Node` resource.
 Suppport for module plugins of this kind is required.
 
-Component resource properties
+Component resource properties:
+
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |enabled |No |boolean |True by default |
@@ -181,7 +187,8 @@ For now, `stf.buffer.included` is the only supported buffer type. Support for ho
 #### stf.buffer.included
 This type represents a buffer contained in the same file.
 
-`stf.buffer.included` properties
+`stf.buffer.included` properties:
+
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |index |Yes |Int |Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer. |
