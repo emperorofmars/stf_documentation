@@ -1,0 +1,34 @@
+[book]
+authors = ["Mars (https://squirrelbite.com)"]
+language = "en"
+src = "src"
+title = "STF Documentation"
+description = "Squirrel Transfer Format - A modular file-format for 3D assets"
+
+[output.html]
+default-theme = "dark"
+preferred-dark-theme = "ayu"
+git-repository-url = "https://github.com/emperorofmars/stf_docs"
+git-repository-icon = "fa-code-fork"
+edit-url-template = "https://github.com/emperorofmars/stf_docs/edit/master/guide/{path}"
+site-url = "https://docs.stfform.at"
+cname = "documentation.stfform.at"
+input-404 = "404.md"
+
+[output.html.fold]
+enable = true
+level = 2
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+max-level = 4
+
+[preprocessor.gitinfo]
+enable = true
+template = "Date: {{date}}{{sep}}branch: {{branch}}{{sep}}commit: {{hash}}"
+separator = " • "
+font-size = "0.8em"
+date-format = "%Y-%m-%d"
+time-format = "%H:%M:%S"
+branch = "master"
