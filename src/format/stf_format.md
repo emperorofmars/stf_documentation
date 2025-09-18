@@ -57,7 +57,7 @@ The `stf` object holds meta information.
 
 The root resource must be a [`stf.prefab`](modules/stf/stf_prefab.md). It represents the assets scene-hierarchy.
 
-`stf` object example:
+~~~admonish example title="stf object example"
 ```json
 "stf": {
 	"version_major": 0,
@@ -69,6 +69,7 @@ The root resource must be a [`stf.prefab`](modules/stf/stf_prefab.md). It repres
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
 }
 ```
+~~~
 
 ### **resources** object
 The `resources` object is a map of resource objects identified by an ID.
@@ -144,7 +145,7 @@ Component resource properties:
 |enabled |No |boolean |True by default |
 |overrides |No |List<Resource-ID> |References `Component` kind types that should not be processed, if this type is supported |
 
-.resources object example
+~~~admonish example title="resources object example"
 ```json
 "resources": {
 	"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
@@ -177,6 +178,7 @@ Component resource properties:
 	}
 }
 ```
+~~~
 
 ### **buffers** object
 The `buffers` object is a map of buffer objects identified by an ID.
@@ -193,7 +195,7 @@ This type represents a buffer contained in the same file.
 | :--- | :--- | :--- | :--- |
 |index |Yes |Int |Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer. |
 
-buffers object example in an STF binary file
+~~~admonish example title="buffers object example"
 ```json
 "buffers": {
 	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
@@ -202,8 +204,11 @@ buffers object example in an STF binary file
 	}
 }
 ```
+~~~
 
 ### Minimal Definition Example
+~~~admonish example collapsible=true, title="Default Cube.stf"
 ```json
 {{#include ../assets/minimal.stf.json}}
 ```
+~~~

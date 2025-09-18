@@ -8,16 +8,17 @@ description = "Squirrel Transfer Format - A modular file-format for 3D assets"
 [output.html]
 default-theme = "dark"
 preferred-dark-theme = "ayu"
-git-repository-url = "https://github.com/emperorofmars/stf_docs"
-git-repository-icon = "fa-code-fork"
-edit-url-template = "https://github.com/emperorofmars/stf_docs/edit/master/guide/{path}"
 site-url = "https://docs.stfform.at"
 cname = "documentation.stfform.at"
+git-repository-icon = "fa-code-fork"
+git-repository-url = "https://codeberg.org/emperorofmars/stf_documentation"
+edit-url-template = "https://codeberg.org/emperorofmars/stf_documentation/_edit/master/{path}"
 input-404 = "404.md"
+additional-css = ["./css/mdbook-admonish.css"]
 
 [output.html.fold]
 enable = true
-level = 2
+level = 1
 
 [preprocessor.toc]
 command = "mdbook-toc"
@@ -32,3 +33,7 @@ font-size = "0.8em"
 date-format = "%Y-%m-%d"
 time-format = "%H:%M:%S"
 branch = "master"
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.1.0" # do not edit: managed by `mdbook-admonish install`

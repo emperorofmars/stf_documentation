@@ -30,6 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MDBOOK_VERSION: 0.4.36
+      MDBOOK_GITINFO_VERSION: 0.1.2
+      MDBOOK_TOC_VERSION: 0.14.2
+      MDBOOK_ADMONISH_VERSION: 1.20.0
     steps:
       - uses: actions/checkout@v4
       - name: Install mdBook
@@ -37,8 +40,9 @@ jobs:
           curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
           rustup update
           cargo install --version ${MDBOOK_VERSION} mdbook
-          cargo install mdbook-gitinfo
-          cargo install mdbook-toc
+          cargo install --version ${MDBOOK_GITINFO_VERSION} mdbook-gitinfo
+          cargo install --version ${MDBOOK_TOC_VERSION} mdbook-toc
+          cargo install --version ${MDBOOK_ADMONISH_VERSION} mdbook-admonish
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
