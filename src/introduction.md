@@ -6,7 +6,7 @@
 Please note, STF is work in progress and likely to change.
 </div>
 
-**Get STF support for:**
+**Install STF support for:**
 * [Blender 4.4+](installation/blender.md)
 * [Unity 2022.3+](installation/unity.md)
 * [Godot 4.5+](installation/godot.md)

@@ -12,7 +12,7 @@ The Json definition contains meta information, arbitrary resources and buffer re
 Resources have a `type` property, and are identified by a unique ID as a string.
 Based on a resources type, a module gets selected which provides support to import & export it.
 
-The minimum required set of supported modules is specified in [Modules](stf_modules.md).
+The minimum required set of supported modules is specified in [Modules](../modules/readme.md).
 
 STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 
@@ -55,7 +55,7 @@ The `stf` object holds meta information.
 | timestamp | No | String | Timestamp as a String in the ISO format. |
 | metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`. |
 
-The root resource must be a [`stf.prefab`](modules/stf/stf_prefab.md). It represents the assets scene-hierarchy.
+The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It represents the assets scene-hierarchy.
 
 ~~~admonish example title="stf object example"
 ```json
@@ -109,7 +109,7 @@ Data resource properties:
 |components |No |List<Resource-ID> |Component resource IDs |
 
 ##### Node
-For now only [`stf.node`](modules/stf/stf_node.md) and [`stf.bone`](modules/stf/stf_bone.md) exist.
+For now only [`stf.node`](../modules/stf/stf_node.md) and [`stf.bone`](../modules/stf/stf_bone.md) exist.
 Suppport for module plugins of this kind is not required.
 
 Node resource properties:
