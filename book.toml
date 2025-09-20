@@ -14,7 +14,8 @@ git-repository-icon = "fa-code-fork"
 git-repository-url = "https://codeberg.org/emperorofmars/stf_documentation"
 edit-url-template = "https://codeberg.org/emperorofmars/stf_documentation/_edit/master/{path}"
 input-404 = "404.md"
-additional-css = ["./css/mdbook-admonish.css"]
+additional-css = ["./theme/mdbook-admonish.css", "./theme/stf.css"]
+copy-fonts = true
 
 [output.html.fold]
 enable = true

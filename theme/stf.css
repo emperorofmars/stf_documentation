@@ -1,0 +1,12 @@
+
+#sidebar-toggle {
+	display: none;
+}
+
+#theme-toggle {
+	display: none;
+}
+
+#content {
+	padding-right: var(--sidebar-width);
+}

@@ -1,5 +1,8 @@
 # Summary
+
 [Introduction](introduction.md)
+
+---
 
 - [Installation](installation/readme.md)
 	- [Blender](installation/blender.md)

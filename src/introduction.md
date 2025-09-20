@@ -15,7 +15,7 @@ _Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-show
 
 Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bevy, BabylonJs, ...
 
-# Concept
+## Concept
 STF by itself is merely a shell format. It provides a framework for different modules to parse and serialize resourses.
 
 Resources are stored as Json-objects, identified by a unique ID. Resources can reference binary buffers and each other.
@@ -29,5 +29,5 @@ If it gets imported into a game-engine, the triangulated data will be used, if i
 
 Learn how STF compares to other 3d file-formats: [Comparisons](format/comparisons.md)
 
-## Anatomy of an STF file
+### Anatomy of an STF file
 ![](assets/stf_anatomy.png)
