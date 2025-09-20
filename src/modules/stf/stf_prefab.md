@@ -1,6 +1,5 @@
 # stf.prefab
 A prefab represents a hierarchy of nodes.
-It can never be instantiated recursively.
 
 ## Properties
 | Key | Required | Type | Description |

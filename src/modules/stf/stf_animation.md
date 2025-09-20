@@ -1,4 +1,5 @@
 # stf.animation
+An animation relative to a prefab.
 
 ## Properties
 | Key | Required | Type | Description |

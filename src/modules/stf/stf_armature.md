@@ -1,6 +1,5 @@
 # stf.armature
 A armature represents a hierarchy of bones.
-It can never be instantiated recursively.
 
 ## Properties
 | Key | Required | Type | Description |

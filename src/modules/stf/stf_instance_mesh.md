@@ -1,4 +1,5 @@
 # stf.instance.mesh
+Instantiates a mesh onto a node.
 
 ## Properties
 | Key | Required | Type | Description |

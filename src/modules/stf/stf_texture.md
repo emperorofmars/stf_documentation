@@ -1,4 +1,5 @@
 # stf.texture
+Information on how an image is to be converted into a GPU texture.
 
 ## Properties
 | Key | Required | Type | Description |

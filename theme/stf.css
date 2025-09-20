@@ -10,3 +10,36 @@
 #content {
 	padding-right: var(--sidebar-width);
 }
+
+.drag-button {
+	font-size: 2rem;
+	border: 2px solid pink;
+	border-radius: 10px;
+	padding: 8px 12px;
+}
+.drag-button > span {
+	color: pink;
+}
+.drag-button:hover {
+	cursor: move !important;
+	text-decoration: none !important;
+	filter: drop-shadow(0 0 8px #ffe6ea);
+}
+.drag-button:hover > span {
+	color: #ffe6ea;
+}
+.drag-button:active {
+	cursor: move !important;
+}
+.drag-button > span:before {
+	position: relative;
+	display: inline-block;
+	content: "";
+	width: 2rem;
+	height: 2rem;
+	margin-right: 1rem;
+	background-image: radial-gradient(pink 40%, transparent 40%);
+	background-size: 7px 7px;
+	background-repeat: repeat;
+	top: 0.3rem;
+}
