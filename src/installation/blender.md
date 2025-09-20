@@ -1,6 +1,6 @@
 # Blender Installation
 
-To install the Blender STF Extension:<br>
+To install the Blender STF extension:<br>
 <!--**[Drag & drop THIS link into an open Blender window!](https://github.com/emperorofmars/stf_blender/releases/download/v0.0.9/stf_blender-0.0.9.zip?repository=https://blender.stfform.at&blender_version_min=4.4.0)**-->
 <a class="drag-button" href="https://github.com/emperorofmars/stf_blender/releases/download/v0.0.10/stf_blender-0.0.10.zip?repository=https://blender.stfform.at&blender_version_min=4.4.0"><span>Drag & drop THIS link into an open Blender window!</span><a>
 
@@ -8,6 +8,6 @@ After the repository has been added, go to `Preferences` → `Get Extensions`, s
 
 ---
 
-Read the [User Guide](../guides/blender.md)
+Read the [User Guide](../guides/blender)
 
 See the Source Code: [Codeberg](https://codeberg.org/emperorofmars/stf_blender) - [GitHub](https://github.com/emperorofmars/stf_blender)

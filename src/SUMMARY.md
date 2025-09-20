@@ -47,6 +47,6 @@
 		- [ava.emotes](modules/ava/ava_emotes.md)
 
 - [Guides](guides/readme.md)
-	- [Blender](guides/blender.md)
+	- [Blender](guides/blender/readme.md)
 	- [Unity](guides/unity.md)
 	- [Godot](guides/godot.md)
