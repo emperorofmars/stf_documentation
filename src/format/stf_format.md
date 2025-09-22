@@ -3,7 +3,12 @@
 
 # STF Format
 
-<!-- toc -->
+```{toctree}
+:hidden:
+:maxdepth: 1
+comparisons.md
+```
+
 
 ## Introduction
 STF is a binary file format, containing a binary header, a Json definition and a set of binary buffers.
