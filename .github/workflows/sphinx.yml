@@ -38,7 +38,7 @@ jobs:
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
       with:
-        pre-build-command: "pip install --upgrade pip"
+        pre-build-command: "pip install --upgrade sphinx"
         docs-folder: "."
         build-command: "sphinx-build -b html src build -c ."
 
