@@ -72,7 +72,7 @@ The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It rep
 	"version_major": 0,
 	"version_minor": 0,
 	"meta": {
-		"asset_name": "STF Example 1"
+		"asset_name": "Default Cube"
 	},
 	"metric_multiplier": 1.0,
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
