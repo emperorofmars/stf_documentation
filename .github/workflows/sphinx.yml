@@ -37,9 +37,6 @@ jobs:
         cache: "pip" # caching pip dependencies
     - run: pip install -r requirements.txt --upgrade
 
-    - name: Change ownership of /github/home
-      run: sudo chown -R $(whoami) /github/home
-
     - name: Setup Pages
       id: pages
       uses: actions/configure-pages@v5
