@@ -61,7 +61,6 @@ extensions = [
 	"sphinx_togglebutton",
 	"sphinx_design",
 	"sphinxext.opengraph",
-	"notfound.extension",
 ]
 
 
