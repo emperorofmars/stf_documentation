@@ -201,7 +201,10 @@ Suppport for module plugins of this kind is required.
 		"name": "Awesome Texture.png",
 		"format": "png",
 		"buffer": "d07b09a0-3184-4a39-8650-d1fc90c64df2",
-		"data_type": "color"
+		"data_type": "color",
+		"components": [
+			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70"
+		]
 	},
 	"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
 		"type": "stf.texture",
