@@ -102,9 +102,8 @@ The various resource objects describe the files actual content. Any further prop
 | degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`. |
 :::
 
-If a referenced resource is not contained within the Json keys `children`, `root_nodes`, `components` or `instance`, it must be additionally stored in the `referenced_resources` field. This is only required for non-default modules.
-
-A referenced buffer must be additionally stored in the `referenced_buffers` field. This is only required for non-default modules.
+Resources, other than from the [`stf.*` namespace](../modules/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
+If an STF implementation doesn't support a resource, it will preserve and re-export it along with all its relationships.
 
 #### Resource Kinds
 Resources can be `Data`, `Node`, `Instance` and `Component` kinds.
