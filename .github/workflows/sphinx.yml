@@ -31,14 +31,14 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Change ownership of /github/home
-      run: sudo chown -R $(whoami) /github/home
-
     - uses: actions/setup-python@v6
       with:
         python-version: "3.13"
         cache: "pip" # caching pip dependencies
     - run: pip install -r requirements.txt --upgrade
+
+    - name: Change ownership of /github/home
+      run: sudo chown -R $(whoami) /github/home
 
     - name: Setup Pages
       id: pages
