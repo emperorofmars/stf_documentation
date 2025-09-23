@@ -1,12 +1,12 @@
 # STF Modules
 
-* [Core Modules (`stf.*`)](stf)\
+* [Core Modules (`stf.*`)](stf/index.md)\
 	Suppport for these modules is required for a valid STF implementation.
 
-* [Expanded Modules (`stfexp.*`)](stfexp)\
+* [Expanded Modules (`stfexp.*`)](stfexp/index.md)\
 	Recommended modules which support not 100% universal information.
 
-* [VR & V-Tubing Avatar Modules (`ava.*`)](ava)\
+* [VR & V-Tubing Avatar Modules (`ava.*`)](ava/index.md)\
 	Modules which represent functionality of VR & V-Tubing Avatars.
 
 ```{toctree}

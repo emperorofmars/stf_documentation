@@ -3,13 +3,6 @@
 
 # STF Format
 
-```{toctree}
-:hidden:
-:maxdepth: 1
-comparisons.md
-```
-
-
 ## Introduction
 STF is a binary file format, containing a binary header, a Json definition and a set of binary buffers.
 
@@ -17,7 +10,7 @@ The Json definition contains meta information, arbitrary resources and buffer re
 Resources have a `type` property, and are identified by a unique ID as a string.
 Based on a resources type, a module gets selected which provides support to import & export it.
 
-The minimum required set of supported modules is specified in [Modules](../modules/readme.md).
+The minimum required set of supported modules is specified in [Modules](../modules/index.md).
 
 STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 

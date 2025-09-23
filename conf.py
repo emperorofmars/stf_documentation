@@ -8,7 +8,8 @@ sphinx-autobuild src/ build/ -c . -a
 
 ## Project
 
-project = "STF"
+project = "STF Documentation"
+html_title = "STF Documentation"
 description = "Squirrel Transfer Format - A modular file-format for 3D assets"
 author = "Mars (https://squirrelbite.com)"
 copyright = f"{date.today().year}, stfform.at"
@@ -43,13 +44,15 @@ html_theme_options = {
 	"use_repository_button": True,
 	"use_edit_page_button": True,
 	"use_issues_button": True,
+	"navigation_depth": 3,
 }
 
 ## Extensions
 
 extensions = [
 	"myst_parser",
-	'sphinxext.opengraph',
+	"sphinxext.opengraph",
+	"sphinx_copybutton"
 ]
 
 myst_enable_extensions = [

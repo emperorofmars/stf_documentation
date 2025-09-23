@@ -35,8 +35,6 @@ Learn how STF compares to other 3d file-formats: [Comparisons](format/comparison
 
 ```{toctree}
 :hidden:
-:glob:
-:caption: Introduction
 Home <self>
 installation/index.md
 ```
@@ -45,7 +43,8 @@ installation/index.md
 :hidden:
 :caption: Reference
 format/stf_format.md
-modules/index.md
+Modules <modules/index.md>
+Comparisons <format/comparisons.md>
 ```
 
 ```{toctree}
@@ -53,4 +52,3 @@ modules/index.md
 :caption: Guides
 guides/index.md
 ```
-
