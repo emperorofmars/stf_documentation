@@ -2,18 +2,32 @@
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
 ## Properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |trs |Yes |TRS |The nodes 3D transform |
 |instance |No |Resource-ID |Reference to an instance-resource. |
 |parent_binding |No |Path |Path to the parent resource. Usually, when the parent node is an armature-instance, its the path to a bone within the instantiated armature. |
+:::
 
 Only other `stf.node` type resources are allowed as its children. Children may never loop.
 
 ## Implementations
-* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_node/stf_node.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
-* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Node.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs[Codeberg])
-* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Node.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd[Codeberg])
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
+	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_node/stf_node.py)
+*	- **Unity**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs)
+	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Node.cs)
+*	- **Godot**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd)
+	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Node.gd)
+:::
 
 ## Json Example
 ```json

@@ -2,19 +2,34 @@
 Can only exist within `stf.armature`.
 
 ## Properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |translation |Yes |Translation |The position of the bone relative to its armature position.
 |rotation |Yes |Rotation |The rotation of the bones head relative to its armature position.
 |length |Yes |Float |The bones length
 |connected |No |Boolean |Default `false`
+:::
 
 Only other `stf.bone` type resources are allowed as its children.
 
 ## Implementations
-* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_bone/stf_bone.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
-* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Bone.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/commit/5320b3e0f2bd631ac0d901ebc2d5765b0eff2a8a/Runtime/Modules/Modules_Core/STF_Bone.cs)
-* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Bone.gd)
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
+	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
+*	- **Unity**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
+	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
+*	- **Godot**
+	- [Codeberg](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd)
+	- [GitHub](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Bone.gd)
+:::
+
 
 ## Json Example
 ```json

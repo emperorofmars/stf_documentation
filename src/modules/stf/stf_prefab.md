@@ -2,17 +2,32 @@
 A prefab represents a hierarchy of nodes.
 
 ## Properties
+
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |root_nodes |Yes |List<Resource-ID> |IDs of the root nodes within this prefab |
 |animations |No |List<Resource-ID> |Animations which originate from this prefab's root |
+:::
 
 The only allowed type for nodes in `root_nodes` is [`stf.node`](stf_node.md).
 
 ## Implementations
-* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/commit/f45c3b56085fbd550901d6160a2d7cc96f69cda5/stfblender/stf_modules/core/stf_prefab/stf_prefab.py)
-* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Prefab.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Prefab.cs)
-* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Prefab.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Prefab.gd)
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py)
+	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py)
+*	- **Unity**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Prefab.cs)
+	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Prefab.cs)
+*	- **Godot**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Prefab.gd)
+	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Prefab.gd)
+:::
 
 ## Json Example
 ```json

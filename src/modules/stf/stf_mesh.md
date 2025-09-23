@@ -1,27 +1,34 @@
 # stf.mesh
 
-## Datemodel
+## Datamodel
 
-Face -> Triangle -> Face Corner -> Split -> Vertex
+* **Face:** Made up of one or more triangles.\
+The Material Index exists at theis level.
+* **Triangle:** 3 Face Corners, which can be shared by other triangles of the same face.
+* **Face Corner:** Reference to a Split, which can be shared by other face corners.
+* **Split:** References a vertex, which can be shared by other splits, as long as at least one of their other properties (Normal, UV, Color, ...) is unique.\
+Normals, UVs and colors exist at this level.
+* **Vertex:** Position\
+Blendshapes, weights & vertex groups exist at this level.
 
-Face: Material Index
-Split: Normal, UVs, Colors
-Vertex: Position
 
 ## Properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-|float_width |No |uint |Byte-width of float-values
-|indices_width |No |uint |Byte-width of indices
+|float_width |No |uint |Byte-width of float-values. Default: 4
+|indices_width |No |uint |Byte-width of indices. Default: 4
 |material_slots |No |List<Resource-ID / null> |List of material IDs in the order of the meshes material-slots
 |vertices |Yes |Buffer-ID |3 floats per vertex
 |face_corners |Yes |Buffer-ID |Index of the split for each face corner
 |splits |Yes |Buffer-ID |Vertex index for each unique combination of normals, uvs, colors, etc..
 |split_normals |No |Buffer-ID |3 floats per normal
 |split_colors |No |Buffer-ID |4 floats per color (rgba)
-|tris |No |Buffer-ID |3 indices per triangle
-|faces |No |Buffer-ID |number of tris for the face
-|material_indices |No |Buffer-ID |
+|tris |Yes |Buffer-ID |3 indices per triangle
+|faces |Yes |Buffer-ID |number of tris for the face
+|material_indices |No |Buffer-ID |Material index per face
 |sharp_edges |No |Buffer-ID |
 |sharp_face_indices |No |Buffer-ID |
 |lines |No |Buffer-ID |
@@ -35,14 +42,22 @@ Vertex: Position
 |uvs |No |List<UV-Object> |
 |blendshapes |No |List<Blendshape-Object> |
 |vertex_groups |No |List<VertexGroup-Object> |
+:::
 
 ### UV-Object properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |name |Yes |string |
 |uv |Yes |Buffer-ID |2 floats per split
+:::
 
 ### Blendshape-Object properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |name |Yes |string |
@@ -53,20 +68,34 @@ Vertex: Position
 |position_offsets |Yes |Buffer-ID |3 floats per vertex
 |split_indices |No |Buffer-ID |int
 |split_normals |No |Buffer-ID |3 floats per split
+:::
 
 ### VertexGroup-Object properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |name |Yes |string |
 |indices |No |Buffer-ID |int
 |weights |Yes |Buffer-ID |float per vertex
+:::
 
-...TODO
 
 ## Implementations
-* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
-* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)
-* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Mesh.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
+	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
+*	- **Unity**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)
+	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)
+*	- **Godot**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
+	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
+:::
 
 ## Json Example
 ```json

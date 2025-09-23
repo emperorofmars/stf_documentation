@@ -2,6 +2,9 @@
 An animation relative to a prefab.
 
 ## Properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |loop |Yes |string |Whether to loop the animation and how
@@ -9,45 +12,77 @@ An animation relative to a prefab.
 |range |Yes |List<float> |Beginning and end frame of the animation
 |bake_on_export |No |bool |Whether the animation should be baked on
 |tracks |Yes |List<Track-Object> |
+:::
 
 ### Track-Object properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |target |Yes |Path |STF path of the target property
 |subtracks |Yes |List<Subtrack-Object / null> |
+:::
 
 ### Subtrack-Object properties
+:::{table}
+:align: left
+:widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |keyframes |Yes |List<Keyframe-Array / null> |
 |baked |No |Buffer-ID |Baked values between range[0] and range[1]
+:::
 
 ### Keyframe-Array
+:::{table}
+:align: left
+:widths: auto
 | Index | Type | Description |
 | :--- | :--- | :--- |
 |0 |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
 |1 |float |Timepoint in frames
 |2 |float |The main value
 |3 |string |interpolation type
+:::
 
 In case the previous keyframe has an out-tangent, this keyframes in-tangent is added at the last position in the keyframe-array.
 
+:::{table}
+:align: left
+:widths: auto
 | Index | Type | Description |
 | :--- | :--- | :--- |
 | last | float | In-tangent x and y offset, present only if the previous keyframe has an out-tangent
+:::
 
 Depending on the `interpolation type`, the following properties are added.
 
 #### bezier
+:::{table}
+:align: left
+:widths: auto
 | Index | Type | Description |
 | :--- | :--- | :--- |
 |4 |string |tangent type
 |5 |List<float> |Out-tangent x and y offset
+:::
 
 ## Implementations
-* Blender: [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py) | [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
-* Unity: [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs) | [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
-* Godot: [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd) | [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
+	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
+*	- **Unity**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
+	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
+*	- **Godot**
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
+	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd)
+:::
+
 
 
 ## Json Example

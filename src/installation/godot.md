@@ -1,6 +1,11 @@
 # Godot Installation
 
-Download the [latest release](https://github.com/emperorofmars/stf_godot/releases/latest) and unpack the `addons/stf_godot` directory into the `addons` directory of your Godot project.
+```{button-link} https://github.com/emperorofmars/stf_godot/releases/latest
+:class: stf-button-full
+Download the latest release
+```
+
+Unpack the `addons/stf_godot` directory into the `addons` directory of your Godot project.
 
 ---
 

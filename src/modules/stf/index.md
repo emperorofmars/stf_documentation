@@ -14,4 +14,5 @@ stf_instance_mesh.md
 stf_material.md
 stf_image.md
 stf_texture.md
+stf_animation.md
 ```

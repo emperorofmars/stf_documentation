@@ -4,7 +4,7 @@
 	Suppport for these modules is required for a valid STF implementation.
 
 * [Expanded Modules (`stfexp.*`)](stfexp/index.md)\
-	Recommended modules which support not 100% universal information.
+	Recommended modules which may not be supported everywhere.
 
 * [VR & V-Tubing Avatar Modules (`ava.*`)](ava/index.md)\
 	Modules which represent functionality of VR & V-Tubing Avatars.
