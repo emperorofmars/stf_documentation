@@ -31,15 +31,18 @@ jobs:
       with:
         persist-credentials: false
 
-    - name: Setup Pages
-      id: pages
-      uses: actions/configure-pages@v5
+    - name: Change ownership of /github/home
+      run: sudo chown -R $(whoami) /github/home
 
     - uses: actions/setup-python@v6
       with:
         python-version: "3.13"
         cache: "pip" # caching pip dependencies
-    - run: pip install -r requirements.txt
+    - run: pip install -r requirements.txt --upgrade
+
+    - name: Setup Pages
+      id: pages
+      uses: actions/configure-pages@v5
 
     - name: Build HTML
       uses: ammaraskar/sphinx-action@master
