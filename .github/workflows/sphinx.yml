@@ -42,10 +42,7 @@ jobs:
       uses: actions/configure-pages@v5
 
     - name: Build HTML
-      uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "."
-        build-command: "sphinx-build -b html src build -c ."
+      run: sphinx-build -b html src build -c .
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
