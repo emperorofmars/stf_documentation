@@ -1,6 +1,11 @@
 # stf.texture
 Information on how an image is to be converted into a GPU texture.
 
+## Representations
+* Blender: `stf.texture` STF Component on Blender Image
+* Unity: `stf.texture` component on STF_Image
+* Godot: `stf.texture` component on Godot Image
+
 ## Properties
 :::{table}
 :align: left

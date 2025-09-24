@@ -1,16 +1,19 @@
 # stf.mesh
 
-## Datamodel
+## Representations
+* Blender: Mesh
+* Unity: Mesh
+* Godot: Mesh
 
+## Datamodel
 * **Face:** Made up of one or more triangles.\
-The Material Index exists at theis level.
+The Material Index exists at this level.
 * **Triangle:** 3 Face Corners, which can be shared by other triangles of the same face.
 * **Face Corner:** Reference to a Split, which can be shared by other face corners.
 * **Split:** References a vertex, which can be shared by other splits, as long as at least one of their other properties (Normal, UV, Color, ...) is unique.\
 Normals, UVs and colors exist at this level.
 * **Vertex:** Position\
 Blendshapes, weights & vertex groups exist at this level.
-
 
 ## Properties
 :::{table}
@@ -25,7 +28,7 @@ Blendshapes, weights & vertex groups exist at this level.
 |face_corners |Yes |Buffer-ID |Index of the split for each face corner
 |splits |Yes |Buffer-ID |Vertex index for each unique combination of normals, uvs, colors, etc..
 |split_normals |No |Buffer-ID |3 floats per normal
-|split_colors |No |Buffer-ID |4 floats per color (rgba)
+|split_colors |No |Buffer-ID |4 floats per color (RGBA)
 |tris |Yes |Buffer-ID |3 indices per triangle
 |faces |Yes |Buffer-ID |number of tris for the face
 |material_indices |No |Buffer-ID |Material index per face

@@ -1,5 +1,10 @@
 # stf.material
 
+## Representations
+* Blender: Material
+* Unity: Material
+* Godot: Material
+
 ## Properties
 :::{table}
 :align: left
@@ -7,9 +12,12 @@
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
 |style_hints |No |List<String> |Hints on the visual style of the material
-|shader_targets |No |Dict<List<String>> |Hints on the target stader per target application
+|shader_targets |No |Dict<List<String>> |Hints on the target shader per target application
 |properties |Yes |Dict<String, Property-Object> |Dict of Property-ID as a string to an Object
 :::
+
+Property-IDs can be freely chosen by users.\
+If an implementations happens to support a Property-ID with its Property-Object's type, it will be used.
 
 ### Property-Object properties
 :::{table}

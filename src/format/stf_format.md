@@ -2,20 +2,23 @@
 <!-- Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) -->
 
 # STF Format
+STF is a file format for 3D assets, consisting of resources like node-hierarchies, meshes, materials, armatures, and many more.
 
-## Introduction
-STF is a binary file format, containing a binary header, a Json definition and a set of binary buffers.
+## Concept
+STF files are made up of a binary header, a Json definition and a set of binary buffers.
 
-The Json definition contains meta information, arbitrary resources and buffer references.
+The Json definition contains meta information, resources and buffer references.\
 Resources have a `type` property, and are identified by a unique ID as a string.
-Based on a resources type, a module gets selected which provides support to import & export it.
 
-The minimum required set of supported modules is specified in [Core Modules](../modules/stf/index.md).
+STF implementations provide modules, which convert between STF resources of a specific `type` and a specific application resource.\
+*(I.e. a module for `stf.mesh` in the Blender STF implementation would convert the STF-resource to and from Blenders `bpy.types.Mesh`.)*
+
+A set of modules that any valid STF implementation has to provide is specified in [Core Modules](../modules/stf/index.md).
 
 STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 
-## Key Facts
-* The file extension for stf binary files is `.stf`.
+### Key Facts
+* The file extension for stf files is `.stf`.
 * The media-type for stf binary files is `model/stf+binary`.
 * The STF binary header is stored in `little endian` byte order.
 * The Json definition is encoded as `utf8`.
@@ -33,7 +36,7 @@ An STF binary file consists of a binary header, a [json-definition](#json-defini
 | 4 | Magic number: `STF0` |
 | 4 | STF binary format version major |
 | 4 | STF binary format version minor |
-| 4 | Number of buffers, including the Json definiton buffer |
+| 4 | Number of buffers, including the Json definition buffer |
 | 8 * {number of buffers} | Buffer lengths in bytes |
 | {length of all buffers} | Buffers |
 :::
@@ -112,7 +115,7 @@ Each of these kinds has additional properties.
 The information about what `kind` a resource is, must be known by the resource-type's implementation and is not contained in STF files itself.
 
 ##### Data
-Suppport for module plugins of this kind is required.
+Support for module plugins of this kind is required.
 
 **Data resource base properties:**
 
@@ -128,7 +131,7 @@ Suppport for module plugins of this kind is required.
 
 ##### Node
 For now only [`stf.node`](../modules/stf/stf_node.md) and [`stf.bone`](../modules/stf/stf_bone.md) exist.
-Suppport for module plugins of this kind is not required.
+Support for module plugins of this kind is not required.
 
 **Node resource base properties:**
 
@@ -148,7 +151,7 @@ They represent an instance of a `data` resource in the scene hierarchy.
 These include for example mesh or armature instances.
 Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
 An instance resource can be referenced only once by a `Node` resource.
-Suppport for module plugins of this kind is required.
+Support for module plugins of this kind is required.
 
 **Instance resource properties:**
 
@@ -164,7 +167,7 @@ Suppport for module plugins of this kind is required.
 ##### Component
 They Represents additional functionality or information for `Data` and `Node` resources.
 A component resource can be referenced only once by a `Data` or `Node` resource.
-Suppport for module plugins of this kind is required.
+Support for module plugins of this kind is required.
 
 **Component resource properties:**
 

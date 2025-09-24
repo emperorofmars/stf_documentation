@@ -20,9 +20,11 @@ body {
 }
 
 .stf-subtitle {
-	font-size: 1.3rem;
+	display: block;
+	font-size: 1.5rem;
 	font-weight: bold;
 	color: var(--color-stf-highlight);
+	margin: 20px 0 10px 0;
 }
 
 /* brand */

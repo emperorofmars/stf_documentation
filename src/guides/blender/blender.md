@@ -14,13 +14,13 @@ Anything parented to the Collection will be exported.
 When an STF file gets imported, it will become its own Collection.
 
 ## Resources
-Everything that can be exported in STF will get its own unique ID. If it is not set on before export, STF will automatically assign one. If STF encounters a duplicate ID, it will reassing it.\
+Everything that can be exported in STF will get its own unique ID. If it is not set on before export, STF will automatically assign one. If STF encounters a duplicate ID, it will reassign it.\
 By default the Blender name of a resource will be used. It can be optionally overridden.
 ![](img/id_editor.png)
 
 
 ## Component Resources
-Resource have Components. These are 'sub-resources' which add additional information/data to their parent resource. Some, like mesh-seams are natively supported by Blender, however most arent.\
+Resource have Components. These are 'sub-resources' which add additional information/data to their parent resource. Some, like mesh-seams are natively supported by Blender, however most aren't.\
 Components can be added/edited in the `Components` section of each resources panel.
 ![](img/component_list.png)
 

@@ -15,7 +15,7 @@ project = "STF Documentation"
 html_title = f"STF Documentation {release}"
 description = "Squirrel Transfer Format - A modular file-format for 3D assets"
 author = "Mars (https://squirrelbite.com)"
-copyright = f"{date.today().year}: This page is licensed under CC-BY-4.0 https://creativecommons.org/licenses/by/4.0/"
+copyright = f"{date.today().year}: stfform.at, This page is licensed under CC-BY-4.0 https://creativecommons.org/licenses/by/4.0/"
 language = "en"
 
 html_favicon = "theme/favicon.png"
@@ -60,6 +60,7 @@ extensions = [
 	"sphinx_copybutton",
 	"sphinx_togglebutton",
 	"sphinx_design",
+	"notfound.extension",
 	"sphinxext.opengraph",
 ]
 
@@ -88,3 +89,7 @@ ogp_social_cards = {
 	"image": "img/stf_logo.png",
 	"line_color": "#ff9cac",
 }
+
+### notfound.extension
+
+notfound_urls_prefix = None

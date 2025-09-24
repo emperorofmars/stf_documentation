@@ -1,5 +1,10 @@
 # stf.image
 
+## Representations
+* Blender: Image
+* Unity: STF_Image
+* Godot: Image
+
 ## Properties
 :::{table}
 :align: left

@@ -1,6 +1,11 @@
 # stf.instance.armature
 Instantiates an armature onto a node.
 
+## Representations
+* Blender: Object with Armature
+* Unity: GameObject
+* Godot: Skeleton3D
+
 ## Properties
 :::{table}
 :align: left

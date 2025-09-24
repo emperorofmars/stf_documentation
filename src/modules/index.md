@@ -1,7 +1,7 @@
 # STF Modules
 
 * [Core Modules (`stf.*`)](stf/index.md)\
-	Suppport for these modules is required for a valid STF implementation.
+	Support for these modules is required for a valid STF implementation.
 
 * [Expanded Modules (`stfexp.*`)](stfexp/index.md)\
 	Recommended modules which may not be supported everywhere.

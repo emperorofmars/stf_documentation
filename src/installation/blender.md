@@ -6,7 +6,7 @@ To install the Blender STF extension:<br>
 After the repository has been added, go to `Preferences` → `Get Extensions`, search for "stf" and press `Install`. 
 
 :::{tip}
-Also install the [Slot Link](https://extensions.blender.org/add-ons/slot-link/) extension to enable support for importing & exporting animations.
+Install the [Slot Link](https://extensions.blender.org/add-ons/slot-link/) extension to enable support for importing & exporting animations.
 :::
 
 ---

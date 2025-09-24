@@ -1,7 +1,7 @@
 # Godot Installation
 
 ```{button-link} https://github.com/emperorofmars/stf_godot/releases/latest
-:class: stf-button-full
+:class: stf-button
 Download the latest release
 ```
 

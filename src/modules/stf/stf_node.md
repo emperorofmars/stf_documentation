@@ -1,6 +1,11 @@
 # stf.node
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
+## Representations
+* Blender: Object
+* Unity: GameObject
+* Godot: Node3D
+
 ## Properties
 :::{table}
 :align: left

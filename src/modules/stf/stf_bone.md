@@ -1,6 +1,11 @@
 # stf.bone
 Can only exist within `stf.armature`.
 
+## Representations
+* Blender: Bone
+* Unity: GameObject
+* Godot: Skeleton3D's bones
+
 ## Properties
 :::{table}
 :align: left

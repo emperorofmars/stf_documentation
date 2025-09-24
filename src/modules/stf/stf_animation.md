@@ -1,6 +1,11 @@
 # stf.animation
 An animation relative to a prefab.
 
+## Representations
+* Blender: Action set-up with [Slot Link](https://extensions.blender.org/add-ons/slot-link/)
+* Unity: AnimationClip
+* Godot: Animation
+
 ## Properties
 :::{table}
 :align: left

@@ -1,14 +1,19 @@
 # stf.instance.mesh
 Instantiates a mesh onto a node.
 
+## Representations
+* Blender: Object with Mesh
+* Unity: MeshRenderer and SkinnedMeshRenderer
+* Godot: MeshInstance3D
+
 ## Properties
 :::{table}
 :align: left
 :widths: auto
 | Key | Required | Type | Description |
 | :--- | :--- | :--- | :--- |
-|mesh |Yes |ID |Resource-ID of the instantiated mesh resource, usually xref:../data/stf_mesh.adoc[`stf.mesh`]
-|armature_instance |No |Resource-ID |ID of a node with an instantiated armature. Usually the instance resource is xref:./stf_instance_armature.adoc[`stf.instance.armature`]
+|mesh |Yes |ID |Resource-ID of the instantiated mesh resource, usually [`stf.mesh`](stf_mesh.md)
+|armature_instance |No |Resource-ID |ID of a node with an instantiated armature. Usually the instance resource is [`stf.instance.armature`](stf_instance_armature.md)
 |blendshape_values |No |List<float> |
 |materials |No |List<Resource-ID> |
 :::

@@ -1,6 +1,11 @@
 # stf.armature
 A armature represents a hierarchy of bones.
 
+## Representations
+* Blender: Armature
+* Unity: GameObject
+* Godot: Skeleton3D
+
 ## Properties
 :::{table}
 :align: left

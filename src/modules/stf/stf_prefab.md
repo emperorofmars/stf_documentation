@@ -1,5 +1,10 @@
 # stf.prefab
-A prefab represents a hierarchy of nodes.
+A prefab represents a hierarchy of nodes. It's always the root resource of an STF asset.
+
+## Representations
+* Blender: Collection
+* Unity: GameObject/Prefab
+* Godot: The root-node of a scene
 
 ## Properties
 
