@@ -2,10 +2,10 @@
 /* Sphinx fixes */
 
 for(let e of document.querySelectorAll(".sidebar-tree .caption")) {
-	//e.removeAttribute("role");
-	e.setAttribute("role", "presentation");
+	e.setAttribute("aria-level", "2");
 }
 
+document.querySelector(".sidebar-tree li.current-page").setAttribute("aria-selected", "true");
 
 /* Furo theme fixes */
 
@@ -15,5 +15,6 @@ document.querySelector(".content-icon-container .view-this-page .muted-link").se
 
 /* STF temp fixes, turn TBD buttons into a AAA error */
 
-document.querySelector(".sd-btn-outline-secondary.ignore").setAttribute("role", "presentation");
+let e;
+if(e = document.querySelector(".sd-btn-outline-secondary.ignore")) e.setAttribute("role", "presentation");
 
