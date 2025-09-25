@@ -71,17 +71,18 @@ User Guide (TBD)
 
 
 ## Advantages
-* **Artist Friendly:**\
-	Import & export is quick and you don't have to fiddle with unnecessary import & export settings.
+* **Artist Friendly**\
+	Import & export is quick and you don't have to fiddle with unnecessary settings.\
+	Your model won't randomly break!
 	[All information in STF and it's core-modules is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
 
-* **Versatile:**\
+* **Versatile**\
 	STF stores original information as well as baked results.
 	[*I.e. STF contains the original topology of meshes, including n-gons, but also the triangulation.*\
 	This allows for STF files to be used for further editing **and** for import into game-engine editors.\
-	Despite that, file-sizes are similar or even lower compared to other formats.]{.stf-info-box}
+	Despite that, file-sizes remain similar and are sometimes even lower compared to other formats.]{.stf-info-box}
 
-* **Easy to Develop:**\
+* **Easy to Develop**\
 	STF's modular nature enables high encapsulation in the source-code and easy collaboration in the development of STF implementations.
 	[A functioning implementation that handles some core resource-types can be usually developed in a day or two.\
 	Third parties can easily develop and distribute custom (perhaps application specific) modules.]{.stf-info-box}
@@ -102,14 +103,20 @@ Additional modules can be easily implemented by third parties. Each STF implemen
 Learn how STF compares to other 3d file-formats: [Comparisons](format/comparisons.md)
 :::
 
-### Anatomy of an STF file
+**Anatomy of an STF file**
 ![Description of the layout of an STF file. You can this information in the STF Format Reference!](img/stf_anatomy.png)
 
 
 ```{toctree}
 :hidden:
 Home <self>
-installation/index.md
+```
+
+```{toctree}
+:hidden:
+:caption: Guides
+Installation <installation/index.md>
+Usage <guides/index.md>
 ```
 
 ```{toctree}
@@ -118,10 +125,4 @@ installation/index.md
 format/stf_format.md
 Modules <modules/index.md>
 Comparisons <format/comparisons.md>
-```
-
-```{toctree}
-:hidden:
-:caption: Guides
-guides/index.md
 ```
