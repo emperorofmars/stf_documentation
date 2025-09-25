@@ -105,7 +105,7 @@ Learn how STF compares to other 3d file-formats: [Comparisons](format/comparison
 :::
 
 ### Anatomy of an STF file
-![](img/stf_anatomy.png)
+![Description of the layout of an STF file. You can this information in the STF Format Reference!](img/stf_anatomy.png)
 
 
 ```{toctree}
