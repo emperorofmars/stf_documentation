@@ -69,29 +69,24 @@ Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bev
 
 
 ## Advantages
-* **Artist Friendly:**
+* **Artist Friendly:**\
 	Artists don't have to fiddle with unnecessary import & export settings.
 
-	All information in STF and it's core-modules is normalized and doesn't require any knowledge about the file by the user.
+	[All information in STF and it's core-modules is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
 
-* **Interchange:**
+* **Interchange:**\
 	STF stores original information as well as baked results.
+	[*I.e. STF contains the original topology of meshes, including n-gons, as well as the triangulation.*\
+	This allows for STF files to be used for further editing and for import into game-engine editors.]{.stf-info-box}
 
-	I.e. STF contains the original topology of meshes, including n-gons, as well as the triangulation.
-
-	This allows for STF files to be used for further editing and for import into game-engine editors.
-
-* **User Experience:**
+* **User Experience:**\
 	The way STF files are structured allows for quick import & export times.
+	[File-sizes are similar or even lower compared to other formats.]{.stf-info-box}
 
-	File-sizes are similar or even lower compared to other formats.
-
-* **Ease of Development:**
+* **Ease of Development:**\
 	STF's modular nature enables high encapsulation in the source-code and easy collaboration in the development of STF implementations.
-
-	A functioning implementation that handles some core resource-types can be usually developed in a day or two.
-
-	Third parties can easily develop and distribute custom (perhaps application specific) modules.
+	[A functioning implementation that handles some core resource-types can be usually developed in a day or two.\
+	Third parties can easily develop and distribute custom (perhaps application specific) modules.]{.stf-info-box}
 
 
 ## Concept

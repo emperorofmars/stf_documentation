@@ -15,6 +15,22 @@ body {
 	}
 }
 
+/* make docutils grid into an actual grid */
+
+.docutils.sd-row {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	gap: var(--sd-gutter-x);
+	padding-left: calc(var(--sd-gutter-x) / 2);
+	padding-right: calc(var(--sd-gutter-x) / 2);
+
+	.docutils.sd-col {
+		padding: 0;
+	}
+}
+
+/* some customizations */
+
 .highlight-json pre span.w {
 	tab-size: 4 !important;
 }
@@ -25,6 +41,15 @@ body {
 	font-weight: bold;
 	color: var(--color-stf-highlight);
 	margin: 20px 0 10px 0;
+}
+
+.stf-info-box {
+	display: block;
+	padding: 8px 14px;
+	background-color: var(--color-admonition-background);
+	border-radius: .25rem;
+	font-size: var(--font-size--small);
+	box-shadow: 0 .2rem .5rem rgba(0,0,0,.05),0 0 .0625rem rgba(0,0,0,.1);
 }
 
 /* brand */
