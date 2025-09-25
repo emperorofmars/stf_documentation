@@ -39,6 +39,7 @@ Installation
 ```
 ```{button-ref} guides/unity
 :color: secondary
+:class: ignore
 :outline:
 :expand:
 User Guide (TBD)
@@ -55,6 +56,7 @@ Installation
 ```
 ```{button-ref} guides/godot
 :color: secondary
+:class: ignore
 :outline:
 :expand:
 User Guide (TBD)

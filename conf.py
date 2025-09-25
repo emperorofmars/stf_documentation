@@ -51,6 +51,9 @@ html_static_path = ["theme"]
 html_css_files = [
 	"stf.css",
 ]
+html_js_files = [
+	"stf.js"
+]
 
 
 ## Extensions

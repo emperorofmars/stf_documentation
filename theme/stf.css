@@ -15,6 +15,25 @@ body {
 	}
 }
 
+
+/* WAI fixes */
+
+@media (min-width: 63em) {
+	.overlay.sidebar-overlay {
+		display: none;
+	}
+}
+
+@media (min-width: 82em) {
+	.overlay.toc-overlay {
+		display: none;
+	}
+}
+
+.toc-tree {
+	line-height: 1.5;
+}
+
 /* make docutils grid into an actual grid */
 
 .docutils.sd-row {
