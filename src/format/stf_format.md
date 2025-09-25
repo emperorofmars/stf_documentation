@@ -11,7 +11,7 @@ The Json definition contains meta information, resources and buffer references.\
 Resources have a `type` property, and are identified by a unique ID as a string.
 
 STF implementations provide modules, which convert between STF resources of a specific `type` and a specific application resource.\
-*(I.e. a module for `stf.mesh` in the Blender STF implementation would convert the STF-resource to and from Blenders `bpy.types.Mesh`.)*
+[*I.e. a module for `stf.mesh` in the Blender STF implementation would convert the STF-resource to and from Blenders `bpy.types.Mesh`.*]{.stf-info-box}
 
 A set of modules that any valid STF implementation has to provide is specified in [Core Modules](../modules/stf/index.md).
 
