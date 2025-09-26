@@ -25,13 +25,10 @@ Information on how an image is to be converted into a GPU texture.
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_texture/stf_texture.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_texture/stf_texture.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Texture.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Texture.cs)
 *	- **Godot**
 	- TBD
-	-
 :::
 
 ## Json Example

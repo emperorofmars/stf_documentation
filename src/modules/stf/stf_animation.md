@@ -79,13 +79,10 @@ Depending on the `interpolation type`, the following properties are added.
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
 *	- **Godot**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
-	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Animation.gd)
 :::
 
 

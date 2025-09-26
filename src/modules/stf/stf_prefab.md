@@ -25,13 +25,10 @@ The only allowed type for nodes in `root_nodes` is [`stf.node`](stf_node.md).
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_prefab/stf_prefab.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Prefab.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Prefab.cs)
 *	- **Godot**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Prefab.gd)
-	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Prefab.gd)
 :::
 
 ## Json Example

@@ -25,13 +25,10 @@ Armatures can be instantiated by [`stf.instance.armature`](stf_instance_armature
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_armature/stf_armature.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_armature/stf_armature.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Armature.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Armature.cs)
 *	- **Godot**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Armature.gd)
-	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Armature.gd)
 :::
 
 

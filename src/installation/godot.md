@@ -9,4 +9,4 @@ Unpack the `addons/stf_godot` directory into the `addons` directory of your Godo
 
 ---
 
-See the Source Code: [Codeberg](https://codeberg.org/emperorofmars/stf_godot) - [GitHub](https://github.com/emperorofmars/stf_godot)
+See the Source Code: [Codeberg](https://codeberg.org/emperorofmars/stf_godot)

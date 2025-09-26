@@ -25,13 +25,10 @@ Only other `stf.node` type resources are allowed as its children. Children may n
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_node/stf_node.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Node.cs)
 *	- **Godot**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd)
-	- [GitHub](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Node.gd)
 :::
 
 ## Json Example

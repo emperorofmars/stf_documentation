@@ -26,13 +26,10 @@ Only other `stf.bone` type resources are allowed as its children.
 :widths: auto
 *	- **Blender**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
-	- [GitHub](https://github.com/emperorofmars/stf_blender/blob/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
 *	- **Unity**
 	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
-	- [GitHub](https://github.com/emperorofmars/stf_unity/blob/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
 *	- **Godot**
 	- [Codeberg](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd)
-	- [GitHub](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Bone.gd)
 :::
 
 
