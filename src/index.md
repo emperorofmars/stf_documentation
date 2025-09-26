@@ -72,8 +72,7 @@ User Guide (TBD)
 
 ## Advantages
 * **Artist Friendly**\
-	Import & export is quick and you don't have to fiddle with unnecessary settings.\
-	Your model won't randomly break!
+	Import & export is quick and you don't have to fiddle with unnecessary settings to avoid breakage.\
 	[All information in STF and it's core-modules is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
 
 * **Versatile**\

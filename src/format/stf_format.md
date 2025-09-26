@@ -24,6 +24,7 @@ STF implementations must provide an easy to use plugin system for modules. If in
 * The Json definition is encoded as `utf8`.
 * STF uses the same coordinate system as glTF 2.0. (See [glTF-2.0. coordinate-system-and-units](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units))
 
+
 ## Binary Format
 An STF binary file consists of a binary header, a [json-definition](#json-definition), and zero or more binary buffers.
 
@@ -43,8 +44,30 @@ An STF binary file consists of a binary header, a [json-definition](#json-defini
 
 The Json definition is the first and only required buffer.
 
+
 ## Json Definition
 The root Json element is an object. It contains 3 properties: [`stf`](#stf-object), [`resources`](#resources-object) and [`buffers`](#buffers-object).
+
+### Json Types
+The following special Json-types are specified:
+
+#### `Resource-ID`
+* For core modules:
+	A string that is the key of a resource in the [`resources`](#resources-object) object.
+* For non-core modules:
+	An int that is the index of in the `referenced_resources` array of the resource.\
+	The string at that index is the key of a resource in the [`resources`](#resources-object) object.
+
+#### `Buffer-ID`
+* For core modules:
+	A string that is the key to a buffer in the [`buffers`](#buffers-object) object.
+* For non-core modules:
+	An int that is the index of in the `referenced_buffers` array of the resource.\
+	The string at that index is the key of a buffer in the [`buffers`](#buffers-object)object.
+
+#### `Resource-Path`
+A Json array which contains `Resource-ID`s and other path elements needed to target a specific resource. As some resources may be instantiated multiple times, this is needed to resolve one specific instance.
+
 
 ### `stf` object
 The `stf` object holds meta information.
@@ -59,7 +82,7 @@ The `stf` object holds meta information.
 | :--- | :--- | :--- | :--- |
 | version_major | Yes | Int | Major version of STF |
 | version_minor | Yes | Int | Minor version of STF |
-| root | Yes | resource-ID | ID of the root resource |
+| root | Yes | Resource-ID | ID of the root resource |
 | meta | No | Map<String, String> | Meta information such as authors, license or documentation link. |
 | generator | No | String | The name of the STF implementation that created this file. |
 | timestamp | No | String | Timestamp as a String in the ISO format. |
