@@ -52,16 +52,16 @@ The root Json element is an object. It contains 3 properties: [`stf`](#stf-objec
 The following special Json-types are specified:
 
 #### `Resource-ID`
-* For core modules:
+* **For core modules:**\
 	A string that is the key of a resource in the [`resources`](#resources-object) object.
-* For non-core modules:
+* **For other modules:**\
 	An int that is the index of in the `referenced_resources` array of the resource.\
 	The string at that index is the key of a resource in the [`resources`](#resources-object) object.
 
 #### `Buffer-ID`
-* For core modules:
+* **For core modules:**\
 	A string that is the key to a buffer in the [`buffers`](#buffers-object) object.
-* For non-core modules:
+* **For other modules:**\
 	An int that is the index of in the `referenced_buffers` array of the resource.\
 	The string at that index is the key of a buffer in the [`buffers`](#buffers-object)object.
 
@@ -107,7 +107,7 @@ The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It rep
 :::
 
 ### `resources` object
-The `resources` object is a map of resource objects identified by an ID.
+The `resources` object is a map of `resource` objects identified by an ID.
 
 The various resource objects describe the files actual content. Any further properties are defined by each resources module.
 
@@ -123,9 +123,8 @@ The various resource objects describe the files actual content. Any further prop
 | referenced_resources |No |List<Resource-ID> |IDs of resources this resource references. |
 | referenced_buffers |No |List<Buffer-ID> |IDs of buffers this resource references. |
 | name |No |String |Display name of the resource. |
-| version_major |No |Int |Major version of this resource. The default value is `0`. |
-| version_minor |No |Int |Major version of this resource. The default value is `0`. |
-| degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `False`. |
+| version |No |Int |Version of this resource. The default value is `-1`. If a breaking change is made by a module, it has to set this property. |
+| degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `false`. |
 :::
 
 Resources, other than from the [`stf.*` namespace](../modules/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
@@ -201,7 +200,7 @@ Support for module plugins of this kind is required.
 |Key |Required |Type |Description |
 | :--- | :--- | :--- | :--- |
 |enabled |No |boolean |True by default |
-|overrides |No |List<Resource-ID> |References `Component` kind types that should not be processed, if this type is supported |
+|overrides |No |List<Resource-ID> |References `Component` resources that should not be processed, if this type is supported |
 :::
 
 :::{admonition} `resources` object example
