@@ -12,7 +12,7 @@ document.querySelector(".content-icon-container").setAttribute("role", "compleme
 document.querySelector(".content-icon-container .view-this-page .muted-link").setAttribute("title", "View this page's source"); /* The default "View this page" doesn't quite make sense imho. */
 
 for(let e of document.querySelectorAll(".toc-tree ul"))
-	if(e.getHTML().trimStart() == "")
+	if(e.getHTML().trimStart() === "")
 		e.remove();
 
 /* STF temp fixes, turn TBD buttons into a AAA error */
