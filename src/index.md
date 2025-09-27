@@ -21,7 +21,7 @@ Please note, STF is work in progress and likely to change.
 :expand:
 Installation
 ```
-```{button-ref} guides/blender/blender
+```{button-ref} guide/blender
 :class: stf-button
 :outline:
 :expand:
@@ -37,7 +37,7 @@ User Guide
 :expand:
 Installation
 ```
-```{button-ref} guides/unity
+```{button-ref} guide/unity
 :color: secondary
 :class: ignore
 :outline:
@@ -54,7 +54,7 @@ User Guide (TBD)
 :expand:
 Installation
 ```
-```{button-ref} guides/godot
+```{button-ref} guide/godot
 :color: secondary
 :class: ignore
 :outline:
@@ -115,7 +115,7 @@ Home <self>
 :hidden:
 :caption: Guides
 Installation <installation/index.md>
-Usage <guides/index.md>
+Usage <guide/index.md>
 ```
 
 ```{toctree}

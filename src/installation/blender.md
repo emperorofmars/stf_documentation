@@ -11,4 +11,4 @@ Install the [Slot Link](https://extensions.blender.org/add-ons/slot-link/) exten
 
 ---
 
-🌰 [User Guide](../guides/blender/blender.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_blender) 🌰
+🌰 [User Guide](../guide/blender.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_blender) 🌰

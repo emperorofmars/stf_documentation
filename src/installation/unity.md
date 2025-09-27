@@ -17,4 +17,4 @@ Then, in the Creator Companion, go to `Manage Project` and add the `STF` package
 
 ---
 
-🌰 [User Guide](../guides/unity.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_unity/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_unity) 🌰
+🌰 [User Guide](../guide/unity.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_unity/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_unity) 🌰
