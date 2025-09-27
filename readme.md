@@ -1,6 +1,6 @@
 # STF: Documentation
 **A modular file-format for 3D assets**\
-*Intended for (not only) game development use-cases.*
+*Intended for (not only) games-development use-cases.*
 
 This documentation is hosted at <https://docs.stfform.at>
 
