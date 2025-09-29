@@ -1,11 +1,9 @@
 # Blender Slot Link
-
 Requires Blender 4.4 or higher.
 
 🌰 [Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
 
 ## The Issue
-
 In games-development, you often need to create multiple separate animations, that animate the same properties.\
 *(I.e. a run-cycle and a walk-cycle for the same character.)*
 
@@ -13,7 +11,6 @@ This is unfortunately impossible to create in Blender without workarounds.\
 *(As of version Blender 4.5)*
 
 ### Blender's Data Model
-
 In Blender, animations are represented by Actions.\
 Each animatable data-block (Object, Mesh, Armature, etc...) links to ***one*** Action and one of its Slots.
 *(Actions only store the data-paths within that data-block)*
@@ -34,17 +31,15 @@ If you need to edit the previous animation, you have to remember yourself where 
 While it doesn't inhibit Film and VFX use-cases, it severely limits the ability to create assets for video-games.]{.stf-info-box}
 
 ### Animation Export
-
 Exporters, like those for FBX or glTF 2.0, do not have the knowledge of the artist.
 
-In order to export the Actions, the targets of Actions and Slots has to be guessed.
+In order to export the Actions, the targets of Actions and Slots have to be guessed.
 
 ### Error Prone UX
-
 The Action displayed in the Action-Editor is linked to the animation-data of the selected data-block.\
 This means, if you switch to another Action in the editor, the data-blocks linked Action will also change, and vice versa.
 
-That way it's incredibly easy to accidentally and unknowingly mess up the scene.
+It's incredibly easy to accidentally and unknowingly mess up the scene.
 
 When intentionally switching the edited action, it has to be done on every single data-block that has a linked Action.\
 This is incredibly tedious, as the artist has to check every single one, since an Action could have been linked just accidentally.
