@@ -19,7 +19,10 @@ Each animatable data-block (Object, Mesh, Armature, etc...) links to ***one*** A
 
 When you hit `spacebar`, which ever Actions and Slots are currently linked on all the data-blocks, will play.
 
-In order to create a second Action, targeting the same data-block, you have to unlink the previous Action first.\
+Unfortunately, a data-block can link to only ***one*** Action.\
+*Should you want to animate a walk-cycle and a run-cycle for the same character, you can't.*
+
+In order to create a second Action, targeting the same data-block, you have to unlink the previous Action first, everywhere.\
 **After an Action has been unlinked, Blender no longer knows what it was animating.**
 
 ![](img/action_unlinked.png)
