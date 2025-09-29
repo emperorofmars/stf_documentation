@@ -38,11 +38,10 @@ User Guide
 Installation
 ```
 ```{button-ref} guide/unity
-:color: secondary
-:class: ignore
+:class: stf-button
 :outline:
 :expand:
-User Guide (TBD)
+User Guide
 ```
 :::
 
@@ -55,11 +54,10 @@ User Guide (TBD)
 Installation
 ```
 ```{button-ref} guide/godot
-:color: secondary
-:class: ignore
+:class: stf-button
 :outline:
 :expand:
-User Guide (TBD)
+User Guide
 ```
 :::
 
