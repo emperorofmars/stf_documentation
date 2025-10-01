@@ -15,6 +15,10 @@ Add this repository
 ```
 Then, in the Creator Companion, go to `Manage Project` and add the `STF` package.
 
+:::{tip}
+Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showcase)!
+:::
+
 ---
 
 🌰 [User Guide](../guide/unity.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_unity/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_unity) 🌰

@@ -10,6 +10,10 @@ Install the [Slot Link](https://extensions.blender.org/add-ons/slot-link/) exten
 See the [Slot Link How-to](../guide/blender/slot_link.md)!
 :::
 
+:::{tip}
+Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showcase)!
+:::
+
 ---
 
 🌰 [User Guide](../guide/blender.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_blender) 🌰
