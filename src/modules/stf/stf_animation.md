@@ -23,10 +23,12 @@ An animation relative to a prefab.
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|target |Yes |Path |STF path of the target property
-|subtracks |Yes |List<Subtrack-Object / null> |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+target | Yes | Path | STF path of the target property
+timepoints | Yes | List<float> | Sorted list of points in time at which keyframes exist
+interpolation | No | string | Interpolation type for the entire track.
+subtracks | Yes | List<Subtrack-Object / null> |
 :::
 
 ### Subtrack-Object properties
@@ -46,9 +48,8 @@ An animation relative to a prefab.
 | Index | Type | Description |
 | :--- | :--- | :--- |
 |0 |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
-|1 |float |Timepoint in frames
-|2 |float |The main value
-|3 |string |interpolation type
+|1 |float |The main value
+|2 |string |interpolation type
 :::
 
 In case the previous keyframe has an out-tangent, this keyframes in-tangent is added at the last position in the keyframe-array.
@@ -69,8 +70,8 @@ Depending on the `interpolation type`, the following properties are added.
 :widths: auto
 | Index | Type | Description |
 | :--- | :--- | :--- |
-|4 |string |tangent type
-|5 |List<float> |Out-tangent x and y offset
+|3 |string |tangent type
+|4 |List<float> |Out-tangent x and y offset
 :::
 
 ## Implementations
