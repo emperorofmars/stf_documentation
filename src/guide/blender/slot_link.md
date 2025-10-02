@@ -1,6 +1,6 @@
 # Blender Slot Link
 
-🌰 [Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
+🌰 [Slot Link Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
 
 Slot Link helps you manage Blender projects with multiple separate animations.\
 It automates the unlinking & linking of Actions and Slots, without requiring you to remember which goes where.
