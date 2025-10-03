@@ -2,7 +2,7 @@
 <!-- Licensed under CC-BY-4.0 (<https://creativecommons.org/licenses/by/4.0/>) -->
 
 # STF Format
-STF is a file format for 3D assets, consisting of resources like node-hierarchies, meshes, materials, armatures, and many more.
+STF is a file format for 3D assets, intended for interchange between 3D modeling-tools and game-engines.
 
 ## Concept
 STF files are made up of a binary header, a Json definition and a set of binary buffers.
