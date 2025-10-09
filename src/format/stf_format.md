@@ -78,15 +78,15 @@ The `stf` object holds meta information.
 :align: left
 :widths: auto
 :name: stf object properties
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-| version_major | Yes | Int | Major version of STF |
-| version_minor | Yes | Int | Minor version of STF |
-| root | Yes | Resource-ID | ID of the root resource |
-| meta | No | Map<String, String> | Meta information such as authors, license or documentation link. |
-| generator | No | String | The name of the STF implementation that created this file. |
-| timestamp | No | String | Timestamp as a String in the ISO format. |
-| metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`. |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+version_major | Yes | Int | Major version of STF
+version_minor | Yes | Int | Minor version of STF
+root | Yes | Resource-ID | ID of the root resource
+meta | No | Map<String, String> | Meta information such as authors, license or documentation link.
+generator | No | String | The name of the STF implementation that created this file.
+timestamp | No | String | ISO 8601 date and time in UTC.
+metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`.
 :::
 
 The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It represents the assets scene-hierarchy.
@@ -117,14 +117,14 @@ The various resource objects describe the files actual content. Any further prop
 :align: left
 :widths: auto
 :name: resource object base properties
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-| type |Yes |String |Type of the resource. |
-| referenced_resources |No |List<Resource-ID> |IDs of resources this resource references. |
-| referenced_buffers |No |List<Buffer-ID> |IDs of buffers this resource references. |
-| name |No |String |Display name of the resource. |
-| version |No |Int |Version of this resource. The default value is `-1`. If a breaking change is made by a module, it has to set this property. |
-| degraded |No |Boolean |Has this resource lost information at some point, but retained the same ID. The default is `false`. |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+type | Yes | String | Type of the resource.
+referenced_resources | No | List<Resource-ID> | IDs of resources this resource references.
+referenced_buffers | No | List<Buffer-ID> | I Ds of buffers this resource references.
+name | No | String | Display name of the resource.
+version | No | Int | Version of this resource. The default value is `-1`. If a breaking change is made by a module, it has to set this property.
+degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
 :::
 
 Resources, other than from the [`stf.*` namespace](../modules/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
@@ -145,10 +145,10 @@ Support for module plugins of this kind is required.
 :align: left
 :widths: auto
 :name: Data resource base properties
-|Key |Required |Type |Description |
-| :--- | :--- | :--- | :--- |
-|fallback |No |Resource-ID |ID of a resource that should be used in case this one's type is not supported in this implementation |
-|components |No |List<Resource-ID> |Component resource IDs |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+fallback | No | Resource-ID | ID of a resource that should be used in case this one's type is not supported in this implementation
+components | No | List<Resource-ID> | Component resource IDs
 :::
 
 ##### Node
@@ -161,11 +161,11 @@ Support for module plugins of this kind is not required.
 :align: left
 :widths: auto
 :name: Node resource base properties
-|Key |Required |Type |Description |
-| :--- | :--- | :--- | :--- |
-|enabled |No |boolean |True by default |
-|children |No |List<Resource-ID> |IDs of child-nodes |
-|components |No |List<Resource-ID> |Component resource IDs |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+enabled | No | boolean | True by default
+children | No | List<Resource-ID> | IDs of child-nodes
+components | No | List<Resource-ID> | Component resource IDs
 :::
 
 ##### Instance
@@ -181,9 +181,9 @@ Support for module plugins of this kind is required.
 :align: left
 :widths: auto
 :name: Instance resource base properties
-|Key |Required |Type |Description |
-| :--- | :--- | :--- | :--- |
-|enabled |No |boolean |True by default |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+enabled | No | boolean | True by default
 :::
 
 ##### Component
@@ -197,10 +197,10 @@ Support for module plugins of this kind is required.
 :align: left
 :widths: auto
 :name: Component resource base properties
-|Key |Required |Type |Description |
-| :--- | :--- | :--- | :--- |
-|enabled |No |boolean |True by default |
-|overrides |No |List<Resource-ID> |References `Component` resources that should not be processed, if this type is supported |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+enabled | No | boolean | True by default
+overrides | No | List<Resource-ID> | References `Component` resources that should not be processed, if this component's type is supported
 :::
 
 :::{admonition} `resources` object example
@@ -257,9 +257,9 @@ This type represents a buffer contained in the same file.
 :align: left
 :widths: auto
 :name: stf.buffer.included properties
-|Key |Required |Type |Description |
-| :--- | :--- | :--- | :--- |
-|index |Yes |Int |Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer. |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+index | Yes | Int | Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer.
 :::
 
 :::{admonition} `buffers` object example

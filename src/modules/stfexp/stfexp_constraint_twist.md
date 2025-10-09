@@ -12,10 +12,10 @@ This is a special application of rotation-constraints, used to compensate for tw
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|weight |No |float |How much of the target rotation to blend. Default is 0.5 |
-|target |No |[Resource-Path](../../format/stf_format.md#resource-path) |Path to the target node. Default is the parent of the parent. |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+weight | No | float | How much of the target rotation to blend. Default is 0.5
+target | No | [Resource-Path](../../format/stf_format.md#resource-path) | Path to the node from which to copy the rotation. Default is the parent of the parent.
 :::
 
 ## Implementations
@@ -23,11 +23,11 @@ This is a special application of rotation-constraints, used to compensate for tw
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_constraint_twist.py)
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_lightprobe_anchor.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Constraint_Twist.cs)
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_LightprobeAnchor.cs)
 *	- **Godot**
-	- TBD
+	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Lightprobe_Anchor.gd)
 :::
 
 ## Json Example

@@ -10,11 +10,11 @@ A node that exists in 3d space. It defines its location, rotation and scale rela
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|trs |Yes |TRS |The nodes 3D transform |
-|instance |No |Resource-ID |Reference to an instance-resource. |
-|parent_binding |No |Path |Path to the parent resource. Usually, when the parent node is an armature-instance, its the path to a bone within the instantiated armature. |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+trs | Yes | TRS | The nodes 3D transform
+instance | No |Resource-ID | Reference to an instance-resource.
+parent_binding | No | Path | Path to the parent resource. Usually, when the parent node is an armature-instance, its the path to a bone within the instantiated armature.
 :::
 
 Only other `stf.node` type resources are allowed as its children. Children may never loop.
