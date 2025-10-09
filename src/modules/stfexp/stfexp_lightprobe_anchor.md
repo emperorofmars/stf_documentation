@@ -12,7 +12,7 @@ Define a object/bone from which a game-engine will sample lightprobe values.
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-anchor | Yes | [Resource-Path](../../format/stf_format.md#resource-path) | Path to the node from which to use as the lightprobe anchor.
+anchor | Yes | [Resource-Path](../../format/stf_format.md#resource-path) | Path to the node whose position to use as the lightprobe anchor.
 :::
 
 ## Implementations
