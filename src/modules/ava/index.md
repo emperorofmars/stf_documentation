@@ -3,7 +3,7 @@
 ```{toctree}
 :maxdepth: 1
 ava_avatar.md
-ava_eyerotation_bone.md
+ava_eye_rotation_bone.md
 ava_eyelids_blendshape.md
 ava_visemes_blendshape.md
 ava_emotes.md
