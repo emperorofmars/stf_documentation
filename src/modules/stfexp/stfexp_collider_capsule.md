@@ -1,0 +1,3 @@
+# stfexp.collider.capsule
+
+TBD

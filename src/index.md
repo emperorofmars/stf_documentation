@@ -5,7 +5,7 @@
 
 
 :::{warning}
-Please note, STF is work in progress and likely to change.
+Please note, STF is a work in progress and likely to change.
 :::
 
 <br>

@@ -1,3 +1,0 @@
-# ava.collider.capsule
-
-TBD
