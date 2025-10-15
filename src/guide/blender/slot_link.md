@@ -5,7 +5,7 @@
 Slot Link helps you manage Blender projects with multiple separate animations.\
 It automates the unlinking & linking of Actions and Slots, without requiring you to remember which goes where.
 
-*Requires Blender 4.4 or higher. Not compatible with legacy Actions.*
+*Requires Blender 4.5 or higher. Not compatible with legacy Actions.*
 
 ## The Issue
 In games-development, you often need to create multiple separate animations, that animate the same properties.\
