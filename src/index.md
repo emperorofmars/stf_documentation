@@ -14,7 +14,7 @@ Please note, STF is a work in progress and likely to change.
 ::::{grid}
 
 :::{grid-item-card} Blender
-*Version 4.4+*
+*Version 4.5+*
 ```{button-ref} installation/blender
 :class: stf-button
 :outline:

@@ -1,6 +1,6 @@
 # STF Blender User Guide
 
-Requires Blender 4.4 or higher.
+Requires Blender 4.5 or higher.
 
 🌰 [Installation](../installation/blender.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_blender) 🌰
 
