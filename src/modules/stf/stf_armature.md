@@ -1,35 +1,33 @@
 # stf.armature
 A armature represents a hierarchy of bones.
 
-## Representations
-* Blender: Armature
-* Unity: GameObject
-* Godot: Skeleton3D
-
-## Properties
-:::{table}
-:align: left
-:widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-| root_bones | Yes | List<ID> | IDs of nodes |
-:::
-
-The only allowed type for nodes in `root_bones` is [`stf.bone`](stf_bone.md).
-
-Armatures can be instantiated by [`stf.instance.armature`](stf_instance_armature.md).
-
 ## Implementations
 :::{list-table}
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_armature/stf_armature.py)
+	- Armature
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_armature/stf_armature.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Armature.cs)
+	- GameObject
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Armature.cs)
 *	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Armature.gd)
+	- Skeleton3D
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Armature.gd)
 :::
+
+## Properties
+:::{table}
+:align: left
+:widths: auto
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+root_bones | Yes | List<ID> | IDs of nodes
+:::
+
+The only allowed type for nodes in `root_bones` is [`stf.bone`](stf_bone.md).
+
+Armatures can be instantiated by [`stf.instance.armature`](stf_instance_armature.md).
 
 
 ## Json Example

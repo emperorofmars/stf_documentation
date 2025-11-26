@@ -1,10 +1,20 @@
 # stfexp.mesh.creases
 Represents mesh's vertex and edge creases.
 
-## Representations
-* Blender: STF Component on Mesh
-* Unity: Not relevant
-* Godot: Not relevant
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF Component on bpy.types.Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_mesh_creases.py)
+*	- **Unity**
+	- Not relevant
+	-
+*	- **Godot**
+	- Not relevant
+	-
+:::
 
 ## Properties
 :::{table}
@@ -16,18 +26,6 @@ indices_width | No | int | The width of vertex-indices in bytes.
 vertex_creases | No | Buffer-ID | A float represents the vertex-crease value at the index of the vertex.
 edges | No | Buffer-ID | A pair of indices specifies the edge which has a crease value.
 edge_creases | No | Buffer-ID | A float represents the crease value of the edge at the same index.
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_mesh_creases.py)
-*	- **Unity**
-	- Not relevant
-*	- **Godot**
-	- Not relevant
 :::
 
 ## Json Example

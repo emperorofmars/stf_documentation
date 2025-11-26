@@ -1,10 +1,22 @@
 # ava.eye_rotation.bone
 Defines limits for eyebone rotations.
 
-## Representations
-* Blender: Component on Armature
-* Unity: Component
-* Godot: TBD
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF_Component on bpy.types.Armature
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_eyerotation_bone.py)
+*	- **Unity**
+	- Only application specific representations
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_EyeRotation_Bone.cs)\
+		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_EyeRotation_Bone_Processor.cs)\
+		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_EyeRotation_Bone_Processor.cs)
+*	- **Godot**
+	- TBD
+	-
+:::
 
 ## Properties
 
@@ -17,18 +29,6 @@ up | Yes | float | Angle in radians.
 down | Yes | float | Angle in radians.
 in | Yes | float | Angle in radians.
 out | Yes | float | Angle in radians.
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_eyerotation_bone.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_EyeRotation_Bone.cs)
-*	- **Godot**
-	- TBD
 :::
 
 ## Json Example

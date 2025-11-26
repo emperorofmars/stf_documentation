@@ -1,31 +1,30 @@
 # stf.instance.armature
 Instantiates an armature onto a node.
 
-## Representations
-* Blender: Object with Armature
-* Unity: GameObject
-* Godot: Skeleton3D
-
-## Properties
-:::{table}
-:align: left
-:widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|armature |Yes |Resource-ID |ID of the instantiated armature resource, usually [`stf.armature`](stf_armature.md)
-|pose |No |Map<Resource-ID, TRS> |Map of the corresponding bone and TRS.
-:::
-
 ## Implementations
 :::{list-table}
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py)
+	- bpy.types.Object with bpy.types.Armature
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_instance_armature/stf_instance_armature.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs)
+	- GameObject
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Instance_Armature.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Instance_Armature_Processor.cs)
 *	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd)
+	- Skeleton3D
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Instance_Armature.gd)
+:::
+
+## Properties
+:::{table}
+:align: left
+:widths: auto
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+armature | Yes | Resource-ID | ID of the instantiated armature resource, usually [`stf.armature`](stf_armature.md)
+pose | No | Map<Resource-ID, TRS> | Map of the corresponding bone and TRS.
 :::
 
 ## Json Example

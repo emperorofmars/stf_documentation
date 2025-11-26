@@ -1,5 +1,9 @@
 # Unity Installation
 
+:::{warning}
+Please note, STF is a work in progress and likely to change.
+:::
+
 ## Unity Package Manager
 Under `Window` → `Package Manager` → `+` → `Add package from git URL…​`\
 add the following URL:

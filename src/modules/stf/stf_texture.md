@@ -1,34 +1,32 @@
 # stf.texture
 Information on how an image is to be converted into a GPU texture.
 
-## Representations
-* Blender: `stf.texture` STF Component on Blender Image
-* Unity: `stf.texture` component on STF_Image
-* Godot: `stf.texture` component on Godot Image
-
-## Properties
-:::{table}
-:align: left
-:widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|width |Yes |int |Width of the resulting GPU texture
-|height |Yes |int |Height of the resulting GPU texture
-|downscale_priority |Yes |int |In case of an enforced memory limit, how quickly should the resolution of the resulting GPU texture reduced.
-|quality |Yes |float |Indicate how much the GPU texture can be compressed. Value range is from 0 to 1. 1 means not compression should be used.
-|mipmaps |Yes |bool |Whether to generate mipmaps
-:::
-
 ## Implementations
 :::{list-table}
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_texture/stf_texture.py)
+	- `stf.texture` STF Component on Blender Image
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_texture/stf_texture.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Texture.cs)
+	- Texture2D
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Texture.cs)
 *	- **Godot**
-	- TBD
+	- PortableCompressedTexture2D
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Texture.gd)
+:::
+
+## Properties
+:::{table}
+:align: left
+:widths: auto
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+width | Yes | int | Width of the resulting GPU texture
+height | Yes | int | Height of the resulting GPU texture
+downscale_priority | Yes | int |In case of an enforced memory limit, how quickly should the resolution of the resulting GPU texture reduced.
+quality | Yes | float | Indicate how much the GPU texture can be compressed. Value range is from 0 to 1. 1 means not compression should be used.
+mipmaps | Yes | bool | Whether to generate mipmaps
 :::
 
 ## Json Example

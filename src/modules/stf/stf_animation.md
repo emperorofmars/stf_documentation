@@ -1,22 +1,33 @@
 # stf.animation
 An animation relative to a prefab.
 
-## Representations
-* Blender: Action set-up with [Slot Link](https://extensions.blender.org/add-ons/slot-link/)
-* Unity: AnimationClip
-* Godot: Animation
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- Actions set-up with [Slot Link](https://extensions.blender.org/add-ons/slot-link/)
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
+*	- **Unity**
+	- AnimationClip
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Animation_Processor.cs)
+*	- **Godot**
+	- Animation
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
+:::
 
 ## Properties
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|loop |Yes |string |Whether to loop the animation and how
-|fps |Yes |float |
-|range |Yes |List<float> |Beginning and end frame of the animation
-|bake_on_export |No |bool |Whether the animation should be baked on
-|tracks |Yes |List<Track-Object> |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+loop | Yes | string | Whether to loop the animation and how
+fps | Yes | float |
+range | Yes | List<float> | Beginning and end frame of the animation
+bake_on_export | No | bool | Whether the animation should be baked on
+tracks | Yes | List<Track-Object> |
 :::
 
 ### Track-Object properties
@@ -35,21 +46,21 @@ subtracks | Yes | List<Subtrack-Object / null> |
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|keyframes |Yes |List<Keyframe-Array / null> |
-|baked |No |Buffer-ID |Baked values between range[0] and range[1]
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+keyframes | Yes | List<Keyframe-Array / null> |
+baked | No | Buffer-ID | Baked values between range[0] and range[1]
 :::
 
 ### Keyframe-Array
 :::{table}
 :align: left
 :widths: auto
-| Index | Type | Description |
-| :--- | :--- | :--- |
-|0 |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
-|1 |float |The main value
-|2 |string |interpolation type
+Index | Type | Description
+:--- | :--- | :---
+0 |bool |`true` if this keyframe is a source of truth, as in not baked or generated.
+1 |float |The main value
+2 |string |interpolation type
 :::
 
 In case the previous keyframe has an out-tangent, this keyframes in-tangent is added at the last position in the keyframe-array.
@@ -57,9 +68,9 @@ In case the previous keyframe has an out-tangent, this keyframes in-tangent is a
 :::{table}
 :align: left
 :widths: auto
-| Index | Type | Description |
-| :--- | :--- | :--- |
-| last | float | In-tangent x and y offset, present only if the previous keyframe has an out-tangent
+Index | Type | Description
+:--- | :--- | :---
+last | float | In-tangent x and y offset, present only if the previous keyframe has an out-tangent
 :::
 
 Depending on the `interpolation type`, the following properties are added.
@@ -68,24 +79,11 @@ Depending on the `interpolation type`, the following properties are added.
 :::{table}
 :align: left
 :widths: auto
-| Index | Type | Description |
-| :--- | :--- | :--- |
-|3 |string |tangent type
-|4 |List<float> |Out-tangent x and y offset
+Index | Type | Description
+:--- | :--- | :---
+3 | string | tangent type
+4 | List<float> | Out-tangent x and y offset
 :::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
-*	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
-:::
-
 
 
 ## Json Example

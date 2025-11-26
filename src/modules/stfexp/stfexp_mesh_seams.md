@@ -1,10 +1,20 @@
 # stfexp.mesh.seams
 Represents a mesh's UV-seams.
 
-## Representations
-* Blender: STF Component on Mesh
-* Unity: Not relevant
-* Godot: Not relevant
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF Component on bpy.types.Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_mesh_seams.py)
+*	- **Unity**
+	- Not relevant
+	-
+*	- **Godot**
+	- Not relevant
+	-
+:::
 
 ## Properties
 :::{table}
@@ -14,18 +24,6 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 indices_width | No | int | The width of vertex-indices in bytes.
 seams | No | Buffer-ID | A pair of indices specifies the edge which has a UV-seam.
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_mesh_seams.py)
-*	- **Unity**
-	- Not relevant
-*	- **Godot**
-	- Not relevant
 :::
 
 ## Json Example

@@ -1,10 +1,21 @@
 # stf.node
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
-## Representations
-* Blender: Object
-* Unity: GameObject
-* Godot: Node3D
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- bpy.types.Object
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
+*	- **Unity**
+	- Object
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Mesh_Processor.cs)
+*	- **Godot**
+	- Node3D
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd)
+:::
 
 ## Properties
 :::{table}
@@ -18,18 +29,6 @@ parent_binding | No | Path | Path to the parent resource. Usually, when the pare
 :::
 
 Only other `stf.node` type resources are allowed as its children. Children may never loop.
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs)
-*	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd)
-:::
 
 ## Json Example
 ```json

@@ -1,10 +1,21 @@
 # stfexp.armature.humanoid
-Declares that this Armature is humanoid. Defines which bone corresponds to which bodypart.
+Declares that this Armature is humanoid. Defines which bone corresponds to which body part.
 
-## Representations
-* Blender: STF Component on Armature
-* Unity: STF Component
-* Godot: STF Component
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF Component on bpy.types.Armature
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_armature_humanoid.py)
+*	- **Unity**
+	- Avatar
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Humanoid_Armature.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Expanded/STFEXP_Humanoid_Armature_Processor.cs)
+*	- **Godot**
+	- TBD
+	-
+:::
 
 ## Properties
 :::{table}
@@ -53,18 +64,6 @@ Key | Required | Type | Description
 primary | No | List<float> | 3 values define the minimum, center and maximum rotation values for the primary axis.
 secondary | No | List<float> | 3 values define the minimum, center and maximum rotation values for the secondary axis.
 twist | No | List<float> | 3 values define the minimum, center and maximum rotation values for the twist axis.
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_armature_humanoid.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Humanoid_Armature.cs)
-*	- **Godot**
-	- TBD
 :::
 
 ## Json Example

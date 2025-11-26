@@ -1,3 +1,0 @@
-# stfexp.constraint.translation
-
-TBD

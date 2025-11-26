@@ -5,6 +5,22 @@
 * Unity: Mesh
 * Godot: Mesh
 
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- bpy.types.Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
+*	- **Unity**
+	- Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Mesh_Processor.cs)
+*	- **Godot**
+	- Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
+:::
+
 ## Datamodel
 * **Face:** Made up of one or more triangles.\
 The Material Index exists at this level.
@@ -19,83 +35,71 @@ Blendshapes, weights & vertex groups exist at this level.
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|float_width |No |uint |Byte-width of float-values. Default: 4
-|indices_width |No |uint |Byte-width of indices. Default: 4
-|material_slots |No |List<Resource-ID / null> |List of material IDs in the order of the meshes material-slots
-|vertices |Yes |Buffer-ID |3 floats per vertex
-|face_corners |Yes |Buffer-ID |Index of the split for each face corner
-|splits |Yes |Buffer-ID |Vertex index for each unique combination of normals, uvs, colors, etc..
-|split_normals |No |Buffer-ID |3 floats per normal
-|split_colors |No |Buffer-ID |4 floats per color (RGBA)
-|tris |Yes |Buffer-ID |3 indices per triangle
-|faces |Yes |Buffer-ID |number of tris for the face
-|material_indices |No |Buffer-ID |Material index per face
-|sharp_edges |No |Buffer-ID |
-|sharp_face_indices |No |Buffer-ID |
-|lines |No |Buffer-ID |
-|armature |No |Resource-ID |ID of the armature if the mesh is skinned
-|weight_lens_width |No |uint |
-|bone_indices_width |No |uint |
-|bones |No |List<Resource-ID> |Bone references in the order by which they will be referenced by `bone_indices`.
-|weight_lens |No |Buffer-ID |
-|bone_indices |No |Buffer-ID |
-|weights |No |Buffer-ID |
-|uvs |No |List<UV-Object> |
-|blendshapes |No |List<Blendshape-Object> |
-|vertex_groups |No |List<VertexGroup-Object> |
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+float_width | No | uint | Byte-width of float-values. Default: 4
+indices_width | No | uint | Byte-width of indices. Default: 4
+material_slots | No | List<Resource-ID / null> |List of material IDs in the order of the meshes material-slots
+vertices | Yes | Buffer-ID | 3 floats per vertex
+face_corners | Yes | Buffer-ID | Index of the split for each face corner
+splits | Yes | Buffer-ID | Vertex index for each unique combination of normals, uvs, colors, etc..
+split_normals | No | Buffer-ID | 3 floats per normal
+split_colors | No | Buffer-ID | 4 floats per color (RGBA)
+tris | Yes | Buffer-ID | 3 indices per triangle
+faces | Yes | Buffer-ID | number of tris for the face
+material_indices | No | Buffer-ID | Material index per face
+sharp_edges | No | Buffer-ID |
+sharp_face_indices | No | Buffer-ID |
+lines | No | Buffer-ID |
+armature | No | Resource-ID | ID of the armature if the mesh is skinned
+weight_lens_width | No | uint |
+bone_indices_width | No | uint |
+bones | No | List<Resource-ID> | Bone references in the order by which they will be referenced by `bone_indices`.
+weight_lens | No | Buffer-ID |
+bone_indices | No | Buffer-ID |
+weights | No | Buffer-ID |
+uvs | No | List<UV-Object> |
+blendshapes | No | List<Blendshape-Object> |
+vertex_groups | No | List<VertexGroup-Object> |
 :::
 
 ### UV-Object properties
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|name |Yes |string |
-|uv |Yes |Buffer-ID |2 floats per split
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+name | Yes | string |
+uv | Yes | Buffer-ID | 2 floats per split
 :::
 
 ### Blendshape-Object properties
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|name |Yes |string |
-|default_value |No |float |default: 0
-|limit_upper |No |float |default: 1
-|limit_lower |No |float |default: 0
-|indices |No |Buffer-ID |int
-|position_offsets |Yes |Buffer-ID |3 floats per vertex
-|split_indices |No |Buffer-ID |int
-|split_normals |No |Buffer-ID |3 floats per split
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+name | Yes | string |
+default_value | No | float | default: 0
+limit_upper | No | float | default: 1
+limit_lower | No | float | default: 0
+indices | No | Buffer-ID | int
+position_offsets | Yes | Buffer-ID | 3 floats per vertex
+split_indices | No | Buffer-ID | int
+split_normals | No | Buffer-ID | 3 floats per split
 :::
 
 ### VertexGroup-Object properties
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|name |Yes |string |
-|indices |No |Buffer-ID |int
-|weights |Yes |Buffer-ID |float per vertex
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+name | Yes | string |
+indices | No | Buffer-ID | int
+weights | Yes | Buffer-ID | float per vertex
 :::
 
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_mesh/stf_mesh.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Mesh/STF_Mesh.cs)
-*	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Mesh.gd)
-:::
 
 ## Json Example
 ```json

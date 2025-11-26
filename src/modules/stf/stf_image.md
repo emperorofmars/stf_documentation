@@ -1,31 +1,30 @@
 # stf.image
 
-## Representations
-* Blender: Image
-* Unity: STF_Image
-* Godot: Image
-
-## Properties
-:::{table}
-:align: left
-:widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|format |Yes |String |Format of the image. Officially supported formats are: `png`, `jpg`
-|buffer |Yes |Buffer-ID |Buffer containing the image file
-|data_type |No |String |Type of image data. As of not it can be `color` or `non_color`.
-:::
-
 ## Implementations
 :::{list-table}
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_image/stf_image.py)
+	- bpy.types.Image
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_image/stf_image.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Image.cs)
+	- [STF_Image Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Image.cs#L7)
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Image.cs)
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Image_Processor.cs)
 *	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Image.gd)
+	- Image
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Image.gd)
+:::
+
+## Properties
+:::{table}
+:align: left
+:widths: auto
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+format | Yes | String | Format of the image. Officially supported formats are: `png`, `jpg`
+buffer | Yes | Buffer-ID | Buffer containing the image file
+data_type | No | String | Type of image data. As of not it can be `color` or `non_color`.
 :::
 
 

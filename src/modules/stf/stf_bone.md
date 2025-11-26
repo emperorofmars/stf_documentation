@@ -1,36 +1,34 @@
 # stf.bone
 Can only exist within `stf.armature`.
 
-## Representations
-* Blender: Bone
-* Unity: GameObject
-* Godot: Skeleton3D's bones
-
-## Properties
-:::{table}
-:align: left
-:widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|translation |Yes |Translation |The position of the bone relative to its armature position.
-|rotation |Yes |Rotation |The rotation of the bones head relative to its armature position.
-|length |Yes |Float |The bones length
-|connected |No |Boolean |Default `false`
-:::
-
-Only other `stf.bone` type resources are allowed as its children.
-
 ## Implementations
 :::{list-table}
 :align: left
 :widths: auto
 *	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
+	- bpy.types.Bone
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_bone/stf_bone.py)
 *	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
+	- GameObject
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
 *	- **Godot**
-	- [Codeberg](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd)
+	- Skeleton3D's bones
+	- [Module](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd)
 :::
+
+## Properties
+:::{table}
+:align: left
+:widths: auto
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+translation | Yes | Translation | The position of the bone relative to its armature position.
+rotation | Yes | Rotation | The rotation of the bones head relative to its armature position.
+length | Yes | Float | The bones length
+connected | No | Boolean | Default `false`
+:::
+
+Only other `stf.bone` type resources are allowed as its children.
 
 
 ## Json Example

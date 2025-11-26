@@ -1,10 +1,21 @@
 # stfexp.lightprobe_anchor
 Define a object/bone from which a game-engine will sample lightprobe values.
 
-## Representations
-* Blender: STF Component
-* Unity: The `Probes` -> `Anchor Override` property on a `Renderer`.
-* Godot: `LightmapProbe`
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF Component on bpy.types.Object with bpy.types.Mesh
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_lightprobe_anchor.py)
+*	- **Unity**
+	- The `Probes` -> `Anchor Override` property on a `Renderer`.
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_LightprobeAnchor.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Expanded/STFEXP_LightprobeAnchor_Processor.cs)
+*	- **Godot**
+	- LightmapProbe
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Lightprobe_Anchor.gd)
+:::
 
 ## Properties
 :::{table}
@@ -13,18 +24,6 @@ Define a object/bone from which a game-engine will sample lightprobe values.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 anchor | Yes | [Resource-Path](../../format/stf_format.md#resource-path) | Path to the node whose position to use as the lightprobe anchor.
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_constraint_twist.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Constraint_Twist.cs)
-*	- **Godot**
-	- TBD
 :::
 
 ## Json Example

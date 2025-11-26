@@ -1,19 +1,30 @@
 # stf.material
 
-## Representations
-* Blender: Material
-* Unity: Material
-* Godot: Material
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- bpy.types.Material
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_material/stf_material.py)
+*	- **Unity**
+	- Material
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Material_Processor.cs)
+*	- **Godot**
+	- Material
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Material.gd)
+:::
 
 ## Properties
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|style_hints |No |List<String> |Hints on the visual style of the material
-|shader_targets |No |Dict<List<String>> |Hints on the target shader per target application
-|properties |Yes |Dict<String, Property-Object> |Dict of Property-ID as a string to an Object
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+style_hints | No | List<string> | Hints on the visual style of the material
+shader_targets | No | Dict<List<string>> | Hints on the target shader per target application
+properties | Yes | Dict<string, Property-Object> | Dict of Property-ID as a string to an Object
 :::
 
 Property-IDs can be freely chosen by users.\
@@ -23,10 +34,10 @@ If an implementations happens to support a Property-ID with its Property-Object'
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|type |No |String |Type of the value variables
-|values |No |List<Value-Variable> |List of values. The value object is determined by the `type`
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+type | No | String | Type of the value variables
+values | No | List<Value-Variable> | List of values. The value object is determined by the `type`
 :::
 
 The following types for property-values are supported:
@@ -46,24 +57,12 @@ An Image-Property-Value-Object:
 :::{table}
 :align: left
 :widths: auto
-| Key | Required | Type | Description |
-| :--- | :--- | :--- | :--- |
-|image |Yes |Resource-ID |ID of an `stf.image` or compatible resource.
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+image | Yes | Resource-ID | ID of an `stf.image` or compatible resource.
 :::
 
 TODO: the image object should be expanded with UV-offsets and such
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_material/stf_material.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs)
-*	- **Godot**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Material.gd)
-:::
 
 ## Json Example
 ```json

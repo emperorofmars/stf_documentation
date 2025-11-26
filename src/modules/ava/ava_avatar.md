@@ -1,10 +1,23 @@
 # ava.avatar
 Represents a VR & V-tubing avatar model.
 
-## Representations
-* Blender: Component on Collection
-* Unity: Component
-* Godot: Component
+## Implementations
+:::{list-table}
+:align: left
+:widths: auto
+*	- **Blender**
+	- STF_Component on Collection
+	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_avatar.py)
+*	- **Unity**
+	- Only application specific representations
+	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_Avatar.cs)\
+		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Avatar_Processor.cs)\
+		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Avatar_Processor.cs)\
+		[BasisVR Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_Avatar_Processor.cs)
+*	- **Godot**
+	- TBD
+	-
+:::
 
 ## Properties
 
@@ -16,18 +29,6 @@ Key | Required | Type | Description
 viewport | No | Resource-ID | `stf.node` representing the viewport position.
 primary_armature_instance | No | Resource-ID | Armature instance for humanoid IK, eye-rotations, ...
 primary_mesh_instance | No | Resource-ID | Mesh instance for facial visemes
-:::
-
-## Implementations
-:::{list-table}
-:align: left
-:widths: auto
-*	- **Blender**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_avatar.py)
-*	- **Unity**
-	- [Codeberg](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_Avatar.cs)
-*	- **Godot**
-	- TBD
 :::
 
 ## Json Example
