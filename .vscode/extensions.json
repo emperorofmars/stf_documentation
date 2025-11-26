@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"ms-python.python",
+		"editorconfig.editorconfig",
+		"ms-vscode-remote.remote-containers",
+		"myriad-dreamin.tinymist",
+		"streetsidesoftware.code-spell-checker"
+	]
+}

@@ -3,7 +3,6 @@
 [A modular file-format for 3D assets]{.stf-subtitle}
 *Intended for (not only) games-development use-cases.*
 
-
 :::{warning}
 Please note, STF is a work in progress and likely to change.
 :::
