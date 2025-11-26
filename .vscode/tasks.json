@@ -1,0 +1,10 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "sphinx_autobuild",
+			"type": "shell",
+			"command": "sphinx-autobuild --watch . src/ build/ -c . -a"
+		}
+	]
+}

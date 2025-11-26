@@ -5,14 +5,10 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "Sphinx Autobuild",
-			"type": "debugpy",
-			"request": "launch",
-			"module": "sphinx_autobuild",
-			"args": [
-				"--watch", ".", "src/", "build/", "-c", ".", "-a"
-			],
-			"justMyCode": false
+			"type": "firefox",
+			"request": "attach",
+			"name": "Attach",
+			"preLaunchTask": "sphinx_autobuild"
 		}
 	]
 }
