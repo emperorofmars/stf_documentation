@@ -2,8 +2,7 @@
 
 🌰 [Slot Link Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
 
-Slot Link helps you manage Blender projects with multiple separate animations.\
-It automates the unlinking & linking of Actions and Slots, without requiring you to remember which goes where.
+Slot Link helps you manage Blender projects with multiple separate animations.
 
 *Requires Blender 4.5 or higher. Not compatible with legacy Actions.*
 
@@ -12,9 +11,39 @@ In games-development, you often need to create multiple separate animations, tha
 *(I.e. a run-cycle and a walk-cycle for the same character.)*
 
 This is unfortunately impossible to create in Blender without workarounds.\
-*(As of Blender version 4.5)*
+*(As of Blender version 5.0)*
 
-### Blender's Data Model
+
+## The Solution
+In the Action-Editor, specify with the [Slot Link extension](https://extensions.blender.org/add-ons/slot-link/) which Slot targets which Object and press `Link Slots`.
+
+Whenever you change the active Action in the Action-Editor, simply press `Link Slots` to ensure the current Action is linked everywhere in the scene correctly.
+
+Switching between Actions becomes a breeze, and it is no longer possible to accidentally change the active Action by just selecting another Object, Mesh etc...
+
+![](img/slot_link_editor.png)
+
+:::{hint}
+Slot Link purposely allows only Objects as targets.
+
+If you animated a Mesh's Shape Keys, simply select the Object on which that Mesh is instantiated.
+
+This has the added advantage of being able to animate instances of the same Mesh separately.
+:::
+
+### Import Export
+With this information present, it is possible to deterministically import & export animations in Blender.
+
+At the time of writing, the only importer/exporter that supports Slot-Link is [STF](https://docs.stfform.at). STF is not yet a production ready format.
+
+Until STF matures, or an importer/exporter for another format implements support, Slot-Link still aids you in creating and managing of animations.
+
+For export, you will for now have to rely on automated guesswork.\
+Alternatively, you can export animations one at a time. The `Link Slots` feature still significantly speeds that process up.
+
+---
+
+## Technical Details
 In Blender, an animation is represented by Actions.\
 Each animatable data-block (Object, Mesh, Armature, etc...) links to ***one*** Action and one of its Slots.
 
@@ -32,7 +61,7 @@ In order to create a second Action, targeting the same data-block, you have to r
 If you need to edit the previous Action, you have to remember yourself where it and its Slots were linked, and restore that manually.
 
 [This is a critical design flaw in Blender's data-model!\
-While it doesn't inhibit Film and VFX use-cases, since all they need is the one animation, it severely limits the ability to create assets for video-games.]{.stf-info-box}
+While it doesn't inhibit film and VFX use-cases much, since all they need is the one animation, it severely limits the ability to create assets for video-games.]{.stf-info-box}
 
 ### Animation Export
 Exporters, like those for FBX or glTF 2.0, do not have the knowledge of the artist.
@@ -44,34 +73,8 @@ Depending on the circumstances, that may work well or fail completely.
 The Action displayed in the Action-Editor is linked to the animation-data of the selected data-block.\
 This means, if you switch to another Action in the editor, the data-block's linked Action will also change, and vice versa.
 
-It's incredibly easy to accidentally and unknowingly mess up the scene.
+Different data-blocks can link to different Actions, ensuring proper chaos. When you want to animate an Object/Mesh/etc.. that isn't selected currently, whichever Action is linked on that data-block will become active in the Action-Editor. Your keys will be added to that one, instead the one you wanted.
+
+It's incredibly easy to accidentally and unknowingly mess up the scene and animations.
 
 When intentionally switching the edited action, the artist has to check every single data-block. Some Actions could have been previously linked somewhere accidentally.
-
-## The Solution
-The [Slot Link extension](https://extensions.blender.org/add-ons/slot-link/) automates the linking and unlinking of Actions and Slots.
-
-First, you have to set the `Target` for each Slot.
-[Slot Link purposely allows only Objects as targets.\
-If you animated a Mesh's Shape Keys, simply select the Object on which that Mesh is instantiated.\
-This has the added advantage of being able to animate instances of the same Mesh separately.]{.stf-info-box}
-
-Select the desired Action in the Action-Editor, and press the `Link Slots` button. It will set the currently displayed Action for all data-blocks.\
-It is no longer possible to accidentally change the displayed Action by just selecting another Object or Mesh.
-
-The `Link Slots` button has to be pressed every single time you change the displayed Action.
-
-![](img/slot_link_editor.png)
-
-[Note: Legacy Actions (without Slots) aren't supported.]{.stf-info-box}
-
-### Import Export
-With this information present, it is possible to deterministically import & export animations in Blender.
-
-At the time of writing, the only importer/exporter that supports Slot-Link is STF. STF is not yet a production ready format.
-
-Until STF matures, or an importer/exporter for another format implements support, Slot-Link still aids in the making of animations.
-
-For export, you will still have to rely on automated guesswork.\
-Alternatively, you can export animations one at a time. The `Link Slots` feature still significantly speeds that process up.
-
