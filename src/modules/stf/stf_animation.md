@@ -28,6 +28,7 @@ fps | Yes | float |
 range | Yes | List<float> | Beginning and end frame of the animation
 bake_on_export | No | bool | Whether the animation should be baked on
 tracks | Yes | List<Track-Object> |
+tracks_baked | No | List<Track-Object> | Tracks that are the result of a baking operation.
 :::
 
 ### Track-Object properties
@@ -40,6 +41,7 @@ target | Yes | Path | STF path of the target property
 timepoints | Yes | List<float> | Sorted list of points in time at which keyframes exist
 interpolation | No | string | Interpolation type for the entire track.
 subtracks | Yes | List<Subtrack-Object / null> |
+track_baked | No | bool | Indicates whether the entire tracks is generated, i.e. by a baking operation.
 :::
 
 ### Subtrack-Object properties
