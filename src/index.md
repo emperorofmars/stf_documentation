@@ -45,7 +45,7 @@ User Guide
 :::
 
 :::{grid-item-card} Godot
-*Version 4.5+*
+*Version 4.6+*
 ```{button-ref} installation/godot
 :class: stf-button
 :outline:
