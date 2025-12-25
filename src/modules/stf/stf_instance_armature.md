@@ -25,6 +25,8 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 armature | Yes | Resource-ID | ID of the instantiated armature resource, usually [`stf.armature`](stf_armature.md)
 pose | No | Map<Resource-ID, TRS> | Map of the corresponding bone and TRS.
+added_components | No | Map<Resource-ID, List<Resource-ID>> | A list of component-IDs that are added to bones within this armature instance.
+modified_components | No | Map<Resource-ID, Map<Resource-ID, JSON>> | A reference to bones within the armature instance -> a component on that bone instance -> a JSON object with changes to that component.
 :::
 
 ## Json Example
@@ -49,6 +51,27 @@ pose | No | Map<Resource-ID, TRS> | Map of the corresponding bone and TRS.
 			[ 0.19152779877185822, -3.042036723854835e-06, -5.479599849422812e-07, 0.9814872145652771 ],
 			[ 1.0, 0.9999999403953552, 0.9999998807907104 ]
 		]
+	},
+	"added_components": {
+		"ead3e787-8014-48ac-9af9-37db03edaed6": [
+			"081143f7-306a-4191-8126-86684db21c86"
+		],
+		"9a663148-f9a4-4b24-8f4c-7f4d388330dc": [
+			"3c5b6c65-b49a-407c-83de-c8e931e08d4b"
+		]
+	},
+	"modified_components": {
+		"9a663148-f9a4-4b24-8f4c-7f4d388330dc": {
+			"99e00ae6-4b8d-4b35-8a89-6221a09f6542": {
+				"weight": 0.6000000238418579,
+				"referenced_resources": [
+					"ed91d9ec-7940-4082-8579-406f099284c4"
+				],
+				"source": [
+					0
+				]
+			}
+		}
 	}
 }
 ```
