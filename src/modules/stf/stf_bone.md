@@ -13,7 +13,7 @@ Can only exist within `stf.armature`.
 	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Bone.cs)
 *	- **Godot**
 	- Skeleton3D's bones
-	- [Module](https://github.com/emperorofmars/stf_godot/blob/master/addons/stf_godot/modules/stf/STF_Bone.gd)
+	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Bone.gd)
 :::
 
 ## Properties

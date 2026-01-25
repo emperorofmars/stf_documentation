@@ -4,7 +4,7 @@
 Please note, STF is a work in progress and likely to change.
 :::
 
-```{button-link} https://github.com/emperorofmars/stf_godot/releases/latest
+```{button-link} https://codeberg.org/emperorofmars/stf_godot/releases/latest
 :class: stf-button
 Download the latest release
 ```

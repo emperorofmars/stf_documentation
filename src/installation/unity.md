@@ -8,7 +8,7 @@ Please note, STF is a work in progress and likely to change.
 Under `Window` → `Package Manager` → `+` → `Add package from git URL…​`\
 add the following URL:
 ```
-https://github.com/emperorofmars/stf_unity.git#upm
+https://codeberg.org/emperorofmars/stf_unity.git#upm
 ```
 
 ## VRChat Creator Companion
