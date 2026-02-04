@@ -121,7 +121,7 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 type | Yes | String | Type of the resource.
 referenced_resources | No | List<Resource-ID> | IDs of resources this resource references.
-referenced_buffers | No | List<Buffer-ID> | I Ds of buffers this resource references.
+referenced_buffers | No | List<Buffer-ID> | IDs of buffers this resource references.
 name | No | String | Display name of the resource.
 version | No | Int | Version of this resource. The default value is `-1`. If a breaking change is made by a module, it has to set this property.
 degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.

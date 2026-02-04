@@ -4,6 +4,8 @@
 
 This documentation is hosted at <https://docs.stfform.at>
 
+🌰 **[Report Issues](https://codeberg.org/emperorofmars/stf_documentation/issues)**
+
 Made with [Sphinx](https://www.sphinx-doc.org/en/master/) and the following plugins:
 * [myst_parser](https://myst-parser.readthedocs.io/en/latest/index.html)
 * [sphinx_copybutton](https://sphinx-copybutton.readthedocs.io/en/latest/)
