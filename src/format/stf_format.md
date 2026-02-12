@@ -17,7 +17,7 @@ A set of modules that any valid STF implementation has to provide is specified i
 
 STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 
-### Key Facts
+### Key Properties
 * The file extension for stf files is `.stf`.
 * The media-type for stf binary files is `model/stf+binary`.
 * The STF binary header is stored in `little endian` byte order.
@@ -200,7 +200,7 @@ Support for module plugins of this kind is required.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 enabled | No | boolean | True by default
-overrides | No | List<Resource-ID> | References `Component` resources that should not be processed, if this component's type is supported
+exclusion_group | No | string | A group from which an importer will choose the best `type` to process. This way competing and mutually exclusive solutions can exist within the same file.
 :::
 
 :::{admonition} `resources` object example
