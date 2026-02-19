@@ -14,6 +14,8 @@ stfexp_collider_capsule.md
 stfexp_collider_sphere.md
 stfexp_collider_plane.md
 stfexp_armature_humanoid.md
+stfexp_text.md
+stfexp_instance_text.md
 ```
 
 More are TBD
