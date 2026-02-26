@@ -32,7 +32,7 @@ html_baseurl = "https://docs.stfform.at"
 
 ## Build
 
-exclude_patterns = ["_build", "build", "Thumbs.db", ".DS_Store", ".github", ".vscode"]
+exclude_patterns = ["_build", "build", "Thumbs.db", ".DS_Store", ".forgejo", ".github", ".vscode"]
 source_suffix = [".rst", ".md"]
 master_doc = "index"
 templates_path = ["theme/templates"]

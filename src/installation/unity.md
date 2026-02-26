@@ -13,7 +13,7 @@ https://codeberg.org/emperorofmars/stf_unity.git#upm
 
 ## VRChat Creator Companion
 
-```{button-link} https://squirrelbite.github.io/vpm/
+```{button-link} https://vpm.squirrelbite.com/
 :class: stf-button
 Add this repository
 ```
