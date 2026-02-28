@@ -1,0 +1,31 @@
+name: Publish
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: codeberg-tiny
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+          cache: "pip"
+      - run: pip install -r requirements.txt
+      - run: mkdir _out
+      - run: sphinx-build -b html src _out -c .
+      # Deploy using git-pages
+      # By default to Codeberg Pages, as of now you can't use custom domains.
+      - uses: https://codeberg.org/git-pages/action@v2
+        with:
+          # If using Codeberg Pages, replace `template_forgejo_vpm_listing` with the name of your repository.
+          # If using a service that supports custom domains, enter your sites url here instead
+          site: "https://docs.stfform.at"
+          source: _out/
+          #token: ${{ forge.token }}
+          # You can use other services with git-pages, such as Grebedoc. This one supports custom domains.
+          # For Grebedoc follow the steps at https://grebedoc.dev
+          # Use method B!! Don't bother with the webhook.
+          # Configure the following additional properties for Grebedoc, adapt the `site`, and remove `token`.
+          server: grebedoc.dev
+          password: ${{ secrets.SITE_PASSWORD }}
