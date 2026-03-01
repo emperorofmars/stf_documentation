@@ -8,7 +8,7 @@ sphinx-autobuild --watch . src/ build/ -c . -a
 
 ## Project
 
-version = "0.0.24"
+version = "0.0.25"
 release = version
 
 project = "STF Documentation"
