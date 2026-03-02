@@ -6,6 +6,7 @@ ava_avatar.md
 ava_eye_rotation_bone.md
 ava_eyelids_blendshape.md
 ava_visemes_blendshape.md
+ava_voice_position.md
 ava_expressions.md
 ava_face_tracking_blendshape.md
 ava_secondary_motion.md

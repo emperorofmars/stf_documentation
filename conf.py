@@ -3,7 +3,7 @@ from datetime import date
 
 """
 Run a dev-server with:
-sphinx-autobuild --watch . src/ build/ -c . -a
+sphinx-autobuild --watch . src/ _out/ -c . -a
 """
 
 ## Project

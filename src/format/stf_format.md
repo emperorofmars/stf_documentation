@@ -17,7 +17,7 @@ A set of modules that any valid STF implementation has to provide is specified i
 
 STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
 
-### Key Properties
+### Format Properties
 * The file extension for stf files is `.stf`.
 * The media-type for stf binary files is `model/stf+binary`.
 * The STF binary header is stored in `little endian` byte order.

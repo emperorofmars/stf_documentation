@@ -1,5 +1,4 @@
 # stfexp.constraint.twist
-
 A rigging behavior that copies a percentage of the Y-axis rotation from its source.\
 This is a special application of rotation-constraints, used to compensate for twist movement.
 

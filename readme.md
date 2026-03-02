@@ -16,7 +16,7 @@ Made with [Sphinx](https://www.sphinx-doc.org/en/master/) and the following plug
 
 Run locally with
 ```sh
-sphinx-autobuild --watch . src/ build/ -c . -a
+sphinx-autobuild --watch . src/ _out/ -c . -a
 ```
 
 ## License
