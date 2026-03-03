@@ -12,6 +12,7 @@ Basic inverse-kinematik constraint. The component has to be placed on the last b
 *	- **Unity**
 	- Application specific components
 	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Constraint_IK.cs)
+		[Processor for FinalIK](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/FinalIK/Editor/FinalIK_STFEXP_Constraint_IK_Processor.cs)
 *	- **Godot**
 	- Various subclasses of IKModifier3D
 	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Constraint_IK.gd)
