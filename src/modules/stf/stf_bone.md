@@ -26,6 +26,8 @@ translation | Yes | Translation | The position of the bone relative to its armat
 rotation | Yes | Rotation | The rotation of the bones head relative to its armature position.
 length | Yes | Float | The bones length
 connected | No | Boolean | Default `false`
+deform | No | Boolean | Whether the bone can deform meshes. Implicit default is `true`
+non_deform_use | No | String | Indicates the purpose of the bone if `deform` is `false`. Possible values include: `ik_target`, `ik_pole`, ...
 :::
 
 Only other `stf.bone` type resources are allowed as its children.
