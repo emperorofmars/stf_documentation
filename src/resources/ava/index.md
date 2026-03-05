@@ -1,4 +1,4 @@
-# VR & V-Tubing Avatar Modules (ava.*)
+# VR & V-Tubing Avatar Resources (ava.*)
 
 ```{toctree}
 :maxdepth: 1

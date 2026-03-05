@@ -70,7 +70,7 @@ User Guide
 ## Advantages
 * **Artist Friendly**\
 	Import & export is quick and you don't have to fiddle with unnecessary settings to avoid breakage.\
-	[All information in STF and it's core-modules is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
+	[All information in STF and it's core-resources is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
 
 * **Versatile**\
 	STF stores original information as well as baked results.
@@ -81,17 +81,19 @@ User Guide
 * **Easy to Develop**\
 	STF's modular nature enables high encapsulation in the source-code and easy collaboration in the development of STF implementations.
 	[A functioning implementation that handles some core resource-types can be usually developed in a day or two.\
-	Third parties can easily develop and distribute custom (perhaps application specific) modules.]{.stf-info-box}
+	Third parties can easily develop and distribute custom (perhaps application specific) resources.]{.stf-info-box}
 
 
 ## Concept
-STF by itself is merely a shell format. Its implementations provide a framework for different **modules** to parse and serialize **resources**.
+STF by itself is merely a shell format. Its implementations provide a framework to parse and serialize arbitrary **resources**.
 
-Resources are stored as Json-objects, identified by a unique ID. Resources can reference binary buffers and each other.
+Resources are stored as Json-objects, and can represent anything, from nodes in a scene hierarchy, meshes, textures, animations, ...\
+Resources are referenced by a unique ID.\
+They and have a `type`, by which the appropriate piece of code, the resources' `handler`, is selected for import / export.
 
-A few modules, including but not limited to [`stf.prefab`](modules/stf/stf_prefab.md), [`stf.mesh`](modules/stf/stf_mesh.md), [`stf.material`](modules/stf/stf_material.md) or [`stf.image`](modules/stf/stf_image.md), are provided by default.
+A few resources, including but not limited to [`stf.prefab`](resources/stf/stf_prefab.md), [`stf.mesh`](resources/stf/stf_mesh.md), [`stf.material`](resources/stf/stf_material.md) or [`stf.image`](resources/stf/stf_image.md), are provided by default.
 
-Additional modules can be easily implemented by third parties. Each STF implementation must provide an easy and convenient way to hot-load module-plugins.
+It should be possible to extend any STF implementation with custom resource-handlers, if at all possible.
 
 :::{seealso}
 **Read the [STF Format Reference](format/stf_format.md)**
@@ -119,6 +121,6 @@ Usage <guide/index.md>
 :hidden:
 :caption: Reference
 format/stf_format.md
-Modules <modules/index.md>
+STF Resources <resources/index.md>
 Comparisons <format/comparisons.md>
 ```

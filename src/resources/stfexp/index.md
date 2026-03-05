@@ -1,4 +1,4 @@
-# Expanded Modules (stfexp.*)
+# Expanded Resources (stfexp.*)
 
 ```{toctree}
 :maxdepth: 1

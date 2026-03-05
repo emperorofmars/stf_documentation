@@ -1,6 +1,6 @@
-# Core Modules (stf.*)
+# Core Resources (stf.*)
 
-Modules which every STF implementation must support are in the main namespace `stf.*`.
+Resources which every STF implementation must support are in the main namespace `stf.*`.
 
 ```{toctree}
 :maxdepth: 1

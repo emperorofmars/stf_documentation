@@ -10,12 +10,12 @@ STF files are made up of a binary header, a Json definition and a set of binary 
 The Json definition contains meta information, resources and buffer references.\
 Resources have a `type` property, and are identified by a unique ID as a string.
 
-STF implementations provide modules, which convert between STF resources of a specific `type` and a specific application resource.\
-[*I.e. a module for `stf.mesh` in the Blender STF implementation would convert the STF-resource to and from Blenders `bpy.types.Mesh`.*]{.stf-info-box}
+STF implementations provide resource-handlers, which convert between STF resources of a specific `type` and a specific application resource.\
+[*I.e. a resources-handler for `stf.mesh` in the Blender STF implementation would convert the STF-resource to and from Blenders `bpy.types.Mesh`.*]{.stf-info-box}
 
-A set of modules that any valid STF implementation has to provide is specified in [Core Modules](../modules/stf/index.md).
+A set of resources-handlers that any valid STF implementation has to provide is specified in [Core Resources](../resources/stf/index.md).
 
-STF implementations must provide an easy to use plugin system for modules. If in any way possible, modules should be hot-loadable at runtime.
+STF implementations must provide an easy to use plugin system for resources-handlers. If in any way possible, resources-handlers should be hot-loadable at runtime.
 
 ### Format Properties
 * The file extension for stf files is `.stf`.
@@ -52,16 +52,16 @@ The root Json element is an object. It contains 3 properties: [`stf`](#stf-objec
 The following special Json-types are specified:
 
 #### `Resource-ID`
-* **For core modules:**\
+* **For core resources:**\
 	A string that is the key of a resource in the [`resources`](#resources-object) object.
-* **For other modules:**\
+* **For other resources:**\
 	An int that is the index of in the `referenced_resources` array of the resource.\
 	The string at that index is the key of a resource in the [`resources`](#resources-object) object.
 
 #### `Buffer-ID`
-* **For core modules:**\
+* **For core resources:**\
 	A string that is the key to a buffer in the [`buffers`](#buffers-object) object.
-* **For other modules:**\
+* **For other resources:**\
 	An int that is the index of in the `referenced_buffers` array of the resource.\
 	The string at that index is the key of a buffer in the [`buffers`](#buffers-object)object.
 
@@ -89,7 +89,7 @@ timestamp | No | String | ISO 8601 date and time in UTC.
 metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`.
 :::
 
-The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It represents the assets scene-hierarchy.
+The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It represents the assets scene-hierarchy.
 
 :::{admonition} `stf` object example
 :class: example
@@ -109,7 +109,8 @@ The root resource must be a [`stf.prefab`](../modules/stf/stf_prefab.md). It rep
 ### `resources` object
 The `resources` object is a map of `resource` objects identified by an ID.
 
-The various resource objects describe the files actual content. Any further properties are defined by each resources module.
+The various resource objects describe the files actual content.
+Each resource-type defines arbitrary additional properties.
 
 **Resource object base properties:**
 
@@ -127,14 +128,14 @@ version | No | Int | Version of this resource. The default value is `-1`. If a b
 degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
 :::
 
-Resources, other than from the [`stf.*` namespace](../modules/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
+Resources, other than from the [`stf.*` namespace](../resources/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
 If an STF implementation doesn't support a resource, it will preserve and re-export it along with all its relationships.
 
-#### Resource Kinds
-Resources can be `Data`, `Node`, `Instance` and `Component` kinds.
-Each of these kinds has additional properties.
+#### Resource Categories
+Resources are in one of the following categories: `Data`, `Node`, `Instance` and `Component`.
+Each of these categories have additional properties.
 
-The information about what `kind` a resource is, must be known by the resource-type's implementation and is not contained in STF files itself.
+The information about what `category` a resource is, must be known by the resource-type's implementation and is not contained in STF files itself.
 
 ##### Data
 Support for module plugins of this kind is required.
@@ -152,8 +153,8 @@ components | No | List<Resource-ID> | Component resource IDs
 :::
 
 ##### Node
-For now only [`stf.node`](../modules/stf/stf_node.md) and [`stf.bone`](../modules/stf/stf_bone.md) exist.
-Support for module plugins of this kind is not required.
+For now only [`stf.node`](../resources/stf/stf_node.md) and [`stf.bone`](../resources/stf/stf_bone.md) exist.
+Support for handler plugins of this kind is not required.
 
 **Node resource base properties:**
 
@@ -173,7 +174,7 @@ They represent an instance of a `data` resource in the scene hierarchy.
 These include for example mesh or armature instances.
 Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
 An instance resource can be referenced only once by a `Node` resource.
-Support for module plugins of this kind is required.
+Support for handler plugins of this kind is required.
 
 **Instance resource properties:**
 
@@ -189,7 +190,7 @@ enabled | No | boolean | True by default
 ##### Component
 They Represents additional functionality or information for `Data` and `Node` resources.
 A component resource can be referenced only once by a `Data` or `Node` resource.
-Support for module plugins of this kind is required.
+Support for handler plugins of this kind is required.
 
 **Component resource properties:**
 
