@@ -7,14 +7,14 @@ Define a object/bone from which a game-engine will sample lightprobe values.
 :widths: auto
 *	- **Blender**
 	- STF Component on bpy.types.Object with bpy.types.Mesh
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_lightprobe_anchor.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_lightprobe_anchor.py)
 *	- **Unity**
 	- The `Probes` -> `Anchor Override` property on a `Renderer`.
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_LightprobeAnchor.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Expanded/STFEXP_LightprobeAnchor_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_LightprobeAnchor.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_LightprobeAnchor_Processor.cs)
 *	- **Godot**
 	- LightmapProbe
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Lightprobe_Anchor.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Lightprobe_Anchor.gd)
 :::
 
 ## Properties

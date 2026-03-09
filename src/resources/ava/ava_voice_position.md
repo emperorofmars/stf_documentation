@@ -7,10 +7,10 @@ Position of the voice audio-source on a VR & V-tubing avatar.
 :widths: auto
 *	- **Blender**
 	- STF_Component on Collection
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_voice_position.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_voice_position.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_VoicePosition.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_VoicePosition.cs)\
 		[BasisVR Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_VoicePosition_Processor.cs)
 *	- **Godot**
 	- TBD

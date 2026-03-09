@@ -8,10 +8,10 @@ An infinitely large plane collider.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Object or bpy.types.Bone
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_collider_plane.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_plane.py)
 *	- **Unity**
 	- Only Application specific components
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Collider_Plane.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Plane.cs)
 		[VRChat Physbone Collider Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Collider_Plane_Processor.cs)
 *	- **Godot**
 	- TBD

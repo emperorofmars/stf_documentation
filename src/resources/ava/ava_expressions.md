@@ -7,10 +7,10 @@ Define the facial expressions and emotions an avatar can express.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Collection
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_expressions.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_expressions.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_Expressions.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_Expressions.cs)\
 		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Expressions_Processor.cs)\
 		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Expressions_Processor.cs)
 *	- **Godot**

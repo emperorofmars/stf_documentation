@@ -6,14 +6,14 @@
 :widths: auto
 *	- **Blender**
 	- bpy.types.Material
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_material/stf_material.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_material/stf_material.py)
 *	- **Unity**
 	- Material
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Material/STF_Material.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Material_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Material/STF_Material.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Material_Processor.cs)
 *	- **Godot**
 	- Material
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/commit/d518b25aeb5b74cc57eb0f82f31a5f7fdbca2aa0/addons/stf_godot/modules/stf/STF_Material.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Material.gd)
 :::
 
 ## Properties

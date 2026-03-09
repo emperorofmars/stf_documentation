@@ -8,14 +8,14 @@ A camera with perspective or orthographic projection.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Camera
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_camera.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_camera.py)
 *	- **Unity**
 	- Camera
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Camera.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Expanded/STFEXP_Camera_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Camera.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Camera_Processor.cs)
 *	- **Godot**
 	- Camera3D
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Camera.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Camera.gd)
 :::
 
 ## Properties
@@ -25,7 +25,7 @@ A camera with perspective or orthographic projection.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 projection | Yes | string | Possible values are "perspective" and "orthographic"
-aspect_ratio | Yes | float | 
+aspect_ratio | Yes | float |
 fov | Yes | float | Vertical field of view for "perspective" projection or the vertical size of the orthographic plane for "orthographic" projection.
 :::
 

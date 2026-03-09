@@ -7,10 +7,10 @@ Defines limits for eyebone rotations.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Armature
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_eyerotation_bone.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_eyerotation_bone.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_EyeRotation_Bone.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_EyeRotation_Bone.cs)\
 		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_EyeRotation_Bone_Processor.cs)\
 		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_EyeRotation_Bone_Processor.cs)
 *	- **Godot**

@@ -8,15 +8,15 @@ This is a special application of rotation-constraints, used to compensate for tw
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Object or bpy.types.Bone (Could use actual CopyRotation modifiers in the future)
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_constraint_twist.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_twist.py)
 *	- **Unity**
 	- RotationConstraint or application specific components
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Constraint_Twist.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Expanded/STFEXP_Constraint_Twist_Processor.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Twist.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Constraint_Twist_Processor.cs)\
 		[VRChat Constraint Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Constraint_Twist_Processor.cs)
 *	- **Godot**
 	- CopyTransformModifier3D
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Constraint_Twist.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Constraint_Twist.gd)
 :::
 
 ## Properties

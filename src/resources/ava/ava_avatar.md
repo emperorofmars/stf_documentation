@@ -7,10 +7,10 @@ Represents a VR & V-tubing avatar model.
 :widths: auto
 *	- **Blender**
 	- STF_Component on Collection
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_avatar.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_avatar.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_Avatar.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_Avatar.cs)\
 		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Avatar_Processor.cs)\
 		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Avatar_Processor.cs)\
 		[BasisVR Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_Avatar_Processor.cs)

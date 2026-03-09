@@ -7,10 +7,10 @@ Defines blendshapes which move the eyelids.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Mesh
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_eyelids_blendshape.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_eyelids_blendshape.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_Eyelids_Blendshape.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_Eyelids_Blendshape.cs)\
 		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Eyelids_Blendshape_Processor.cs)\
 		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Eyelids_Blendshape_Processor.cs)\
 		[BasisVR Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_Eyelids_Blendshape_Processor.cs)

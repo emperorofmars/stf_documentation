@@ -7,14 +7,14 @@ A node that exists in 3d space. It defines its location, rotation and scale rela
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_node/stf_node.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_node/stf_node.py)
 *	- **Unity**
 	- Object
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Node.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Mesh_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Node.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Mesh_Processor.cs)
 *	- **Godot**
 	- Node3D
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Node.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Node.gd)
 :::
 
 ## Properties

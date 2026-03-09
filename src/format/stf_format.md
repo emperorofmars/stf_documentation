@@ -124,7 +124,7 @@ type | Yes | String | Type of the resource.
 referenced_resources | No | List<Resource-ID> | IDs of resources this resource references.
 referenced_buffers | No | List<Buffer-ID> | IDs of buffers this resource references.
 name | No | String | Display name of the resource.
-version | No | Int | Version of this resource. The default value is `-1`. If a breaking change is made by a module, it has to set this property.
+version | No | Int | Version of this resource. The default value is `-1`. If a breaking change is made to a resource type, it has to set this property.
 degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
 :::
 
@@ -138,7 +138,7 @@ Each of these categories have additional properties.
 The information about what `category` a resource is, must be known by the resource-type's implementation and is not contained in STF files itself.
 
 ##### Data
-Support for module plugins of this kind is required.
+Support for plugins of this category is required.
 
 **Data resource base properties:**
 
@@ -154,7 +154,7 @@ components | No | List<Resource-ID> | Component resource IDs
 
 ##### Node
 For now only [`stf.node`](../resources/stf/stf_node.md) and [`stf.bone`](../resources/stf/stf_bone.md) exist.
-Support for handler plugins of this kind is not required.
+Support for handler plugins of this category is not required.
 
 **Node resource base properties:**
 
@@ -174,7 +174,7 @@ They represent an instance of a `data` resource in the scene hierarchy.
 These include for example mesh or armature instances.
 Instances can provide data relevant for the instance of the resource, such as an armatures pose or meshes blendshape value or material assignments.
 An instance resource can be referenced only once by a `Node` resource.
-Support for handler plugins of this kind is required.
+Support for handler plugins of this category is required.
 
 **Instance resource properties:**
 
@@ -190,7 +190,7 @@ enabled | No | boolean | True by default
 ##### Component
 They Represents additional functionality or information for `Data` and `Node` resources.
 A component resource can be referenced only once by a `Data` or `Node` resource.
-Support for handler plugins of this kind is required.
+Support for handler plugins of this category is required.
 
 **Component resource properties:**
 

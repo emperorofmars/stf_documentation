@@ -7,14 +7,14 @@ An animation relative to a prefab.
 :widths: auto
 *	- **Blender**
 	- Actions set-up with [Slot Link](https://extensions.blender.org/add-ons/slot-link/)
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_animation/stf_animation.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_animation/stf_animation.py)
 *	- **Unity**
 	- AnimationClip
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Animation.cs)
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Animation_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Animation.cs)
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Animation_Processor.cs)
 *	- **Godot**
 	- Animation
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Animation.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Animation.gd)
 :::
 
 ## Properties

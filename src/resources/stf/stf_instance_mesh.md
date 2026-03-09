@@ -7,14 +7,14 @@ Instantiates a mesh onto a node.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.Mesh
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/core/stf_instance_mesh/stf_instance_mesh.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_instance_mesh/stf_instance_mesh.py)
 *	- **Unity**
 	- MeshRenderer and SkinnedMeshRenderer
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Core/STF_Instance_Mesh.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_Core/STF_Instance_Mesh_Processor.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Instance_Mesh.cs)\
+		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Instance_Mesh_Processor.cs)
 *	- **Godot**
 	- MeshInstance3D
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stf/STF_Instance_Mesh.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Instance_Mesh.gd)
 :::
 
 ## Properties

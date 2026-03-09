@@ -7,7 +7,7 @@ Represents mesh's vertex and edge creases.
 :widths: auto
 *	- **Blender**
 	- STF Component on bpy.types.Mesh
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_mesh_creases.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_mesh_creases.py)
 *	- **Unity**
 	- Not relevant
 	-

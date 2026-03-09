@@ -10,13 +10,13 @@ To be expanded with more attributes and functionality.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.TextCurve
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/expanded/stfexp_instance_text.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_instance_text.py)
 *	- **Unity**
 	- TextMeshPro, Text
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Modules/Modules_Expanded/STFEXP_Instance_Text.cs)
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Instance_Text.cs)
 *	- **Godot**
 	- Label3D
-	- [Module](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/modules/stfexp/STFEXP_Instance_Text.gd)
+	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Instance_Text.gd)
 :::
 
 ## Properties

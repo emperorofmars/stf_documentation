@@ -7,10 +7,10 @@ Defines wich face-tracking standard this avatar conforms to.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Mesh
-	- [Module](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_modules/ava/ava_facial_tracking_blendshape/ava_face_tracking_blendshape.py)
+	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_facial_tracking_blendshape/ava_face_tracking_blendshape.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Module](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Modules/AVA_FaceTracking_Blendshape.cs)\
+	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_FaceTracking_Blendshape.cs)\
 		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_FaceTracking_Blendshape_Processor.cs)
 *	- **Godot**
 	- TBD
