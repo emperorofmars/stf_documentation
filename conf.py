@@ -10,6 +10,7 @@ sphinx-autobuild --watch . src/ _out/ -c . -a
 
 version = "0.0.28"
 release = version
+blender_version = "0.0.29"
 
 project = "STF Documentation"
 html_title = f"STF Documentation {release}"
@@ -43,8 +44,8 @@ templates_path = ["theme/templates"]
 html_theme = "furo"
 
 html_theme_options = {
-	"source_view_link": "https://codeberg.org/emperorofmars/stf_documentation/src/branch/master/src/{filename}",
-	"source_edit_link": "https://codeberg.org/emperorofmars/stf_documentation/_edit/master/src/{filename}",
+	"source_view_link": "https://codeberg.org/stf_format/stf_documentation/src/branch/master/src/{filename}",
+	"source_edit_link": "https://codeberg.org/stf_format/stf_documentation/_edit/master/src/{filename}",
 }
 
 html_static_path = ["theme"]
@@ -82,6 +83,7 @@ myst_heading_anchors = 6
 
 myst_substitutions = {
 	"version": version,
+	"blender_version": blender_version,
 }
 
 ### sphinxext.opengraph
