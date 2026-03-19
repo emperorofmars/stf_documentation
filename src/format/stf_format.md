@@ -83,10 +83,26 @@ Key | Required | Type | Description
 version_major | Yes | Int | Major version of STF
 version_minor | Yes | Int | Minor version of STF
 root | Yes | Resource-ID | ID of the root resource
-meta | No | Map<String, String> | Meta information such as authors, license or documentation link.
+asset_info | No | Asset-Info-Object | Meta information such as authors, license or documentation link.
+asset_properties | No | Map<String, String> | User defined properties
 generator | No | String | The name of the STF implementation that created this file.
 timestamp | No | String | ISO 8601 date and time in UTC.
 metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`.
+:::
+
+:::{table} Asset-Info-Object
+:align: left
+:widths: auto
+:name: resource object base properties
+Key | Required | Type | Description
+:--- | :--- | :--- | :---
+asset_name | No | String |
+version | No | String |
+url | No | String |
+author | No | String |
+license | No | String |
+license_url | No | String |
+documentation_url | No | String |
 :::
 
 The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It represents the assets scene-hierarchy.
@@ -97,8 +113,11 @@ The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It r
 "stf": {
 	"version_major": 0,
 	"version_minor": 0,
-	"meta": {
+	"asset_info": {
 		"asset_name": "Default Cube"
+	},
+	"asset_properties": {
+		"user": "defined"
 	},
 	"metric_multiplier": 1.0,
 	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
@@ -128,7 +147,7 @@ version | No | Int | Version of this resource. The default value is `-1`. If a b
 degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
 :::
 
-Resources, other than from the [`stf.*` namespace](../resources/stf/index.md), must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
+Resources must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
 If an STF implementation doesn't support a resource, it will preserve and re-export it along with all its relationships.
 
 #### Resource Categories

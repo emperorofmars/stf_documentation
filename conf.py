@@ -8,7 +8,7 @@ sphinx-autobuild --watch . src/ _out/ -c . -a
 
 ## Project
 
-version = "0.0.28"
+version = "0.0.29"
 release = version
 blender_version = "0.0.29"
 
