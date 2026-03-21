@@ -7,11 +7,11 @@ Associate animations with a 1d or 2d position.
 :widths: auto
 *	- **Blender**
 	- STFEXP_Animation_Blendtree
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_animation_blendtree.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_animation_blendtree.py)
 *	- **Unity**
 	- BlendTree
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_AnimationBlendtree.cs)\
-		[Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_AnimationBlendtree_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_AnimationBlendtree.cs)\
+		[Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_AnimationBlendtree_Processor.cs)
 *	- **Godot**
 	- TBD
 	- -

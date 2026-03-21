@@ -4,7 +4,7 @@
 Please note, STF is a work in progress and likely to change.
 :::
 
-```{button-link} https://codeberg.org/emperorofmars/stf_godot/releases/latest
+```{button-link} https://codeberg.org/stf_format/stf_godot/releases/latest
 :class: stf-button
 Download the latest release
 ```
@@ -26,4 +26,4 @@ Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showc
 
 {octicon}`zap` _Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showcase)!_
 
-🌰 [User Guide](../guide/godot.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_godot/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_godot) 🌰
+🌰 [User Guide](../guide/godot.md) 🌰 [Report Issues](https://codeberg.org/stf_format/stf_godot/issues) 🌰 [Source Code](https://codeberg.org/stf_format/stf_godot) 🌰

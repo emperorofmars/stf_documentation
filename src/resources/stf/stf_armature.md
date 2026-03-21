@@ -7,13 +7,13 @@ A armature represents a hierarchy of bones.
 :widths: auto
 *	- **Blender**
 	- Armature
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_armature/stf_armature.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_armature/stf_armature.py)
 *	- **Unity**
 	- GameObject
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resource/Resources_STF/STF_Armature.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resource/Resources_STF/STF_Armature.cs)
 *	- **Godot**
 	- Skeleton3D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Armature.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Armature.gd)
 :::
 
 ## Properties

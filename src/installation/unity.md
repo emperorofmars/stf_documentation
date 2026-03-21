@@ -8,7 +8,7 @@ Please note, STF is a work in progress and likely to change.
 Under `Window` → `Package Manager` → `+` → `Add package from git URL…​`\
 add the following URL:
 ```
-https://codeberg.org/emperorofmars/stf_unity.git#upm
+https://codeberg.org/stf_format/stf_unity.git#upm
 ```
 
 ## VRChat Creator Companion
@@ -25,4 +25,4 @@ Try to import this [example model](https://squirrelbite.itch.io/stf-avatar-showc
 
 ---
 
-🌰 [User Guide](../guide/unity.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_unity/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_unity) 🌰
+🌰 [User Guide](../guide/unity.md) 🌰 [Report Issues](https://codeberg.org/stf_format/stf_unity/issues) 🌰 [Source Code](https://codeberg.org/stf_format/stf_unity) 🌰

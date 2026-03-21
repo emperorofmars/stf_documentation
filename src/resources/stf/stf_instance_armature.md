@@ -7,14 +7,14 @@ Instantiates an armature onto a node.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.Armature
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_instance_armature/stf_instance_armature.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_instance_armature/stf_instance_armature.py)
 *	- **Unity**
 	- GameObject
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Instance_Armature.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Instance_Armature_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Instance_Armature.cs)\
+		[Default Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Processors/Processors_STF/STF_Instance_Armature_Processor.cs)
 *	- **Godot**
 	- Skeleton3D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Instance_Armature.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Instance_Armature.gd)
 :::
 
 ## Properties

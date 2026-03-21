@@ -2,7 +2,7 @@
 
 Requires Blender 4.5 or higher.
 
-🌰 [Installation](../installation/blender.md) 🌰 [Report Issues](https://codeberg.org/emperorofmars/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/stf_blender) 🌰
+🌰 [Installation](../installation/blender.md) 🌰 [Report Issues](https://codeberg.org/stf_format/stf_blender/issues) 🌰 [Source Code](https://codeberg.org/stf_format/stf_blender) 🌰
 
 :::{tip}
 Install the [Slot Link](https://extensions.blender.org/add-ons/slot-link/) extension to enable support for importing & exporting animations.\

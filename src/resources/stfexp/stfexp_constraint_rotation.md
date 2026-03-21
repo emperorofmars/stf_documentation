@@ -8,14 +8,14 @@ A rigging behavior that copies a percentage of the rotation from its source.\
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Object or bpy.types.Bone (Could use actual CopyRotation modifiers in the future)
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_rotation.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_rotation.py)
 *	- **Unity**
 	- ParentConstraint or application specific components
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Rotation.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Constraint_Rotation_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Rotation.cs)\
+		[Default Processor](https://codeberg.org/stf_formatrc/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Constraint_Rotation_Processor.cs)
 *	- **Godot**
 	- CopyTransformModifier3D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Constraint_Rotation.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Constraint_Rotation.gd)
 :::
 
 ## Properties

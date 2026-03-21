@@ -8,14 +8,14 @@ Basic inverse-kinematik constraint. The component has to be placed on the last b
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Bone and bpy.types.KinematicConstraint
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_ik.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_ik.py)
 *	- **Unity**
 	- Application specific components
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_IK.cs)
-		[Processor for FinalIK](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/FinalIK/Editor/FinalIK_STFEXP_Constraint_IK_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_IK.cs)
+		[Processor for FinalIK](https://codeberg.org/stf_format/stf_unity/src/branch/master/FinalIK/Editor/FinalIK_STFEXP_Constraint_IK_Processor.cs)
 *	- **Godot**
 	- Various subclasses of IKModifier3D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Constraint_IK.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Constraint_IK.gd)
 :::
 
 ## Properties

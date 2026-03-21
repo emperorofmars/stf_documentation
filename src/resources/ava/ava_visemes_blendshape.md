@@ -7,13 +7,13 @@ Define blendshapes for audio-based lip-sync.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Mesh
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_visemes_blendshape.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/ava/ava_visemes_blendshape.py)
 *	- **Unity**
 	- Only application specific representations
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_Visemes_Blendshape.cs)\
-		[VRChat Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Visemes_Blendshape_Processor.cs)\
-		[UNIVRM0 Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Visemes_Blendshape_Processor.cs)\
-		[BasisVR Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_Visemes_Blendshape_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/Runtime/Resources/AVA_Visemes_Blendshape.cs)\
+		[VRChat Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_AVA_Visemes_Blendshape_Processor.cs)\
+		[UNIVRM0 Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_AVA_Visemes_Blendshape_Processor.cs)\
+		[BasisVR Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_BASISVR/Editor/Processors/BASIS_AVA_Visemes_Blendshape_Processor.cs)
 *	- **Godot**
 	- TBD
 	-

@@ -7,11 +7,11 @@ Declares that this Armature is humanoid. Defines which bone corresponds to which
 :widths: auto
 *	- **Blender**
 	- STF Component on bpy.types.Armature
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_armature_humanoid.py)
+	- [Resource](https://codeberg.org/stf_formatder/src/branch/master/stfblender/stf_resources/expanded/stfexp_armature_humanoid.py)
 *	- **Unity**
 	- Avatar
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Humanoid_Armature.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Humanoid_Armature_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Humanoid_Armature.cs)\
+		[Default Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Humanoid_Armature_Processor.cs)
 *	- **Godot**
 	- TBD
 	-

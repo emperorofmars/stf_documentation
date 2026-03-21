@@ -7,13 +7,13 @@ Can only exist within `stf.armature`.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Bone
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_bone/stf_bone.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_bone/stf_bone.py)
 *	- **Unity**
 	- GameObject
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Bone.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Bone.cs)
 *	- **Godot**
 	- Skeleton3D's bones
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Bone.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Bone.gd)
 :::
 
 ## Properties

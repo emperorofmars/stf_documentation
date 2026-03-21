@@ -8,11 +8,11 @@ An infinitely large plane collider.
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Object or bpy.types.Bone
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_plane.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_plane.py)
 *	- **Unity**
 	- Only Application specific components
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Plane.cs)
-		[VRChat Physbone Collider Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Collider_Plane_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Plane.cs)
+		[VRChat Physbone Collider Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Collider_Plane_Processor.cs)
 *	- **Godot**
 	- TBD
 	-

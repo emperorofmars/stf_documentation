@@ -8,16 +8,16 @@ A sphere collider
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Object or bpy.types.Bone
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_sphere.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_sphere.py)
 *	- **Unity**
 	- SphereCollider or application specific components
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Sphere.cs)\
-		[Default Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Collider_Sphere_Processor.cs)\
-		[VRChat Physbone Collider Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Collider_Sphere_Processor.cs)\
-		[UNIVRM0 Springbone Collider Processor](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_STFEXP_Collider_Sphere_Processor.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Sphere.cs)\
+		[Default Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Processors/Processors_STFEXP/STFEXP_Collider_Sphere_Processor.cs)\
+		[VRChat Physbone Collider Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_VRChat/Editor/Processors/VRC_STFEXP_Collider_Sphere_Processor.cs)\
+		[UNIVRM0 Springbone Collider Processor](https://codeberg.org/stf_format/stf_unity/src/branch/master/AVA/AVA_UNIVRM0/Editor/Processors/UNIVRM0_STFEXP_Collider_Sphere_Processor.cs)
 *	- **Godot**
 	- CollisionShape3D & SphereShape3D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Collider_Sphere.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stfexp/STFEXP_Collider_Sphere.gd)
 :::
 
 ## Properties

@@ -7,13 +7,13 @@ Information on how an image is to be converted into a GPU texture.
 :widths: auto
 *	- **Blender**
 	- `stf.texture` STF Component on Blender Image
-	- [Resource](https://codeberg.org/emperorofmars/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_texture/stf_texture.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_texture/stf_texture.py)
 *	- **Unity**
 	- Texture2D
-	- [Resource](https://codeberg.org/emperorofmars/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Texture.cs)
+	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Texture.cs)
 *	- **Godot**
 	- PortableCompressedTexture2D
-	- [Resource](https://codeberg.org/emperorofmars/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Texture.gd)
+	- [Resource](https://codeberg.org/stf_format/stf_godot/src/branch/master/addons/stf_godot/resources/stf/STF_Texture.gd)
 :::
 
 ## Properties
