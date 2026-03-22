@@ -80,8 +80,7 @@ The `stf` object holds meta information.
 :name: stf object properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-version_major | Yes | Int | Major version of STF
-version_minor | Yes | Int | Minor version of STF
+version | Yes | list<int> | List of two integers, specifying the major and minor version of the STF files Json definition.
 root | Yes | Resource-ID | ID of the root resource
 asset_info | No | Asset-Info-Object | Meta information such as authors, license or documentation link.
 asset_properties | No | Map<String, String> | User defined properties
@@ -111,8 +110,7 @@ The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It r
 :class: example
 ```json
 "stf": {
-	"version_major": 0,
-	"version_minor": 0,
+	"version": [0, 1],
 	"asset_info": {
 		"asset_name": "Default Cube"
 	},
