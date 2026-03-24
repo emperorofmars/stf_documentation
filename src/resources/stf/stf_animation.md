@@ -42,6 +42,8 @@ timepoints | Yes | List<float> | Sorted list of points in time at which keyframe
 interpolation | No | string | Interpolation type for the entire track.
 subtracks | Yes | List<Subtrack-Object / null> |
 track_baked | No | bool | Indicates whether the entire tracks is generated, i.e. by a baking operation.
+reset_animation | No | Resource-ID | Reference to a reset animation.
+is_reset_animation | No | bool | Whether this animation is a reset-animation. Default is `false`.
 :::
 
 ### Subtrack-Object properties
@@ -90,175 +92,210 @@ Index | Type | Description
 
 ## Json Example
 ```json
-"6a60e775-4374-4439-bbbe-49ea5edc9438": {
+"8e657448-a4b0-4020-9254-437b0611a765": {
 	"type": "stf.animation",
-	"name": "Anim Test",
+	"name": "Test Animation",
 	"loop": "none",
 	"fps": 24,
-	"bake_on_export": true,
 	"range": [
 		1.0,
-		16.0
+		5.0
 	],
+	"reset_animation": 0,
 	"tracks": [
 		{
 			"target": [
-				"737c6e44-4269-409b-95a8-cfc8e680a13b",
-				"t"
+				"bbff51e8-b34d-4ec4-aca4-3fcecad73309",
+				"instance",
+				"blendshape",
+				"MouthEdgesOpen",
+				"value"
+			],
+			"timepoints": [
+				1.0,
+				5.0
 			],
 			"subtracks": [
 				{
 					"keyframes": [
 						[
 							true,
-							1.0,
-							-0.7435536980628967,
+							0.0,
 							"bezier",
-							"aligned",
+							"auto",
 							[
-								2.0,
+								1.3333334922790527,
 								0.0
 							]
 						],
 						[
 							true,
-							16.0,
-							-0.2216922640800476,
-							"bezier",
-							"aligned",
-							[
-								3.0,
-								0.0
-							],
-							[
-								-3.0,
-								0.0
-							]
-						]
-					],
-					"baked": "ba4b975f-3df3-42cf-8508-d527b1468b18"
-				},
-				{
-					"keyframes": [
-						[
-							true,
 							1.0,
-							2.200054168701172,
 							"bezier",
-							"aligned",
+							"auto",
 							[
-								2.0,
-								0.0
-							]
-						],
-						[
-							true,
-							16.0,
-							0.4340066909790039,
-							"bezier",
-							"aligned",
-							[
-								3.0,
+								1.3333334922790527,
 								0.0
 							],
 							[
-								-3.0,
+								-1.3333334922790527,
 								0.0
 							]
 						]
 					],
-					"baked": "591f8e72-d4bc-456f-8420-95a46a687329"
-				},
-				{
-					"keyframes": [
-						[
-							true,
-							1.0,
-							1.996330738067627,
-							"bezier",
-							"aligned",
-							[
-								2.0,
-								0.0
-							]
-						],
-						[
-							true,
-							16.0,
-							0.2330167293548584,
-							"bezier",
-							"aligned",
-							[
-								3.0,
-								0.0
-							],
-							[
-								-3.0,
-								0.0
-							]
-						]
-					],
-					"baked": "b1951f62-a79e-4cfb-bb3b-75e431d52ca0"
+					"baked": 0
 				}
-			]
+			],
+			"interpolation": "bezier",
+			"track_baked": false
 		},
 		{
 			"target": [
-				"737c6e44-4269-409b-95a8-cfc8e680a13b",
+				"e6ae2ed1-fc53-43ee-ac53-05bf296d5fc1",
 				"instance",
-				"blendshape",
-				"Key 1",
-				"value"
+				"29c1fb4e-37f7-46d5-b07e-526934455996",
+				"r"
+			],
+			"timepoints": [
+				1.0,
+				5.0
 			],
 			"subtracks": [
 				{
 					"keyframes": [
 						[
 							true,
-							1.0,
-							0.0,
+							0.8330915570259094,
 							"bezier",
-							"aligned",
+							"auto",
 							[
-								2.0,
+								1.3333334922790527,
 								0.0
 							]
 						],
 						[
 							true,
-							7.0,
-							0.7300613522529602,
+							0.8460156917572021,
 							"bezier",
-							"aligned",
+							"auto",
 							[
-								3.0,
+								1.3333334922790527,
 								0.0
 							],
 							[
-								-2.0,
-								0.0
-							]
-						],
-						[
-							true,
-							16.0,
-							0.0,
-							"bezier",
-							"aligned",
-							[
-								3.0,
-								0.0
-							],
-							[
-								-3.0,
+								-1.3333334922790527,
 								0.0
 							]
 						]
 					],
-					"baked": "fba2e828-e6c9-476f-b47c-d1851bcacc7d"
+					"baked": 6
+				},
+				{
+					"keyframes": [
+						[
+							true,
+							4.20605830192368e-16,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							]
+						],
+						[
+							true,
+							4.3544335926898076e-16,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							],
+							[
+								-1.3333334922790527,
+								0.0
+							]
+						]
+					],
+					"baked": 7
+				},
+				{
+					"keyframes": [
+						[
+							true,
+							-1.713443229014921e-16,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							]
+						],
+						[
+							true,
+							-1.7949213134447822e-16,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							],
+							[
+								-1.3333334922790527,
+								0.0
+							]
+						]
+					],
+					"baked": 8
+				},
+				{
+					"keyframes": [
+						[
+							true,
+							0.5531351566314697,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							]
+						],
+						[
+							true,
+							0.5331581234931946,
+							"bezier",
+							"auto",
+							[
+								1.3333334922790527,
+								0.0
+							],
+							[
+								-1.3333334922790527,
+								0.0
+							]
+						]
+					],
+					"baked": 9
 				}
-			]
+			],
+			"interpolation": "bezier",
+			"track_baked": false
 		}
+	],
+	"referenced_buffers": [
+		"d8127b86-db5a-4914-b04b-8303058abbcf",
+		"65d2a116-3534-418d-a60d-8fbf63e086d0",
+		"62291a71-9c14-4fee-811b-406abf5dadec",
+		"87638823-adb0-4822-ad66-9cabdf0e0de4",
+		"e17a8389-5517-4c33-a5d7-17d93f0d00b4",
+		"a893069d-0b84-44e4-846c-24d59ece8fac",
+		"4c462ff6-8fd6-4c62-b668-ac87e700c9df",
+		"265c2f68-85fb-4f73-8643-8f419f5b9c62",
+		"2ccf7b4a-1a7f-4f9f-b729-751b9539eaf6",
+		"c7859f35-1c2e-46af-a50e-e52df147b53f"
+	],
+	"referenced_resources": [
+		"49ebe3d6-b733-4556-91ce-5adc6779f0b3"
 	]
-},
+}
 ```

@@ -66,27 +66,15 @@ TODO: the image object should be expanded with UV-offsets and such
 
 ## Json Example
 ```json
-"bdf11d99-70d2-42df-8a58-19f1e5238662": {
+"0060c2b8-d856-4459-a88a-16e659792e6f": {
 	"type": "stf.material",
 	"name": "Body",
-	"style_hints": [
-		"realistic",
-		"pbr"
-	],
-	"shader_targets": {
-		"stfblender": [
-			"ShaderNodeBsdfPrincipled"
-		],
-		"unity": [
-			"PoiyomiToon"
-		]
-	},
 	"properties": {
 		"albedo.texture": {
 			"type": "image",
 			"values": [
 				{
-					"image": "1bf800ea-1bda-491c-ba89-c7bfa364e239"
+					"image": 0
 				}
 			]
 		},
@@ -94,7 +82,7 @@ TODO: the image object should be expanded with UV-offsets and such
 			"type": "image",
 			"values": [
 				{
-					"image": "155888f8-041c-4fe7-bf57-a558bd7b2137"
+					"image": 1
 				}
 			]
 		},
@@ -102,7 +90,7 @@ TODO: the image object should be expanded with UV-offsets and such
 			"type": "image",
 			"values": [
 				{
-					"image": "937ef22d-5175-4c4b-aa89-51da4c445dd4"
+					"image": 2
 				}
 			]
 		},
@@ -110,10 +98,25 @@ TODO: the image object should be expanded with UV-offsets and such
 			"type": "image",
 			"values": [
 				{
-					"image": "e0c8e0ce-f667-49cc-b39a-5fb2dcde48ee"
+					"image": 3
 				}
 			]
 		}
-	}
+	},
+	"style_hints": [
+		"realistic",
+		"pbr"
+	],
+	"shader_targets": {
+		"blender": [
+			"ShaderNodeBsdfPrincipled"
+		]
+	},
+	"referenced_resources": [
+		"f518a35d-d788-4692-a2dd-84d036d259e8",
+		"edc8188f-7d85-419c-967f-5f7b427d8288",
+		"5761ccd4-55bd-4fa5-ac98-f3d32004ac9e",
+		"746f1aa1-5287-4d57-8892-e26fe631b953"
+	]
 }
 ```

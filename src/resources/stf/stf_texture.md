@@ -31,12 +31,12 @@ mipmaps | Yes | bool | Whether to generate mipmaps
 
 ## Json Example
 ```json
-"f0aa405c-8548-453d-8758-516e5c43d45e": {
+"6db664cf-a4ba-4dd5-8845-477ca01f24d0": {
 	"type": "stf.texture",
-	"width": 1024,
-	"height": 1024,
+	"width": 2048,
+	"height": 2048,
 	"downscale_priority": 0,
-	"quality": 0.800000011920929,
+	"quality": 0.8999999761581421,
 	"mipmaps": true
 }
 ```

@@ -32,39 +32,35 @@ Only other `stf.node` type resources are allowed as its children. Children may n
 
 ## Json Example
 ```json
-"880c2403-471d-46e4-99ac-0b218f201337": {
+"bbff51e8-b34d-4ec4-aca4-3fcecad73309": {
 	"type": "stf.node",
-	"name": "ArmatureHair",
-	"enabled": true,
-	"children": [
-		"0912ff56-e534-4c8e-a99e-d3ef2a9ea8ba"
-	],
+	"name": "Body",
+	"children": [],
 	"trs": [
 		[
-			-6.138677122180525e-09,
-			1.584037184715271,
-			-0.029444340616464615
+			0,
+			0,
+			0
 		],
 		[
-			-3.725290298461914e-09,
-			-4.618527782440651e-14,
-			1.7659484985443896e-15,
-			1.0
+			0,
+			0,
+			0,
+			1
 		],
 		[
-			1.0,
-			1.0,
-			1.0
+			1,
+			1,
+			1
 		]
 	],
-	"instance": "73d67945-2937-41c8-b683-7a992cbca5c5",
-	"components": [
-		"3051ea80-cc8a-4b6a-afce-dd75e1868fa5"
+	"referenced_resources": [
+		"799b9826-85d9-40a3-a58b-b6489ba60452"
 	],
-	"parent_binding": [
-		"9fac8ebe-54ee-4c97-a193-235fcc5ebe7f",
-		"instance",
-		"9a6e0ab7-29e4-48b1-ba25-5e0cd86988e7"
+	"instance": 0,
+	"components": [
+		"3a10d82c-3649-4f90-8300-c90a21dbafaa",
+		"6cf57561-7578-4cc8-a66d-8353ce783e69"
 	]
 }
 ```

@@ -66,30 +66,29 @@ User Guide
 
 [Relevant future implementation targets include: 3dsMax, Unreal Engine, Maya, Bevy, BabylonJs, ...]{.stf-info-box}
 
-
 ## Advantages
-* **Artist Friendly**\
-	Import & export is quick and you don't have to fiddle with unnecessary settings to avoid breakage.\
-	[All information in STF and it's core-resources is normalized and doesn't require any knowledge about the file by the user.]{.stf-info-box}
+* **Made Games-Development**\
+	STF files are meant to be imported into game-engine projects (Godot, Unity, Unreal, ...), and are also usable for further editing in 3d modeling tools (Blender, 3dsMax, ...).
+	[STF stores original information as well as baked results.\
+	I.e. STF contains the original topology of meshes, including n-gons, but also the triangulation.\
+	Animations store original unbaked keyframes, as well as baked tracks.]{.stf-info-box}
 
-* **Versatile**\
-	STF stores original information as well as baked results.
-	[*I.e. STF contains the original topology of meshes, including n-gons, but also the triangulation.*\
-	This allows for STF files to be used for further editing **and** for import into game-engine editors.\
-	Despite that, file-sizes remain similar and are sometimes even lower compared to other formats.]{.stf-info-box}
+* **Artist Friendly**\
+	Import & export times are short and artists don't have to fiddle with unnecessary settings to avoid breakage.
 
 * **Easy to Develop**\
-	STF's modular nature enables high encapsulation in the source-code and easy collaboration in the development of STF implementations.
+	STF's modular nature leads to very loose coupling in the source-code and easy collaboration in the development of STF implementations.
 	[A functioning implementation that handles some core resource-types can be usually developed in a day or two.\
-	Third parties can easily develop and distribute custom (perhaps application specific) resources.]{.stf-info-box}
-
+	Third parties can easily develop and distribute custom resources.]{.stf-info-box}
 
 ## Concept
-STF by itself is merely a shell format. Its implementations provide a framework to parse and serialize arbitrary **resources**.
+STF is a binary format, consisting of a binary header, a Json definition and arbitrary binary buffers.
 
-Resources are stored as Json-objects, and can represent anything, from nodes in a scene hierarchy, meshes, textures, animations, ...\
-Resources are referenced by a unique ID.\
-They and have a `type`, by which the appropriate piece of code, the resources' `handler`, is selected for import / export.
+By itself it is merely a shell format. Its implementations provide a framework to parse and serialize arbitrary **resources**, which are defined separately.
+
+Resources are stored as Json-objects, and can represent anything, nodes in a scene hierarchy, meshes, textures, animations, ...\
+Every resource object is referenced by a unique ID, and contains `type` property.
+Depending on the `type`, a "handler" class / function will be selected to handle import / export.
 
 A few resources, including but not limited to [`stf.prefab`](resources/stf/stf_prefab.md), [`stf.mesh`](resources/stf/stf_mesh.md), [`stf.material`](resources/stf/stf_material.md) or [`stf.image`](resources/stf/stf_image.md), are provided by default.
 
@@ -99,6 +98,45 @@ It should be possible to extend any STF implementation with custom resource-hand
 **Read the [STF Format Reference](format/stf_format.md)**
 
 Learn how STF compares to other 3d file-formats: [Comparisons](format/comparisons.md)
+:::
+
+:::{admonition} `resources` object example
+:class: example
+```json
+// ...
+"resources": {
+	"0060c2b8-d856-4459-a88a-16e659792e6f": {
+		"type": "stf.material",
+		"name": "Body",
+		"properties": {
+			"albedo.texture": {
+				"type": "image",
+				"values": [
+					{
+						"image": 0
+					}
+				]
+			}
+		},
+		"style_hints": [
+			"realistic",
+			"pbr"
+		],
+		"shader_targets": {
+			"blender": [
+				"ShaderNodeBsdfPrincipled"
+			]
+		},
+		"referenced_resources": [
+			"f518a35d-d788-4692-a2dd-84d036d259e8"
+		]
+	},
+	{
+		// ...
+	}
+},
+// ...
+```
 :::
 
 **Anatomy of an STF file**

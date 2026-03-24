@@ -103,73 +103,49 @@ weights | Yes | Buffer-ID | float per vertex
 
 ## Json Example
 ```json
-"783134da-9e2a-4d69-a1f0-59952bc36895": {
+"ededda7a-651c-44a9-b5a2-b6b6ff799881": {
 	"type": "stf.mesh",
-	"name": "Superawesome Mesh",
+	"name": "Cube",
+	"referenced_resources": [
+		"ec16a927-1b26-4157-a3f2-71455d05e2bf"
+	],
 	"material_slots": [
-		"dc07246c-47e9-41bb-b009-5a4eb60303e4"
+		0
 	],
 	"float_width": 4,
-	"indices_width": 2,
-	"vertices": "23ec5dc3-2e0e-460b-b07d-413e64f9326e",
-	"face_corners": "3e6c056e-6dd9-4011-bb14-97cf8e6eaaa0",
-	"splits": "c4c432c7-2b1e-4282-92a3-af1a001b08bf",
-	"split_normals": "528e70e1-65a1-4155-bff5-cc60fa140d14",
+	"indices_width": 1,
+	"referenced_buffers": [
+		"a2678730-f63c-4415-85a8-9426bfc7242e",
+		"be7acc51-f47c-406c-82f6-c7ea7833ed4d",
+		"c29e0d3a-9b4d-444b-93f1-e3163332fdcb",
+		"d3329a1a-b79a-4d27-b16d-f7af2420951a",
+		"97925952-70a7-4773-96fe-00e44d4cdfee",
+		"05039913-1397-4f3c-9b54-d514ace748e7",
+		"4d86408e-84f5-4f05-86b2-82f3a8803f9d",
+		"6cdbf5c5-e770-4bbf-924f-4c10818826e9",
+		"e7b0b03d-c004-4876-97a3-c4a26b7ac3c9",
+		"ecb6ef8b-618c-4dcd-a0b0-0a0cf70cf143",
+		"42a32c5f-edb6-43c3-a028-fa2a75b46671"
+	],
+	"vertices": 0,
+	"face_corners": 1,
+	"splits": 2,
+	"split_normals": 3,
 	"uvs": [
 		{
 			"name": "UVMap",
-			"uv": "a0001434-7844-4038-ba8a-2e0540fe65c8"
+			"uv": 4
 		}
 	],
-	"tris": "98ef746d-1023-424b-ac04-2b27540637b6",
+	"tris": 5,
 	"material_indices_width": 1,
-	"faces": "f15060e3-49f1-43d6-a6e9-117984cbe8fe",
-	"material_indices": "04a31482-e1cd-437b-be16-be26f164bfdb",
-	"sharp_face_indices": "5ef64c4d-0cc8-4ad1-aadc-898b8cc7b436",
-	"lines": "13084993-3492-48ca-956b-0ee0766527bf",
-	"sharp_edges": "a9d12c37-94d3-43f0-ae48-4a4619416f6e",
-	"vertex_groups": [
-		{
-			"name": "Select Some Things",
-			"weights": "14f9133b-fcd4-4c00-95ee-7d8c7dab8bff",
-			"indices": "af4f4676-5e26-49fc-a639-4e467076828e"
-		},
-		{
-			"name": "Normal Project Blend Weights",
-			"weights": "2a69a2fe-1a2e-4472-a3cf-064762d6b974"
-		}
-	],
-	"blendshapes": [
-		{
-			"name": "ToggleOff",
-			"default_value": 0.0,
-			"limit_upper": 1.0,
-			"limit_lower": 0.0,
-			"indices": "313f0ad4-4933-49bf-8c0c-6957c2750d16",
-			"position_offsets": "b4d196a5-1776-460f-8e04-721d7cff5281",
-			"split_indices": "c854ed9b-93df-41f5-ab43-e0e9b8ae2625",
-			"split_normals": "5fa5f424-6f4e-49c4-82b5-fb8dcaff82ef"
-		},
-		{
-			"name": "Vis_AA",
-			"default_value": 0.0,
-			"limit_upper": 1.0,
-			"limit_lower": 0.0,
-			"position_offsets": "9db99d09-0ff7-4f92-896e-0318a31bfd46",
-			"split_normals": "949c0d7a-edb7-4d8e-9b9f-c24a56646f65"
-		},
-		{
-			"name": "Vis_IH",
-			"default_value": 0.0,
-			"limit_upper": 1.0,
-			"limit_lower": 0.0,
-			"position_offsets": "37118f5c-3dee-4e75-8067-adec146769d0",
-			"split_normals": "7c88cbd6-38c2-4755-90aa-54fcd9a880d3"
-		}
-	],
+	"faces": 6,
+	"material_indices": 7,
+	"sharp_face_indices": 8,
+	"lines": 9,
+	"sharp_edges": 10,
 	"components": [
-		"60850594-9bab-4cb2-ac64-657ec5589f5f",
-		"5e6c4973-d3cf-423f-aabe-a6a6d0959e40"
+		"5b09c146-b626-4fb4-a4fa-b33b0e5085e2"
 	]
 }
 ```

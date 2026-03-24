@@ -92,7 +92,7 @@ metric_multiplier | No | Float | Which number represents one meter. The default 
 :::{table} Asset-Info-Object
 :align: left
 :widths: auto
-:name: resource object base properties
+:name: Asset-Info-Object properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 asset_name | No | String |
@@ -110,15 +110,21 @@ The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It r
 :class: example
 ```json
 "stf": {
-	"version": [0, 1],
+	"version": [
+		0,
+		0
+	],
+	"root": "a6452f90-3edb-4fcd-bfe5-f7860a1ea665",
 	"asset_info": {
 		"asset_name": "Default Cube"
 	},
 	"asset_properties": {
-		"user": "defined"
+		"Foo": "Bar"
 	},
-	"metric_multiplier": 1.0,
-	"root": "5f1ea7e8-ee26-46c9-91dc-cd002cb9b0a5"
+	"generator": "stf_blender",
+	"generator_version": "0.1.0",
+	"timestamp": "2026-03-24T10:37:45.230480+00:00",
+	"metric_multiplier": 1
 }
 ```
 :::
@@ -225,36 +231,43 @@ exclusion_group | No | string | A group from which an importer will choose the b
 :class: example
 ```json
 "resources": {
-	"b5f96f63-d5ce-4210-b4d6-8f43fbf557dd": {
+	"0060c2b8-d856-4459-a88a-16e659792e6f": {
 		"type": "stf.material",
-		"name": "Body Material",
+		"name": "Body",
 		"properties": {
 			"albedo.texture": {
 				"type": "image",
 				"values": [
 					{
-						"image": "f518a35d-d788-4692-a2dd-84d036d259e8"
+						"image": 0
+					}
+				]
+			},
+			"roughness.texture": {
+				"type": "image",
+				"values": [
+					{
+						"image": 1
 					}
 				]
 			}
-		}
-	},
-	"60b9192c-0c82-434b-b1cf-27d8add2c071": {
-		"type": "stf.image",
-		"name": "Awesome Texture.png",
-		"format": "png",
-		"buffer": "d07b09a0-3184-4a39-8650-d1fc90c64df2",
-		"data_type": "color",
-		"components": [
-			"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70"
+		},
+		"style_hints": [
+			"realistic",
+			"pbr"
+		],
+		"shader_targets": {
+			"blender": [
+				"ShaderNodeBsdfPrincipled"
+			]
+		},
+		"referenced_resources": [
+			"f518a35d-d788-4692-a2dd-84d036d259e8",
+			"edc8188f-7d85-419c-967f-5f7b427d8288"
 		]
 	},
-	"3ca7f62c-b2a8-4315-bb1d-e4c6118ead70": {
-		"type": "stf.texture",
-		"resolution": [2048, 2048],
-		"quality": 0.7,
-		"texture_type": "color",
-		"downscale_priority": 0
+	{
+		// ...
 	}
 }
 ```
@@ -287,6 +300,9 @@ index | Yes | Int | Index of the binary buffer in the file. An index of 0 means 
 	"2c04d7f9-96cd-4867-baf3-2a54d4d31a67": {
 		"type": "stf.buffer.included",
 		"index": 666
+	},
+	{
+		// ...
 	}
 }
 ```

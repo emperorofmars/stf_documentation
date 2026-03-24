@@ -30,14 +30,17 @@ data_type | No | String | Type of image data. As of not it can be `color` or `no
 
 ## Json Example
 ```json
-"1bf800ea-1bda-491c-ba89-c7bfa364e239": {
+"f518a35d-d788-4692-a2dd-84d036d259e8": {
 	"type": "stf.image",
-	"name": "Body_BaseColor.png",
+	"name": "squeak_warrior_paint_Body_BaseColor.png",
 	"format": "png",
-	"buffer": "ef192623-cc41-445e-acd7-e435be793e95",
 	"data_type": "color",
+	"referenced_buffers": [
+		"2f1f1b32-6960-44d6-9b9a-a441be06f38c"
+	],
+	"buffer": 0,
 	"components": [
-		"f79c8521-845f-4a6c-a44f-bd2647877e0e"
+		"6db664cf-a4ba-4dd5-8845-477ca01f24d0"
 	]
 }
 ```

@@ -32,16 +32,19 @@ Armatures can be instantiated by [`stf.instance.armature`](stf_instance_armature
 
 ## Json Example
 ```json
-"90b9fbb6-3e2d-44e5-8821-454c97c8d15a": {
+"7ae076bd-d53f-478e-8b80-73bdaff97f2d": {
 	"type": "stf.armature",
 	"name": "Armature",
 	"root_bones": [
-		"ed9fac3c-1500-436e-9c4e-fd88822be434"
+		0
+	],
+	"referenced_resources": [
+		"b6f82f9a-b78f-4778-a513-32f4e2342ed0"
 	],
 	"components": [
-		"1e7c6be0-e53c-4af5-8e2d-c1bdc7c687c5",
-		"1b453833-a3c8-4ac8-9d26-7a9e84eb27f9",
-		"8324983e-c79f-466b-b21d-b1cdbe5bf229"
+		"38ddf9ce-688c-41c2-b917-4bde02709913",
+		"247d40d1-0a38-4453-9e1b-641bc21f5512",
+		"4385a660-0778-447a-bacb-ff4852ea08fd"
 	]
 }
 ```
