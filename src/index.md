@@ -9,6 +9,12 @@ Please note, STF is a work in progress and likely to change.
 
 <br>
 
+<iframe class="embed_fullwidth" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DDQjbSaDbkM?si=NJYbuBTovjJJ7GCJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+*Not sorry for the thumbnail^^*
+
+<br>
+
 **Install STF support for:**
 ::::{grid}
 

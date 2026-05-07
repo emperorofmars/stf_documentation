@@ -155,3 +155,11 @@ body {
 	background-repeat: repeat;
 	top: 0.2rem;
 }
+
+/* other */
+
+.embed_fullwidth {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+}
