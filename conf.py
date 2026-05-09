@@ -10,7 +10,7 @@ sphinx-autobuild --watch . src/ _out/ -c . -a
 
 version = "0.1.0"
 release = version
-blender_version = "0.1.1"
+blender_version = "0.1.3"
 
 project = "STF Documentation"
 html_title = f"STF Documentation {release}"
