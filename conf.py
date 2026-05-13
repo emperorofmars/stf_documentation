@@ -30,6 +30,10 @@ myst_html_meta = {
 
 html_baseurl = "https://docs.stfform.at"
 
+html_extra_path = [
+	"src/format/assets/",
+]
+
 
 ## Build
 
@@ -48,12 +52,14 @@ html_theme_options = {
 	"source_edit_link": "https://codeberg.org/stf_format/stf_documentation/_edit/master/src/{filename}",
 }
 
-html_static_path = ["theme"]
+html_static_path = [
+	"theme",
+]
 html_css_files = [
 	"stf.css",
 ]
 html_js_files = [
-	"stf.js"
+	"stf.js",
 ]
 
 
@@ -85,6 +91,8 @@ myst_substitutions = {
 	"version": version,
 	"blender_version": blender_version,
 }
+
+myst_links_external_new_tab = True
 
 ### sphinxext.opengraph
 
