@@ -30,7 +30,7 @@ Made with [Sphinx](https://www.sphinx-doc.org/en/master/) and the following plug
 ## Contributing
 Human made contributions via pull-requests are very welcome.
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines and development environment setup.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ## License
 This repository is licensed under **CC-BY-4.0** (<https://creativecommons.org/licenses/by/4.0/>)
