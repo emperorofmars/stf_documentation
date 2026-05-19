@@ -25,8 +25,8 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 mesh | Yes | ID | Resource-ID of the instantiated mesh resource, usually [`stf.mesh`](stf_mesh.md)
 armature_instance | No | Resource-ID | ID of a node with an instantiated armature. Usually the instance resource is [`stf.instance.armature`](stf_instance_armature.md)
-blendshape_values | No | List<float> | A value of `null` means that the resources default value is to be used.
-materials | No | List<Resource-ID> | A value of `null` means that the resources default value is to be used.
+blendshape_values | No | List[float] | A value of `null` means that the resources default value is to be used.
+materials | No | List[Resource-ID] | A value of `null` means that the resources default value is to be used.
 :::
 
 ## Json Example

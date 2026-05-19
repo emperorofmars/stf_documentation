@@ -26,6 +26,8 @@ STF implementations must provide an easy to use plugin system for resources-hand
 
 
 ## Binary Format
+[ [Kaitai-Struct Schema](https://schema.stfform.at/stf.ksy) ]
+
 An STF binary file consists of a binary header, a [json-definition](#json-definition), and zero or more binary buffers.
 
 :::{table} STF binary file layout
@@ -35,8 +37,8 @@ An STF binary file consists of a binary header, a [json-definition](#json-defini
 | Length (Bytes) | Content |
 | :--- | :--- |
 | 4 | Magic number: `STF0` |
-| 4 | STF binary format version major |
-| 4 | STF binary format version minor |
+| 4 | STF binary format version |
+| 4 | Padding, this field may be reused for other purposes in the future |
 | 4 | Number of buffers, including the Json definition buffer |
 | 8 * {number of buffers} | Buffer lengths in bytes |
 | {length of all buffers} | Buffers |
@@ -46,24 +48,20 @@ The Json definition is the first and only required buffer.
 
 
 ## Json Definition
+[ [JSON Schema](https://schema.stfform.at/stf.schema.json) ]
+
 The root Json element is an object. It contains 3 properties: [`stf`](#stf-object), [`resources`](#resources-object) and [`buffers`](#buffers-object).
 
 ### Json Types
 The following special Json-types are specified:
 
 #### `Resource-ID`
-* **For core resources:**\
-	A string that is the key of a resource in the [`resources`](#resources-object) object.
-* **For other resources:**\
-	An int that is the index of in the `referenced_resources` array of the resource.\
-	The string at that index is the key of a resource in the [`resources`](#resources-object) object.
+An int that is the index in the `referenced_resources` array of the resource.\
+The string at that index is the key of a resource in the [`resources`](#resources-object) object.
 
 #### `Buffer-ID`
-* **For core resources:**\
-	A string that is the key to a buffer in the [`buffers`](#buffers-object) object.
-* **For other resources:**\
-	An int that is the index of in the `referenced_buffers` array of the resource.\
-	The string at that index is the key of a buffer in the [`buffers`](#buffers-object)object.
+An int that is the index of in the `referenced_buffers` array of the resource.\
+The string at that index is the key of a buffer in the [`buffers`](#buffers-object)object.
 
 #### `Resource-Path`
 A Json array which contains `Resource-ID`s and other path elements needed to target a specific resource. As some resources may be instantiated multiple times, this is needed to resolve one specific instance.
@@ -80,13 +78,13 @@ The `stf` object holds meta information.
 :name: stf object properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-version | Yes | list<int> | List of two integers, specifying the major and minor version of the STF files Json definition.
+version | Yes | List[int] | List of two integers, specifying the major and minor version of the STF files Json definition.
 root | Yes | Resource-ID | ID of the root resource
 asset_info | No | Asset-Info-Object | Meta information such as authors, license or documentation link.
-asset_properties | No | Map<String, String> | User defined properties
-generator | No | String | The name of the STF implementation that created this file.
-timestamp | No | String | ISO 8601 date and time in UTC.
-metric_multiplier | No | Float | Which number represents one meter. The default value is `1.0`.
+asset_properties | No | Map[string, string] | User defined properties
+generator | No | string | The name of the STF implementation that created this file.
+timestamp | No | string | ISO 8601 date and time in UTC.
+metric_multiplier | No | float | Which number represents one meter. The default value is `1.0`.
 :::
 
 :::{table} Asset-Info-Object
@@ -95,13 +93,13 @@ metric_multiplier | No | Float | Which number represents one meter. The default 
 :name: Asset-Info-Object properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-asset_name | No | String |
-version | No | String |
-url | No | String |
-author | No | String |
-license | No | String |
-license_url | No | String |
-documentation_url | No | String |
+asset_name | No | string |
+version | No | string |
+url | No | string |
+author | No | string |
+license | No | string |
+license_url | No | string |
+documentation_url | No | string |
 :::
 
 The root resource must be a [`stf.prefab`](../resources/stf/stf_prefab.md). It represents the assets scene-hierarchy.
@@ -143,12 +141,12 @@ Each resource-type defines arbitrary additional properties.
 :name: resource object base properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-type | Yes | String | Type of the resource.
-referenced_resources | No | List<Resource-ID> | IDs of resources this resource references.
-referenced_buffers | No | List<Buffer-ID> | IDs of buffers this resource references.
-name | No | String | Display name of the resource.
-version | No | Int | Version of this resource. The default value is `-1`. If a breaking change is made to a resource type, it has to set this property.
-degraded | No | Boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
+type | Yes | string | Type of the resource.
+referenced_resources | No | List[Resource-ID] | IDs of resources this resource references.
+referenced_buffers | No | List[Buffer-ID] | IDs of buffers this resource references.
+name | No | string | Display name of the resource.
+version | No | int | Version of this resource. The default value is `-1`. If a breaking change is made to a resource type, it has to set this property.
+degraded | No | boolean | Has this resource lost information at some point, but retained the same ID. The default is `false`.
 :::
 
 Resources must store all references to other resources and buffers in the `referenced_resources` and `referenced_buffers` fields respectively.\
@@ -172,7 +170,7 @@ Support for plugins of this category is required.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 fallback | No | Resource-ID | ID of a resource that should be used in case this one's type is not supported in this implementation
-components | No | List<Resource-ID> | Component resource IDs
+components | No | List[Resource-ID] | Component resource IDs
 :::
 
 ##### Node
@@ -188,8 +186,8 @@ Support for handler plugins of this category is not required.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 enabled | No | boolean | True by default
-children | No | List<Resource-ID> | IDs of child-nodes
-components | No | List<Resource-ID> | Component resource IDs
+children | No | List[Resource-ID] | IDs of child-nodes
+components | No | List[Resource-ID] | Component resource IDs
 :::
 
 ##### Instance
@@ -290,7 +288,7 @@ This type represents a buffer contained in the same file.
 :name: stf.buffer.included properties
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-index | Yes | Int | Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer.
+index | Yes | int | Index of the binary buffer in the file. An index of 0 means the first buffer after the Json definition buffer.
 :::
 
 :::{admonition} `buffers` object example
@@ -316,3 +314,9 @@ index | Yes | Int | Index of the binary buffer in the file. An index of 0 means 
 :tab-width: 3
 ```
 :::
+
+```{toctree}
+:hidden:
+:caption: Schema
+Schema <stf_schema.md>
+```

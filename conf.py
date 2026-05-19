@@ -54,6 +54,7 @@ html_theme_options = {
 
 html_static_path = [
 	"theme",
+	"static",
 ]
 html_css_files = [
 	"stf.css",

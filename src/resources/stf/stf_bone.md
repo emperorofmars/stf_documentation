@@ -1,4 +1,6 @@
 # stf.bone
+[ [Schema](https://schema.stfform.at/stf.bone.schema.json) ]
+
 Can only exist within `stf.armature`.
 
 ## Implementations

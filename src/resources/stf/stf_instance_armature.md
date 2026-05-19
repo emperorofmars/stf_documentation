@@ -24,9 +24,9 @@ Instantiates an armature onto a node.
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 armature | Yes | Resource-ID | ID of the instantiated armature resource, usually [`stf.armature`](stf_armature.md)
-pose | No | Map<Resource-ID, TRS> | Map of the corresponding bone and TRS.
-added_components | No | Map<Resource-ID, List<Resource-ID>> | A list of component-IDs that are added to bones within this armature instance.
-modified_components | No | Map<Resource-ID, Map<Resource-ID, JSON>> | A reference to bones within the armature instance -> a component on that bone instance -> a JSON object with changes to that component.
+pose | No | Map[Resource-ID, TRS] | Map of the corresponding bone and TRS.
+added_components | No | Map[Resource-ID, List[Resource-ID]] | A list of component-IDs that are added to bones within this armature instance.
+modified_components | No | Map[Resource-ID, Map[Resource-ID, JSON]] | A reference to bones within the armature instance -> a component on that bone instance -> a JSON object with changes to that component.
 :::
 
 ## Json Example

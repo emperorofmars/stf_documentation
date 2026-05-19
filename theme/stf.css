@@ -156,10 +156,50 @@ body {
 	top: 0.2rem;
 }
 
-/* other */
+/* Youtube embed */
 
-.embed_fullwidth {
+.embed_fullwidth, .embed_preview {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 16/9;
+	position: relative;
 }
+
+.embed_preview .embed_preview_overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	text-align: center;
+	cursor: pointer;
+	gap: 10px;
+	color: #cfd0d0;
+
+	.play_control {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.play_button {
+		font-size: xx-large;
+		color: white;
+		background-color: red;
+		border-radius: 10px;
+		width: 67.5px;
+		height: 47.3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.embed_preview img {
+	cursor: pointer;
+}
+
+

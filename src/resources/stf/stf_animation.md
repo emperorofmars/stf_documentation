@@ -25,10 +25,10 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 loop | Yes | string | Whether to loop the animation and how
 fps | Yes | float |
-range | Yes | List<float> | Beginning and end frame of the animation
+range | Yes | List[float] | Beginning and end frame of the animation
 bake_on_export | No | bool | Whether the animation should be baked on
-tracks | Yes | List<Track-Object> |
-tracks_baked | No | List<Track-Object> | Tracks that are the result of a baking operation.
+tracks | Yes | List[Track-Object] |
+tracks_baked | No | List[Track-Object] | Tracks that are the result of a baking operation.
 :::
 
 ### Track-Object properties
@@ -38,9 +38,9 @@ tracks_baked | No | List<Track-Object> | Tracks that are the result of a baking 
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 target | Yes | Path | STF path of the target property
-timepoints | Yes | List<float> | Sorted list of points in time at which keyframes exist
+timepoints | Yes | List[float] | Sorted list of points in time at which keyframes exist
 interpolation | No | string | Interpolation type for the entire track.
-subtracks | Yes | List<Subtrack-Object / null> |
+subtracks | Yes | List[Subtrack-Object / null] |
 track_baked | No | bool | Indicates whether the entire tracks is generated, i.e. by a baking operation.
 reset_animation | No | Resource-ID | Reference to a reset animation.
 is_reset_animation | No | bool | Whether this animation is a reset-animation. Default is `false`.
@@ -52,7 +52,7 @@ is_reset_animation | No | bool | Whether this animation is a reset-animation. De
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-keyframes | Yes | List<Keyframe-Array / null> |
+keyframes | Yes | List[Keyframe-Array / null] |
 baked | No | Buffer-ID | Baked values between range[0] and range[1]
 :::
 
@@ -86,7 +86,7 @@ Depending on the `interpolation type`, the following properties are added.
 Index | Type | Description
 :--- | :--- | :---
 3 | string | tangent type
-4 | List<float> | Out-tangent x and y offset
+4 | List[float] | Out-tangent x and y offset
 :::
 
 

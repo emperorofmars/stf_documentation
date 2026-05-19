@@ -26,7 +26,7 @@ Key | Required | Type | Description
 locomotion_type | No | string | Locomotion Type
 no_jaw | No | boolean | Ignore Jaw Mapping
 settings | No | Settings-Object | Humanoid Settings
-mappings | No | Map<string, Mappings-Object> | Bone to human bodypart mappings. The key of the map is the human bodypart name.
+mappings | No | Map[string, Mappings-Object] | Bone to human bodypart mappings. The key of the map is the human bodypart name.
 :::
 
 ### Settings-Object Properties
@@ -61,9 +61,9 @@ rotation_limits | No | RotationLimits-Object |
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-primary | No | List<float> | 3 values define the minimum, center and maximum rotation values for the primary axis.
-secondary | No | List<float> | 3 values define the minimum, center and maximum rotation values for the secondary axis.
-twist | No | List<float> | 3 values define the minimum, center and maximum rotation values for the twist axis.
+primary | No | List[float] | 3 values define the minimum, center and maximum rotation values for the primary axis.
+secondary | No | List[float] | 3 values define the minimum, center and maximum rotation values for the secondary axis.
+twist | No | List[float] | 3 values define the minimum, center and maximum rotation values for the twist axis.
 :::
 
 ## Json Example

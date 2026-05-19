@@ -39,7 +39,7 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 float_width | No | uint | Byte-width of float-values. Default: 4
 indices_width | No | uint | Byte-width of indices. Default: 4
-material_slots | No | List<Resource-ID / null> |List of material IDs in the order of the meshes material-slots
+material_slots | No | List[Resource-ID / null] |List of material IDs in the order of the meshes material-slots
 vertices | Yes | Buffer-ID | 3 floats per vertex
 face_corners | Yes | Buffer-ID | Index of the split for each face corner
 splits | Yes | Buffer-ID | Vertex index for each unique combination of normals, uvs, colors, etc..
@@ -54,13 +54,13 @@ lines | No | Buffer-ID |
 armature | No | Resource-ID | ID of the armature if the mesh is skinned
 weight_lens_width | No | uint |
 bone_indices_width | No | uint |
-bones | No | List<Resource-ID> | Bone references in the order by which they will be referenced by `bone_indices`.
+bones | No | List[Resource-ID] | Bone references in the order by which they will be referenced by `bone_indices`.
 weight_lens | No | Buffer-ID |
 bone_indices | No | Buffer-ID |
 weights | No | Buffer-ID |
-uvs | No | List<UV-Object> |
-blendshapes | No | List<Blendshape-Object> |
-vertex_groups | No | List<VertexGroup-Object> |
+uvs | No | List[UV-Object] |
+blendshapes | No | List[Blendshape-Object] |
+vertex_groups | No | List[VertexGroup-Object] |
 :::
 
 ### UV-Object properties

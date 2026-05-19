@@ -1,4 +1,6 @@
 # stf.prefab
+[ [Schema](https://schema.stfform.at/stf.prefab.schema.json) ]
+
 A prefab represents a hierarchy of nodes. It's always the root resource of an STF asset.
 
 ## Implementations
@@ -24,8 +26,8 @@ A prefab represents a hierarchy of nodes. It's always the root resource of an ST
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-root_nodes | Yes | List<Resource-ID> | IDs of the root nodes within this prefab
-animations | No | List<Resource-ID> | Animations which originate from this prefab's root
+root_nodes | Yes | List[Resource-ID] | IDs of the root nodes within this prefab
+animations | No | List[Resource-ID] | Animations which originate from this prefab's root
 :::
 
 The only allowed type for nodes in `root_nodes` is [`stf.node`](stf_node.md).

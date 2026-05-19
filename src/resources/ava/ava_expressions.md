@@ -25,7 +25,7 @@ Define the facial expressions and emotions an avatar can express.
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-expressions | Yes | Dict<string, Expressions-Object> | Maps an emotion & face-expressions meaning to an animation
+expressions | Yes | Map[string, Expressions-Object] | Maps an emotion & face-expressions meaning to an animation
 :::
 
 ### Expressions-Object Properties

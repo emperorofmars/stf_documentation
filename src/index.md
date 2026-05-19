@@ -7,9 +7,23 @@
 Please note, STF is a work in progress and likely to change.
 :::
 
-<br>
-
-<iframe class="embed_fullwidth" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DDQjbSaDbkM?si=NJYbuBTovjJJ7GCJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<div class="embed_preview" tabindex=0
+	onclick="this.nextElementSibling.style.display='block'; this.style.display='none';"
+	onkeydown="if(event.keyCode ==13){this.nextElementSibling.style.display='block'; this.style.display='none';}"
+>
+	<div class="embed_preview_overlay">
+		<h3>Why do we need Yet-Another™ File-Format for 3D Models</h3>
+		<div class="play_control">
+			<div class="play_button"><span>▶</span></div>
+			<div>Play Youtube Video</div>
+		</div>
+		<a href="https://www.youtube.com/watch?v=DDQjbSaDbkM">Direct Link</a>
+	</div>
+	<img src="_static/yt_preview.png" />
+</div>
+<div style="display:none">
+	<iframe class="embed_fullwidth" width="560" height="315" src="https://www.youtube-nocookie.com/embed/DDQjbSaDbkM?si=NJYbuBTovjJJ7GCJ&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 <br>
 
@@ -142,9 +156,6 @@ Learn how STF compares to other 3d file-formats: [Comparisons](format/comparison
 // ...
 ```
 :::
-
-**Anatomy of an STF file**
-![Description of the layout of an STF file. You can this information in the STF Format Reference!](img/stf_anatomy.png)
 
 
 ```{toctree}

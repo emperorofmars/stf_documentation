@@ -1,4 +1,6 @@
 # stf.node
+[ [Schema](https://schema.stfform.at/stf.node.schema.json) ]
+
 A node that exists in 3d space. It defines its location, rotation and scale relative to its parent.
 
 ## Implementations
@@ -25,7 +27,7 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 trs | Yes | TRS | The nodes 3D transform
 instance | No |Resource-ID | Reference to an instance-resource.
-parent_binding | No | Path | Path to the parent resource. Usually, when the parent node is an armature-instance, its the path to a bone within the instantiated armature.
+parent_binding | No | Resource-Path | Path to the parent resource. Usually, when the parent node is an armature-instance, its the path to a bone within the instantiated armature.
 :::
 
 Only other `stf.node` type resources are allowed as its children. Children may never loop.

@@ -1,4 +1,6 @@
 # stf.armature
+[ [Schema](https://schema.stfform.at/stf.armature.schema.json) ]
+
 A armature represents a hierarchy of bones.
 
 ## Implementations
@@ -22,7 +24,7 @@ A armature represents a hierarchy of bones.
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-root_bones | Yes | List<ID> | IDs of nodes
+root_bones | Yes | List[Resource-ID] | IDs of nodes
 :::
 
 The only allowed type for nodes in `root_bones` is [`stf.bone`](stf_bone.md).

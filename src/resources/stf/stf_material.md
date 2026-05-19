@@ -22,9 +22,9 @@
 :widths: auto
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
-style_hints | No | List<string> | Hints on the visual style of the material
-shader_targets | No | Dict<List<string>> | Hints on the target shader per target application
-properties | Yes | Dict<string, Property-Object> | Dict of Property-ID as a string to an Object
+style_hints | No | List[string] | Hints on the visual style of the material
+shader_targets | No | Map[List[string]] | Hints on the target shader per target application
+properties | Yes | Map[string, Property-Object] | Map of Property-ID as a string to an Object
 :::
 
 Property-IDs can be freely chosen by users.\
@@ -37,7 +37,7 @@ If an implementations happens to support a Property-ID with its Property-Object'
 Key | Required | Type | Description
 :--- | :--- | :--- | :---
 type | No | String | Type of the value variables
-values | No | List<Value-Variable> | List of values. The value object is determined by the `type`
+values | No | List[Value-Variable] | List of values. The value object is determined by the `type`
 :::
 
 The following types for property-values are supported:
