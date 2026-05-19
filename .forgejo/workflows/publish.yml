@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   publish:
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
