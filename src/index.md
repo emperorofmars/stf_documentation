@@ -149,7 +149,8 @@ Learn how STF compares to other 3d file-formats: [Comparisons](format/comparison
 			"f518a35d-d788-4692-a2dd-84d036d259e8"
 		]
 	},
-	{
+	"f518a35d-d788-4692-a2dd-84d036d259e8": {
+		"type": "stf.image",
 		// ...
 	}
 },
