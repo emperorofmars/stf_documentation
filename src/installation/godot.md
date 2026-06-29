@@ -4,15 +4,10 @@
 Please note, STF is a work in progress and likely to change.
 :::
 
-```{button-link} https://codeberg.org/stf_format/stf_godot/releases/latest
+```{button-link} https://store.godotengine.org/asset/mars/stf-godot/
 :class: stf-button
-Download the latest release
+Install from the Godot Asset Store
 ```
-
-Unpack the `addons/stf_godot` directory from the downloaded zip file into the `addons` directory of your Godot project.
-
-Your project's filesystem should look something like this:
-![](img/godot_filesystem.png)
 
 Enable the addon under `Project` -> `Project Settings` -> `Plugins`
 ![](img/godot_plugin_settings.png)

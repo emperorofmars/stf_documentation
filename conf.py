@@ -14,7 +14,7 @@ blender_version = "0.1.5"
 
 project = "STF Documentation"
 html_title = f"STF Documentation {release}"
-description = "Squirrel Transfer Format - A modular file-format for 3D assets"
+description = "Squirrel Transfer Format - Modular 3D Interchange-Format for Gamedev"
 author = "Mars (https://squirrelbite.com)"
 copyright = f"{date.today().year}: Squirrelbite LLC, This page is licensed under CC-BY-4.0 https://creativecommons.org/licenses/by/4.0/"
 language = "en"
@@ -23,7 +23,7 @@ html_favicon = "theme/favicon.png"
 html_logo = "src/img/stf_logo.png"
 
 myst_html_meta = {
-	"description": "Squirrel Transfer Format - A modular file-format for 3D assets",
+	"description": "Squirrel Transfer Format - Modular 3D Interchange-Format for Gamedev",
 	"keywords": "stf, squirrel transfer format, 3d file format, 3d format",
 	"robots": "noai, noimageai",
 }
