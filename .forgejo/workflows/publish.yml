@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   publish:
+    if: ${{ forge.ref == 'refs/heads/master'}}
     runs-on: codeberg-tiny
     steps:
       - uses: actions/checkout@v6
