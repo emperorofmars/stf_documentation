@@ -2,7 +2,7 @@
 	"stf": {
 		"version": [
 			0,
-			0
+			1
 		],
 		"root": "a6452f90-3edb-4fcd-bfe5-f7860a1ea665",
 		"asset_info": {
@@ -12,8 +12,8 @@
 			"Foo": "Bar"
 		},
 		"generator": "stf_blender",
-		"generator_version": "0.1.0",
-		"timestamp": "2026-03-24T10:37:45.230480+00:00",
+		"generator_version": "0.1.7",
+		"timestamp": "2026-07-15T18:28:23.631310+00:00",
 		"metric_multiplier": 1
 	},
 	"resources": {

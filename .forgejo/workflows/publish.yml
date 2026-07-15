@@ -7,18 +7,17 @@ jobs:
     if: ${{ forge.ref == 'refs/heads/master'}}
     runs-on: codeberg-small
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
           cache: "pip"
-          cache-dependency-path: "requirements.txt"
       - run: pip install -r requirements.txt
       - run: mkdir _out
       - run: sphinx-build -b html src _out -c .
       # Deploy using git-pages
       # By default to Codeberg Pages, as of now you can't use custom domains.
-      - uses: https://codeberg.org/git-pages/action@v2
+      - uses: actions/git-pages@v2
         with:
           # If using Codeberg Pages, replace `template_forgejo_vpm_listing` with the name of your repository.
           # If using a service that supports custom domains, enter your sites url here instead
