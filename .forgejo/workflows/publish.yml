@@ -5,7 +5,7 @@ on:
 jobs:
   publish:
     if: ${{ forge.ref == 'refs/heads/master'}}
-    runs-on: codeberg-tiny
+    runs-on: codeberg-small
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
