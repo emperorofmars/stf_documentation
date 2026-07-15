@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
 jobs:
   publish:
-    runs-on: codeberg-small
+    runs-on: codeberg-tiny
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
           cache: "pip"
+          cache-dependency-path: "requirements.txt"
       - run: pip install -r requirements.txt
       - run: mkdir _out
       - run: sphinx-build -b html src _out -c .

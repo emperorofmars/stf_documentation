@@ -2,7 +2,7 @@
 
 🌰 [Slot Link Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
 
-Slot Link helps you manage Blender projects with multiple separate animations.
+**Slot Link helps you manage Blender projects with multiple separate animations.**
 
 *Requires Blender 4.5 or higher. Not compatible with legacy Actions.*
 
@@ -11,45 +11,61 @@ In games-development, you often need to create multiple separate animations, tha
 *(I.e. a run-cycle and a walk-cycle for the same character.)*
 
 This is unfortunately impossible to create in Blender without workarounds.\
-*(As of Blender version 5.0)*
+*(As of Blender version 5.2)*
 
+**Blender supports only one animation per .blend file.**\
+Actions are modular pieces from which the one animation is composed of.
 
 ## The Solution
-In the Action-Editor, specify with the [Slot Link extension](https://extensions.blender.org/add-ons/slot-link/) which Slot targets which Object and press `Link Slots`.
+**Slot Link redefines Actions to be full standalone animations.**\
+To achieve that, you have to set the animation target for each Slot of an Action.
 
-Whenever you change the active Action in the Action-Editor, simply press `Link Slots` to ensure the current Action is linked everywhere in the scene correctly.
+To do so, open the Dopesheets Action Editor, and expand the Action panel on the right.
+For each Slot on the Action, select a Target.
+
+Press the `Link Slots` button to play and edit the animation.
+
+Easily switch between animations with only one additional button press.\
+Whenever you change the active Action, simply press `Link Slots` again to ensure only the newly selected Action is linked throughout the Scene.
 
 Switching between Actions becomes a breeze, and it is no longer possible to accidentally change the active Action by just selecting another Object, Mesh etc...
 
 ![](img/slot_link_editor.png)
 
 :::{hint}
-Slot Link purposely allows only Objects as targets.
+Slot Link purposely allows only selecting Objects as targets.
 
 If you animated a Mesh's Shape Keys, simply select the Object on which that Mesh is instantiated.
 
-This has the added advantage of being able to animate instances of the same Mesh separately.
+This has the added advantage of being able to animate multiple instances of the same Mesh separately.
 :::
 
+### Reset Animation
+Slot Link additionally allows you to specify whether an animation is intended to reset the Scene into a consistent state.\
+The reset animation should consist of just one frame that animates all desired properties to their default value.
+
+Further animations can select this animation as their reset.\
+If so, when the `Link Slots` button is pressed, the reset animation will be applied right before the selected animation.
+
+
 ### Import Export
-With this information present, it is possible to deterministically import & export animations in Blender.
+With Slot Link, it is possible to deterministically import & export animations in Blender.
 
-At the time of writing, the only importer/exporter that supports Slot-Link is [STF](https://docs.stfform.at). STF is not yet a production ready format.
+At the time of writing, the only importer/exporter that supports Slot-Link is [STF](https://docs.stfform.at). STF is not a production ready format yet.
 
-Until STF matures, or an importer/exporter for another format implements support, Slot-Link still aids you in creating and managing of animations.
+Until STF matures, or an importer/exporter for another format implements support, Slot-Link still aids you in creating and managing animations.
 
-For export, you will for now have to rely on automated guesswork.\
-Alternatively, you can export animations one at a time. The `Link Slots` feature still significantly speeds that process up.
+For now, you can export animations one at a time. The `Link Slots` feature speeds that process up significantly.
 
 ---
 
 ## Technical Details
-In Blender, an animation is represented by Actions.\
+In Blender, the animation is composed of all the Actions and Slots linked throughout the Scene.\
 Each animatable data-block (Object, Mesh, Armature, etc...) links to ***one*** Action and one of its Slots.
 
 ![](img/animation_data.png)
 
-When you hit `spacebar`, which ever Actions and Slots are currently linked on all the data-blocks, will play.
+When you hit the `spacebar`, which ever Actions and Slots are currently linked on all the data-blocks, will play.
 
 Unfortunately, a data-block can link to only ***one*** Action.\
 In order to create a second Action, targeting the same data-block, you have to remove the previous Action first.\
@@ -70,11 +86,9 @@ In order to export Actions, the targets of Actions and Slots have to be guessed.
 Depending on the circumstances, that may work well or fail completely.
 
 ### Error Prone UX
-The Action displayed in the Action-Editor is linked to the animation-data of the selected data-block.\
-This means, if you switch to another Action in the editor, the data-block's linked Action will also change, and vice versa.
+The Action displayed in the Action-Editor is linked to the animation-data of the currently selected data-block.\
+This means, if you switch to another Action in the editor, the data-block's linked Action is what actually changes, and vice versa.
 
-Different data-blocks can link to different Actions, ensuring proper chaos. When you want to animate an Object/Mesh/etc.. that isn't selected currently, whichever Action is linked on that data-block will become active in the Action-Editor. Your keys will be added to that one, instead the one you wanted.
+If you select another Object/Mesh/etc, whichever Action was linked there, will become the active Action in the Action-Editor. Keyframes will be inserted there instead.
+It is incredibly easy to accidentally and unknowingly animate the wrong Action.
 
-It's incredibly easy to accidentally and unknowingly mess up the scene and animations.
-
-When intentionally switching the edited action, the artist has to check every single data-block. Some Actions could have been previously linked somewhere accidentally.
