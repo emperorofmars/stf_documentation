@@ -20,10 +20,23 @@ Actions are modular pieces from which the one animation is composed of.
 **Slot Link redefines Actions to be full standalone animations.**\
 To achieve that, you have to set the animation target for each Slot of an Action.
 
-To do so, open the Dopesheets Action Editor, and expand the Action panel on the right.
-For each Slot on the Action, select a Target.
+Open the `Dopesheet` editor and select the `Action Editor` mode.
 
-Press the `Link Slots` button to play and edit the animation.
+* If you have **existing actions**, open the `Slot Link` dropdown menu and press `Setup all Actions`.
+This will setup links for all slots of all actions, and it will attempt to match a target if possible. Check each action yourself, and assign all empty targets manually in the action panel.
+* If you **create a new action**, press the highlighted `Prepare` button. Then start animating. Blender will create slots on your action automatically. For each created slot, select a target in the action panel.
+
+You purposely can't select meshes, armatures, materials, etc.. as targets. Instead, you select objects in the scenes hierarchy, on which those resources are instantiated.
+
+:::{hint}
+This brings the data-model closer to how game engines and other tools work, but it may not always replay correctly in Blender.\
+Animating two instances of the same mesh (i.e. their shape keys) for example is impossible. If you animate one mesh-instances shape keys, Blender will play the animation on all of the meshes instances.\
+This is unfixable with extensions and has to be addressed in Blender natively.
+:::
+
+Press `Link Slots` to link the action throughout the scene, and its slots to the specified targets. You can now play and edit the animation.
+
+By default, this will not touch the NLA. To also clear the NLA, in the operator options on the bottom left, select `Full Reset`.
 
 Easily switch between animations with only one additional button press.\
 Whenever you change the active Action, simply press `Link Slots` again to ensure only the newly selected Action is linked throughout the Scene.
@@ -32,14 +45,6 @@ Switching between Actions becomes a breeze, and it is no longer possible to acci
 
 ![](img/slot_link_editor.png)
 
-:::{hint}
-Slot Link purposely allows only selecting Objects as targets.
-
-If you animated a Mesh's Shape Keys, simply select the Object on which that Mesh is instantiated.
-
-This has the added advantage of being able to animate multiple instances of the same Mesh separately.
-:::
-
 ### Reset Animation
 Slot Link additionally allows you to specify whether an animation is intended to reset the Scene into a consistent state.\
 The reset animation should consist of just one frame that animates all desired properties to their default value.
@@ -47,9 +52,14 @@ The reset animation should consist of just one frame that animates all desired p
 Further animations can select this animation as their reset.\
 If so, when the `Link Slots` button is pressed, the reset animation will be applied right before the selected animation.
 
+### Target Collection
+If you wish to restrict an action to be linked only inside of one collection, select the `Target Collection`. All targets must be part of the selected collection.
+
+### Clear Scene
+If your animation behaves weirdly, you may have something pushed on the NLA. If that is unwanted, you can easily fix it by opening the `Slot Link` dropdown and pressing `Clear Scene`. In the bottom left operator options, select `Full Reset`, to also clear the NLA.
 
 ### Import Export
-With Slot Link, it is possible to deterministically import & export animations in Blender.
+Slot Link makes it technically possible to deterministically import & export animations in Blender.
 
 At the time of writing, the only importer/exporter that supports Slot-Link is [STF](https://docs.stfform.at). STF is not a production ready format yet.
 
