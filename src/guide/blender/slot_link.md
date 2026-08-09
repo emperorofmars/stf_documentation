@@ -1,8 +1,8 @@
 # Blender Slot Link
 
-🌰 [Slot Link Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
+🌰 [Installation](https://extensions.blender.org/add-ons/slot-link/) 🌰 [Report Issues](https://codeberg.org/emperorofmars/blender_slot_link/issues) 🌰 [Source Code](https://codeberg.org/emperorofmars/blender_slot_link) 🌰
 
-**Slot Link helps you manage Blender projects with multiple separate animations.**
+**Animation For Video Games Made Easy!**
 
 *Requires Blender 4.5 or higher. Not compatible with legacy Actions.*
 
@@ -59,13 +59,14 @@ If you wish to restrict an action to be linked only inside of one collection, se
 If your animation behaves weirdly, you may have something pushed on the NLA. If that is unwanted, you can easily fix it by opening the `Slot Link` dropdown and pressing `Clear Scene`. In the bottom left operator options, select `Full Reset`, to also clear the NLA.
 
 ### Import Export
-Slot Link makes it technically possible to deterministically import & export animations in Blender.
+Slot link provides operators to setup all slot-linked animations onto the NLA in an export ready representation.\
+A button to do that and immediately open the FBX exporter with the correct settings also exists.
 
-At the time of writing, the only importer/exporter that supports Slot-Link is [STF](https://docs.stfform.at). STF is not a production ready format yet.
+Import into Slot Link is not yet supported.
 
-Until STF matures, or an importer/exporter for another format implements support, Slot-Link still aids you in creating and managing animations.
-
-For now, you can export animations one at a time. The `Link Slots` feature speeds that process up significantly.
+:::{hint}
+Slot Link is supported natively for import and export by [STF](https://docs.stfform.at), an experimental interchange format for games development.
+:::
 
 ---
 
