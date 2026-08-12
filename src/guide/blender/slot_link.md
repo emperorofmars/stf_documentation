@@ -29,9 +29,12 @@ This will setup links for all slots of all actions, and it will attempt to match
 You purposely can't select meshes, armatures, materials, etc.. as targets. Instead, you select objects in the scenes hierarchy, on which those resources are instantiated.
 
 :::{hint}
-This brings the data-model closer to how game engines and other tools work, but it may not always replay correctly in Blender.\
-Animating two instances of the same mesh (i.e. their shape keys) for example is impossible. If you animate one mesh-instances shape keys, Blender will play the animation on all of the meshes instances.\
-This is unfixable with extensions and has to be addressed in Blender natively.
+This brings the data-model closer to how game engines and other tools work, but it may not always replay correctly in Blender.
+
+In case you animate the shape keys of a mesh-instance, Blender will play the animation on all instances of that mesh.
+Animating two instances of the same mesh differently is impossible.\
+This is unfixable with extensions and has to be addressed in Blender natively.\
+*Please consider voting on the [Blender community issue](https://blender.community/c/rightclickselect/BO0X/?sorting=hot#).*
 :::
 
 Press `Link Slots` to link the action throughout the scene, and its slots to the specified targets. You can now play and edit the animation.
