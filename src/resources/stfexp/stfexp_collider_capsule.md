@@ -8,7 +8,7 @@ A capsule collider
 :widths: auto
 *	- **Blender**
 	- STF_Component on bpy.types.Object or bpy.types.Bone
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_collider_capsule.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_collider_capsule.py)
 *	- **Unity**
 	- CapsuleCollider or application specific components
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Collider_Capsule.cs)\

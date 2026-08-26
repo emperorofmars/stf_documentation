@@ -7,7 +7,7 @@ Instantiates a mesh onto a node.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.Mesh
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_instance_mesh/stf_instance_mesh.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_instance_mesh/stf_instance_mesh.py)
 *	- **Unity**
 	- MeshRenderer and SkinnedMeshRenderer
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Instance_Mesh.cs)\

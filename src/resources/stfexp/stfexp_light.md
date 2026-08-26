@@ -8,7 +8,7 @@ A real-time rendering friendly light-source. It can represent pointlights, direc
 :widths: auto
 *	- **Blender**
 	- bpy.types.Light
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_light.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_light.py)
 *	- **Unity**
 	- Light
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Light.cs)\

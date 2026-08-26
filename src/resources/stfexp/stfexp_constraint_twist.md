@@ -8,7 +8,7 @@ This is a special application of rotation-constraints, used to compensate for tw
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Object or bpy.types.Bone (Could use actual CopyRotation modifiers in the future)
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_twist.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_constraint_twist.py)
 *	- **Unity**
 	- RotationConstraint or application specific components
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Twist.cs)\

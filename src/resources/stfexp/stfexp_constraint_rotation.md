@@ -8,7 +8,7 @@ A rigging behavior that copies a percentage of the rotation from its source.\
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Object or bpy.types.Bone (Could use actual CopyRotation modifiers in the future)
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_rotation.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_constraint_rotation.py)
 *	- **Unity**
 	- ParentConstraint or application specific components
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Rotation.cs)\

@@ -2,6 +2,7 @@
 
 ```{toctree}
 :maxdepth: 1
+stfexp_animation_blendtree.md
 stfexp_camera.md
 stfexp_light.md
 stfexp_lightprobe_anchor.md
@@ -17,7 +18,9 @@ stfexp_collider_plane.md
 stfexp_armature_humanoid.md
 stfexp_text.md
 stfexp_instance_text.md
-stfexp_animation_blendtree.md
+stfexp_curve.md
+stfexp_instance_curve.md
+stfexp_node_ethereal.md
 ```
 
 More are TBD

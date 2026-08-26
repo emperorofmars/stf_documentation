@@ -10,7 +10,7 @@ To be expanded with more attributes and functionality.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.TextCurve
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_instance_text.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_instance_text.py)
 *	- **Unity**
 	- TextMeshPro, Text
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Instance_Text.cs)

@@ -7,7 +7,7 @@ Instantiates an armature onto a node.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object with bpy.types.Armature
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_instance_armature/stf_instance_armature.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_instance_armature/stf_instance_armature.py)
 *	- **Unity**
 	- GameObject
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Instance_Armature.cs)\

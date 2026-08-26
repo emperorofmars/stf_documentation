@@ -7,7 +7,7 @@ An animation relative to a prefab.
 :widths: auto
 *	- **Blender**
 	- Actions set-up with [Slot Link](https://extensions.blender.org/add-ons/slot-link/)
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_animation/stf_animation.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_animation/stf_animation.py)
 *	- **Unity**
 	- AnimationClip
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Animation.cs)

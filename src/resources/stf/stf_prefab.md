@@ -9,7 +9,7 @@ A prefab represents a hierarchy of nodes. It's always the root resource of an ST
 :widths: auto
 *	- **Blender**
 	- bpy.types.Collection
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_prefab/stf_prefab.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_prefab/stf_prefab.py)
 *	- **Unity**
 	- GameObject/Prefab
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Prefab.cs)\

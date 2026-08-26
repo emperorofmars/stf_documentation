@@ -8,7 +8,7 @@ Basic inverse-kinematik constraint. The component has to be placed on the last b
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Bone and bpy.types.KinematicConstraint
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_ik.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_constraint_ik.py)
 *	- **Unity**
 	- Application specific components
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_IK.cs)

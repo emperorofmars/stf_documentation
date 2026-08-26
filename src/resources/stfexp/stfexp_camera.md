@@ -8,7 +8,7 @@ A camera with perspective or orthographic projection.
 :widths: auto
 *	- **Blender**
 	- bpy.types.Camera
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_camera.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_camera.py)
 *	- **Unity**
 	- Camera
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Camera.cs)\

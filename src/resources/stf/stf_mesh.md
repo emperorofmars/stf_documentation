@@ -11,7 +11,7 @@
 :widths: auto
 *	- **Blender**
 	- bpy.types.Mesh
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_mesh/stf_mesh.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_mesh/stf_mesh.py)
 *	- **Unity**
 	- Mesh
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Mesh/STF_Mesh.cs)\

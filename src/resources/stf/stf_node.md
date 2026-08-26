@@ -9,7 +9,7 @@ A node that exists in 3d space. It defines its location, rotation and scale rela
 :widths: auto
 *	- **Blender**
 	- bpy.types.Object
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/core/stf_node/stf_node.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stf/stf_node/stf_node.py)
 *	- **Unity**
 	- Object
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STF/STF_Node.cs)\

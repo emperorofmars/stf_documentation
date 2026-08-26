@@ -8,7 +8,7 @@ A rigging behaviour that parents itself to its sources.\
 :widths: auto
 *	- **Blender**
 	- STF component on bpy.types.Object or bpy.types.Bone (Could use actual CopyRotation modifiers in the future)
-	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/expanded/stfexp_constraint_parent.py)
+	- [Resource](https://codeberg.org/stf_format/stf_blender/src/branch/master/stfblender/stf_resources/stfexp/stfexp_constraint_parent.py)
 *	- **Unity**
 	- ParentConstraint or application specific components
 	- [Resource](https://codeberg.org/stf_format/stf_unity/src/branch/master/Runtime/Resources/Resources_STFEXP/STFEXP_Constraint_Parent.cs)\
