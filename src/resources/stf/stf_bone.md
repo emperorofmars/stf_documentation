@@ -26,6 +26,9 @@ Key | Required | Type | Description
 :--- | :--- | :--- | :---
 translation | Yes | Translation | The position of the bone relative to its armature position.
 rotation | Yes | Rotation | The rotation of the bones head relative to its armature position.
+translation_local | Yes | Translation | The position of the bone relative to its parent.
+rotation_local | Yes | Rotation | The rotation of the bones head relative to its parent.
+source_of_truth_tr | No | boolean | Whether the translation & rotation relative to the armature or the parent is the source of truth.
 length | Yes | Float | The bones length
 connected | No | Boolean | Default `false`
 deform | No | Boolean | Whether the bone can deform meshes. Implicit default is `true`
