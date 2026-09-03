@@ -1,4 +1,6 @@
 # stf.instance.armature
+[ [Schema](https://schema.stfform.at/stf.instance.armature.schema.json) ]
+
 Instantiates an armature onto a node.
 
 ## Implementations
